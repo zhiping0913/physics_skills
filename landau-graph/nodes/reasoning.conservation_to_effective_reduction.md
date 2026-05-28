@@ -52,8 +52,10 @@ one fewer variable. This is the simplest form of dimensional reduction.
 
 For central field: Δφ = 2∫(M/r²)dr/√[2m(E−U) − M²/r²].
 If Δφ/2π = m/n (rational), trajectory is closed.
-Only U ∝ −1/r and U ∝ r² give strictly closed orbits for all bound states
-(Bertrand's theorem).
+Closed orbits — Bertrand's theorem: Only U ∝ −1/r and U ∝ r² give
+strictly closed orbits for all bound states. This is a THEOREM requiring
+proof (perturbation analysis of Δφ around circular orbit). The node
+states the result; see Vol.1 §14 appendix for the full derivation.
 
 ## Edge Cases
 

@@ -68,6 +68,32 @@ it just swaps coordinate and momentum.
 - **Non-canonical transformations**: Do not preserve the symplectic structure.
   Poisson bracket invariance is THE test.
 
+## Legendre Transform: A Cross-Volume Universal
+
+The transformation L(q,q̇) → H(p,q) via H = Σ pᵢq̇ᵢ − L is the Legendre
+transform. This is NOT just a mechanics trick — it is a universal
+mathematical pattern appearing across ALL of theoretical physics:
+
+| Domain | Original function | Transformed function | Relation |
+|--------|------------------|---------------------|----------|
+| Mechanics (V1) | L(q,q̇) | H(p,q) | H = Σ pᵢq̇ᵢ − L |
+| Thermodynamics (V5) | E(S,V,N) | F(T,V,N) | F = E − TS |
+| Thermodynamics (V5) | F(T,V,N) | Ω(T,V,μ) | Ω = F − μN |
+| Elasticity (V7) | F(u_ik) | σ_ik(u) | σ_ik = ∂F/∂u_ik |
+| Dielectrics (V8) | F(E) | F̃(D) | F̃ = F − E·D/4π |
+| QFT (V4) | L(φ,∂φ) | H(π,φ) | H = πφ̇ − L |
+
+The MATHEMATICS is identical in all cases: given F(x) (convex),
+define G(y) = F(x) − xy where y = dF/dx. Then dG/dy = −x.
+This is the mechanism behind:
+- Canonical transformations (generating functions)
+- Thermodynamic potentials (all four: E, F, H, G)
+- Effective action in QFT (1PI generating functional)
+
+**Key insight for agents**: When you encounter a new type of "energy" or
+"potential" in ANY volume, ask: is this a Legendre transform of a more
+fundamental function? The answer is almost always yes.
+
 ## Cross-References
 
 - Landau Vol.1 §45 (Canonical transformations), §46 (Liouville theorem)

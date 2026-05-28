@@ -55,5 +55,27 @@ when the light was emitted. This is the mathematical expression of the
 finite speed of light.
 
 ## Cross-References
+
 - Landau Vol.2 §62 (retarded potentials)
 - Landau Vol.2 §63 (Liénard-Wiechert — retarded potentials for point charge)
+
+## From LW Potentials to LW Fields
+
+The Liénard-Wiechert potentials for a point charge e moving on trajectory r₀(t):
+φ = e/[R − v·R/c]_ret,  A = ev/[c(R − v·R/c)]_ret
+where R = r − r₀(t'), t' = t − R/c, and [·]_ret means evaluate at t'.
+
+**Critical algebra step**: E = −∇φ − (1/c)∂A/∂t with RETARDED time t'(r,t).
+The chain rule gives ∂/∂r = (∂/∂r)_t' + (∂t'/∂r)∂/∂t'. The denominator
+κ = 1 − n·v/c appears from ∂t'/∂r = −n/[c(1 − n·v/c)]. The full fields:
+E = e[(n−v/c)(1−v²/c²)/(κ³R²)]_ret + e[n×[(n−v/c)×v̇]/(c²κ³R)]_ret
+
+**Key physical decomposition**:
+- First term ∝ 1/R²: velocity field (generalized Coulomb) — no radiation
+- Second term ∝ 1/R: acceleration field — RADIATION (energy flux to infinity)
+- The κ³ denominator → relativistic beaming: Δθ ~ 1/γ
+
+The reasoning_green_function_method node (Vol.9) extends this concept to
+quantum many-body systems. The underlying idea is identical: the propagator
+(what happens at (r,t) when a source acts at (r',t')) is the fundamental
+building block.

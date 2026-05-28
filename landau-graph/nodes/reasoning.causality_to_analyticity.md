@@ -56,8 +56,15 @@ This reasoning applies to ANY linear response function:
 - Dielectric permittivity ε(ω)
 - Magnetic permeability μ(ω)
 - Conductivity σ(ω)
-- Generalized susceptibility α(ω)
+- Generalized susceptibility α(ω) (Vol.5 §123)
 - Scattering amplitudes (forward dispersion relations)
+- Density response χ(q,ω) in many-body theory (Vol.9)
+- Plasma dielectric ε(k,ω) (Vol.10)
+
+**Pattern**: For ANY causal linear kernel A(t) = ∫χ(t−t')F(t')dt':
+χ(ω) analytic in UHP → Kramers-Kronig → Im χ determines Re χ.
+The SPECIFIC susceptibility changes (ε, μ, σ, χ_nn) but the LOGIC is identical.
+This is one of the deepest cross-volume unifiers in the Landau course.
 
 ## Key Properties
 

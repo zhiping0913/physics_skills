@@ -65,6 +65,24 @@ Additional conditions (symmetry) may be needed to fully specify.
 
 ## Cross-References
 
-- Landau Vol.1 §23 (Normal modes), §24 (Molecular vibrations)
+- Landau Vol.1 §23-24 (Small oscillations, forced oscillations)
+- Landau Vol.6 §69 (MHD waves — normal modes in continuum)
+- Landau Vol.10 §29 (Plasma oscillations — longitudinal normal mode)
+
+## Cross-Volume Bridge: Normal Modes → Equipartition (Vol.5)
+
+Each normal mode is an independent harmonic oscillator with energy
+ε_α = ½ω_α²|Θ_α|² + ½|Θ̇_α|². In classical statistical mechanics (Vol.5),
+the equipartition theorem assigns ½T to EACH quadratic degree of freedom →
+each normal mode contributes T (not ½T!) because it has two quadratic terms
+(kinetic + potential). This is the microscopic foundation of the
+Dulong-Petit law (heat capacity = 3N for N atoms in a solid), and its
+quantum generalization (Einstein/Debye models) comes from quantizing
+each normal mode.
+
+**Pattern**: Whenever a system decomposes into independent harmonic modes,
+each mode contributes energy according to its statistics: classical = T,
+quantum = ℏω/(e^{ℏω/T}−1). This applies to phonons, photons, magnons,
+and plasma oscillations across Vol.5, Vol.9, and Vol.10.
 - Quantum: same math → phonon modes in solids
 - Plasma: electrostatic normal modes (Langmuir, ion-acoustic)

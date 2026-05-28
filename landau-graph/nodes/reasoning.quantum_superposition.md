@@ -64,7 +64,16 @@ statistics.
   and other continuous-spectrum states. Use δ-function normalization.
 - **Phase ambiguity**: Ψ and Ψe^{iα} represent the SAME physical state.
   This is a principled non-uniqueness — all observables are bilinear in Ψ.
-  It is the seed of U(1) gauge symmetry in quantum mechanics.
+- **Identical particles** (Vol.3 §61-62): The superposition principle
+  combined with indistinguishability forces a fundamental constraint:
+  Ψ(1,2) = ±Ψ(2,1). The + sign (bosons) or − sign (fermions) is determined
+  by spin (spin-statistics theorem). This leads to:
+  * Pauli exclusion principle (fermions cannot occupy same state)
+  * Slater determinants for fermion wave functions
+  * Bose-Einstein and Fermi-Dirac statistics (Vol.5)
+  * Exchange interaction energy: E_ex = ±⟨ψ₁ψ₂|V|ψ₂ψ₁⟩
+  Without this, the entire edifice of multi-electron atoms, the periodic
+  table, and quantum statistics has no foundation in the reasoning graph.
 
 ## Cross-References
 - Landau Vol.3 §14 (density matrix)

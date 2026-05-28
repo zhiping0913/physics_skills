@@ -81,6 +81,29 @@ translation in qᵢ, and the conserved quantity is the conjugate momentum.
 - The Lagrangian formalism is valid (forces derivable from potential)
 - The system has the stated symmetry (external fields break translation symmetry)
 
+## Hidden Dependencies
+
+**Momentum formula depends on L = ½mv²**: P = Σ ∂L/∂vₐ = Σ mₐvₐ ASSUMES
+the free-particle Lagrangian has been derived from Galilean invariance
+(see `reasoning.variational_principle` §"Constructing L from Symmetry").
+Without completing that construction, the momentum formula is just asserted.
+
+**Energy = T + U requires T to be quadratic in velocities**: 
+E = Σ q̇ᵢ ∂T/∂q̇ᵢ − (T−U) = 2T − T + U = T + U. This uses Euler's theorem
+for homogeneous functions: if T is homogeneous of degree 2 in velocities,
+then Σ q̇ᵢ ∂T/∂q̇ᵢ = 2T. This holds in Cartesian AND curvilinear coordinates.
+
+**Angular momentum additivity is subtler**: M = Σ rₐ×pₐ is additive,
+but M depends on origin choice. Under r → r + a: M → M + a×P.
+The intrinsic part (free of origin) is M_int, with M = M_int + R×P
+where R is the center-of-mass position.
+
+**Energy derivation method differs from P and M**: E is derived via
+dL/dt manipulation (using E-L equations directly), while P and M
+use infinitesimal symmetry transformations δq. Both are instances
+of Noether's theorem, but the energy case shows the theorem in a
+different form (time translation generates dL/dt rather than δL=0).
+
 ## Edge Cases
 
 - **External fields**: Break homogeneity → P and M components may fail to conserve

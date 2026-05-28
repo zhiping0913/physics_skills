@@ -30,6 +30,19 @@ This is NOT derived from classical mechanics — it is a NEW postulate.
 But it guarantees that in the limit ℏ→0, quantum mechanics recovers
 classical mechanics: Ψ = a·exp(iS/ℏ) → S satisfies the H-J equation.
 
+**Epistemological shift from Vol.1-2**: In classical mechanics and field
+theory, EVERYTHING followed from a single principle (δS = 0). The Schrödinger
+equation cannot be derived this way — it requires NEW postulates:
+(1) physical states are vectors in a Hilbert space,
+(2) observables are Hermitian operators,
+(3) the superposition principle → the equation must be LINEAR,
+(4) [q̂,p̂] = iℏ (the fundamental commutation relation).
+Landau's footnote (§17): "This statement is not a logical consequence of
+the basic principles of quantum mechanics and should be regarded as a
+consequence of experimental data." The correspondence p→−iℏ∇ is a
+PRESCRIPTION, not a theorem. This is a fundamentally different
+epistemological status from the derivations in Vol.1 and Vol.2.
+
 ## Algorithm
 
 ```

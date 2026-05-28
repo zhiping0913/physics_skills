@@ -55,7 +55,21 @@ flow (sound waves, shocks), ζ matters too.
 ρ(∂v/∂t + v·∇v) = −∇p + η∇²v + (ζ+η/3)∇(div v).
 
 ## Cross-References
-- Landau Vol.6 §15 (Navier-Stokes derivation)
-- Landau Vol.7: elasticity theory uses the SAME reasoning
-  (symmetry → unique form of elastic modulus tensor)
-- Landau Vol.8: MHD adds magnetic stress tensor (same pattern)
+
+- Landau Vol.6 §15 (Navier-Stokes viscous stress derivation)
+- **Cross-volume trinity**: The SAME template (linearity + symmetry →
+  unique tensor) applies in THREE physically different contexts:
+  1. **Viscous stress** (Vol.6 §15): σ'_ik = η(∂_i v_k + ∂_k v_i − ⅔δ_ik div v) + ζδ_ik div v
+  2. **Hooke's law** (Vol.7 §4): σ_ik = K u_ll δ_ik + 2μ(u_ik − ⅓δ_ik u_ll)
+     — Two elastic constants for isotropic body because only two independent
+     quadratic scalar invariants from the strain tensor.
+  3. **Dielectric tensor** (Vol.8 §103): D_i = ε_ik E_k classified by crystal symmetry
+  4. **Conductivity** (Vol.10): j_i = σ_ik E_k — same symmetry classification
+- In ALL cases: the form of the constitutive tensor is determined by
+  (a) linearity of response, (b) symmetry of the medium, (c) Onsager
+  reciprocity. The rank and index structure differ, but the reasoning
+  is identical.
+- This is arguably the single most powerful cross-volume transfer pattern
+  in the entire Landau course — mastering it once gives you the key to
+  fluid dynamics, elasticity, electrodynamics of continuous media, and
+  transport theory.
