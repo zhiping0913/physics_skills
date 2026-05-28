@@ -12,7 +12,6 @@ trigger:
 reasoning_role: integrability_condition
 parent: reasoning.canonical_transformation
 children:
-  - knowledge.mechanics.hamilton_jacobi_equation
   - knowledge.mechanics.action_angle_variables
 related:
   - reasoning.adiabatic_invariance
@@ -66,6 +65,36 @@ The Kepler problem separates in BOTH spherical and parabolic coordinates
   The system may still be integrable (e.g., Toda lattice) but H-J won't split.
 - **Degeneracy**: When frequencies are commensurate, the number of
   independent frequencies is less than s.
+
+## Hidden Symmetries and the Runge-Lenz Vector
+
+Separability in MULTIPLE coordinate systems signals a hidden symmetry
+beyond the obvious geometric ones. The Kepler problem separates in BOTH
+spherical AND parabolic coordinates — this is NOT generic. It signals
+an extra conserved quantity: the Runge-Lenz vector.
+
+**For U = −α/r (Kepler problem)**:
+```
+A = p × M − mα r̂
+```
+where M = r × p is the angular momentum.
+
+**Properties**:
+- A is conserved (dA/dt = 0) — check by direct differentiation
+- A lies in the orbit plane (A·M = 0)
+- |A| = mαe where e is the eccentricity
+- A points from the focus to the perihelion
+- A² = m²α² + 2mE M² → relates energy to eccentricity
+
+**Hidden SO(4) symmetry**: For E < 0 (bound orbits), the conserved
+quantities M and A form an SO(4) algebra. Combined with the Hamiltonian,
+this explains why ALL bound Kepler orbits close — the system has more
+conserved quantities than degrees of freedom (superintegrability).
+
+**Pattern**: When a system separates in more coordinate systems than
+expected → look for hidden conserved quantities. The Runge-Lenz vector
+is the paradigm case. The harmonic oscillator has an analogous hidden
+SU(3) symmetry (Fradkin tensor).
 
 ## Cross-References
 

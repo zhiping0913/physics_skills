@@ -12,9 +12,7 @@ trigger:
 reasoning_role: dimensional_reduction
 parent: reasoning.symmetry_to_conservation
 children:
-  - knowledge.mechanics.central_field
   - knowledge.mechanics.kepler_problem
-  - knowledge.mechanics.effective_potential
 related:
   - knowledge.mechanics.cyclic_coordinate
 retrieval_cost: 1

@@ -13,7 +13,6 @@ reasoning_role: scale_separation
 parent: reasoning.retarded_green_function
 children:
   - knowledge.em.dipole_radiation
-  - knowledge.em.quadrupole_radiation
 related:
   - reasoning.small_parameter_expansion
 retrieval_cost: 1

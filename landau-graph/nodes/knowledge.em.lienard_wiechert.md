@@ -10,7 +10,7 @@ trigger:
   - radiation from accelerated relativistic charges
   - relativistic plasma mirror (ROM) model foundation
 reasoning_role: exact_solution_for_moving_charge
-parent: knowledge.em.retarded_potentials
+parent: reasoning.retarded_green_function
 retrieval_cost: 1
 ---
 

@@ -54,7 +54,32 @@ Reynolds number measures the ratio of inertial to viscous forces:
 Re = ρu²/(ηu/l) = inertial stress / viscous stress.
 Re ≪ 1: viscous dominated (Stokes flow). Re ≫ 1: inertia dominated → turbulence.
 
-## Cross-References
-- Landau Vol.6 §19 (similarity law)
-- Landau Vol.1 §10 (mechanical similarity — same idea, different context)
-- Landau Vol.5 §53 (heat transfer similarity — Prandtl, Nusselt numbers)
+## Kolmogorov Turbulence: Dimensional Analysis at Its Peak
+
+The Richardson-Kolmogorov theory of developed turbulence (§33) is arguably
+the most impressive application of dimensional analysis in physics.
+The reasoning uses ONLY ε (energy dissipation per unit mass) and λ (scale),
+with NO free parameters:
+
+```
+v_λ ∼ (ε·λ)^{1/3}                     (Kolmogorov-Obukhov law, 33.6)
+E(k) ∼ ε^{2/3}·k^{-5/3}              (energy spectrum in inertial range)
+λ₀ ∼ (ν³/ε)^{1/4}                     (Kolmogorov dissipation scale, 33.10)
+ε ∼ (Δu)³/l                           (dissipation from large scales, 33.1)
+```
+
+**The reasoning** (§33):
+1. For scales λ ≫ λ₀, viscosity ν is irrelevant → v_λ can only depend on ε and λ.
+2. [ε] = cm²/s³, [λ] = cm → unique combination with [v] = cm/s is (ελ)^{1/3}.
+3. The energy cascades from large to small scales without dissipation
+   (Richardson cascade). Dissipation only occurs at λ ∼ λ₀.
+4. The k^{-5/3} spectrum follows from Fourier transform of (33.6).
+
+**This is dimensional analysis in its purest form**: two quantities
+(ε, λ) → one unique velocity scale. No PDE solving, no free parameters.
+The only "input" is the physical insight that ν is irrelevant for λ ≫ λ₀.
+
+**Cross-References**
+
+- Landau Vol.6 §19 (similarity law), §33 (developed turbulence)
+- reasoning.homogeneity_to_scaling (Vol.1) — same logic applied to mechanics

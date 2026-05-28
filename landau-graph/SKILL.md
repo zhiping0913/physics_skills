@@ -53,17 +53,17 @@ Edge Cases, Cross-References).
 
 ### Volume Coverage
 
-| Vol | Title | Nodes | Status |
+| Vol | Title | Nodes | Source |
 |-----|-------|-------|--------|
-| 1 | Mechanics | 21 | Rumin. ✓ |
-| 2 | Classical Fields | 14 | Rumin. ✓ |
-| 3 | Quantum Mechanics | 7 | Rumin. ✓ |
-| 4 | QED | 4 | Rumin. ✓ |
-| 5 | Statistical Physics I | 11 | Rumin. ✓ |
-| 6 | Fluid Mechanics | 7 | Rumin. ✓ |
-| 7 | Elasticity | 2 | Rumin. ✓ |
-| 8 | Electrodynamics of Continuous Media | 6 | Rumin. ✓ |
-| 9 | Statistical Physics II | 5 | Rumin. ✓ |
-| 10 | Physical Kinetics | 10 | Rumin. ✓ |
+| 1 | Mechanics | 21 | `~/knowledge_base/book/2004/2004--Механика/book.md` |
+| 2 | Classical Fields | 14 | `~/knowledge_base/book/2003/2003--Классическая теория поля/book.md` |
+| 3 | Quantum Mechanics | 7 | `~/knowledge_base/book/2002/2002--Квантовая механика (нерелятивистская теория)/book.md` |
+| 4 | QED | 4 | `~/knowledge_base/book/2005/2005--Квантовая электродинамика/book.md` |
+| 5 | Statistical Physics I | 11 | `~/knowledge_base/book/2002/2002--Статистическая физика. Часть 1/book.md` |
+| 6 | Fluid Mechanics | 7 | `~/knowledge_base/book/2001/2001--Гидродинамика/book.md` |
+| 7 | Elasticity | 2 | `~/knowledge_base/book/2003/2003--Теория упругости/book.md` |
+| 8 | Electrodynamics of Continuous Media | 6 | `~/knowledge_base/book/2005/2005--Электродинамика сплошных сред/book.md` |
+| 9 | Statistical Physics II | 5 | `~/knowledge_base/book/2001/2001--Статистическая физика. Часть 2/book.md` |
+| 10 | Physical Kinetics | 10 | `~/knowledge_base/book/2002/2002--Физическая кинетика/book.md` |
 
-All 10 volumes ruminated. All rewrite fixes applied.
+All 10 volumes ruminated. All rewrite fixes applied. Source books are in the knowledge base as markdown (Russian originals).

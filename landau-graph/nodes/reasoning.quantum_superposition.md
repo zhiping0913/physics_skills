@@ -12,7 +12,6 @@ trigger:
 reasoning_role: quantum_probability
 parent: reasoning.classical_to_quantum_correspondence
 children:
-  - knowledge.quantum.wave_function
 retrieval_cost: 1
 ---
 

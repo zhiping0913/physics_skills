@@ -13,7 +13,6 @@ reasoning_role: generating_function_logic
 parent: reasoning.variational_principle
 children:
   - knowledge.mechanics.hamilton_equations
-  - knowledge.mechanics.poisson_brackets
   - knowledge.mechanics.action_angle_variables
 related:
   - reasoning.separation_of_variables

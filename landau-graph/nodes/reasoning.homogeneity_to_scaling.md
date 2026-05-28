@@ -12,8 +12,6 @@ trigger:
 reasoning_role: scaling_argument
 parent: reasoning.variational_principle
 children:
-  - knowledge.mechanics.mechanical_similarity
-  - knowledge.mechanics.virial_theorem
 related:
   - knowledge.mechanics.kepler_problem
 retrieval_cost: 1

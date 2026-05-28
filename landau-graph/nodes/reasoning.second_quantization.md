@@ -12,7 +12,6 @@ trigger:
 reasoning_role: field_quantization
 parent: reasoning.classical_to_quantum_correspondence
 children:
-  - knowledge.qed.photon_quantization
 retrieval_cost: 1
 ---
 

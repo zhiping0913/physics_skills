@@ -12,7 +12,6 @@ trigger:
 reasoning_role: canonical_ensemble
 parent: reasoning.microcanonical_to_canonical
 children:
-  - knowledge.statistical.maxwell_distribution
   - knowledge.statistical.free_energy
 retrieval_cost: 1
 ---

@@ -13,8 +13,6 @@ reasoning_role: variational_logic
 parent: null
 children:
   - reasoning.symmetry_to_conservation
-  - knowledge.mechanics.lagrangian_free_particle
-  - knowledge.mechanics.lagrangian_system
 related:
   - reasoning.small_parameter_expansion
 retrieval_cost: 1

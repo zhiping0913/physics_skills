@@ -13,7 +13,7 @@ reasoning_role: field_theory_construction
 parent: reasoning.variational_principle
 children:
   - knowledge.em.maxwell_from_action
-  - knowledge.em.energy_momentum_tensor
+  - knowledge.em.energy_momentum_tensor_field
 retrieval_cost: 1
 ---
 

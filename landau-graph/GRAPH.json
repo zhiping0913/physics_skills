@@ -533,6 +533,34 @@
       "layer": "reasoning",
       "reasoning_role": "causality_principle",
       "volume": "cross"
+    },
+    "reasoning.physical_solution_selection": {
+      "source": "Vol.2 §62, Vol.6 §96, Vol.8 §82, Vol.10 §29",
+      "node_type": "reasoning"
+    },
+    "reasoning.equilibrium_as_extremum": {
+      "source": "Vol.1 §2, Vol.3 §17, Vol.5 §12, Vol.7 §4",
+      "node_type": "reasoning"
+    },
+    "reasoning.linear_response_general": {
+      "source": "Vol.5 §123, Vol.8 §77, Vol.9 §76, Vol.10 §29",
+      "node_type": "reasoning"
+    },
+    "reasoning.noether_field_theory": {
+      "source": "Vol.2 §29, §32",
+      "node_type": "reasoning"
+    },
+    "reasoning.angular_momentum_algebra": {
+      "source": "Vol.3 §27, §54",
+      "node_type": "reasoning"
+    },
+    "reasoning.cumulant_generating_function": {
+      "source": "Vol.4 §72, Vol.5 §15, Vol.9 §13",
+      "node_type": "reasoning"
+    },
+    "reasoning.renormalization": {
+      "source": "Vol.4 §114-116",
+      "node_type": "reasoning"
     }
   },
   "edges": [
@@ -1233,12 +1261,6 @@
       "weight": 0.6
     },
     {
-      "source": "knowledge.mechanics.poisson_brackets",
-      "target": "reasoning.classical_to_quantum_correspondence",
-      "type": "prerequisite",
-      "weight": 0.8
-    },
-    {
       "source": "reasoning.quantum_perturbation_theory",
       "target": "reasoning.small_parameter_expansion",
       "type": "reasoning-instance",
@@ -1447,6 +1469,228 @@
       "target": "reasoning.fluctuation_dissipation_quantum",
       "type": "prerequisite",
       "weight": 0.8
+    },
+    {
+      "source": "reasoning.canonical_transformation",
+      "target": "reasoning.partition_to_thermodynamics",
+      "type": "analogy",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.normal_mode_decomposition",
+      "target": "knowledge.statistical.equipartition",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.constitutive_relation_from_symmetry",
+      "target": "knowledge.continuous.dielectric_dispersion",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.variational_principle",
+      "target": "reasoning.lorentz_invariance_to_action",
+      "type": "analogy",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.causality_as_constraint",
+      "target": "reasoning.physical_solution_selection",
+      "type": "prerequisite",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.variational_principle",
+      "target": "reasoning.equilibrium_as_extremum",
+      "type": "prerequisite",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.causality_as_constraint",
+      "target": "reasoning.linear_response_general",
+      "type": "prerequisite",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.physical_solution_selection",
+      "target": "reasoning.retarded_green_function",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.physical_solution_selection",
+      "target": "reasoning.causality_to_analyticity",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.physical_solution_selection",
+      "target": "reasoning.landau_damping",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.equilibrium_as_extremum",
+      "target": "reasoning.classical_to_quantum_correspondence",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.equilibrium_as_extremum",
+      "target": "reasoning.partition_to_thermodynamics",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.linear_response_general",
+      "target": "reasoning.causality_to_analyticity",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.linear_response_general",
+      "target": "reasoning.fluctuation_dissipation_quantum",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.linear_response_general",
+      "target": "reasoning.spatial_dispersion",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.symmetry_drives_physics",
+      "target": "reasoning.noether_field_theory",
+      "type": "prerequisite",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.noether_field_theory",
+      "target": "knowledge.em.energy_momentum_tensor_field",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.noether_field_theory",
+      "target": "reasoning.lorentz_invariance_to_action",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.noether_field_theory",
+      "target": "reasoning.constitutive_relation_from_symmetry",
+      "type": "analogy",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.classical_to_quantum_correspondence",
+      "target": "reasoning.angular_momentum_algebra",
+      "type": "prerequisite",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.angular_momentum_algebra",
+      "target": "knowledge.quantum.angular_momentum",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.angular_momentum_algebra",
+      "target": "reasoning.quantum_superposition",
+      "type": "prerequisite",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.partition_to_thermodynamics",
+      "target": "reasoning.cumulant_generating_function",
+      "type": "prerequisite",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.cumulant_generating_function",
+      "target": "knowledge.statistical.fluctuations",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.cumulant_generating_function",
+      "target": "knowledge.condensed.diagram_technique",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.cumulant_generating_function",
+      "target": "reasoning.thermodynamic_perturbation_theory",
+      "type": "analogy",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.cumulant_generating_function",
+      "target": "knowledge.qed.feynman_rules",
+      "type": "analogy",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.second_quantization",
+      "target": "reasoning.renormalization",
+      "type": "prerequisite",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.renormalization",
+      "target": "knowledge.qed.feynman_rules",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.renormalization",
+      "target": "reasoning.small_parameter_expansion",
+      "type": "analogy",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.separation_of_variables",
+      "target": "knowledge.mechanics.kepler_problem",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.small_parameter_expansion",
+      "target": "reasoning.thermodynamic_perturbation_theory",
+      "type": "analogy",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.small_parameter_expansion",
+      "target": "reasoning.green_function_method",
+      "type": "analogy",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.partition_to_thermodynamics",
+      "target": "knowledge.statistical.bose_distribution",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.partition_to_thermodynamics",
+      "target": "knowledge.statistical.fermi_distribution",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.kinetic_equation_closure",
+      "target": "knowledge.kinetic.vlasov_equation",
+      "type": "reasoning-instance",
+      "weight": 1
+    },
+    {
+      "source": "reasoning.plasma_dielectric_response",
+      "target": "knowledge.kinetic.plasma_instabilities",
+      "type": "reasoning-instance",
+      "weight": 1
     }
   ],
   "rumination_1_notes": {

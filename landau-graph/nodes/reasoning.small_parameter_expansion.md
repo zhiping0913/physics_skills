@@ -12,9 +12,7 @@ trigger:
 reasoning_role: perturbation_expansion
 parent: reasoning.timescale_hierarchy
 children:
-  - knowledge.mechanics.small_oscillations_1d
   - knowledge.mechanics.normal_modes
-  - knowledge.mechanics.dissipation
 related:
   - reasoning.normal_mode_decomposition
 retrieval_cost: 1
@@ -58,6 +56,31 @@ eigenvalues of m⁻¹k, and they are guaranteed positive (by stability) and real
   exponential growth (not oscillation).
 - **Large amplitudes**: Quadratic approximation breaks → anharmonic terms
   (see knowledge.mechanics.nonlinear_oscillations).
+
+## Perturbation Theory: A Cross-Volume Quadruple Bridge
+
+The small-parameter-expansion pattern is the SINGLE most cross-referenced
+template in the Landau course. It appears in four volumes with identical
+logical structure but different names:
+
+| | Classical (V1) | Quantum (V3) | Statistical (V5) | Many-body (V9) |
+|---|---|---|---|---|
+| **Bare system** | x₀(t) — free oscillation | ψ^(0), E^(0) — unperturbed | F₀, Z₀ — ideal gas | G₀ — free propagator |
+| **Small param** | amplitude a/l | ΔE splitting / E^(0) | V/T (interaction/thermal) | V/g(ε_F) (interaction/Fermi) |
+| **1st correction** | x₁(t) — forced oscillation | E^(1) = ⟨ψ^(0)|V|ψ^(0)⟩ | F₁ = ⟨V⟩_0 | Σ — self-energy |
+| **Method** | Expand EOM in amplitude | Rayleigh-Schrödinger series | Expand ln Z in V/T | Dyson: G = G₀ + G₀ΣG |
+| **Key result** | Nonlinear frequency shift | Energy level shift | Virial expansion | Quasiparticle spectrum |
+
+**The parallel structure**:
+1. Identify the bare (solvable) system.
+2. Express the full system as bare + λ·(perturbation).
+3. Expand in λ: 0th = bare, 1st = average of perturbation, 2nd = fluctuation.
+4. The SERIES converges only when λ ≪ 1. Check the condition.
+
+**Key subtlety (Vol.5)**: In thermodynamics, the perturbation parameter
+is V/T, which is EXTENSIVE — it grows with system size! The series appears
+divergent for macroscopic systems. But ln Z cancels the extensive terms
+(see `reasoning.cumulant_generating_function` and `reasoning.thermodynamic_perturbation_theory`). This is a non-trivial cross-volume insight.
 
 ## Cross-References
 

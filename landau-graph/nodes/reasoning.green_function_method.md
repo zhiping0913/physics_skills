@@ -72,6 +72,35 @@ Residual interactions produce finite lifetime: γ ∝ (ε−ε_F)².
 - Transport: conductivity from current-current correlation
 - The entire diagram technique is built on Green's functions
 
+## From Perturbation Theory to Feynman Diagrams
+
+The leap from time-dependent PT (Vol.3) to relativistic Feynman diagrams
+(Vol.4) requires three conceptual bridges:
+
+```
+1. RELATIVISTIC TRANSITION:
+   Non-relativistic H_int = V(r) → QED: H_int = −e∫ j^μ A_μ d³r
+   Use 4-momentum conservation at each vertex instead of energy only.
+
+2. WICK CONTRACTION → PROPAGATORS:
+   T(ψ̄ψA ψ̄ψA ...) = Σ(all pairings of field operators).
+   Each pairing = propagator (Green's function of the free theory).
+   Wick's theorem (proved in §13) ALGORITHMS this decomposition.
+
+3. DYSON SERIES → DIAGRAMMATIC EXPANSION:
+   S = T exp(−i∫H_int d⁴x) = Σ (−i)^n/n! ∫ T[H_int(x₁)...H_int(x_n)] d⁴x₁...d⁴x_n
+   Each term → set of Feynman diagrams with vertices = H_int insertions.
+   Momentum-space rules from Fourier transform of each diagram.
+```
+
+The critical insight: Feynman diagrams ARE the Green's function method
+applied to relativistic perturbation theory. The propagators (lines) are
+free Green's functions. The vertices are interaction terms. The loop
+integrals are the Dyson series Σ = self-energy insertion.
+
+See also: `reasoning.renormalization` (what to do when loop integrals diverge),
+`reasoning.cumulant_generating_function` (why vacuum diagrams cancel).
+
 ## Cross-References
 - Landau Vol.9 §7-21 (Green's functions at T=0), §36-38 (finite T)
 - Landau Vol.10 §29: plasma ε(k,ω) = 1 − V_k Π(k,ω) — the density-density

@@ -12,7 +12,6 @@ trigger:
 reasoning_role: symmetry_to_lagrangian
 parent: reasoning.symmetry_drives_physics
 children:
-  - knowledge.relativity.action_free_particle
   - knowledge.relativity.energy_momentum
 related:
   - knowledge.mechanics.lagrangian_free_particle

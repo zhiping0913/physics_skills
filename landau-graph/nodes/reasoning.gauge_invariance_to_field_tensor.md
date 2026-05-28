@@ -13,7 +13,6 @@ reasoning_role: gauge_redundancy_resolution
 parent: reasoning.symmetry_drives_physics
 children:
   - knowledge.em.field_tensor
-  - knowledge.em.gauge_invariance
 retrieval_cost: 1
 ---
 

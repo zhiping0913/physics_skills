@@ -11,7 +11,6 @@ trigger:
 reasoning_role: causal_boundary_condition
 parent: reasoning.causality_as_constraint
 children:
-  - knowledge.em.retarded_potentials
   - knowledge.em.lienard_wiechert
 retrieval_cost: 1
 ---

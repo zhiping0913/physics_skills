@@ -13,7 +13,6 @@ reasoning_role: collision_operator
 parent: reasoning.kinetic_equation_closure
 children:
   - knowledge.kinetic.landau_collision_integral
-  - knowledge.kinetic.plasma_transport
 retrieval_cost: 1
 ---
 

@@ -10,8 +10,6 @@ trigger:
 reasoning_role: phase_space_formalism
 parent: reasoning.canonical_transformation
 children:
-  - knowledge.mechanics.poisson_brackets
-  - knowledge.mechanics.hamilton_jacobi_equation
 retrieval_cost: 1
 ---
 
