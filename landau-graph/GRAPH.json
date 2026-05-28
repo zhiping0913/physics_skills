@@ -1,0 +1,1577 @@
+{
+  "meta": {
+    "source": "Landau-Lifshitz Vol.1 Mechanics (5th ed., 2004)",
+    "kb_path": "/home/zhiping/knowledge_base/book/2004/2004--Механика/book.md",
+    "version": "0.1.0",
+    "node_count": 89,
+    "edge_count": 152,
+    "volumes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "node_index": {
+    "reasoning.variational_principle": {
+      "file": "nodes/reasoning.variational_principle.md",
+      "layer": "reasoning",
+      "reasoning_role": "variational_logic"
+    },
+    "reasoning.symmetry_to_conservation": {
+      "file": "nodes/reasoning.symmetry_to_conservation.md",
+      "layer": "reasoning",
+      "reasoning_role": "symmetry_logic"
+    },
+    "reasoning.homogeneity_to_scaling": {
+      "file": "nodes/reasoning.homogeneity_to_scaling.md",
+      "layer": "reasoning",
+      "reasoning_role": "scaling_argument"
+    },
+    "reasoning.conservation_to_effective_reduction": {
+      "file": "nodes/reasoning.conservation_to_effective_reduction.md",
+      "layer": "reasoning",
+      "reasoning_role": "dimensional_reduction"
+    },
+    "reasoning.small_parameter_expansion": {
+      "file": "nodes/reasoning.small_parameter_expansion.md",
+      "layer": "reasoning",
+      "reasoning_role": "perturbation_expansion"
+    },
+    "reasoning.normal_mode_decomposition": {
+      "file": "nodes/reasoning.normal_mode_decomposition.md",
+      "layer": "reasoning",
+      "reasoning_role": "eigenvalue_diagonalization"
+    },
+    "reasoning.periodic_parametric_instability": {
+      "file": "nodes/reasoning.periodic_parametric_instability.md",
+      "layer": "reasoning",
+      "reasoning_role": "instability_analysis"
+    },
+    "reasoning.canonical_transformation": {
+      "file": "nodes/reasoning.canonical_transformation.md",
+      "layer": "reasoning",
+      "reasoning_role": "generating_function_logic"
+    },
+    "reasoning.separation_of_variables": {
+      "file": "nodes/reasoning.separation_of_variables.md",
+      "layer": "reasoning",
+      "reasoning_role": "integrability_condition"
+    },
+    "reasoning.adiabatic_invariance": {
+      "file": "nodes/reasoning.adiabatic_invariance.md",
+      "layer": "reasoning",
+      "reasoning_role": "timescale_separation"
+    },
+    "knowledge.mechanics.energy_conservation": {
+      "file": "nodes/knowledge.mechanics.energy_conservation.md",
+      "layer": "knowledge",
+      "reasoning_role": "conserved_quantity"
+    },
+    "knowledge.mechanics.momentum_conservation": {
+      "file": "nodes/knowledge.mechanics.momentum_conservation.md",
+      "layer": "knowledge",
+      "reasoning_role": "conserved_quantity"
+    },
+    "knowledge.mechanics.angular_momentum_conservation": {
+      "file": "nodes/knowledge.mechanics.angular_momentum_conservation.md",
+      "layer": "knowledge",
+      "reasoning_role": "conserved_quantity"
+    },
+    "knowledge.mechanics.central_field_effective": {
+      "file": "nodes/knowledge.mechanics.central_field_effective.md",
+      "layer": "knowledge",
+      "reasoning_role": "effective_potential_reduction"
+    },
+    "knowledge.mechanics.kepler_problem": {
+      "file": "nodes/knowledge.mechanics.kepler_problem.md",
+      "layer": "knowledge",
+      "reasoning_role": "exact_solution"
+    },
+    "knowledge.mechanics.normal_modes": {
+      "file": "nodes/knowledge.mechanics.normal_modes.md",
+      "layer": "knowledge",
+      "reasoning_role": "eigenvalue_diagonalization"
+    },
+    "knowledge.mechanics.parametric_resonance": {
+      "file": "nodes/knowledge.mechanics.parametric_resonance.md",
+      "layer": "knowledge",
+      "reasoning_role": "instability_condition"
+    },
+    "knowledge.mechanics.hamilton_equations": {
+      "file": "nodes/knowledge.mechanics.hamilton_equations.md",
+      "layer": "knowledge",
+      "reasoning_role": "phase_space_formalism"
+    },
+    "knowledge.mechanics.hamilton_jacobi": {
+      "file": "nodes/knowledge.mechanics.hamilton_jacobi.md",
+      "layer": "knowledge",
+      "reasoning_role": "action_as_generator"
+    },
+    "knowledge.mechanics.adiabatic_invariant": {
+      "file": "nodes/knowledge.mechanics.adiabatic_invariant.md",
+      "layer": "knowledge",
+      "reasoning_role": "adiabatic_invariant"
+    },
+    "knowledge.mechanics.action_angle_variables": {
+      "file": "nodes/knowledge.mechanics.action_angle_variables.md",
+      "layer": "knowledge",
+      "reasoning_role": "canonical_variables_for_integrable_systems"
+    },
+    "reasoning.lorentz_invariance_to_action": {
+      "file": "nodes/reasoning.lorentz_invariance_to_action.md",
+      "layer": "reasoning",
+      "reasoning_role": "symmetry_to_lagrangian",
+      "volume": 2
+    },
+    "reasoning.gauge_invariance_to_field_tensor": {
+      "file": "nodes/reasoning.gauge_invariance_to_field_tensor.md",
+      "layer": "reasoning",
+      "reasoning_role": "gauge_redundancy_resolution",
+      "volume": 2
+    },
+    "reasoning.action_decomposition_field_theory": {
+      "file": "nodes/reasoning.action_decomposition_field_theory.md",
+      "layer": "reasoning",
+      "reasoning_role": "field_theory_construction",
+      "volume": 2
+    },
+    "reasoning.retarded_green_function": {
+      "file": "nodes/reasoning.retarded_green_function.md",
+      "layer": "reasoning",
+      "reasoning_role": "causal_boundary_condition",
+      "volume": 2
+    },
+    "reasoning.multipole_expansion_radiation": {
+      "file": "nodes/reasoning.multipole_expansion_radiation.md",
+      "layer": "reasoning",
+      "reasoning_role": "scale_separation",
+      "volume": 2
+    },
+    "knowledge.relativity.lorentz_transform": {
+      "file": "nodes/knowledge.relativity.lorentz_transform.md",
+      "layer": "knowledge",
+      "reasoning_role": "spacetime_symmetry",
+      "volume": 2
+    },
+    "knowledge.relativity.energy_momentum": {
+      "file": "nodes/knowledge.relativity.energy_momentum.md",
+      "layer": "knowledge",
+      "reasoning_role": "relativistic_mechanics",
+      "volume": 2
+    },
+    "knowledge.em.field_tensor": {
+      "file": "nodes/knowledge.em.field_tensor.md",
+      "layer": "knowledge",
+      "reasoning_role": "field_unification",
+      "volume": 2
+    },
+    "knowledge.em.maxwell_from_action": {
+      "file": "nodes/knowledge.em.maxwell_from_action.md",
+      "layer": "knowledge",
+      "reasoning_role": "field_equations_from_action",
+      "volume": 2
+    },
+    "knowledge.em.lienard_wiechert": {
+      "file": "nodes/knowledge.em.lienard_wiechert.md",
+      "layer": "knowledge",
+      "reasoning_role": "exact_solution_for_moving_charge",
+      "volume": 2
+    },
+    "knowledge.em.dipole_radiation": {
+      "file": "nodes/knowledge.em.dipole_radiation.md",
+      "layer": "knowledge",
+      "reasoning_role": "leading_multipole",
+      "volume": 2
+    },
+    "knowledge.em.synchrotron_radiation": {
+      "file": "nodes/knowledge.em.synchrotron_radiation.md",
+      "layer": "knowledge",
+      "reasoning_role": "relativistic_radiation",
+      "volume": 2
+    },
+    "knowledge.em.energy_momentum_tensor_field": {
+      "file": "nodes/knowledge.em.energy_momentum_tensor_field.md",
+      "layer": "knowledge",
+      "reasoning_role": "conserved_tensor",
+      "volume": 2
+    },
+    "reasoning.ensemble_logic": {
+      "file": "nodes/reasoning.ensemble_logic.md",
+      "layer": "reasoning",
+      "reasoning_role": "statistical_ensemble",
+      "volume": 5
+    },
+    "reasoning.microcanonical_to_canonical": {
+      "file": "nodes/reasoning.microcanonical_to_canonical.md",
+      "layer": "reasoning",
+      "reasoning_role": "ensemble_equivalence",
+      "volume": 5
+    },
+    "reasoning.partition_to_thermodynamics": {
+      "file": "nodes/reasoning.partition_to_thermodynamics.md",
+      "layer": "reasoning",
+      "reasoning_role": "generating_function",
+      "volume": 5
+    },
+    "reasoning.thermodynamic_perturbation_theory": {
+      "file": "nodes/reasoning.thermodynamic_perturbation_theory.md",
+      "layer": "reasoning",
+      "reasoning_role": "perturbation_in_thermal_ensemble",
+      "volume": 5
+    },
+    "knowledge.statistical.entropy": {
+      "file": "nodes/knowledge.statistical.entropy.md",
+      "layer": "knowledge",
+      "reasoning_role": "microscopic_origin_of_entropy",
+      "volume": 5
+    },
+    "knowledge.statistical.gibbs_distribution": {
+      "file": "nodes/knowledge.statistical.gibbs_distribution.md",
+      "layer": "knowledge",
+      "reasoning_role": "canonical_ensemble",
+      "volume": 5
+    },
+    "knowledge.statistical.free_energy": {
+      "file": "nodes/knowledge.statistical.free_energy.md",
+      "layer": "knowledge",
+      "reasoning_role": "thermodynamic_potential",
+      "volume": 5
+    },
+    "knowledge.statistical.fluctuations": {
+      "file": "nodes/knowledge.statistical.fluctuations.md",
+      "layer": "knowledge",
+      "reasoning_role": "statistical_fluctuations",
+      "volume": 5
+    },
+    "knowledge.statistical.fermi_distribution": {
+      "file": "nodes/knowledge.statistical.fermi_distribution.md",
+      "layer": "knowledge",
+      "reasoning_role": "quantum_statistics_fermi",
+      "volume": 5
+    },
+    "knowledge.statistical.bose_distribution": {
+      "file": "nodes/knowledge.statistical.bose_distribution.md",
+      "layer": "knowledge",
+      "reasoning_role": "quantum_statistics_bose",
+      "volume": 5
+    },
+    "knowledge.statistical.equipartition": {
+      "file": "nodes/knowledge.statistical.equipartition.md",
+      "layer": "knowledge",
+      "reasoning_role": "energy_distribution",
+      "volume": 5
+    },
+    "reasoning.kinetic_equation_closure": {
+      "file": "nodes/reasoning.kinetic_equation_closure.md",
+      "layer": "reasoning",
+      "reasoning_role": "kinetic_closure",
+      "volume": 10
+    },
+    "reasoning.landau_damping": {
+      "file": "nodes/reasoning.landau_damping.md",
+      "layer": "reasoning",
+      "reasoning_role": "collisionless_dissipation",
+      "volume": 10
+    },
+    "reasoning.collision_integral_construction": {
+      "file": "nodes/reasoning.collision_integral_construction.md",
+      "layer": "reasoning",
+      "reasoning_role": "collision_operator",
+      "volume": 10
+    },
+    "reasoning.plasma_dielectric_response": {
+      "file": "nodes/reasoning.plasma_dielectric_response.md",
+      "layer": "reasoning",
+      "reasoning_role": "linear_response",
+      "volume": 10
+    },
+    "knowledge.kinetic.boltzmann_equation": {
+      "file": "nodes/knowledge.kinetic.boltzmann_equation.md",
+      "layer": "knowledge",
+      "reasoning_role": "kinetic_foundation",
+      "volume": 10
+    },
+    "knowledge.kinetic.landau_damping_formula": {
+      "file": "nodes/knowledge.kinetic.landau_damping_formula.md",
+      "layer": "knowledge",
+      "reasoning_role": "collisionless_damping_formula",
+      "volume": 10
+    },
+    "knowledge.kinetic.plasma_dielectric": {
+      "file": "nodes/knowledge.kinetic.plasma_dielectric.md",
+      "layer": "knowledge",
+      "reasoning_role": "plasma_linear_response",
+      "volume": 10
+    },
+    "knowledge.kinetic.landau_collision_integral": {
+      "file": "nodes/knowledge.kinetic.landau_collision_integral.md",
+      "layer": "knowledge",
+      "reasoning_role": "coulomb_collision_operator",
+      "volume": 10
+    },
+    "knowledge.kinetic.plasma_instabilities": {
+      "file": "",
+      "layer": "knowledge",
+      "reasoning_role": "collective_instability",
+      "volume": 10,
+      "note": "inline"
+    },
+    "knowledge.kinetic.vlasov_equation": {
+      "file": "",
+      "layer": "knowledge",
+      "reasoning_role": "collisionless_kinetics",
+      "volume": 10,
+      "note": "inline"
+    },
+    "reasoning.causality_to_analyticity": {
+      "file": "nodes/reasoning.causality_to_analyticity.md",
+      "layer": "reasoning",
+      "reasoning_role": "causality_constraint",
+      "volume": 8
+    },
+    "reasoning.spatial_dispersion": {
+      "file": "nodes/reasoning.spatial_dispersion.md",
+      "layer": "reasoning",
+      "reasoning_role": "nonlocal_response",
+      "volume": 8
+    },
+    "knowledge.continuous.kramers_kronig": {
+      "file": "nodes/knowledge.continuous.kramers_kronig.md",
+      "layer": "knowledge",
+      "reasoning_role": "dispersion_relations",
+      "volume": 8
+    },
+    "knowledge.continuous.dielectric_dispersion": {
+      "file": "nodes/knowledge.continuous.dielectric_dispersion.md",
+      "layer": "knowledge",
+      "reasoning_role": "frequency_dispersion",
+      "volume": 8
+    },
+    "knowledge.continuous.spatial_dispersion": {
+      "file": "nodes/knowledge.continuous.spatial_dispersion.md",
+      "layer": "knowledge",
+      "reasoning_role": "nonlocal_dielectric",
+      "volume": 8
+    },
+    "knowledge.continuous.moving_media_electrodynamics": {
+      "file": "nodes/knowledge.continuous.moving_media_electrodynamics.md",
+      "layer": "knowledge",
+      "reasoning_role": "moving_media",
+      "volume": 8
+    },
+    "reasoning.continuum_limit_to_field_equations": {
+      "file": "nodes/reasoning.continuum_limit_to_field_equations.md",
+      "layer": "reasoning",
+      "reasoning_role": "continuum_limit",
+      "volume": 6
+    },
+    "reasoning.constitutive_relation_from_symmetry": {
+      "file": "nodes/reasoning.constitutive_relation_from_symmetry.md",
+      "layer": "reasoning",
+      "reasoning_role": "constitutive_closure",
+      "volume": 6
+    },
+    "reasoning.dimensional_analysis_to_similarity": {
+      "file": "nodes/reasoning.dimensional_analysis_to_similarity.md",
+      "layer": "reasoning",
+      "reasoning_role": "scaling_analysis",
+      "volume": 6
+    },
+    "knowledge.fluid.euler_equation": {
+      "file": "nodes/knowledge.fluid.euler_equation.md",
+      "layer": "knowledge",
+      "reasoning_role": "ideal_fluid_dynamics",
+      "volume": 6
+    },
+    "knowledge.fluid.navier_stokes": {
+      "file": "nodes/knowledge.fluid.navier_stokes.md",
+      "layer": "knowledge",
+      "reasoning_role": "viscous_fluid_dynamics",
+      "volume": 6
+    },
+    "knowledge.fluid.reynolds_similarity": {
+      "file": "nodes/knowledge.fluid.reynolds_similarity.md",
+      "layer": "knowledge",
+      "reasoning_role": "similarity_scaling",
+      "volume": 6
+    },
+    "knowledge.fluid.shock_waves": {
+      "file": "nodes/knowledge.fluid.shock_waves.md",
+      "layer": "knowledge",
+      "reasoning_role": "nonlinear_wave_discontinuity",
+      "volume": 6
+    },
+    "reasoning.classical_to_quantum_correspondence": {
+      "file": "nodes/reasoning.classical_to_quantum_correspondence.md",
+      "layer": "reasoning",
+      "reasoning_role": "quantization_prescription",
+      "volume": 3
+    },
+    "reasoning.quantum_superposition": {
+      "file": "nodes/reasoning.quantum_superposition.md",
+      "layer": "reasoning",
+      "reasoning_role": "quantum_probability",
+      "volume": 3
+    },
+    "reasoning.quantum_perturbation_theory": {
+      "file": "nodes/reasoning.quantum_perturbation_theory.md",
+      "layer": "reasoning",
+      "reasoning_role": "quantum_perturbation",
+      "volume": 3
+    },
+    "reasoning.wkb_quasiclassical": {
+      "file": "nodes/reasoning.wkb_quasiclassical.md",
+      "layer": "reasoning",
+      "reasoning_role": "semiclassical_approximation",
+      "volume": 3
+    },
+    "knowledge.quantum.schrodinger_equation": {
+      "file": "nodes/knowledge.quantum.schrodinger_equation.md",
+      "layer": "knowledge",
+      "reasoning_role": "quantum_dynamics",
+      "volume": 3
+    },
+    "knowledge.quantum.wkb_approximation": {
+      "file": "nodes/knowledge.quantum.wkb_approximation.md",
+      "layer": "knowledge",
+      "reasoning_role": "semiclassical_method",
+      "volume": 3
+    },
+    "knowledge.quantum.angular_momentum": {
+      "file": "nodes/knowledge.quantum.angular_momentum.md",
+      "layer": "knowledge",
+      "reasoning_role": "quantum_rotation",
+      "volume": 3
+    },
+    "reasoning.green_function_method": {
+      "file": "nodes/reasoning.green_function_method.md",
+      "layer": "reasoning",
+      "reasoning_role": "many_body_propagator",
+      "volume": 9
+    },
+    "reasoning.fermi_liquid_theory": {
+      "file": "nodes/reasoning.fermi_liquid_theory.md",
+      "layer": "reasoning",
+      "reasoning_role": "quasiparticle_paradigm",
+      "volume": 9
+    },
+    "reasoning.fluctuation_dissipation_quantum": {
+      "file": "nodes/reasoning.fluctuation_dissipation_quantum.md",
+      "layer": "reasoning",
+      "reasoning_role": "quantum_noise",
+      "volume": 9
+    },
+    "knowledge.condensed.green_function": {
+      "file": "nodes/knowledge.condensed.green_function.md",
+      "layer": "knowledge",
+      "reasoning_role": "many_body_propagator",
+      "volume": 9
+    },
+    "knowledge.condensed.diagram_technique": {
+      "file": "nodes/knowledge.condensed.diagram_technique.md",
+      "layer": "knowledge",
+      "reasoning_role": "perturbative_expansion",
+      "volume": 9
+    },
+    "reasoning.second_quantization": {
+      "file": "nodes/reasoning.second_quantization.md",
+      "layer": "reasoning",
+      "reasoning_role": "field_quantization",
+      "volume": 4
+    },
+    "reasoning.dirac_equation_antiparticles": {
+      "file": "nodes/reasoning.dirac_equation_antiparticles.md",
+      "layer": "reasoning",
+      "reasoning_role": "relativistic_quantum_theory",
+      "volume": 4
+    },
+    "knowledge.qed.dirac_equation": {
+      "file": "nodes/knowledge.qed.dirac_equation.md",
+      "layer": "knowledge",
+      "reasoning_role": "relativistic_wave_equation",
+      "volume": 4
+    },
+    "knowledge.qed.feynman_rules": {
+      "file": "nodes/knowledge.qed.feynman_rules.md",
+      "layer": "knowledge",
+      "reasoning_role": "qed_calculational_rules",
+      "volume": 4
+    },
+    "reasoning.elasticity_from_symmetry": {
+      "file": "nodes/reasoning.elasticity_from_symmetry.md",
+      "layer": "reasoning",
+      "reasoning_role": "constitutive_linear_response",
+      "volume": 7
+    },
+    "knowledge.elasticity.hooke_law": {
+      "file": "nodes/knowledge.elasticity.hooke_law.md",
+      "layer": "knowledge",
+      "reasoning_role": "linear_elastic_response",
+      "volume": 7
+    },
+    "reasoning.timescale_hierarchy": {
+      "file": "nodes/reasoning.timescale_hierarchy.md",
+      "layer": "reasoning",
+      "reasoning_role": "timescale_separation",
+      "volume": 1
+    },
+    "reasoning.symmetry_drives_physics": {
+      "file": "nodes/reasoning.symmetry_drives_physics.md",
+      "layer": "reasoning",
+      "reasoning_role": "symmetry_as_constructive_principle",
+      "volume": "cross"
+    },
+    "reasoning.causality_as_constraint": {
+      "file": "nodes/reasoning.causality_as_constraint.md",
+      "layer": "reasoning",
+      "reasoning_role": "causality_principle",
+      "volume": "cross"
+    }
+  },
+  "edges": [
+    {
+      "source": "reasoning.variational_principle",
+      "target": "reasoning.homogeneity_to_scaling",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.variational_principle",
+      "target": "reasoning.canonical_transformation",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.variational_principle",
+      "target": "reasoning.periodic_parametric_instability",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "reasoning.symmetry_to_conservation",
+      "target": "reasoning.conservation_to_effective_reduction",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.symmetry_to_conservation",
+      "target": "knowledge.mechanics.energy_conservation",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.symmetry_to_conservation",
+      "target": "knowledge.mechanics.momentum_conservation",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.symmetry_to_conservation",
+      "target": "knowledge.mechanics.angular_momentum_conservation",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.homogeneity_to_scaling",
+      "target": "knowledge.mechanics.kepler_problem",
+      "type": "reasoning-instance",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.conservation_to_effective_reduction",
+      "target": "knowledge.mechanics.central_field_effective",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.mechanics.central_field_effective",
+      "target": "knowledge.mechanics.kepler_problem",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.mechanics.angular_momentum_conservation",
+      "target": "knowledge.mechanics.central_field_effective",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.small_parameter_expansion",
+      "target": "reasoning.normal_mode_decomposition",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.small_parameter_expansion",
+      "target": "knowledge.mechanics.normal_modes",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.normal_mode_decomposition",
+      "target": "knowledge.mechanics.normal_modes",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.periodic_parametric_instability",
+      "target": "knowledge.mechanics.parametric_resonance",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.canonical_transformation",
+      "target": "knowledge.mechanics.hamilton_equations",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "knowledge.mechanics.hamilton_equations",
+      "target": "reasoning.canonical_transformation",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "knowledge.mechanics.hamilton_equations",
+      "target": "knowledge.mechanics.hamilton_jacobi",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.canonical_transformation",
+      "target": "knowledge.mechanics.hamilton_jacobi",
+      "type": "reasoning-instance",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.canonical_transformation",
+      "target": "reasoning.separation_of_variables",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "knowledge.mechanics.hamilton_jacobi",
+      "target": "reasoning.separation_of_variables",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.separation_of_variables",
+      "target": "knowledge.mechanics.action_angle_variables",
+      "type": "reasoning-instance",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.adiabatic_invariance",
+      "target": "knowledge.mechanics.adiabatic_invariant",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.mechanics.adiabatic_invariant",
+      "target": "knowledge.mechanics.action_angle_variables",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "knowledge.mechanics.hamilton_jacobi",
+      "target": "knowledge.mechanics.action_angle_variables",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.small_parameter_expansion",
+      "target": "reasoning.adiabatic_invariance",
+      "type": "analogy",
+      "weight": 0.5
+    },
+    {
+      "source": "reasoning.normal_mode_decomposition",
+      "target": "reasoning.separation_of_variables",
+      "type": "analogy",
+      "weight": 0.6
+    },
+    {
+      "source": "knowledge.mechanics.kepler_problem",
+      "target": "reasoning.homogeneity_to_scaling",
+      "type": "reasoning-instance",
+      "weight": 0.9
+    },
+    {
+      "source": "knowledge.mechanics.energy_conservation",
+      "target": "knowledge.mechanics.momentum_conservation",
+      "type": "analogy",
+      "weight": 0.4
+    },
+    {
+      "source": "knowledge.mechanics.momentum_conservation",
+      "target": "knowledge.mechanics.angular_momentum_conservation",
+      "type": "analogy",
+      "weight": 0.4
+    },
+    {
+      "source": "knowledge.mechanics.central_field_effective",
+      "target": "reasoning.conservation_to_effective_reduction",
+      "type": "reasoning-instance",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.homogeneity_to_scaling",
+      "target": "reasoning.variational_principle",
+      "type": "abstraction",
+      "weight": 0.3
+    },
+    {
+      "source": "reasoning.symmetry_to_conservation",
+      "target": "reasoning.variational_principle",
+      "type": "reasoning-instance",
+      "weight": 0.5
+    },
+    {
+      "source": "reasoning.canonical_transformation",
+      "target": "reasoning.variational_principle",
+      "type": "abstraction",
+      "weight": 0.3
+    },
+    {
+      "source": "reasoning.small_parameter_expansion",
+      "target": "reasoning.conservation_to_effective_reduction",
+      "type": "analogy",
+      "weight": 0.3
+    },
+    {
+      "source": "reasoning.conservation_to_effective_reduction",
+      "target": "reasoning.separation_of_variables",
+      "type": "analogy",
+      "weight": 0.5
+    },
+    {
+      "source": "knowledge.mechanics.central_field_effective",
+      "target": "knowledge.mechanics.adiabatic_invariant",
+      "type": "analogy",
+      "weight": 0.3
+    },
+    {
+      "source": "reasoning.lorentz_invariance_to_action",
+      "target": "knowledge.relativity.energy_momentum",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.lorentz_invariance_to_action",
+      "target": "knowledge.relativity.lorentz_transform",
+      "type": "reasoning-instance",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.gauge_invariance_to_field_tensor",
+      "target": "knowledge.em.field_tensor",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.variational_principle",
+      "target": "reasoning.action_decomposition_field_theory",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.action_decomposition_field_theory",
+      "target": "knowledge.em.maxwell_from_action",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.em.field_tensor",
+      "target": "knowledge.em.maxwell_from_action",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.retarded_green_function",
+      "target": "knowledge.em.lienard_wiechert",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.em.maxwell_from_action",
+      "target": "knowledge.em.energy_momentum_tensor_field",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.retarded_green_function",
+      "target": "reasoning.multipole_expansion_radiation",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.multipole_expansion_radiation",
+      "target": "knowledge.em.dipole_radiation",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.em.lienard_wiechert",
+      "target": "knowledge.em.synchrotron_radiation",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.lorentz_invariance_to_action",
+      "target": "reasoning.symmetry_to_conservation",
+      "type": "analogy",
+      "weight": 0.6
+    },
+    {
+      "source": "reasoning.multipole_expansion_radiation",
+      "target": "reasoning.small_parameter_expansion",
+      "type": "analogy",
+      "weight": 0.9
+    },
+    {
+      "source": "knowledge.em.dipole_radiation",
+      "target": "knowledge.mechanics.kepler_problem",
+      "type": "analogy",
+      "weight": 0.2
+    },
+    {
+      "source": "knowledge.em.energy_momentum_tensor_field",
+      "target": "knowledge.mechanics.energy_conservation",
+      "type": "abstraction",
+      "weight": 0.5
+    },
+    {
+      "source": "knowledge.em.lienard_wiechert",
+      "target": "knowledge.mechanics.central_field_effective",
+      "type": "analogy",
+      "weight": 0.3
+    },
+    {
+      "source": "reasoning.variational_principle",
+      "target": "reasoning.ensemble_logic",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.ensemble_logic",
+      "target": "reasoning.microcanonical_to_canonical",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.microcanonical_to_canonical",
+      "target": "reasoning.partition_to_thermodynamics",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.ensemble_logic",
+      "target": "knowledge.statistical.entropy",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.microcanonical_to_canonical",
+      "target": "knowledge.statistical.gibbs_distribution",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.partition_to_thermodynamics",
+      "target": "knowledge.statistical.free_energy",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.partition_to_thermodynamics",
+      "target": "reasoning.thermodynamic_perturbation_theory",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.thermodynamic_perturbation_theory",
+      "target": "reasoning.small_parameter_expansion",
+      "type": "analogy",
+      "weight": 0.5
+    },
+    {
+      "source": "knowledge.statistical.gibbs_distribution",
+      "target": "knowledge.statistical.fermi_distribution",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "knowledge.statistical.gibbs_distribution",
+      "target": "knowledge.statistical.bose_distribution",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "knowledge.statistical.gibbs_distribution",
+      "target": "knowledge.statistical.equipartition",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "reasoning.ensemble_logic",
+      "target": "knowledge.statistical.fluctuations",
+      "type": "reasoning-instance",
+      "weight": 0.9
+    },
+    {
+      "source": "knowledge.mechanics.hamilton_equations",
+      "target": "reasoning.ensemble_logic",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "reasoning.homogeneity_to_scaling",
+      "target": "knowledge.statistical.entropy",
+      "type": "analogy",
+      "weight": 0.3
+    },
+    {
+      "source": "knowledge.statistical.fluctuations",
+      "target": "reasoning.small_parameter_expansion",
+      "type": "analogy",
+      "weight": 0.6
+    },
+    {
+      "source": "reasoning.ensemble_logic",
+      "target": "reasoning.kinetic_equation_closure",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.kinetic_equation_closure",
+      "target": "reasoning.landau_damping",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.kinetic_equation_closure",
+      "target": "reasoning.collision_integral_construction",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.kinetic_equation_closure",
+      "target": "reasoning.plasma_dielectric_response",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.kinetic_equation_closure",
+      "target": "knowledge.kinetic.boltzmann_equation",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.landau_damping",
+      "target": "knowledge.kinetic.landau_damping_formula",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.collision_integral_construction",
+      "target": "knowledge.kinetic.landau_collision_integral",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.plasma_dielectric_response",
+      "target": "knowledge.kinetic.plasma_dielectric",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.adiabatic_invariance",
+      "target": "reasoning.landau_damping",
+      "type": "analogy",
+      "weight": 0.7
+    },
+    {
+      "source": "knowledge.em.maxwell_from_action",
+      "target": "reasoning.plasma_dielectric_response",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "knowledge.statistical.fluctuations",
+      "target": "knowledge.kinetic.plasma_dielectric",
+      "type": "prerequisite",
+      "weight": 0.5
+    },
+    {
+      "source": "knowledge.em.lienard_wiechert",
+      "target": "knowledge.kinetic.landau_collision_integral",
+      "type": "analogy",
+      "weight": 0.4
+    },
+    {
+      "source": "reasoning.periodic_parametric_instability",
+      "target": "knowledge.kinetic.landau_damping_formula",
+      "type": "analogy",
+      "weight": 0.6
+    },
+    {
+      "source": "knowledge.statistical.entropy",
+      "target": "knowledge.kinetic.boltzmann_equation",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.kinetic_equation_closure",
+      "target": "reasoning.periodic_parametric_instability",
+      "type": "abstraction",
+      "weight": 0.4
+    },
+    {
+      "source": "reasoning.causality_to_analyticity",
+      "target": "reasoning.spatial_dispersion",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.causality_to_analyticity",
+      "target": "knowledge.continuous.kramers_kronig",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.causality_to_analyticity",
+      "target": "knowledge.continuous.dielectric_dispersion",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.spatial_dispersion",
+      "target": "knowledge.continuous.spatial_dispersion",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.continuous.dielectric_dispersion",
+      "target": "knowledge.continuous.moving_media_electrodynamics",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "knowledge.em.maxwell_from_action",
+      "target": "knowledge.continuous.dielectric_dispersion",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "knowledge.kinetic.plasma_dielectric",
+      "target": "knowledge.continuous.spatial_dispersion",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "knowledge.continuous.kramers_kronig",
+      "target": "knowledge.kinetic.landau_damping_formula",
+      "type": "prerequisite",
+      "weight": 0.6
+    },
+    {
+      "source": "reasoning.plasma_dielectric_response",
+      "target": "reasoning.spatial_dispersion",
+      "type": "reasoning-instance",
+      "weight": 0.8
+    },
+    {
+      "source": "knowledge.em.lienard_wiechert",
+      "target": "knowledge.continuous.moving_media_electrodynamics",
+      "type": "analogy",
+      "weight": 0.6
+    },
+    {
+      "source": "reasoning.causality_to_analyticity",
+      "target": "reasoning.landau_damping",
+      "type": "prerequisite",
+      "weight": 0.5
+    },
+    {
+      "source": "reasoning.ensemble_logic",
+      "target": "reasoning.continuum_limit_to_field_equations",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "reasoning.continuum_limit_to_field_equations",
+      "target": "reasoning.constitutive_relation_from_symmetry",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.continuum_limit_to_field_equations",
+      "target": "knowledge.fluid.euler_equation",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.constitutive_relation_from_symmetry",
+      "target": "knowledge.fluid.navier_stokes",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.homogeneity_to_scaling",
+      "target": "reasoning.dimensional_analysis_to_similarity",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.dimensional_analysis_to_similarity",
+      "target": "knowledge.fluid.reynolds_similarity",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.fluid.euler_equation",
+      "target": "knowledge.fluid.shock_waves",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "knowledge.mechanics.energy_conservation",
+      "target": "reasoning.continuum_limit_to_field_equations",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "knowledge.fluid.navier_stokes",
+      "target": "reasoning.kinetic_equation_closure",
+      "type": "analogy",
+      "weight": 0.5
+    },
+    {
+      "source": "reasoning.dimensional_analysis_to_similarity",
+      "target": "reasoning.homogeneity_to_scaling",
+      "type": "reasoning-instance",
+      "weight": 0.8
+    },
+    {
+      "source": "knowledge.fluid.euler_equation",
+      "target": "knowledge.continuous.moving_media_electrodynamics",
+      "type": "prerequisite",
+      "weight": 0.4
+    },
+    {
+      "source": "reasoning.canonical_transformation",
+      "target": "reasoning.classical_to_quantum_correspondence",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.classical_to_quantum_correspondence",
+      "target": "reasoning.quantum_superposition",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.classical_to_quantum_correspondence",
+      "target": "reasoning.quantum_perturbation_theory",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.classical_to_quantum_correspondence",
+      "target": "reasoning.wkb_quasiclassical",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.classical_to_quantum_correspondence",
+      "target": "knowledge.quantum.schrodinger_equation",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.wkb_quasiclassical",
+      "target": "knowledge.quantum.wkb_approximation",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.quantum.schrodinger_equation",
+      "target": "knowledge.quantum.angular_momentum",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.adiabatic_invariance",
+      "target": "reasoning.wkb_quasiclassical",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "knowledge.mechanics.adiabatic_invariant",
+      "target": "knowledge.quantum.wkb_approximation",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.quantum_perturbation_theory",
+      "target": "reasoning.thermodynamic_perturbation_theory",
+      "type": "analogy",
+      "weight": 0.7
+    },
+    {
+      "source": "reasoning.small_parameter_expansion",
+      "target": "reasoning.quantum_perturbation_theory",
+      "type": "analogy",
+      "weight": 0.6
+    },
+    {
+      "source": "knowledge.mechanics.poisson_brackets",
+      "target": "reasoning.classical_to_quantum_correspondence",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.quantum_perturbation_theory",
+      "target": "reasoning.small_parameter_expansion",
+      "type": "reasoning-instance",
+      "weight": 0.5
+    },
+    {
+      "source": "reasoning.classical_to_quantum_correspondence",
+      "target": "reasoning.green_function_method",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.green_function_method",
+      "target": "reasoning.fermi_liquid_theory",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.green_function_method",
+      "target": "knowledge.condensed.green_function",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.green_function_method",
+      "target": "knowledge.condensed.diagram_technique",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.statistical.fluctuations",
+      "target": "reasoning.fluctuation_dissipation_quantum",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "knowledge.kinetic.landau_collision_integral",
+      "target": "reasoning.fermi_liquid_theory",
+      "type": "prerequisite",
+      "weight": 0.6
+    },
+    {
+      "source": "reasoning.quantum_perturbation_theory",
+      "target": "knowledge.condensed.diagram_technique",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "knowledge.continuous.kramers_kronig",
+      "target": "reasoning.fluctuation_dissipation_quantum",
+      "type": "analogy",
+      "weight": 0.7
+    },
+    {
+      "source": "reasoning.adiabatic_invariance",
+      "target": "reasoning.fermi_liquid_theory",
+      "type": "analogy",
+      "weight": 0.6
+    },
+    {
+      "source": "reasoning.classical_to_quantum_correspondence",
+      "target": "reasoning.second_quantization",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.lorentz_invariance_to_action",
+      "target": "reasoning.dirac_equation_antiparticles",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.quantum_superposition",
+      "target": "reasoning.second_quantization",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "reasoning.dirac_equation_antiparticles",
+      "target": "knowledge.qed.dirac_equation",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.dirac_equation_antiparticles",
+      "target": "knowledge.qed.feynman_rules",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "knowledge.em.maxwell_from_action",
+      "target": "reasoning.second_quantization",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "knowledge.statistical.bose_distribution",
+      "target": "reasoning.second_quantization",
+      "type": "prerequisite",
+      "weight": 0.6
+    },
+    {
+      "source": "knowledge.relativity.energy_momentum",
+      "target": "reasoning.dirac_equation_antiparticles",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "knowledge.condensed.diagram_technique",
+      "target": "knowledge.qed.feynman_rules",
+      "type": "analogy",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.constitutive_relation_from_symmetry",
+      "target": "reasoning.elasticity_from_symmetry",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.elasticity_from_symmetry",
+      "target": "knowledge.elasticity.hooke_law",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.fluid.navier_stokes",
+      "target": "reasoning.elasticity_from_symmetry",
+      "type": "analogy",
+      "weight": 0.9
+    },
+    {
+      "source": "knowledge.continuous.dielectric_dispersion",
+      "target": "reasoning.elasticity_from_symmetry",
+      "type": "analogy",
+      "weight": 0.5
+    },
+    {
+      "source": "reasoning.variational_principle",
+      "target": "reasoning.symmetry_drives_physics",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.variational_principle",
+      "target": "reasoning.timescale_hierarchy",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.symmetry_drives_physics",
+      "target": "reasoning.symmetry_to_conservation",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.symmetry_drives_physics",
+      "target": "reasoning.lorentz_invariance_to_action",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.symmetry_drives_physics",
+      "target": "reasoning.gauge_invariance_to_field_tensor",
+      "type": "prerequisite",
+      "weight": 0.8
+    },
+    {
+      "source": "reasoning.timescale_hierarchy",
+      "target": "reasoning.adiabatic_invariance",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.timescale_hierarchy",
+      "target": "reasoning.small_parameter_expansion",
+      "type": "prerequisite",
+      "weight": 0.9
+    },
+    {
+      "source": "reasoning.timescale_hierarchy",
+      "target": "reasoning.multipole_expansion_radiation",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "reasoning.variational_principle",
+      "target": "reasoning.causality_as_constraint",
+      "type": "prerequisite",
+      "weight": 0.7
+    },
+    {
+      "source": "reasoning.causality_as_constraint",
+      "target": "reasoning.retarded_green_function",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.causality_as_constraint",
+      "target": "reasoning.causality_to_analyticity",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.causality_as_constraint",
+      "target": "reasoning.fluctuation_dissipation_quantum",
+      "type": "prerequisite",
+      "weight": 0.8
+    }
+  ],
+  "rumination_1_notes": {
+    "date": "2026-05-25 (Vol.2 added)",
+    "potential_hidden_parents": [
+      {
+        "name": "reasoning.timescale_separation",
+        "children": [
+          "reasoning.adiabatic_invariance",
+          "reasoning.small_parameter_expansion"
+        ],
+        "rationale": "Both separate dynamics into fast and slow components. Adiabatic: parameter changes slowly vs period; small parameter: nonlinear terms are slow vs linear oscillation. Could unify under a common parent.",
+        "confidence": "medium"
+      },
+      {
+        "name": "reasoning.independent_mode_decomposition",
+        "children": [
+          "reasoning.normal_mode_decomposition",
+          "reasoning.separation_of_variables"
+        ],
+        "rationale": "Both find a coordinate system where dynamics decouple into independent 1D problems. Normal modes: eigenvalue diagonalization. H-J separation: PDE splitting. Similar structure, different context.",
+        "confidence": "medium"
+      },
+      {
+        "name": "reasoning.action_extremization",
+        "children": [
+          "reasoning.variational_principle",
+          "reasoning.homogeneity_to_scaling"
+        ],
+        "rationale": "Homogeneity scaling can be derived without action, but action provides the unifying framework. Weak parent candidate.",
+        "confidence": "low"
+      }
+    ],
+    "duplicates_found": [],
+    "missing_edges": [
+      "parametric_resonance → adiabatic_invariance: both concern time-dependent parameters, but parametric is fast variation, adiabatic is slow. Complementary views of the same underlying Floquet/slow manifold mathematics.",
+      "normal_modes → small_parameter_expansion: the reverse edge should exist — normal mode theory is what justifies the quadratic expansion being sufficient."
+    ],
+    "graph_quality": "Good initial topology. The reasoning tree is deep (variational → symmetry → conservation → effective reduction → Kepler). Cross-links (analogy edges) are sparse but correctly identified. The main gap is the timescale_separation hidden parent — extracting this would make the graph significantly more useful for plasma physics applications.",
+    "vol2_additions": {
+      "new_reasoning_nodes": 6,
+      "new_knowledge_nodes": 8,
+      "cross_volume_edges": 5,
+      "key_analogies": [
+        "multipole_expansion ↔ small_parameter_expansion (scale separation in radiation vs mechanics)",
+        "lorentz_invariance ↔ symmetry_to_conservation (Vol.2 T1 vs Vol.1 T2 — both are symmetry→physics chains)",
+        "EM energy-momentum tensor ↔ mechanical energy conservation (field theory generalization of Noether)"
+      ],
+      "potential_new_hidden_parents": [
+        {
+          "name": "reasoning.scale_separation_universal",
+          "children": [
+            "reasoning.multipole_expansion_radiation",
+            "reasoning.small_parameter_expansion",
+            "reasoning.adiabatic_invariance"
+          ],
+          "rationale": "All three separate dynamics by a small parameter: a/λ (radiation), amplitude/equilibrium (oscillations), dλ/dt·T (adiabatic). Could unify as 'small parameter → simplified description'.",
+          "confidence": "high"
+        },
+        {
+          "name": "reasoning.symmetry_constrains_lagrangian",
+          "children": [
+            "reasoning.lorentz_invariance_to_action",
+            "reasoning.symmetry_to_conservation"
+          ],
+          "rationale": "Both use symmetry to constrain physical law. Lorentz constrains the FORM of L; Noether constrains the CONSEQUENCES of L. Two sides of the same coin.",
+          "confidence": "high"
+        }
+      ]
+    },
+    "vol5_additions": {
+      "new_reasoning_nodes": 4,
+      "new_knowledge_nodes": 7,
+      "cross_volume_edges": 3,
+      "new_dag_branch": "variational_principle → ensemble_logic → microcanonical_to_canonical → partition_to_thermodynamics"
+    },
+    "vol10_additions": {
+      "new_reasoning_nodes": 4,
+      "new_knowledge_nodes": 6,
+      "file_nodes_written": 8,
+      "key_cross_connections": [
+        "adiabatic_invariance ↔ landau_damping (both involve slow/fast timescale separation)",
+        "parametric_instability ↔ landau_damping (instability thresholds vs damping thresholds)",
+        "Maxwell → plasma dielectric (field equations + Vlasov → ε(k,ω))",
+        "entropy → Boltzmann H-theorem (statistical → kinetic irreversibility)"
+      ]
+    },
+    "vol8_additions": {
+      "new_reasoning_nodes": 2,
+      "new_knowledge_nodes": 4,
+      "key_cross_connections": [
+        "Maxwell → dielectric_dispersion (field equations in matter)",
+        "plasma ε(k,ω) → spatial_dispersion (microscopic→macroscopic framework)",
+        "Kramers-Kronig → Landau damping (analyticity underlies both)",
+        "Liénard-Wiechert ↔ moving_media (point charge radiation ↔ medium electrodynamics)"
+      ]
+    },
+    "vol6_additions": {
+      "new_nodes": 7,
+      "key_connections": [
+        "mechanics.energy → continuum_limit (conservation laws in field form)",
+        "homogeneity_to_scaling → dimensional_analysis (Vol.1 scaling → Vol.6 similarity)",
+        "Navier-Stokes ↔ kinetic_closure (fluid stress ↔ Boltzmann collision integral)",
+        "Euler → MHD (ideal fluid + Maxwell = magnetohydrodynamics)"
+      ]
+    }
+  },
+  "rumination_vol1": {
+    "date": "2026-05-26",
+    "report": "rumination/vol1.md",
+    "nodes_added": [
+      "reasoning.timescale_hierarchy",
+      "reasoning.symmetry_drives_physics"
+    ],
+    "nodes_modified": 6,
+    "edges_removed": 5,
+    "edges_added": 8
+  },
+  "rumination_vol2": {
+    "date": "2026-05-26",
+    "report": "rumination/vol2.md",
+    "nodes_added": [
+      "reasoning.causality_as_constraint"
+    ],
+    "nodes_modified": 3,
+    "edges_changed": 7
+  }
+}
