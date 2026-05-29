@@ -1,12 +1,13 @@
 ---
 name: landau-graph
-description: "LandauGraph — reasoning-constrained skill graph distilled from Landau-Lifshitz 10-volume Course of Theoretical Physics. 89 nodes, 152 edges. 4 edge types: prerequisite, reasoning-instance, abstraction, analogy. Provides retrieval access to reasoning templates and knowledge nodes for physics reasoning."
+description: "LandauGraph — reasoning-constrained skill graph distilled from Landau-Lifshitz 10-volume Course of Theoretical Physics. 96 nodes, 188 edges. 4 edge types: prerequisite, reasoning-instance, abstraction, analogy. Production graph for agent physics reasoning."
 ---
 
 # LandauGraph — Landau-Lifshitz Reasoning Graph
 
 A reasoning-constrained skill graph distilled from the complete 10-volume
-Landau-Lifshitz Course of Theoretical Physics.
+Landau-Lifshitz Course of Theoretical Physics. This is the PRODUCTION GRAPH
+— the output of the `discipline-distillation` methodology.
 
 ## Graph Structure
 
@@ -21,12 +22,9 @@ Landau-Lifshitz Course of Theoretical Physics.
 landau-graph/
 ├── SKILL.md            # This file
 ├── GRAPH.json          # Full graph topology (nodes + edges)
-├── nodes/              # Individual node .md files
-│   ├── reasoning.*.md  # Reasoning templates (algorithm + edge cases)
-│   └── knowledge.*.md  # Knowledge nodes (formulas + facts)
-└── rumination/         # Per-volume rumination reports and fix logs
-    ├── vol{N}.md       # Rumination report for volume N
-    └── vol{N}-rewrite-fixes.md  # Applied content fixes
+└── nodes/              # Individual node .md files
+    ├── reasoning.*.md  # Reasoning templates (algorithm + edge cases)
+    └── knowledge.*.md  # Knowledge nodes (formulas + facts)
 ```
 
 ## How to Use
@@ -66,4 +64,10 @@ Edge Cases, Cross-References).
 | 9 | Statistical Physics II | 5 | `~/knowledge_base/book/2001/2001--Статистическая физика. Часть 2/book.md` |
 | 10 | Physical Kinetics | 10 | `~/knowledge_base/book/2002/2002--Физическая кинетика/book.md` |
 
-All 10 volumes ruminated. All rewrite fixes applied. Source books are in the knowledge base as markdown (Russian originals).
+## Methodology
+
+This graph was produced by the `discipline-distillation` methodology
+(three-track extraction, systematic rumination, blind-derivation validation).
+For the complete distillation history — rumination reports, rewrite fixes,
+and validation experiment results — see:
+`discipline-distillation/examples/landau-10-volumes/`
