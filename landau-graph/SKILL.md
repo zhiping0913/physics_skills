@@ -10,8 +10,8 @@ Landau-Lifshitz Course of Theoretical Physics.
 
 ## Graph Structure
 
-- **89 nodes**: ~30 reasoning templates + ~56 knowledge nodes
-- **152 edges**: prerequisite (79), reasoning-instance (43), analogy (26), abstraction (4)
+- **96 nodes**: ~37 reasoning templates + ~59 knowledge nodes
+- **188 edges**: prerequisite (82), reasoning-instance (54), analogy (47), abstraction (5)
 - **3 hidden parent nodes**: symmetry_drives_physics, timescale_hierarchy, causality_as_constraint
 - **4 edge types**: prerequisite, reasoning-instance, abstraction, analogy
 
