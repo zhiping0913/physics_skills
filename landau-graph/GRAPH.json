@@ -561,6 +561,10 @@
     "reasoning.renormalization": {
       "source": "Vol.4 §114-116",
       "node_type": "reasoning"
+    },
+    "reasoning.hidden_symmetry": {
+      "source": "Vol.1 §15, §52",
+      "node_type": "reasoning"
     }
   },
   "edges": [
@@ -1691,6 +1695,54 @@
       "target": "knowledge.kinetic.plasma_instabilities",
       "type": "reasoning-instance",
       "weight": 1
+    },
+    {
+      "source": "reasoning.canonical_transformation",
+      "target": "reasoning.hidden_symmetry",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.symmetry_drives_physics",
+      "target": "reasoning.hidden_symmetry",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge.mechanics.action_angle_variables",
+      "target": "reasoning.hidden_symmetry",
+      "type": "prerequisite",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.hidden_symmetry",
+      "target": "knowledge.mechanics.kepler_problem",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.hidden_symmetry",
+      "target": "knowledge.mechanics.action_angle_variables",
+      "type": "reasoning-instance",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.symmetry_to_conservation",
+      "target": "reasoning.hidden_symmetry",
+      "type": "analogy",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.adiabatic_invariance",
+      "target": "reasoning.hidden_symmetry",
+      "type": "analogy",
+      "weight": 1.0
+    },
+    {
+      "source": "reasoning.normal_mode_decomposition",
+      "target": "reasoning.hidden_symmetry",
+      "type": "analogy",
+      "weight": 1.0
     }
   ],
   "rumination_1_notes": {
