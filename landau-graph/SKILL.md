@@ -1,6 +1,6 @@
 ---
-name: landau-graph
-description: "LandauGraph — reasoning-constrained skill graph distilled from Landau-Lifshitz 10-volume Course of Theoretical Physics. 96 nodes, 188 edges. 4 edge types: prerequisite, reasoning-instance, abstraction, analogy. Production graph for agent physics reasoning."
+description: "LandauGraph — reasoning-constrained skill graph distilled from Landau-Lifshitz 10-volume Course of Theoretical Physics. 97 nodes, 196 edges. 4 edge types: prerequisite, reasoning-instance, abstraction, analogy. Production graph for agent physics reasoning."
+
 ---
 
 # LandauGraph — Landau-Lifshitz Reasoning Graph
@@ -11,8 +11,8 @@ Landau-Lifshitz Course of Theoretical Physics. This is the PRODUCTION GRAPH
 
 ## Graph Structure
 
-- **96 nodes**: ~37 reasoning templates + ~59 knowledge nodes
-- **188 edges**: prerequisite (82), reasoning-instance (54), analogy (47), abstraction (5)
+- **97 nodes**: ~38 reasoning templates + ~59 knowledge nodes
+- **196 edges**: prerequisite, reasoning-instance, analogy, abstraction
 - **3 hidden parent nodes**: symmetry_drives_physics, timescale_hierarchy, causality_as_constraint
 - **4 edge types**: prerequisite, reasoning-instance, abstraction, analogy
 
