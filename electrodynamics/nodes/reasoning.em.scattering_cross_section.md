@@ -10,7 +10,8 @@ trigger:
   - need angular distribution of scattered radiation
   - computing extinction, absorption, scattering efficiencies
 reasoning_role: scattering_theory
-parent: reasoning.small_parameter_expansion
+parent: landau-graph:reasoning.small_parameter_expansion
+sign_convention: time-harmonic e^{−iωt}; outgoing scattered wave e^{ikr}/r
 retrieval_cost: 1
 references:
   - landau-graph: reasoning.small_parameter_expansion
@@ -29,6 +30,37 @@ E_s(r) → f(k,k') E₀ e^{ikr}/r   as r → ∞
 
 where f(k,k') is the SCATTERING AMPLITUDE (depends on incident direction k
 and scattered direction k'). All observable quantities follow from f.
+
+## Derivation Sketch
+
+Starting from `landau-graph: reasoning.small_parameter_expansion` we have the
+pattern: identify a small dimensionless parameter → expand the governing
+equation → truncate at leading order. For scattering, the size parameter
+ka = 2πa/λ controls three distinct regimes:
+
+**Key non-obvious step — the optical theorem and the extinction paradox**:
+The extinction cross section σ_ext = σ_scat + σ_abs is given by the FORWARD
+scattering amplitude alone: σ_ext = (4π/k)Im[f(0)]. This is a consequence of
+energy conservation (unitarity of the S-matrix): the forward-scattered wave
+INTERFERES with the incident wave, removing power from the forward direction
+to feed scattered power into all other directions. For a large opaque object
+(ka ≫ 1), σ_ext → 2πa² — TWICE the geometric cross section πa². The "extra"
+πa² comes from diffraction: the shadow region creates an equal amount of
+scattered power beyond direct interception (the **extinction paradox**).
+
+**Born approximation** (weak scatterer, |ε−1| ≪ 1): Replace the total field
+inside the scatterer by the incident field → f(k,k') ∝ ∫[ε(r')−1]e^{i(k−k')·r'}dV'.
+This is the 3D Fourier transform of the dielectric contrast. Valid when
+|ε−1|ka ≪ 1 (single scattering). When this breaks down (strong scatterer),
+switch to Mie theory (exact for sphere) or T-matrix method (arbitrary shape).
+
+**Polarization scattering matrix (Stokes-Mueller formalism)**:
+The scattered field relates to incident field via the 2×2 Jones matrix J:
+(E_s∥, E_s⟂)^T = (e^{ikr}/r) J·(E_i∥, E_i⟂)^T. For partially polarized
+light, use the 4×4 Mueller matrix M relating Stokes vectors:
+S_s = (1/r²) M·S_i. The 16 Mueller elements encode all polarization
+properties: depolarization, diattenuation, retardance. For spherical
+particles, symmetry reduces M to 4 independent parameters (Bohren & Huffman §3).
 
 ## Algorithm (Jackson §10)
 
@@ -82,8 +114,23 @@ the "extinction paradox"). Diffraction contributes equally to direct interceptio
 ## Optical Theorem
 
 σ_ext = (4π/k) Im[f(0)] — a purely FORWARD quantity determines TOTAL extinction.
-This is a consequence of ENERGY CONSERVATION (unitarily of S-matrix). It holds
+This is a consequence of ENERGY CONSERVATION (unitarity of S-matrix). It holds
 for ANY target, not just spheres.
+
+## Edge Cases
+
+- **Rayleigh-Gans-Debye (RGD) regime**: |ε−1| ≪ 1 but ka NOT ≪ 1 — use Born
+  approximation for arbitrary size. When |ε−1|ka > 1, RGD breaks down — switch
+  to Mie theory for spheres or anomalous diffraction (AD) approximation
+  for ka ≫ 1 with moderate |ε−1|.
+- **Resonant scattering** (Mie resonances): At specific ka, a_l or b_l ≈ 1 →
+  sharp peaks in σ_scat. These are morphology-dependent resonances (MDRs) or
+  "whispering gallery" modes — analyze with complex angular momentum (CAM)
+  theory for physical interpretation, not just numerical Mie code.
+- **Multiple scattering**: When scatterer density is high (mean free path
+  ℓ ≪ sample size), single-scattering theory breaks down — switch to radiative
+  transfer equation (RTE) or full Maxwell solver (DDA, FDTD, T-matrix
+  superposition).
 
 ## Cross-References
 

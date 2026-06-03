@@ -10,7 +10,8 @@ trigger:
   - need systematic method beyond guessing image charges
   - computing potential from known charge distribution
 reasoning_role: poisson_green_function
-parent: reasoning.retarded_green_function
+parent: landau-graph:reasoning.retarded_green_function
+sign_convention: SI; ∇²G = −δ(r−r')/ε₀ (source sign follows Poisson ∇²φ = −ρ/ε₀)
 retrieval_cost: 1
 references:
   - landau-graph: reasoning.retarded_green_function (wave Green's function analog)
@@ -36,6 +37,38 @@ Once G is found, the solution for ANY source ρ is:
 ```
 
 The surface integral vanishes if we use the proper Green's function type.
+
+## Derivation Sketch
+
+Starting from `landau-graph: reasoning.retarded_green_function` we have the
+wave-equation Green's function G_ret(r,t; r',t') = δ(t−t'−|r−r'|/c)/|r−r'|.
+The static (Poisson) limit c→∞ collapses the retarded-time shell to an
+instantaneous Coulomb kernel: G_ret → δ(t−t')/|r−r'|. After integrating over
+time, the spatial Green's function satisfies ∇²G = −δ(r−r')/ε₀.
+
+**Key non-obvious step — splitting G into free + image parts**: For bounded
+domains, construct G(r,r') = G_free(|r−r'|) + G_image(r,r') where:
+```
+G_free = 1/(4πε₀|r−r'|)              ← Coulomb kernel
+∇²G_image = 0 in V                   ← harmonic function (no sources in V)
+G_image satisfies BCs on ∂V          ← compensates G_free at boundary
+```
+The image part is found by the method of images (half-space, sphere) or
+eigenfunction expansion (cylinder, rectangle). Crucially, G_image has NO
+sources in V — it's a solution to Laplace's equation there — so the convolution
+with ρ only involves G_free in V; G_image only appears in the surface term.
+
+**Layered media — Sommerfeld integral**: For planar dielectric interfaces
+(e.g., ground plane with ε₁ above, ε₂ below), G is NOT expressible in closed
+form. The solution uses 2D Fourier transform in the transverse coordinates:
+G(ρ,z; ρ',z') = (1/4π)∫₀^∞ J₀(k_ρ|ρ−ρ'|) g(z,z'; k_ρ) k_ρ dk_ρ, where
+g(z,z') is a 1D Green's function with transmission/reflection at the interface
+(Chew §2; Sommerfeld's classic 1909 paper).
+
+**Dyadic Green's function** (for vector fields): For ∇×∇×E − k²E = iωμ₀J,
+the solution is E(r) = iωμ₀∫ G̿(r,r')·J(r')dV'. G̿ is a 3×3 tensor (dyadic)
+constructed from vector spherical harmonics for spherical geometry or from
+TE/TM decomposition for planar layered media (Tai, Dyadic Green Functions).
 
 ## Algorithm
 

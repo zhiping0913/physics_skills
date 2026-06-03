@@ -11,7 +11,8 @@ trigger:
   - need to find propagating modes and cutoff frequencies
   - designing microwave/optical transmission structures
 reasoning_role: waveguide_modes
-parent: reasoning.normal_mode_decomposition
+parent: landau-graph:reasoning.normal_mode_decomposition
+sign_convention: propagation e^{i(βz−ωt)}; β = k_z is the propagation constant
 retrieval_cost: 1
 references:
   - landau-graph: reasoning.normal_mode_decomposition (analogy)
@@ -28,6 +29,31 @@ QUANTIZE the transverse wave number → DISCRETE propagation modes.
 The mathematical structure is identical to `reasoning.normal_mode_decomposition`,
 but with a twist: ω is continuous (driving frequency) while k_⊥ is discrete
 (from BCs). This produces the characteristic CUTOFF behavior.
+
+## Derivation Sketch
+
+Starting from `landau-graph: reasoning.normal_mode_decomposition` we have the
+pattern: coupled degrees of freedom → eigenvalue problem → discrete spectrum
+of normal modes. In mechanics, the eigenvalue is ω_n (oscillation frequency).
+In waveguides, the roles invert: ω is a continuous parameter (the driving
+frequency) and the eigenvalue is k_⊥(n) (transverse wavenumber from BCs), with
+β_n = √(k²−k_⊥(n)²) as the propagation constant.
+
+**Key non-obvious step — the Helmholtz eigenproblem structure**:
+Maxwell's equations reduce to (∇_⊥² + γ²)ψ = 0 on the cross-section, where
+γ² = k² − β². The boundary condition ψ=0 (Dirichlet for TM, Neumann ∂ψ/∂n=0
+for TE) turns this into a Sturm-Liouville eigenproblem on the 2D cross-section.
+The eigenvalues γ_n² form a discrete, positive, increasing sequence. The
+dispersion relation β_n(ω) = √(k²−γ_n²) implies:
+
+- **Cutoff**: below k = γ_n, β becomes imaginary → EVANESCENT decay.
+- **Phase velocity**: v_p = ω/β_n = c/√(1−ω_c²/ω²) > c (always superluminal).
+- **Group velocity**: v_g = dω/dβ_n = c√(1−ω_c²/ω²) < c, and crucially:
+  v_g·v_p = c²  (a universal waveguide relation).
+
+**Energy velocity = group velocity**: The time-averaged Poynting power P =
+(1/2)Re ∫(E×H*)·n̂ dS and stored energy per unit length W' satisfy v_g =
+P/W' — energy propagates at the group velocity (Jackson §8.5).
 
 ## Algorithm (Jackson §8.1-8.6)
 
@@ -77,6 +103,20 @@ Dispersion: material (dn/dλ) + waveguide (geometry). Zero-dispersion point:
 MFD≈2a for V∼2. Polarization-maintaining fiber (PMF): stress-induced
 birefringence (PANDA, bow-tie). Photonic crystal fiber (PCF): endlessly
 single-mode, high nonlinearity, anomalous dispersion at visible.
+
+## Cavity Resonators — Q, Mode Density, Purcell Factor
+
+For a closed cavity (or ring resonator), resonances occur when βL = mπ
+(longitudinal quantization on top of transverse). Key figures of merit:
+
+- **Quality factor**: Q = ω₀ W_stored / P_loss. For a cavity with volume V
+  and surface resistance R_s: Q ∼ (V/S)(1/δ_skin). Superconducting cavities
+  reach Q > 10¹⁰.
+- **Mode density** (free space): ρ(ω) = ω²/π²c³ per polarization. In a cavity,
+  this becomes a sum of Lorentzians centered at ω_n with width ω_n/Q.
+- **Purcell factor**: F_P = (3/4π²)(λ/n)³(Q/V). For a single-mode cavity
+  resonant with a dipole emitter, F_P > 1 → ENHANCED spontaneous emission
+  rate. This is the basis of cavity QED (Purcell, Phys. Rev. 1946).
 
 ## Analogy to Normal Modes
 

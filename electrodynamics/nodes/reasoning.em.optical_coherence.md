@@ -10,7 +10,8 @@ trigger:
   - computing fringe visibility in interferometers
   - stellar interferometry, coherence tomography
 reasoning_role: coherence_theory
-parent: reasoning.fluctuation_dissipation_quantum
+parent: landau-graph:reasoning.fluctuation_dissipation_quantum
+sign_convention: stationary random process; ⟨·⟩ = ensemble/time average; complex analytic signal representation
 retrieval_cost: 1
 references:
   - landau-graph: reasoning.fluctuation_dissipation_quantum
@@ -24,6 +25,51 @@ Perfectly monochromatic plane waves produce perfect interference. Real light
 sources (thermal, LED, even lasers) have finite bandwidth and spatial extent
 → only PARTIALLY coherent. Coherence theory quantifies the degree to which
 a field can produce interference.
+
+## Derivation Sketch
+
+Starting from `landau-graph: reasoning.fluctuation_dissipation_quantum` we have
+the quantum correlation function ⟨x̂(t)x̂(0)⟩ encoding statistical fluctuations
+and the fluctuation-dissipation theorem linking correlations to response. The
+classical optical analog is the mutual coherence function:
+
+Γ(r₁, r₂, τ) = ⟨E(r₁, t+τ) E*(r₂, t)⟩
+
+where E is the complex analytic signal (positive-frequency part of the real
+field). This is a second-order correlation function; higher-order correlations
+g₁(τ), g₂(τ) distinguish thermal from coherent and non-classical light.
+
+**Key non-obvious step — van Cittert-Zernike theorem**: An extended spatially
+INCOHERENT source (each surface element emits independently) produces a
+partially COHERENT field at a distant plane. The complex degree of coherence
+γ(r₁, r₂) is the normalized Fourier transform of the source intensity
+distribution I(ξ,η):
+
+γ(Δx, Δy) = e^{iψ} ∬ I(ξ,η) e^{−ik(ξΔx+ηΔy)/R} dξdη / ∬ I(ξ,η) dξdη
+
+This holds because each source point radiates a spherical wave; the
+superposition at the observation plane creates a random field whose
+correlation function is the Fourier transform of the source intensity
+(Wiener-Khinchin in space). The theorem is the foundation of aperture
+synthesis in radio astronomy and stellar interferometry.
+
+**Coherent vs partially coherent imaging (Hopkins formulation)**:
+For a Köhler-illuminated microscope, the image intensity is:
+I(x) = ∭ TCC(f₁,f₂) Õ(f₁) Õ*(f₂) e^{2πi(f₁−f₂)x} df₁ df₂
+where the transmission cross-coefficient TCC encodes the illumination
+partial coherence. Two limits: (1) coherent illumination (point source) →
+linear in amplitude — edge ringing, speckle; (2) incoherent illumination
+(large source) → linear in intensity — smooth, no speckle. The cutoff
+frequency is 2NA/λ (incoherent) vs NA/λ (coherent) — a factor of 2
+resolution gain for incoherent imaging (Hopkins, Proc. Roy. Soc. 1953).
+
+**Speckle statistics**: When coherent light scatters from a rough surface
+(surface roughness > λ), the random phase at each scattering point produces
+a speckle pattern. For fully developed speckle (many independent scatterers):
+intensity follows negative-exponential PDF p(I) = (1/⟨I⟩)e^{−I/⟨I⟩};
+contrast C = σ_I/⟨I⟩ = 1 (fully developed). Speckle size is λz/D
+(diffraction-limited). Speckle interferometry exploits these statistics
+for high-resolution imaging through turbulence (Labeyrie technique).
 
 ## Key Quantities (Born & Wolf §10)
 
@@ -67,6 +113,23 @@ source size increases. Critical source size: w_crit ∼ λR/d (slit separation d
 **Stellar interferometry**: For a uniform disk star of angular diameter θ,
 γ(d) = 2J₁(πθd/λ)/(πθd/λ). First zero at d = 1.22λ/θ → measure d where
 fringes disappear → θ.
+
+## Edge Cases
+
+- **Coherence collapses under strong turbulence**: When the atmospheric
+  coherence time τ_0 (Greenwood time) < detector integration time, the
+  fringe visibility washes out. Remedy: adaptive optics (wavefront
+  correction at > 1/τ_0) or speckle interferometry (short-exposure
+  lucky imaging) rather than long-exposure averaging.
+- **Laser coherence is NOT perfect**: Lasers have finite linewidth
+  (Schawlow-Townes limit Δν ∝ 1/P) and drift. For long-baseline
+  interferometry (> coherence length L_c = c/Δν), coherence breaks down —
+  use active path-length stabilization or heterodyne detection with
+  independent local oscillators.
+- **Non-classical light breaks the classical bounds**: |γ(τ)| ≤ 1 is a
+  classical constraint. Squeezed light and entangled photons can achieve
+  sub-shot-noise correlations; for these, switch to the full quantum
+  optical description (Glauber g⁽²⁾, Mandel Q-parameter).
 
 ## Connection to Fluctuation-Dissipation
 
