@@ -63,6 +63,12 @@ The surface integral vanishes if we use the proper Green's function type.
 G(r,r') = 1/(4πε₀|r−r'|) → φ(r) = (1/4πε₀)∫ ρ(r')/|r−r'| dV'.
 This is the Coulomb integral.
 
+**Neumann subtlety** (Jackson §1.10): For Neumann BCs, ∂G/∂n' CANNOT be zero
+everywhere because ∮(∂G/∂n')dS' = −4π from Gauss's theorem. The standard
+choice is ∂G_N/∂n' = −4π/S (constant), giving φ as volume integral plus
+⟨Φ⟩_S (the average potential on the boundary). This is rarely needed in
+practice — most problems are Dirichlet.
+
 **Grounded conducting sphere, radius a** (Jackson §2.6):
 Place image charge q' = −(a/r')q at r'' = (a²/r'²)r'. The Green's function
 incorporates this automatically → solution for arbitrary ρ inside sphere.

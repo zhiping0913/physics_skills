@@ -62,6 +62,17 @@ The decomposition A is NOT unique: A → A + ∇χ leaves ∇×A unchanged.
 This is the 3D origin of gauge invariance. The Coulomb gauge ∇·A = 0
 is a natural choice from the Helmholtz decomposition perspective.
 
+## Edge Cases
+
+- **Uniqueness requires falloff faster than 1/r**: The decomposition is unique
+  only if |F| → 0 faster than 1/r as r → ∞. A field falling as exactly 1/r
+  admits multiple valid decompositions. Jackson §1.5 explicitly notes this
+  fine print — it rarely matters practically but is the mathematical basis.
+- **Multiply connected domains** (e.g., toroidal volumes): Additional harmonic
+  components from cohomology are needed.
+- **Non-vanishing at infinity** (uniform background field): The decomposition
+  must include the background component explicitly.
+
 ## Cross-References
 
 - Jackson §1.5-1.6 (Helmholtz theorem, potentials)

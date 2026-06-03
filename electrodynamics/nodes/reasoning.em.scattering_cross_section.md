@@ -37,10 +37,10 @@ and scattered direction k'). All observable quantities follow from f.
    dσ/dΩ = |f(k,k')|² = (r²⟨S_s⟩·n)/(|⟨S_i⟩|)
 
 2. Total cross sections:
-   σ_scat = ∫ (dσ/dΩ) dΩ
-   σ_ext = σ_scat + σ_abs (extinction = scattering + absorption)
+   σ_scat = ∫ (dσ/dΩ) dΩ  (integrated scattered power / incident flux)
+   σ_ext = σ_scat + σ_abs  (EXTINCTION = scattering + absorption)
    Optical theorem: σ_ext = (4π/k) Im[f(k,k)] — forward amplitude
-   determines total extinction.
+   determines total extinction (not just scattering).
 
 3. Three regimes by size parameter ka = 2πa/λ:
 ```

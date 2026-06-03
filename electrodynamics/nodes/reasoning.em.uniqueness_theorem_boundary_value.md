@@ -54,6 +54,18 @@ This theorem is the central justification for ALL boundary-value techniques:
    as long as it produces a solution meeting the BCs.
 ```
 
+## Edge Cases
+
+- **Cauchy BCs are INVALID**: Specifying BOTH Φ and ∂Φ/∂n on ∂V is an
+  OVERSpecification — no solution exists in general (Jackson §1.9).
+- **Mixed BCs**: Dirichlet on part of ∂V, Neumann on another part also
+  yields a unique solution. The proof still holds because U(∂U/∂n)=0 on
+  each part separately.
+- **Unbounded domains**: Φ→0 (or ∂Φ/∂n→0 sufficiently fast) at infinity
+  replaces the finite ∂V condition.
+- **Floating conductors**: Φ is constant but UNKNOWN on the surface. An
+  additional constraint (e.g., total charge) determines it.
+
 ## Extension to Maxwell's Equations
 
 For time-harmonic fields in a source-free region, specifying n×E or n×H
