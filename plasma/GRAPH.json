@@ -1,0 +1,123 @@
+{
+  "node_index": {
+    "knowledge.plasma.cold_magnetized_waves": {
+      "source": "plasma textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.plasma.kinetic_waves": {
+      "source": "plasma textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.plasma.laser_plasma_processes": {
+      "source": "plasma textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.plasma.mhd_waves_stability": {
+      "source": "plasma textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.plasma.parameters_scales": {
+      "source": "plasma textbooks",
+      "node_type": "knowledge"
+    },
+    "reasoning.plasma.dielectric_tensor_magnetized": {
+      "source": "plasma textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.plasma.dispersion_relation_method": {
+      "source": "plasma textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.plasma.instability_classification": {
+      "source": "plasma textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.plasma.laser_plasma_interaction": {
+      "source": "plasma textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.plasma.mhd_equilibrium_stability": {
+      "source": "plasma textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.plasma.surface_waves_plasmonics": {
+      "source": "plasma textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.plasma.transport_coefficients": {
+      "source": "plasma textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.plasma.wave_particle_resonance": {
+      "source": "plasma textbooks",
+      "node_type": "reasoning"
+    }
+  },
+  "edges": [
+    {
+      "source": "reasoning.plasma.dielectric_tensor_magnetized",
+      "target": "knowledge.plasma.cold_magnetized_waves",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.plasma.wave_particle_resonance",
+      "target": "knowledge.plasma.kinetic_waves",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.plasma.laser_plasma_interaction",
+      "target": "knowledge.plasma.laser_plasma_processes",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.plasma.mhd_equilibrium_stability",
+      "target": "knowledge.plasma.mhd_waves_stability",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.plasma.dispersion_relation_method",
+      "target": "knowledge.plasma.parameters_scales",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "knowledge.kinetic.plasma_dielectric",
+      "target": "reasoning.plasma.dielectric_tensor_magnetized",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.normal_mode_decomposition",
+      "target": "reasoning.plasma.dispersion_relation_method",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.kinetic.plasma_instabilities",
+      "target": "reasoning.plasma.instability_classification",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.nonlinear_optical_response",
+      "target": "reasoning.plasma.laser_plasma_interaction",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.equilibrium_as_extremum",
+      "target": "reasoning.plasma.mhd_equilibrium_stability",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.spatial_dispersion",
+      "target": "reasoning.plasma.surface_waves_plasmonics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.kinetic_equation_closure",
+      "target": "reasoning.plasma.transport_coefficients",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.landau_damping",
+      "target": "reasoning.plasma.wave_particle_resonance",
+      "type": "prerequisite"
+    }
+  ]
+}
