@@ -82,6 +82,19 @@ different wave topology (number of propagating modes, resonance cones).
 | ω_UH | √(ω_p²+ω_ce²) | Upper hybrid — X-mode resonance |
 | ω_LH | √(ω_ci ω_ce) (approx) | Lower hybrid — ion dynamics |
 
+## Warm Plasma Corrections (Stix §10-11)
+
+When T_e>0, the cold-plasma S,D,P acquire thermal corrections from finite
+Larmor radius (k_⊥ρ_L). Key effects:
+
+- **Electrostatic ε_l(k,ω)** = 1+Σ(ω_pα²/k²v_thα²)[1+ζ_α Z(ζ_α)] where
+  Z(ζ) is the plasma dispersion function, ζ_α=(ω−nω_cα)/k_∥v_thα.
+- **Landau damping** (n=0 resonance) and **cyclotron damping** (n≠0) appear
+  as Im[Z(ζ)]. These are ABSENT in cold plasma.
+- **Bernstein waves**: purely perpendicular (k_∥=0), undamped modes at
+  ω≈nω_ce. Propagate in bands between cyclotron harmonics.
+- Cold plasma is valid when k_⊥ρ_L ≪ 1 AND |ω−nω_c| ≫ k_∥v_th for all n.
+
 ## Cross-References
 
 - Stix §1-2, Ginzburg §3-5, Chen §4

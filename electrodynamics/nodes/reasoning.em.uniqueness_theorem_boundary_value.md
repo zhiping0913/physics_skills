@@ -65,6 +65,11 @@ This theorem is the central justification for ALL boundary-value techniques:
   replaces the finite ∂V condition.
 - **Floating conductors**: Φ is constant but UNKNOWN on the surface. An
   additional constraint (e.g., total charge) determines it.
+- **Sommerfeld radiation condition**: For exterior (unbounded) wave problems,
+  the solution must represent OUTGOING waves at infinity:
+  lim_{r→∞} r(∂U/∂r − ikU) = 0. This selects the physical solution
+  among mathematically valid ones. Same pattern as `reasoning.physical_solution_selection`.
+  (Jackson §9.1, §10.1; Chew §1)
 
 ## Extension to Maxwell's Equations
 

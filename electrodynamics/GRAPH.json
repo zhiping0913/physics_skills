@@ -1,71 +1,81 @@
 {
   "node_index": {
     "knowledge.em.antennas": {
-      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.born_approximation_scattering": {
       "node_type": "knowledge"
     },
     "knowledge.em.coherence_interference": {
-      "source": "electrodynamics textbooks",
       "node_type": "knowledge"
     },
     "knowledge.em.crystal_optics": {
-      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.fresnel_reflection_transmission": {
+      "node_type": "knowledge"
+    },
+    "knowledge.em.kirchhoff_diffraction_detail": {
       "node_type": "knowledge"
     },
     "knowledge.em.method_of_images": {
-      "source": "electrodynamics textbooks",
       "node_type": "knowledge"
     },
     "knowledge.em.nonlinear_optics": {
-      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.optics_of_metals": {
       "node_type": "knowledge"
     },
     "knowledge.em.scattering_mie": {
-      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.separation_of_variables": {
       "node_type": "knowledge"
     },
     "knowledge.em.static_multipoles": {
-      "source": "electrodynamics textbooks",
       "node_type": "knowledge"
     },
     "knowledge.em.strong_field_electrodynamics": {
-      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.transmission_lines": {
       "node_type": "knowledge"
     },
     "knowledge.em.waveguides_cavities": {
-      "source": "electrodynamics textbooks",
       "node_type": "knowledge"
     },
     "reasoning.em.antenna_radiation_pattern": {
-      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.em.fresnel_interface_reflection_refraction": {
       "node_type": "reasoning"
     },
     "reasoning.em.green_function_poisson": {
-      "source": "electrodynamics textbooks",
       "node_type": "reasoning"
     },
     "reasoning.em.helmholtz_decomposition": {
-      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.em.lienard_wiechert_radiation": {
       "node_type": "reasoning"
     },
     "reasoning.em.nonlinear_optical_response": {
-      "source": "electrodynamics textbooks",
       "node_type": "reasoning"
     },
     "reasoning.em.optical_coherence": {
-      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.em.scalar_diffraction_kirchhoff": {
       "node_type": "reasoning"
     },
     "reasoning.em.scattering_cross_section": {
-      "source": "electrodynamics textbooks",
       "node_type": "reasoning"
     },
     "reasoning.em.uniqueness_theorem_boundary_value": {
-      "source": "electrodynamics textbooks",
       "node_type": "reasoning"
     },
     "reasoning.em.waveguide_mode_decomposition": {
-      "source": "electrodynamics textbooks",
       "node_type": "reasoning"
     }
   },
@@ -73,51 +83,86 @@
     {
       "source": "reasoning.em.antenna_radiation_pattern",
       "target": "knowledge.em.antennas",
-      "type": "prerequisite"
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.em.scattering_cross_section",
+      "target": "knowledge.em.born_approximation_scattering",
+      "type": "reasoning-instance"
     },
     {
       "source": "reasoning.em.optical_coherence",
       "target": "knowledge.em.coherence_interference",
-      "type": "prerequisite"
+      "type": "reasoning-instance"
     },
     {
       "source": "reasoning.constitutive_relation_from_symmetry",
       "target": "knowledge.em.crystal_optics",
-      "type": "prerequisite"
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.em.fresnel_interface_reflection_refraction",
+      "target": "knowledge.em.fresnel_reflection_transmission",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.em.scalar_diffraction_kirchhoff",
+      "target": "knowledge.em.kirchhoff_diffraction_detail",
+      "type": "reasoning-instance"
     },
     {
       "source": "reasoning.em.uniqueness_theorem_boundary_value",
       "target": "knowledge.em.method_of_images",
-      "type": "prerequisite"
+      "type": "reasoning-instance"
     },
     {
       "source": "reasoning.em.nonlinear_optical_response",
       "target": "knowledge.em.nonlinear_optics",
-      "type": "prerequisite"
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.em.fresnel_interface_reflection_refraction",
+      "target": "knowledge.em.optics_of_metals",
+      "type": "reasoning-instance"
     },
     {
       "source": "reasoning.em.scattering_cross_section",
       "target": "knowledge.em.scattering_mie",
-      "type": "prerequisite"
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.em.uniqueness_theorem_boundary_value",
+      "target": "knowledge.em.separation_of_variables",
+      "type": "reasoning-instance"
     },
     {
       "source": "reasoning.em.green_function_poisson",
       "target": "knowledge.em.static_multipoles",
-      "type": "prerequisite"
+      "type": "reasoning-instance"
     },
     {
       "source": "reasoning.em.nonlinear_optical_response",
       "target": "knowledge.em.strong_field_electrodynamics",
-      "type": "prerequisite"
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.em.waveguide_mode_decomposition",
+      "target": "knowledge.em.transmission_lines",
+      "type": "reasoning-instance"
     },
     {
       "source": "reasoning.em.waveguide_mode_decomposition",
       "target": "knowledge.em.waveguides_cavities",
-      "type": "prerequisite"
+      "type": "reasoning-instance"
     },
     {
       "source": "reasoning.multipole_expansion_radiation",
       "target": "reasoning.em.antenna_radiation_pattern",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.waveguide_mode_decomposition",
+      "target": "reasoning.em.fresnel_interface_reflection_refraction",
       "type": "prerequisite"
     },
     {
@@ -131,6 +176,11 @@
       "type": "prerequisite"
     },
     {
+      "source": "reasoning.retarded_green_function",
+      "target": "reasoning.em.lienard_wiechert_radiation",
+      "type": "prerequisite"
+    },
+    {
       "source": "knowledge.continuous.dielectric_dispersion",
       "target": "reasoning.em.nonlinear_optical_response",
       "type": "prerequisite"
@@ -138,6 +188,11 @@
     {
       "source": "reasoning.fluctuation_dissipation_quantum",
       "target": "reasoning.em.optical_coherence",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.scattering_cross_section",
+      "target": "reasoning.em.scalar_diffraction_kirchhoff",
       "type": "prerequisite"
     },
     {

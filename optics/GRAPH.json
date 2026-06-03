@@ -15,10 +15,16 @@
     "knowledge.optics.fourier_optics_data": {
       "node_type": "knowledge"
     },
+    "knowledge.optics.fresnel_fraunhofer_regimes": {
+      "node_type": "knowledge"
+    },
     "knowledge.optics.gaussian_beam_parameters": {
       "node_type": "knowledge"
     },
     "knowledge.optics.laser_engineering_data": {
+      "node_type": "knowledge"
+    },
+    "knowledge.optics.nonspherical_scattering": {
       "node_type": "knowledge"
     },
     "knowledge.optics.pulse_measurement_data": {
@@ -33,6 +39,9 @@
     "reasoning.optics.acousto_optic_interaction": {
       "node_type": "reasoning"
     },
+    "reasoning.optics.dispersion_management_gdd": {
+      "node_type": "reasoning"
+    },
     "reasoning.optics.fourier_optics_transfer_function": {
       "node_type": "reasoning"
     },
@@ -45,6 +54,9 @@
     "reasoning.optics.pulse_characterization": {
       "node_type": "reasoning"
     },
+    "reasoning.optics.pulse_propagation_nlse": {
+      "node_type": "reasoning"
+    },
     "reasoning.optics.ultrashort_pulse_generation": {
       "node_type": "reasoning"
     }
@@ -52,6 +64,11 @@
   "edges": [
     {
       "source": "knowledge.em.crystal_optics",
+      "target": "reasoning.optics.fourier_optics_transfer_function",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.optics.fourier_optics_transfer_function",
       "target": "knowledge.optics.aberrations_polarization",
       "type": "reasoning-instance"
     },
@@ -76,6 +93,11 @@
       "type": "reasoning-instance"
     },
     {
+      "source": "reasoning.optics.fourier_optics_transfer_function",
+      "target": "knowledge.optics.fresnel_fraunhofer_regimes",
+      "type": "reasoning-instance"
+    },
+    {
       "source": "reasoning.optics.gaussian_beam_optics",
       "target": "knowledge.optics.gaussian_beam_parameters",
       "type": "reasoning-instance"
@@ -83,6 +105,11 @@
     {
       "source": "reasoning.optics.laser_rate_equations",
       "target": "knowledge.optics.laser_engineering_data",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "knowledge.em.scattering_mie",
+      "target": "knowledge.optics.nonspherical_scattering",
       "type": "reasoning-instance"
     },
     {
@@ -106,6 +133,11 @@
       "type": "prerequisite"
     },
     {
+      "source": "reasoning.optics.pulse_propagation_nlse",
+      "target": "reasoning.optics.dispersion_management_gdd",
+      "type": "prerequisite"
+    },
+    {
       "source": "reasoning.em.scattering_cross_section",
       "target": "reasoning.optics.fourier_optics_transfer_function",
       "type": "prerequisite"
@@ -123,6 +155,11 @@
     {
       "source": "reasoning.em.optical_coherence",
       "target": "reasoning.optics.pulse_characterization",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.nonlinear_optical_response",
+      "target": "reasoning.optics.pulse_propagation_nlse",
       "type": "prerequisite"
     },
     {

@@ -64,6 +64,20 @@ TE₁₁: k_⊥R ≈ 1.841. TM₀₁: k_⊥R ≈ 2.405.
 **Coaxial cable (TEM mode)**: No cutoff! Propagates down to DC.
 Impedance Z₀ = (1/2π)√(μ/ε) ln(b/a). Loss minimum at optimal b/a ratio.
 
+## Dielectric Waveguides (Optical Fiber)
+
+**Slab waveguide** (n_core > n_clad): TE/TM guided modes. Dispersion:
+tan(κd) = κ(α+γ)/(κ²−αγ) where κ=k₀√(n_core²−n_eff²), γ=k₀√(n_eff²−n_clad²).
+Number of modes ∝ V = k₀d√(n_core²−n_clad²). V<π→single mode.
+
+**Step-index circular fiber**: V = (2πa/λ)NA. Single-mode: V<2.405.
+LP_lm modes: l=angular, m=radial order. LP₀₁ is fundamental (near-Gaussian).
+Dispersion: material (dn/dλ) + waveguide (geometry). Zero-dispersion point:
+λ₀≈1.31μm (standard fiber), shifted to 1.55μm in DSF. Mode field diameter
+MFD≈2a for V∼2. Polarization-maintaining fiber (PMF): stress-induced
+birefringence (PANDA, bow-tie). Photonic crystal fiber (PCF): endlessly
+single-mode, high nonlinearity, anomalous dispersion at visible.
+
 ## Analogy to Normal Modes
 
 Same mathematical structure as `reasoning.normal_mode_decomposition`:

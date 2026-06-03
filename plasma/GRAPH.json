@@ -1,55 +1,57 @@
 {
   "node_index": {
     "knowledge.plasma.cold_magnetized_waves": {
-      "source": "plasma textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.plasma.diagnostics": {
       "node_type": "knowledge"
     },
     "knowledge.plasma.kinetic_waves": {
-      "source": "plasma textbooks",
       "node_type": "knowledge"
     },
     "knowledge.plasma.laser_plasma_processes": {
-      "source": "plasma textbooks",
       "node_type": "knowledge"
     },
     "knowledge.plasma.mhd_waves_stability": {
-      "source": "plasma textbooks",
       "node_type": "knowledge"
     },
     "knowledge.plasma.parameters_scales": {
-      "source": "plasma textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.plasma.surface_plasmon_polaritons": {
+      "node_type": "knowledge"
+    },
+    "knowledge.plasma.transport_data": {
+      "node_type": "knowledge"
+    },
+    "knowledge.plasma.wave_mode_atlas": {
       "node_type": "knowledge"
     },
     "reasoning.plasma.dielectric_tensor_magnetized": {
-      "source": "plasma textbooks",
       "node_type": "reasoning"
     },
     "reasoning.plasma.dispersion_relation_method": {
-      "source": "plasma textbooks",
       "node_type": "reasoning"
     },
     "reasoning.plasma.instability_classification": {
-      "source": "plasma textbooks",
       "node_type": "reasoning"
     },
     "reasoning.plasma.laser_plasma_interaction": {
-      "source": "plasma textbooks",
       "node_type": "reasoning"
     },
     "reasoning.plasma.mhd_equilibrium_stability": {
-      "source": "plasma textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.plasma.single_particle_drifts": {
       "node_type": "reasoning"
     },
     "reasoning.plasma.surface_waves_plasmonics": {
-      "source": "plasma textbooks",
       "node_type": "reasoning"
     },
     "reasoning.plasma.transport_coefficients": {
-      "source": "plasma textbooks",
       "node_type": "reasoning"
     },
     "reasoning.plasma.wave_particle_resonance": {
-      "source": "plasma textbooks",
       "node_type": "reasoning"
     }
   },
@@ -57,6 +59,11 @@
     {
       "source": "reasoning.plasma.dielectric_tensor_magnetized",
       "target": "knowledge.plasma.cold_magnetized_waves",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.plasma.dispersion_relation_method",
+      "target": "knowledge.plasma.diagnostics",
       "type": "reasoning-instance"
     },
     {
@@ -77,6 +84,21 @@
     {
       "source": "reasoning.plasma.dispersion_relation_method",
       "target": "knowledge.plasma.parameters_scales",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.plasma.surface_waves_plasmonics",
+      "target": "knowledge.plasma.surface_plasmon_polaritons",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.plasma.transport_coefficients",
+      "target": "knowledge.plasma.transport_data",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.plasma.dielectric_tensor_magnetized",
+      "target": "knowledge.plasma.wave_mode_atlas",
       "type": "reasoning-instance"
     },
     {
@@ -102,6 +124,11 @@
     {
       "source": "reasoning.equilibrium_as_extremum",
       "target": "reasoning.plasma.mhd_equilibrium_stability",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.dispersion_relation_method",
+      "target": "reasoning.plasma.single_particle_drifts",
       "type": "prerequisite"
     },
     {

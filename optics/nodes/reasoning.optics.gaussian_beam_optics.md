@@ -60,6 +60,10 @@ The q-parameter propagates through any paraxial optical system via the ABCD law:
   diffraction theory (Richards-Wolf).
 - **High-power thermal lensing**: dn/dT > 0 → thermal gradient → effective lens.
   Changes resonator stability dynamically.
+- **Higher-order modes**: Hermite-Gauss HG_mn (rectangular symmetry) and
+  Laguerre-Gauss LG_pl (cylindrical symmetry, p=radial, l=azimuthal).
+  LG₀l carries orbital angular momentum (OAM) ℏl per photon. Applications:
+  optical tweezers, quantum communication, STED microscopy.
 
 ## Cross-References
 

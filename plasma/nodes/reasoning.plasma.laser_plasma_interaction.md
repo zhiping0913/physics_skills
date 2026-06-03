@@ -63,6 +63,23 @@ high-intensity regions → density profile steepening, channel formation.
 Laser pulse (τ ∼ τ_p/2) drives plasma wave: E_wake ∼ (n_e/n_c)^{1/2} a₀² E_0.
 E_0 = cm ω_p/e ≈ 96√(n_e[cm⁻³]) V/m. For n_e=10¹⁸: E_0∼100 GV/m.
 
+**Bubble/blowout regime** (a₀>2): laser pulse expels all electrons → spherical
+ion cavity → strong focusing + accelerating fields. Self-injection at bubble
+rear → quasi-monoenergetic beams (ΔE/E∼1-10%). Scaling: E_max[GeV]≈1.7(P[TW]/100)^{1/3}
+(n_e/10¹⁸)^{-2/3}. LWFA: E∼1 GeV over ∼cm at P∼100TW.
+PWFA (proton-driven): E∼50 GeV over ∼m.
+
+**Resonance absorption** (oblique p-pol, θ≠0): laser tunnels from n_e=n_c cos²θ
+to critical surface. Absorption fraction: f_abs≈½φ²(τ), τ=(k₀L)^{1/3}sinθ.
+Optimal angle sinθ≈0.8/(k₀L)^{1/3}. Hot electron temperature scaling:
+T_hot≈α(Iλ²)^{1/3} (α depends on model, ∼10-100 keV at I∼10¹⁵ W/cm², λ∼1μm).
+Brunel (vacuum heating): v_osc>L_n→electrons pulled into vacuum→return with
+energy∼ponderomotive→resonant at ω=2ω_p. J×B heating: T_hot∼(Iλ²)^{1/2}.
+
+**SRS growth rate** (backscatter): γ/ω₀≈(k_epw v_osc/4)√(ω_p/ω₀) where
+v_osc=eE₀/mω₀c. Threshold: γ>ν_ei (collisional) or γL_n/c>1 (convective).
+SRS saturates by pump depletion or Langmuir wave breaking/collapse.
+
 ## Cross-References
 
 - Laser Plasma Handbook (1991), Kruer (1988), Gibbon (2005)
