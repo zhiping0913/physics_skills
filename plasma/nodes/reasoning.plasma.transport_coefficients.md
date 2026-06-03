@@ -57,3 +57,6 @@ Empirical scaling: τ_E ∝ I_p^α P^{−β} n^{γ} (e.g., IPB98(y,2)).
 
 - Chen §5, Wesson §3, Braginskii (1965)
 - landau-graph: reasoning.kinetic_equation_closure (moments + closure → transport)
+- plasma: reasoning.plasma.single_particle_drifts (GC drift velocities feed into
+  Braginskii flux calculations; transport coefficients are the FLUID averaging of
+  single-particle drifts — bidirectional)

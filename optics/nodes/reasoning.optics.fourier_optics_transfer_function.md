@@ -66,3 +66,6 @@ in real space to MULTIPLICATION in frequency space.
 
 - Goodman §3-9
 - electrodynamics: reasoning.em.scattering_cross_section (Fraunhofer = far-field)
+- electrodynamics: reasoning.em.scalar_diffraction_kirchhoff (Fraunhofer IS the
+  Fourier transform of the aperture — bidirectional: diffraction theory provides
+  the Fraunhofer condition a²/λz≪1 that justifies the FT in Fourier optics)

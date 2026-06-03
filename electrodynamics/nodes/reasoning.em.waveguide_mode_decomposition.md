@@ -90,3 +90,7 @@ mechanics, ω is the eigenvalue (discrete); here, k_⊥ is the eigenvalue
 - Jackson §8.1-8.6
 - Griffiths §9.5
 - landau-graph: reasoning.normal_mode_decomposition (same mathematical structure)
+- electrodynamics: reasoning.em.fresnel_interface_reflection_refraction
+  (waveguide conducting walls = TIR boundary; dielectric interface is the
+  planar counterpart — Fresnel coefficients from the same boundary-condition
+  matching framework; bidirectional: Fresnel derives from waveguide decomposition)

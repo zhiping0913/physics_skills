@@ -9,6 +9,9 @@ trigger: propagating ultrashort pulses in fiber/bulk, soliton formation
 reasoning_role: nlse_propagation
 parent: reasoning.em.nonlinear_optical_response
 retrieval_cost: 1
+sign_convention: >
+  NLSE with retarded time T = t − z/v_g. β₂>0: normal GVD. β₂<0: anomalous.
+  γ>0 for self-focusing Kerr (χ⁽³⁾>0). N² = L_D/L_NL = γP₀T₀²/|β₂|.
 ---
 
 # reasoning.optics.pulse_propagation_nlse — Dispersion + Nonlinearity → Pulse Evolution
@@ -16,9 +19,40 @@ retrieval_cost: 1
 ## Core Picture
 
 The Nonlinear Schrödinger Equation (NLSE) governs pulse propagation in
-dispersive, nonlinear media (Boyd §7, Siegman §9-10). It balances GVD
-(group-velocity dispersion, linear) with SPM (self-phase modulation,
+dispersive, nonlinear media (Boyd §7, Siegman §9-10, Agrawal §2). It balances
+GVD (group-velocity dispersion, linear) with SPM (self-phase modulation,
 nonlinear via Kerr effect n₂).
+
+## Derivation Sketch (from Maxwell + χ⁽³⁾ → NLSE)
+
+Starting from `electrodynamics: reasoning.em.nonlinear_optical_response`
+(χ⁽³⁾ tensor → Kerr nonlinearity):
+
+1. **Wave equation in nonlinear medium** (Boyd §2):
+   ∇²E − (n₀²/c²)∂²E/∂t² = μ₀ ∂²P_NL/∂t²
+   where P_NL = ε₀ χ⁽³⁾ |E|² E (Kerr term, isotropic medium). Only the
+   frequency component near ω₀ is retained (rotating-wave approximation).
+
+2. **Slowly-varying envelope ansatz** (SVEA):
+   E(z,t) = ½ A(z,t) exp[i(k₀z − ω₀t)] + c.c.
+   Assume ∂A/∂z ≪ k₀A and ∂A/∂t ≪ ω₀A. Neglect ∂²A/∂z².
+
+3. **Expand k(ω) around ω₀** (from `landau-graph: knowledge.continuous.dielectric_dispersion`):
+   k(ω) = k₀ + β₁(ω−ω₀) + (β₂/2)(ω−ω₀)² + ...
+   β₁ = dk/dω = 1/v_g,   β₂ = d²k/dω² = GVD.
+
+4. **Retarded time frame**: T = t − z/v_g. Replace (ω−ω₀) → i∂/∂T via
+   Fourier transform correspondence. Drop second derivatives of envelope
+   and terms ∝ (∂²A/∂T²)∂A/∂z (small).
+
+5. **Result — NLSE**:
+   ∂A/∂z = −i(β₂/2) ∂²A/∂T² + iγ|A|²A
+   with γ = n₂ ω₀ / (c A_eff),   n₂ = (3 / 4n₀² ε₀ c) Re[χ⁽³⁾₁₁₁₁].
+   **This is the bridge to the parent χ⁽³⁾ node**: γ expresses the Kerr
+   nonlinearity in terms of the nonlinear susceptibility. Isotropic Kerr
+   reduces χ⁽³⁾_(ijkl) to a single independent component χ⁽³⁾₁₁₁₁.
+
+   Including loss α: add −(α/2)A on RHS.
 
 ## Algorithm
 
@@ -35,7 +69,9 @@ nonlinear via Kerr effect n₂).
    L ∼ L_NL ≪ L_D: SPM dominates. L ≳ both: NLSE balance.
 
 3. GVD only (γ=0, α=0): A(z,T) = FT⁻¹{A(0,ω) exp(iβ₂ω²z/2)}.
-   Gaussian: τ(z)=τ₀√[1+(z/L_D)²]. Chirp: Δω(z)=C z/L_D/(1+(z/L_D)²).
+   Input: A(0,T) = √P₀ exp[−(1+iC)T²/(2T₀²)].
+   C = chirp parameter (C>0: up-chirp, C<0: down-chirp; C=0: TL).
+   Gaussian: τ(z) = τ₀√[1+(z/L_D)²]. Chirp: Δω(z)=C z/L_D/(1+(z/L_D)²).
 
 4. SPM only (β₂=0, α=0): A(z,T)=A(0,T) exp(iγ|A|²z).
    φ_NL = γP₀ L. Δω_max ∝ (γP₀/T₀)L. Spectrum broadens symmetrically.
@@ -51,21 +87,42 @@ nonlinear via Kerr effect n₂).
    CW breaks into pulse train → soliton fission.
 ```
 
+## Dark Soliton (β₂>0 normal GVD, or defocusing γ<0)
+
+For anomalous GVD β₂<0 with defocusing nonlinearity γ<0, OR normal GVD
+β₂>0 with focusing γ>0 (equivalent via A→A* substitution):
+```
+  A(z,T) = √P₀ tanh(T/T₀)                                      (dark soliton)
+```
+The tanh profile is a "dip" on a CW background. Phase jump Δφ = π at T=0.
+Gray soliton: depth parameter 0<η<1, A = √P₀ [cos φ₀ tanh(ηT/T₀)+i sin φ₀].
+NLS with defocusing supports dark solitons but NOT bright solitons.
+
 ## Higher-Order Effects (ultrashort, <100 fs)
 
 - **TOD** (β₃): asymmetric pulse distortion, oscillatory tail.
-- **Self-steepening** (∂/∂T(γ|A|²A)): pulse peak trails, shock formation.
-- **Intrapulse Raman** (T_R): soliton self-frequency shift to longer λ.
+- **Self-steepening**: (i/ω₀)∂/∂T(γ|A|²A) term. Pulse peak lags, optical
+  shock formation. Derivation: expand χ⁽³⁾(ω) including first derivative.
+- **Intrapulse Raman** (T_R): delayed nonlinear response → soliton
+  self-frequency shift to longer λ (Δω ∝ −T_R τ⁻⁴).
 
 ## Edge Cases
 
-- **Normal dispersion** (β₂>0): no bright soliton. Dark soliton (dip on CW).
-  Requires NLS with defocusing nonlinearity.
-- **Few-cycle**: envelope approximation breaks. Need full Maxwell + nonlinear
-  polarization. Carrier-envelope phase becomes critical.
+- **Few-cycle pulses**: envelope approximation breaks. Use generalized NLSE
+  with self-steepening term (1 + i/ω₀ ∂/∂T)(γ|A|²A), or the **forward
+  Maxwell equation** (UPPE — unidirectional pulse propagation equation)
+  for true few-cycle: ∂E(z,ω)/∂z = i[k(ω)−ω/v_g]E + i(μ₀ω²/2k)P_NL.
+  Reference: Brabec & Krausz, PRL 78, 3282 (1997); Boyd §7.4.
+  Carrier-envelope phase becomes critical.
+
+- **Vector NLSE** (birefringent fiber): two coupled equations for x,y
+  polarizations with XPM term 2iγ|A_⊥|²A_∥.
 
 ## Cross-References
 
-- Boyd §7, Siegman §9-10, Agrawal (Nonlinear Fiber Optics)
+- Boyd §7, Siegman §9-10, Agrawal (Nonlinear Fiber Optics) §2-5
 - landau-graph: knowledge.continuous.dielectric_dispersion (β₂ from ε(ω))
-- electrodynamics: reasoning.em.nonlinear_optical_response (parent: γ from χ⁽³⁾)
+- electrodynamics: reasoning.em.nonlinear_optical_response (parent: γ from χ⁽³⁾;
+  Derivation Sketch step 5 consumes this parent explicitly)
+- optics: reasoning.optics.dispersion_management_gdd (β₂ in NLSE IS GDD/L
+  managed by gratings/prisms; cross-ref is bidirectional)

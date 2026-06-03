@@ -84,3 +84,5 @@ This is the Euler-Heisenberg effective action — nonlinear optics of the vacuum
 - Born & Wolf §12 (nonlinear optics basics)
 - landau-graph: knowledge.continuous.dielectric_dispersion (linear regime)
 - landau-graph: reasoning.constitutive_relation_from_symmetry (χ⁽ⁿ⁾ tensor symmetry)
+- optics: reasoning.optics.pulse_propagation_nlse (γ from χ⁽³⁾ → Kerr coefficient
+  n₂ feeds NLSE soliton formation; bidirectional: NLSE consumes this parent)

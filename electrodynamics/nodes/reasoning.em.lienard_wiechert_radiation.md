@@ -21,6 +21,39 @@ The Liénard-Wiechert potentials give the exact EM fields of a point charge
 on an arbitrary trajectory r₀(t), evaluated at the RETARDED time t' satisfying
 t' = t − |r−r₀(t')|/c (Jackson §14, Griffiths §11).
 
+## Derivation Sketch (from retarded Green's function → LW)
+
+The retarded potentials from `landau-graph: reasoning.retarded_green_function` are
+```
+φ(r,t) = (1/4πε₀) ∫ ρ(r',t')/|r−r'| δ(t' − t + |r−r'|/c) dt' d³r'
+A(r,t) = (μ₀/4π)  ∫ J(r',t')/|r−r'| δ(t' − t + |r−r'|/c) dt' d³r'
+```
+For a point charge ρ=eδ(r'−r₀(t')), J=ev δ(r'−r₀(t')). Doing the r' integral
+collapses everything onto the trajectory; the remaining t' integral has the
+δ-function constraint t' = t − R(t')/c (implicit equation for retarded time t').
+
+**Key step — Jacobian of the δ-function**: using δ(g(t'))=δ(t'−t*)/|g'(t*)|,
+```
+g(t') = t' − t + R(t')/c,    g'(t') = 1 − (n·v)/c ≡ κ
+```
+(R is the distance from source at t' to observation point at t; dR/dt' = −n·v.)
+So the t' integral picks up a factor 1/κ, giving the LW potentials below.
+
+**Fields by implicit differentiation**: t' depends on (r,t) via t' + R(r,t')/c = t.
+Differentiate at fixed r vs at fixed t:
+```
+∂t'/∂t |_r  = 1/κ           (one more 1/κ when ∂/∂t hits [·]_ret)
+∇t' |_t      = −n/(κc)       (one more 1/κ when ∇ hits [·]_ret)
+```
+Applying E = −∇φ − ∂A/∂t with these rules and ∂κ/∂t' = ... gives the κ³ in
+the denominators below: 1/κ from the potential, ×1/κ from differentiating
+[·]_ret, ×1/κ from differentiating κ itself → 1/κ³.
+
+The (1−v²/c²) in the velocity field is the special-relativistic correction
+that converts the Coulomb-like 1/R² field into the Lorentz-boosted form of
+a uniformly moving charge — it must reduce to (1−β²)/(1−β²cos²θ_v)^{3/2} for
+uniform motion.
+
 ## Algorithm
 
 ```
@@ -29,15 +62,17 @@ t' = t − |r−r₀(t')|/c (Jackson §14, Griffiths §11).
    A(r,t)  = (μ₀e/4π) [v/(κR)]_ret
    where R = r−r₀(t'), κ = 1−n·v/c, n=R/R. [·]_ret = evaluate at t'.
 
-2. Fields from potentials (chain rule ∂/∂r → ∂/∂t'):
-   E = (e/4πε₀)[(n−v/c)(1−v²/c²)/(κ³R²)]_ret
-     + (e/4πε₀c²)[n×((n−v/c)×a)/(κ³R)]_ret
+2. Fields from potentials (using chain rule above, ∂t'/∂t=1/κ, ∇t'=−n/(κc)):
+   E = (e/4πε₀)[(n−v/c)(1−v²/c²)/(κ³R²)]_ret           ← VELOCITY field, 1/R²
+     + (e/4πε₀c²)[n×((n−v/c)×a)/(κ³R)]_ret            ← ACCELERATION field, 1/R
    B = n×E/c
 
-   First term ∝ 1/R²: VELOCITY FIELD (generalized Coulomb, no radiation).
-   Second term ∝ 1/R: ACCELERATION FIELD (radiation, energy to infinity).
+   Velocity field = boosted Coulomb (no radiation, energy bound to charge).
+   Acceleration field = radiation (energy escapes to infinity, ∝1/R).
 
-3. Radiation power Poynting: dP/dΩ = r²⟨S⟩ = (e²/16π²ε₀c³)|n×((n−v/c)×a)|²/κ⁵.
+3. Radiation power: dP/dΩ|_t' = r²⟨S⟩·κ
+                              = (e²/16π²ε₀c³)|n×((n−v/c)×a)|²/κ⁵.
+   (Extra κ in conversion dt → dt' since dt = κ dt' for emitter clock.)
 ```
 
 ## Special Cases

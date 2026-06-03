@@ -90,3 +90,6 @@ for ANY target, not just spheres.
 - Jackson §10.1-10.11
 - Born & Wolf §8.3 (Kirchhoff diffraction), §13.5 (Mie theory)
 - landau-graph: reasoning.small_parameter_expansion (ka controls approximation)
+- electrodynamics: reasoning.em.fresnel_interface_reflection_refraction
+  (specular reflection = Fresnel limit; rough surface generalizes to scattering
+  via perturbation theory — bidirectional)
