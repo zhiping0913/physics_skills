@@ -40,7 +40,9 @@ Free energy source: spatial gradients.
 | Drift wave | ∇n₀ | Universal (always unstable) | Tokamak turbulence |
 
 **Method**: Ideal MHD energy principle: δW < 0 ↔ unstable.
-δW = (1/2)∫[|Q|²/μ₀ + γp|∇·ξ|² + (ξ·∇p)(κ·ξ) − 2(ξ·∇p)(ξ·κ) + ...] dV.
+Full expression: see `knowledge.plasma.mhd_waves_stability`.
+Configuration-space instabilities are classified by the free-energy
+source term in δW (pressure gradient, current, curvature).
 
 ### Velocity-Space (Kinetic) Instabilities
 

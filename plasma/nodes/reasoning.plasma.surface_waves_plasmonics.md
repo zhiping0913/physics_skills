@@ -69,6 +69,18 @@ biosensing (shift with binding), color engineering (stained glass).
 - **Strong-field plasmonics**: field emission at sharp tips, tunnel ionization,
   optical-field electron emission, attosecond nanoplasmonics.
 
+## Edge Cases
+
+- **Interband transitions**: Noble metals (Ag, Au, Cu) have d→sp transitions
+  at visible frequencies (Ag: ∼3.8 eV, Au: ∼2.4 eV). The Drude model fails —
+  ε_p(ω) becomes complex with Re[ε_p] > −ε_d, suppressing SPP. Use measured
+  optical constants (Johnson & Christy).
+- **Nonlocal response**: For gaps < 1 nm or features < λ_F (∼0.5 nm in Au),
+  the local ε approximation fails — requires quantum treatment.
+- **Gain media**: ε_p'(ω) > 0 (pumped) → loss-compensated or amplifying SPP.
+- **Ultra-strong coupling**: Rabi splitting > 10% ω₀ → SPP dispersion
+  bifurcates into upper/lower polariton branches.
+
 ## Cross-References
 
 - Shah §2-4, Raether (1988), Maier (2007)

@@ -37,7 +37,9 @@ D = ½(R−L)    L = 1 − Σ ω_pα²/[ω(ω−ω_cα)]    (left-hand cutoff)
 P = 1 − Σ ω_pα²/ω²                             (plasma cutoff)
 ```
 
-Sum over species α (electrons, ions). ω_cα = q_α B₀/m_α (signed).
+Sum over species α (electrons, ions). **ω_cα = q_α B₀/m_α (SIGNED)** — ω_ce < 0
+for electrons. In texts using |ω_c| > 0 (Chen), R/L have opposite sign conventions.
+Both forms are equivalent; the signed version handles multi-species sums compactly.
 
 ## Algorithm: From ε to Wave Modes
 
@@ -76,7 +78,7 @@ different wave topology (number of propagating modes, resonance cones).
 | Frequency | Formula | Significance |
 |-----------|---------|-------------|
 | ω_p | √(n₀e²/ε₀m_e) | Plasma frequency — EM cutoff |
-| ω_ce | eB₀/m_e | Electron cyclotron — R-wave resonance |
+| ω_ce | |e|B₀/m_e (magnitude) | Electron cyclotron — R-wave resonance |
 | ω_UH | √(ω_p²+ω_ce²) | Upper hybrid — X-mode resonance |
 | ω_LH | √(ω_ci ω_ce) (approx) | Lower hybrid — ion dynamics |
 

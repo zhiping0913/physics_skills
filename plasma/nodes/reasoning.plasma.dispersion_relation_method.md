@@ -38,6 +38,8 @@ propagating vs evanescent, phase/group velocity, damping/growth, cutoffs/resonan
 3. FOURIER: all perturbations ∝ exp[i(k·r − ωt)].
 4. ELIMINATE: express ñ, ṽ, B̃ in terms of Ẽ using continuity, momentum, Maxwell.
 5. WAVE EQUATION: N×(N×Ẽ) + ε·Ẽ = 0  where N = ck/ω.
+   (Same form in Gaussian and SI after ε conversion; load
+   `si-gaussian-conversion` when reading Stix or Ginzburg.)
 6. DETERMINANT: det|N_i N_k − N²δ_ik + ε_ik| = 0 → D(k,ω) = 0.
 7. SOLVE: ω(k) [initial value] or k(ω) [boundary value].
 ```

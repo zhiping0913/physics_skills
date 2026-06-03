@@ -26,14 +26,17 @@ Laser light incident on plasma is reflected at the CRITICAL SURFACE where
 n_e = n_c = ε₀ m_e ω²/e². Below n_c, the laser propagates (ω > ω_p).
 Above n_c, it is evanescent. Energy is deposited via:
 
-## Three Regimes by Iλ² (Laser Plasma Handbook, Kruer)
+## Three Regimes by Iλ² (approximate — depends on Z, T_e, L_n)
 
 ```
-Iλ² < 10¹⁴ W·μm²/cm²: COLLISIONAL (inverse bremsstrahlung)
+Iλ² < 10¹⁴ W·μm²/cm²: COLLISIONAL (inverse bremsstrahlung dominant)
 10¹⁴ < Iλ² < 10¹⁶: PARAMETRIC INSTABILITIES (SRS, SBS, TPD)
 Iλ² > 10¹⁶: PONDEROMOTIVE (profile modification, hole boring)
 Iλ² > 10¹⁸: RELATIVISTIC (a₀ = eE/mωc > 1, wakefield)
 ```
+
+Boundaries are order-of-magnitude. Higher Z or lower T_e extends
+collisional regime. Shorter L_n raises parametric thresholds.
 
 ## Key Processes
 

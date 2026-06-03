@@ -28,7 +28,7 @@ turbulence (anomalous — dominant in fusion plasmas).
 From the two-fluid moment equations with collisions:
 
 ```
-η_∥ = (m_e ν_ei)/(n e²)  (Spitzer resistivity)
+η_∥ = (m_e ν_ei)/(n e²)  (Spitzer resistivity, SI: η_∥ ≈ 5.2×10⁻⁵ Z lnΛ / T_e[eV]^{3/2} Ω·m)
 χ_e∥ ≈ 3.2 n_e T_e/(m_e ν_ei)    (parallel electron thermal)
 χ_e⊥ = χ_e∥/(1+ω_ce²/ν_ei²)     (⊥ suppressed by magnetization)
 D_⊥ = η_∥ n T/B₀²                (classical particle diffusion)
