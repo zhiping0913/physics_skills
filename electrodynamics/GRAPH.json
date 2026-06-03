@@ -1,0 +1,159 @@
+{
+  "node_index": {
+    "knowledge.em.antennas": {
+      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.coherence_interference": {
+      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.crystal_optics": {
+      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.method_of_images": {
+      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.nonlinear_optics": {
+      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.scattering_mie": {
+      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.static_multipoles": {
+      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.strong_field_electrodynamics": {
+      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "knowledge.em.waveguides_cavities": {
+      "source": "electrodynamics textbooks",
+      "node_type": "knowledge"
+    },
+    "reasoning.em.antenna_radiation_pattern": {
+      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.em.green_function_poisson": {
+      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.em.helmholtz_decomposition": {
+      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.em.nonlinear_optical_response": {
+      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.em.optical_coherence": {
+      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.em.scattering_cross_section": {
+      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.em.uniqueness_theorem_boundary_value": {
+      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    },
+    "reasoning.em.waveguide_mode_decomposition": {
+      "source": "electrodynamics textbooks",
+      "node_type": "reasoning"
+    }
+  },
+  "edges": [
+    {
+      "source": "reasoning.em.antenna_radiation_pattern",
+      "target": "knowledge.em.antennas",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.optical_coherence",
+      "target": "knowledge.em.coherence_interference",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.constitutive_relation_from_symmetry",
+      "target": "knowledge.em.crystal_optics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.uniqueness_theorem_boundary_value",
+      "target": "knowledge.em.method_of_images",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.nonlinear_optical_response",
+      "target": "knowledge.em.nonlinear_optics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.scattering_cross_section",
+      "target": "knowledge.em.scattering_mie",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.green_function_poisson",
+      "target": "knowledge.em.static_multipoles",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.nonlinear_optical_response",
+      "target": "knowledge.em.strong_field_electrodynamics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.waveguide_mode_decomposition",
+      "target": "knowledge.em.waveguides_cavities",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.multipole_expansion_radiation",
+      "target": "reasoning.em.antenna_radiation_pattern",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.retarded_green_function",
+      "target": "reasoning.em.green_function_poisson",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.gauge_invariance_to_field_tensor",
+      "target": "reasoning.em.helmholtz_decomposition",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.continuous.dielectric_dispersion",
+      "target": "reasoning.em.nonlinear_optical_response",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.fluctuation_dissipation_quantum",
+      "target": "reasoning.em.optical_coherence",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.small_parameter_expansion",
+      "target": "reasoning.em.scattering_cross_section",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.equilibrium_as_extremum",
+      "target": "reasoning.em.uniqueness_theorem_boundary_value",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.normal_mode_decomposition",
+      "target": "reasoning.em.waveguide_mode_decomposition",
+      "type": "prerequisite"
+    }
+  ]
+}
