@@ -1,6 +1,14 @@
 ---
 name: electrodynamics
-description: "Electrodynamics reasoning and knowledge graph — extends landau-graph with boundary-value methods, waveguides, antennas, scattering, crystal optics, coherence theory, and nonlinear/strong-field electrodynamics from 6 standard textbooks. Builds ON landau-graph; landau-graph remains self-contained."
+description: "Electrodynamics reasoning and knowledge graph — extends landau-graph with boundary-value methods, waveguides, antennas, scattering, crystal optics, coherence theory, and nonlinear/strong-field electrodynamics from 6 standard textbooks."
+
+unit_system: SI
+unit_note: >
+  All formulas in this skill use SI units, following Jackson and Griffiths.
+  Maxwell: ∇·E=ρ/ε₀, ∇×B=μ₀J+μ₀ε₀∂E/∂t. Coulomb: F=q₁q₂/(4πε₀r²).
+  Lorentz force: F=q(E+v×B). ε₀ and μ₀ appear throughout.
+  Landau-graph (which this skill extends) uses GAUSSIAN units.
+  For conversion, load the `si-gaussian-conversion` skill.
 ---
 
 # Electrodynamics Skill Graph

@@ -1,6 +1,13 @@
 ---
+name: landau-graph
 description: "LandauGraph — reasoning-constrained skill graph distilled from Landau-Lifshitz 10-volume Course of Theoretical Physics. 97 nodes, 196 edges. 4 edge types: prerequisite, reasoning-instance, abstraction, analogy. Production graph for agent physics reasoning."
 
+unit_system: Gaussian
+unit_note: >
+  All formulas in this skill use GAUSSIAN (CGS) units, following Landau-Lifshitz.
+  Maxwell: ∇·E=4πρ, ∇×B=(4π/c)J+(1/c)∂E/∂t. Coulomb: F=q₁q₂/r².
+  Lorentz force: F=q(E+v×B/c). No ε₀ or μ₀ appears.
+  For SI conversion, load the `si-gaussian-conversion` skill.
 ---
 
 # LandauGraph — Landau-Lifshitz Reasoning Graph
