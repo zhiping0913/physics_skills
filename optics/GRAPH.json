@@ -1,171 +1,55 @@
 {
   "node_index": {
-    "knowledge.optics.aberrations_polarization": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.advanced_nonlinear_optics": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.ao_eo_devices": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.computational_methods": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.fourier_optics_data": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.fresnel_fraunhofer_regimes": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.gaussian_beam_parameters": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.laser_engineering_data": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.nonspherical_scattering": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.pulse_measurement_data": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.stimulated_scattering_engineering": {
-      "node_type": "knowledge"
-    },
-    "knowledge.optics.wave_propagation_real_media": {
-      "node_type": "knowledge"
-    },
-    "reasoning.optics.acousto_optic_interaction": {
-      "node_type": "reasoning"
-    },
-    "reasoning.optics.dispersion_management_gdd": {
-      "node_type": "reasoning"
-    },
-    "reasoning.optics.fourier_optics_transfer_function": {
-      "node_type": "reasoning"
-    },
-    "reasoning.optics.gaussian_beam_optics": {
-      "node_type": "reasoning"
-    },
-    "reasoning.optics.laser_rate_equations": {
-      "node_type": "reasoning"
-    },
-    "reasoning.optics.pulse_characterization": {
-      "node_type": "reasoning"
-    },
-    "reasoning.optics.pulse_propagation_nlse": {
-      "node_type": "reasoning"
-    },
-    "reasoning.optics.ultrashort_pulse_generation": {
-      "node_type": "reasoning"
-    }
+    "knowledge.optics.aberrations_polarization": {"node_type": "knowledge"},
+    "knowledge.optics.advanced_nonlinear_optics": {"node_type": "knowledge"},
+    "knowledge.optics.ao_eo_devices": {"node_type": "knowledge"},
+    "knowledge.optics.computational_methods": {"node_type": "knowledge"},
+    "knowledge.optics.fourier_optics_data": {"node_type": "knowledge"},
+    "knowledge.optics.fresnel_fraunhofer_regimes": {"node_type": "knowledge"},
+    "knowledge.optics.gaussian_beam_parameters": {"node_type": "knowledge"},
+    "knowledge.optics.laser_engineering_data": {"node_type": "knowledge"},
+    "knowledge.optics.nonspherical_scattering": {"node_type": "knowledge"},
+    "knowledge.optics.pulse_measurement_data": {"node_type": "knowledge"},
+    "knowledge.optics.stimulated_scattering_engineering": {"node_type": "knowledge"},
+    "knowledge.optics.wave_propagation_real_media": {"node_type": "knowledge"},
+    "reasoning.optics.acousto_optic_interaction": {"node_type": "reasoning"},
+    "reasoning.optics.dispersion_management_gdd": {"node_type": "reasoning"},
+    "reasoning.optics.fourier_optics_transfer_function": {"node_type": "reasoning"},
+    "reasoning.optics.gaussian_beam_optics": {"node_type": "reasoning"},
+    "reasoning.optics.laser_rate_equations": {"node_type": "reasoning"},
+    "reasoning.optics.pulse_characterization": {"node_type": "reasoning"},
+    "reasoning.optics.pulse_propagation_nlse": {"node_type": "reasoning"},
+    "reasoning.optics.stimulated_raman_scattering": {"node_type": "reasoning"},
+    "reasoning.optics.ultrashort_pulse_generation": {"node_type": "reasoning"}
   },
   "edges": [
-    {
-      "source": "knowledge.em.crystal_optics",
-      "target": "reasoning.optics.fourier_optics_transfer_function",
-      "type": "prerequisite"
-    },
-    {
-      "source": "reasoning.optics.fourier_optics_transfer_function",
-      "target": "knowledge.optics.aberrations_polarization",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.em.nonlinear_optical_response",
-      "target": "knowledge.optics.advanced_nonlinear_optics",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.optics.acousto_optic_interaction",
-      "target": "knowledge.optics.ao_eo_devices",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.optics.fourier_optics_transfer_function",
-      "target": "knowledge.optics.computational_methods",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.optics.fourier_optics_transfer_function",
-      "target": "knowledge.optics.fourier_optics_data",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.optics.fourier_optics_transfer_function",
-      "target": "knowledge.optics.fresnel_fraunhofer_regimes",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.optics.gaussian_beam_optics",
-      "target": "knowledge.optics.gaussian_beam_parameters",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.optics.laser_rate_equations",
-      "target": "knowledge.optics.laser_engineering_data",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "knowledge.em.scattering_mie",
-      "target": "knowledge.optics.nonspherical_scattering",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.optics.pulse_characterization",
-      "target": "knowledge.optics.pulse_measurement_data",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.em.nonlinear_optical_response",
-      "target": "knowledge.optics.stimulated_scattering_engineering",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "knowledge.continuous.dielectric_dispersion",
-      "target": "knowledge.optics.wave_propagation_real_media",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.em.nonlinear_optical_response",
-      "target": "reasoning.optics.acousto_optic_interaction",
-      "type": "prerequisite"
-    },
-    {
-      "source": "reasoning.optics.pulse_propagation_nlse",
-      "target": "reasoning.optics.dispersion_management_gdd",
-      "type": "prerequisite"
-    },
-    {
-      "source": "reasoning.em.scattering_cross_section",
-      "target": "reasoning.optics.fourier_optics_transfer_function",
-      "type": "prerequisite"
-    },
-    {
-      "source": "reasoning.normal_mode_decomposition",
-      "target": "reasoning.optics.gaussian_beam_optics",
-      "type": "prerequisite"
-    },
-    {
-      "source": "reasoning.equilibrium_as_extremum",
-      "target": "reasoning.optics.laser_rate_equations",
-      "type": "prerequisite"
-    },
-    {
-      "source": "reasoning.em.optical_coherence",
-      "target": "reasoning.optics.pulse_characterization",
-      "type": "prerequisite"
-    },
-    {
-      "source": "reasoning.em.nonlinear_optical_response",
-      "target": "reasoning.optics.pulse_propagation_nlse",
-      "type": "prerequisite"
-    },
-    {
-      "source": "reasoning.optics.laser_rate_equations",
-      "target": "reasoning.optics.ultrashort_pulse_generation",
-      "type": "prerequisite"
-    }
+    {"source": "knowledge.em.crystal_optics", "target": "reasoning.optics.fourier_optics_transfer_function", "type": "prerequisite"},
+    {"source": "reasoning.optics.fourier_optics_transfer_function", "target": "knowledge.optics.aberrations_polarization", "type": "reasoning-instance"},
+    {"source": "reasoning.em.nonlinear_optical_response", "target": "knowledge.optics.advanced_nonlinear_optics", "type": "reasoning-instance"},
+    {"source": "reasoning.optics.acousto_optic_interaction", "target": "knowledge.optics.ao_eo_devices", "type": "reasoning-instance"},
+    {"source": "reasoning.optics.fourier_optics_transfer_function", "target": "knowledge.optics.computational_methods", "type": "reasoning-instance"},
+    {"source": "reasoning.optics.fourier_optics_transfer_function", "target": "knowledge.optics.fourier_optics_data", "type": "reasoning-instance"},
+    {"source": "reasoning.optics.fourier_optics_transfer_function", "target": "knowledge.optics.fresnel_fraunhofer_regimes", "type": "reasoning-instance"},
+    {"source": "reasoning.optics.gaussian_beam_optics", "target": "knowledge.optics.gaussian_beam_parameters", "type": "reasoning-instance"},
+    {"source": "reasoning.optics.laser_rate_equations", "target": "knowledge.optics.laser_engineering_data", "type": "reasoning-instance"},
+    {"source": "knowledge.em.scattering_mie", "target": "knowledge.optics.nonspherical_scattering", "type": "reasoning-instance"},
+    {"source": "reasoning.optics.pulse_characterization", "target": "knowledge.optics.pulse_measurement_data", "type": "reasoning-instance"},
+    {"source": "reasoning.em.nonlinear_optical_response", "target": "knowledge.optics.stimulated_scattering_engineering", "type": "reasoning-instance"},
+    {"source": "knowledge.continuous.dielectric_dispersion", "target": "knowledge.optics.wave_propagation_real_media", "type": "reasoning-instance"},
+    {"source": "reasoning.em.nonlinear_optical_response", "target": "reasoning.optics.acousto_optic_interaction", "type": "prerequisite"},
+    {"source": "reasoning.optics.pulse_propagation_nlse", "target": "reasoning.optics.dispersion_management_gdd", "type": "prerequisite"},
+    {"source": "reasoning.em.scattering_cross_section", "target": "reasoning.optics.fourier_optics_transfer_function", "type": "prerequisite"},
+    {"source": "reasoning.normal_mode_decomposition", "target": "reasoning.optics.gaussian_beam_optics", "type": "prerequisite"},
+    {"source": "reasoning.equilibrium_as_extremum", "target": "reasoning.optics.laser_rate_equations", "type": "prerequisite"},
+    {"source": "reasoning.em.optical_coherence", "target": "reasoning.optics.pulse_characterization", "type": "prerequisite"},
+    {"source": "reasoning.em.nonlinear_optical_response", "target": "reasoning.optics.pulse_propagation_nlse", "type": "prerequisite"},
+    {"source": "reasoning.optics.laser_rate_equations", "target": "reasoning.optics.ultrashort_pulse_generation", "type": "prerequisite"},
+
+    {"source": "reasoning.em.nonlinear_optical_response", "target": "reasoning.optics.stimulated_raman_scattering", "type": "prerequisite"},
+    {"source": "reasoning.optics.stimulated_raman_scattering", "target": "knowledge.optics.stimulated_scattering_engineering", "type": "reasoning-instance"},
+
+    {"source": "reasoning.optics.pulse_propagation_nlse", "target": "reasoning.plasma.laser_plasma_interaction", "type": "analogy"},
+    {"source": "reasoning.optics.stimulated_raman_scattering", "target": "reasoning.plasma.laser_plasma_interaction", "type": "analogy"},
+    {"source": "reasoning.em.nonlinear_optical_response", "target": "reasoning.plasma.instability_classification", "type": "analogy"}
   ]
 }

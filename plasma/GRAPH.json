@@ -145,6 +145,10 @@
       "source": "reasoning.landau_damping",
       "target": "reasoning.plasma.wave_particle_resonance",
       "type": "prerequisite"
-    }
+    },
+
+    {"source": "reasoning.plasma.laser_plasma_interaction", "target": "reasoning.optics.pulse_propagation_nlse", "type": "analogy"},
+    {"source": "reasoning.plasma.laser_plasma_interaction", "target": "reasoning.optics.stimulated_raman_scattering", "type": "analogy"},
+    {"source": "reasoning.plasma.instability_classification", "target": "reasoning.em.nonlinear_optical_response", "type": "analogy"}
   ]
 }

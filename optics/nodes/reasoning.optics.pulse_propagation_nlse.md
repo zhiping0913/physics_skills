@@ -98,6 +98,24 @@ The tanh profile is a "dip" on a CW background. Phase jump Δφ = π at T=0.
 Gray soliton: depth parameter 0<η<1, A = √P₀ [cos φ₀ tanh(ηT/T₀)+i sin φ₀].
 NLS with defocusing supports dark solitons but NOT bright solitons.
 
+## XPM and Coupled NLSE
+
+Coupled NLSE for two polarization/frequency channels (j=1,2):
+  ∂A_j/∂z = −i(β₂j/2)∂²A_j/∂T² + iγ_j(|A_j|² + 2|A_{3−j}|²)A_j
+XPM factor 2: incoherent cross-phase modulation (energy of field 2 modulates index seen by field 1).
+
+**Plasma analog — relativistic self-focusing**: In plasma, n(I) = n₀ − n₂ I where
+n₂ = −1/(2 n₀ a₀²) is the relativistic correction (a₀ = eE/(mωc)). Same I-dependence
+as Kerr but PHYSICAL ORIGIN is mass increase, not bound-electron anharmonicity.
+Cross-ref: `plasma: reasoning.plasma.laser_plasma_interaction` (relativistic
+self-focusing, critical power P_c = 17 (n_c/n_e) GW).
+
+Also: self-steepening already in Higher-Order Effects section is fine. For the
+vector NLSE (Manakov): add one line in the existing "#Vector NLSE" edge case:
+"In fiber, polarization-averaged Manakov equation with 8/9 factor appears when
+birefringence beat length ≪ nonlinear length. Cross-ref to `reasoning.plasma.dielectric_tensor_magnetized`
+for 2×2 coupled-mode structure with plasma R/L waves."
+
 ## Higher-Order Effects (ultrashort, <100 fs)
 
 - **TOD** (β₃): asymmetric pulse distortion, oscillatory tail.
@@ -116,7 +134,10 @@ NLS with defocusing supports dark solitons but NOT bright solitons.
   Carrier-envelope phase becomes critical.
 
 - **Vector NLSE** (birefringent fiber): two coupled equations for x,y
-  polarizations with XPM term 2iγ|A_⊥|²A_∥.
+  polarizations with XPM term 2iγ|A_⊥|²A_∥. In fiber, polarization-averaged
+  Manakov equation with 8/9 factor appears when birefringence beat length
+  ≪ nonlinear length. Cross-ref to `reasoning.plasma.dielectric_tensor_magnetized`
+  for 2×2 coupled-mode structure with plasma R/L waves.
 
 ## Cross-References
 

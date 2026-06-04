@@ -115,6 +115,17 @@ from TPA-generated carriers further increases loss.
 **Four-wave mixing (FWM)**: ω₁ + ω₂ → ω₃ + ω₄. Phase conjugation when
 ω₄ = 2ω_p − ω_s (signal wave reversed).
 
+## Degenerate Four-Wave Mixing
+
+1. Source polarization at ω_4 = ω_1+ω_2−ω_3: P^(3)(ω_4) = 6 ε₀ χ⁽³⁾ E₁E₂E₃*
+   (factor 6 = 3! from χ⁽³⁾ permutations under frequency degeneracy).
+2. Coupled-amplitude eq: dA₄/dz = i(ω₄χ⁽³⁾/(2n₄c)) A₁A₂A₃* e^{−iΔkz}, Δk = k₄−k₁−k₂+k₃.
+3. Solution: parametric gain g = √[(γP)²−(Δk/2)²]; bandwidth depends on dispersion.
+4. Phase matching in fibers: near zero-GVD (β₂→0).
+5. **Plasma analog**: same 4-wave structure in Langmuir decay instability (L→L'+S)
+   and modulational instability. Cross-ref: `plasma: reasoning.plasma.instability_classification`
+   (parametric instabilities) and `reasoning.plasma.laser_plasma_interaction` (TPD/SRS).
+
 ## Manley-Rowe Relations
 
 In lossless nonlinear mixing, photon number is conserved:

@@ -120,6 +120,31 @@ strategies beyond passive grating-stretcher matching:
 - **Dazzler / AOPDF**: acousto-optic programmable dispersive filter for
   arbitrary spectral phase and amplitude control within a single device.
 
+## Higher-Order Dispersion (β₃, β₄)
+
+1. **Full expansion**: The propagation constant k(ω) expands as:
+   ```
+   k(ω) = k₀ + β₁(ω−ω₀) + (β₂/2)(ω−ω₀)² + (β₃/6)(ω−ω₀)³ + (β₄/24)(ω−ω₀)⁴ + ...
+   ```
+   Where βₙ = dⁿk/dωⁿ|ω₀. β₁=1/v_g (group delay), β₂=GVD, β₃=TOD, β₄=FOD.
+
+2. **Near zero-GVD (β₂→0)**: β₃ dominates. Asymmetric pulse distortion —
+   oscillatory tail on one side. Broadening factor for Gaussian input:
+   ```
+   Δτ/τ₀ ∝ |β₃|/τ₀³
+   ```
+   Short pulses (small τ₀) are severely affected even by modest β₃ since
+   the scaling is cubic in the inverse pulse duration.
+
+3. **TOD compensation**: Cubic-phase arrangement or programmable pulse
+   shaper (Dazzler/SLM). In CPA: design stretcher+compressor so β₂ AND β₃
+   cancel; residual β₄ limits pulse. Hybrid grating-prism setups decouple
+   β₂ and β₃ control for independent optimization.
+
+4. **Cross-ref**: `pulse_propagation_nlse` (generalized NLSE with β₃ ∂³A/∂T³
+   term; when β₃ is non-negligible the third-derivative term must be
+   included alongside β₂ ∂²A/∂T²).
+
 ## Cross-References
 
 - Siegman §9, Svelto §8.6; Trebino §3 (dispersion in pulse measurement)

@@ -82,7 +82,9 @@ Regions: r<a (inner cavity, μ₀), a<r<b (shell, μ≫μ₀), r>b (outer, μ₀
 4 unknowns from 4 BCs at r=a and r=b.
 
 For thin shell (t=b−a ≪ a) with μ ≫ μ₀:
-  B_in ≈ [9μ₀b / (4μt)] B₀   → shielding factor S = B₀/B_in ≈ 4μt/(9μ₀b)
+  B_in/B₀ ≈ 9μμ₀b/(6μ²t) = 3μ₀b/(2μt)
+  S = B₀/B_in ≈ 2μt/(3μ₀b)
+  As μ→∞: B_in→0 (perfect shielding). As μ→μ₀: B_in→B₀ (no shielding). As a→b: B_in→B₀ (zero thickness).
 Intuition: flux lines are sucked into the high-μ shell and shunted around
 the inner cavity. Higher μ and thicker shell → better shielding.
 

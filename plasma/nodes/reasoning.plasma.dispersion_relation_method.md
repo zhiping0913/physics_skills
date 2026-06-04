@@ -90,6 +90,19 @@ Further split by angle to B₀: ∥ (R/L), ⊥ (O/X), oblique.
 - **Resonance**: N→∞ (k→∞). Wave absorbed or mode-converted.
   Condition: coefficient of N⁴ vanishes. Example: ω=ω_ce (R-wave), S=0 (X-mode).
 
+## MHD Reduction from Two-Fluid
+
+Algorithm (Chen §3, Friedberg §1-2):
+1. Start from two-fluid momentum: m_e n_e dV_e/dt = −∇p_e − en_e(E + V_e×B) − m_e n_e ν_ei(V_e−V_i); same for ions.
+2. Add → single-fluid: ρ dV/dt = J×B − ∇p (ideal MHD limit).
+3. Subtract → generalized Ohm's law: E + V×B = ηJ + (1/en_e)(J×B − ∇p_e) + (m_e/e²n_e)∂J/∂t.
+4. Ordering analysis for different MHD regimes (table):
+   - Ideal MHD: η→0, Hall term negligible, electron inertia negligible → E + V×B = 0
+   - Resistive MHD: keep ηJ term → flux diffusion, reconnection
+   - Hall MHD: keep (1/ne)J×B → whistler, fast reconnection
+   - Electron MHD: keep ∂J/∂t → collisionless skin depth
+5. Cross-ref: `plasma: reasoning.plasma.mhd_equilibrium_stability`, `knowledge.plasma.mhd_waves_stability`.
+
 ## Edge Cases
 
 - **k → 0 (spatially uniform)**: D(k,ω) reduces to a pure algebraic condition

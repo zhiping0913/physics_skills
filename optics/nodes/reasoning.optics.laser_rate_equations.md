@@ -176,6 +176,20 @@ KLM: Kerr lens from n₂(I) → self-focusing → higher gain for pulsed mode.
 Stretch (τ→ns) → amplify (avoid damage) → compress (τ→fs). Grating pair
 provides positive/negative GDD. P_peak increased by 10³−10⁵×.
 
+## Frantz-Nodvik Amplifier Pass
+
+Algorithm:
+1. Short-pulse limit (τ_pulse ≪ τ_upper) → drop pumping and decay during pulse transit.
+2. Local fluence J(z) = ∫I(z,t)dt; saturation fluence J_sat = hν/σ (4-level).
+3. Inversion extraction: ∂ΔN/∂t = −(I/J_sat)ΔN → ΔN(z,+∞) = ΔN(z,−∞) exp[−J(z)/J_sat].
+4. Photon transport: dJ/dz = J_sat · ΔN₀ · (1 − e^{−J/J_sat}).
+5. Closed-form solution (separation of variables x = e^{J/J_sat}):
+   J_out = J_sat · ln[1 + (e^{J_in/J_sat} − 1) · e^{g₀ L}]
+   where g₀ = σ ΔN₀ is small-signal gain coefficient.
+6. Limits: J ≪ J_sat → J_out = J_in e^{g₀ L} (small signal); J ≫ J_sat → J_out = J_in + g₀ L J_sat (saturated extraction).
+
+Cross-ref: Siegman §10, Frantz & Nodvik (1963), `reasoning.optics.ultrashort_pulse_generation` (CPA chain).
+
 ## Edge Cases
 
 - **CW threshold vs. pulsed threshold**: Q-switched or mode-locked lasers may
