@@ -30,4 +30,4 @@ NTM: bootstrap current perturbation → seed island required.
 **ELMs** (Edge Localized Modes): peeling-ballooning instability.
 Type I (large, low f): ideal ballooning at edge, ΔW_ELM≈3-10% W_ped.
 
-- Friedberg §4-13, Chen §6, Wesson §6-7
+- Friedberg §4-13, Chen §6, [Wesson §6-7]

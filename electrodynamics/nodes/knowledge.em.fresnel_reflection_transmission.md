@@ -26,4 +26,4 @@ Frustrated TIR: second prism at d<d_p→tunneling→beam splitter.
 **Thin film**: r=(r₁₂+r₂₃e^{2iβ})/(1+r₁₂r₂₃e^{2iβ}), β=2πn₂d cosθ₂/λ.
 Antireflection: n_coat=√(n₁n₃), d=λ/4→R=0 at design λ.
 
-- Jackson §7.3, Born&Wolf §1.5, Griffiths §9.3
+- Jackson §7.3, Born & Wolf §1.5, Griffiths §9.3

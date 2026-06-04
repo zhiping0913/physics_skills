@@ -188,7 +188,7 @@ When v_hb exceeds the sound speed, the piston outruns hydro expansion
 
 ## Cross-References
 
-- Laser Plasma Handbook (1991), Kruer (1988), Gibbon (2005), Macchi (2013) §5-6
+- Handbook PP-3, Kruer, Gibbon, Macchi §5-6
 - electrodynamics: reasoning.em.nonlinear_optical_response (χ⁽³⁾ for plasma;
   parent edge — laser-plasma interaction is the plasma specialization of
   general nonlinear optics; bidirectional: the plasma χ⁽³⁾ computed here

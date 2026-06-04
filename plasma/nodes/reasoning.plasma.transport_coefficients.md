@@ -96,7 +96,7 @@ D_⊥ = η_∥ n T/B₀²                (classical particle diffusion)
 These off-diagonal terms dominate in the pedestal and divertor where
 ∇T is large and MHD equilibrium enforces specific current patterns.
 
-## Neoclassical Transport (Chen §5, Wesson §3)
+## Neoclassical Transport (Chen §5, [Wesson §3])
 
 Toroidal geometry traps particles (banana orbits) → enhanced transport:
 
@@ -165,7 +165,7 @@ Empirical scaling: τ_E ∝ I_p^α P^{−β} n^{γ} (e.g., IPB98(y,2)).
 
 ## Cross-References
 
-- Chen §5, Wesson §3, Braginskii (1965), Handbook of Plasma Physics Part 1 (Rosenbluth & Sagdeev, eds.) Vol.1 §2
+- Chen §5, [Wesson §3], Braginskii, Handbook PP-1 §2
 - landau-graph: reasoning.kinetic_equation_closure (moments + closure → transport)
 - plasma: reasoning.plasma.single_particle_drifts (GC drift velocities feed into
   Braginskii flux calculations; transport coefficients are the FLUID averaging of

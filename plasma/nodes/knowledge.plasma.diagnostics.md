@@ -39,4 +39,4 @@ I_sat=(1/2)en₀c_s A_probe. RF compensation needed in RF plasmas.
 Doppler: Δλ/λ=√(8kT_i ln2/m_i c²). Zeeman: Δλ∝B. Line ratios: coronal
 equilibrium→T_e. CXRS: fully stripped impurity + neutral beam→line emission→T_i(r).
 
-- Hutchinson (2002), entire book
+- Hutchinson (entire book)

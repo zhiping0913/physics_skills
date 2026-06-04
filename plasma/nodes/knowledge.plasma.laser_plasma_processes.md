@@ -32,4 +32,4 @@ Hole boring: v_hb/c = √(I/ρc³)/(1+√(I/ρc³)).
 Bubble regime (a₀>2): spherical cavity, self-injection, quasi-monoenergetic.
 LWFA: E∼1GeV over ∼cm. PWFA: E∼50GeV over ∼m (proton-driven).
 
-- Laser Plasma Handbook (1991), Kruer (1988), Gibbon (2005)
+- Handbook PP-3, Kruer, Gibbon
