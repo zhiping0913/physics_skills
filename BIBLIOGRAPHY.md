@@ -12,7 +12,8 @@ the canonical citation form used in node `Cross-References` sections.
 |-----------|---------------|---------|
 | Landau Vol.1 / LL1 | Landau & Lifshitz, *Механика* (Mechanics), 5th ed., 2004 | `book/2004/2004--Механика/` |
 | Landau Vol.2 / LL2 | Landau & Lifshitz, *Классическая теория поля* (Classical Theory of Fields), 8th ed., 2003 | `book/2003/2003--Классическая теория поля/` |
-| Landau Vol.3 / LL3 | Landau & Lifshitz, *Квантовая механика* (Quantum Mechanics), 4th ed., 2002 | `book/2002/2002--Квантовая механика/` |
+| Landau Vol.3 / LL3 | Landau & Lifshitz, *Квантовая механика (нерелятивистская теория)* (Quantum Mechanics), 5th ed., 2002 | `book/2002/2002--Квантовая механика (нерелятивистская теория)/` |
+| Landau Vol.4 / LL4 | Berestetskii, Lifshitz & Pitaevskii, *Квантовая электродинамика* (Quantum Electrodynamics), 4th ed., 2002 | `book/2005/2005--Квантовая электродинамика/` |
 | Landau Vol.5 / LL5 | Landau & Lifshitz, *Статистическая физика. Часть 1* (Statistical Physics I), 5th ed., 2002 | `book/2002/2002--Статистическая физика. Часть 1/` |
 | Landau Vol.6 / LL6 | Landau & Lifshitz, *Гидродинамика* (Fluid Mechanics), 5th ed., 2001 | `book/2001/2001--Гидродинамика/` |
 | Landau Vol.7 / LL7 | Landau & Lifshitz, *Теория упругости* (Theory of Elasticity), 4th ed., 2003 | `book/2003/2003--Теория упругости/` |
