@@ -4,8 +4,8 @@ type: convention
 summary_50t: >
   landau-graph uses Gaussian units, metric (+−−−), Landau's circular-pol
   naming. When citing landau-graph from downstream: convert ε₀↔1/4π (via
-  si-gaussian-conversion), flip metric signs in 4-vector contractions, and
-  check pol-handedness if relevant.
+  convention.units_systems in this skill), flip metric signs in 4-vector
+  contractions, and check pol-handedness if relevant.
 ---
 
 # Landau-graph → downstream bridge
@@ -19,7 +19,7 @@ apply when a downstream skill cites a landau-graph node.
 
 | Topic | Landau | Project (downstream) | Conversion |
 |-------|--------|----------------------|------------|
-| Units | Gaussian | SI | `si-gaussian-conversion` skill |
+| Units | Gaussian | SI | [[convention.units_systems]] (this skill) |
 | Metric | (+−−−) | (−+++) | Flip sign of every g_μν / g^μν contraction |
 | Plane wave | e^{i(k·r − ωt)} | same | — |
 | FT convention | same | same | — |
@@ -35,7 +35,7 @@ apply when a downstream skill cites a landau-graph node.
 
 A downstream node that cites a landau-graph node typically needs:
 
-1. **Restate the result in SI** (use `si-gaussian-conversion`).
+1. **Restate the result in SI** (use [[convention.units_systems]] within this skill).
 2. **Flip metric signs**: If the result is a 4-vector contraction (radiation
    4-momentum, action), flip the relevant sign.
 3. **Helmholtz Green's function**: If the result involves a Helmholtz Green's
@@ -68,4 +68,5 @@ Both reduce to the formula in `electrodynamics: reasoning.em.lienard_wiechert_ra
 step 1.
 
 **References**: Landau-Lifshitz prefaces of each volume (unit choices);
-`si-gaussian-conversion` skill; this skill (signs and normalizations).
+[[convention.units_systems]] (SI↔Gaussian conversion tables); this skill's
+other convention nodes (signs and normalizations).

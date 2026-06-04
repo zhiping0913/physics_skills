@@ -122,8 +122,11 @@ ion current. Essential for low-frequency plasma dielectric response.
    This is the fundamental MHD fluid velocity.
 
 4. ∇B DRIFT (|∇B| ≪ B/r_L, slow spatial variation):
-   v_∇B = ±½v_⟂ r_L (B×∇B)/B² = (μ/q)(B×∇B)/B².
-   ± sign: ions and electrons drift in OPPOSITE directions → current!
+   v_∇B = (μ/q) (B×∇B)/B²   with signed q (project default, Stix).
+   μ = mv_⟂²/(2B) > 0 always; sign of v_∇B inherited from sign of q.
+   Ions (q>0) and electrons (q<0) drift in OPPOSITE directions → current J_∇B.
+   (Chen's unsigned-ω_c form writes this as ±½v_⟂ r_L (B×∇B)/B² with explicit ±.
+   The two forms are equivalent.)
 
 5. CURVATURE DRIFT (field line curvature R_c, |R_c|≫r_L):
    v_c = (mv_∥²/qB²)(R_c×B)/R_c².

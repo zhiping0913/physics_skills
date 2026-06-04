@@ -12,9 +12,13 @@ reasoning_role: fresnel_coefficients
 parent: reasoning.em.waveguide_mode_decomposition
 retrieval_cost: 1
 sign_convention: >
-  r_p follows the VERDET (B-tangential) convention (E_r tangential component
-  has same sign at normal incidence). Born & Wolf uses the opposite sign
-  (E-tangential flips at normal). Both are equivalent; check before comparing.
+  r_p follows the VERDET (H-tangential) convention: at normal incidence
+  r_p(Verdet) = (n₂−n₁)/(n₂+n₁) = −r_s. Born & Wolf uses the opposite
+  E-tangential sign: r_p(B&W) = −r_p(Verdet) = (n₁−n₂)/(n₁+n₂) at normal
+  incidence. Explicit: r_p(B&W) = (n₁ cos θ_t − n₂ cos θ_i)/(n₁ cos θ_t + n₂ cos θ_i).
+  Both conventions give identical power R=|r|². The project default is Verdet
+  (per `physics-conventions: convention.fresnel_rp`). When reading B&W §1.5,
+  flip sign of r_p to compare.
 ---
 
 # reasoning.em.fresnel_interface_reflection_refraction — Boundary → r, t
@@ -89,6 +93,25 @@ either convention is fine as long as it's stated. Power R = |r|² is unambiguous
    r_p = (n₂ cos θ_i − n₁ cos θ_t) / (n₂ cos θ_i + n₁ cos θ_t)
    t_p = 2 n₁ cos θ_i / (n₂ cos θ_i + n₁ cos θ_t)
 
+3b. MAGNETIC MEDIA (μ ≠ μ₀) GENERALIZATION:
+   For interfaces with μ₁ ≠ μ₂, replace the index n_i with the wave
+   admittance/ impedance. Define normalized wave admittance Y_i:
+
+   TE (s-pol): Y_i = (k_{iz}/k₀) / μ_{ri} = n_i cos θ_i / (μ_{ri} c μ₀)
+                          ≈ n_i cos θ_i  (when μ_{ri}=1, recovers standard)
+   TM (p-pol): Z_i = (k_{iz}/k₀) / ε_{ri}  (impedance form)
+
+   Fresnel coefficients generalize to:
+   r_s = (Y₁ − Y₂)/(Y₁ + Y₂),    t_s = 2Y₁/(Y₁ + Y₂)
+   r_p = (Z₁ − Z₂)/(Z₁ + Z₂),    t_p = 2Z₁/(Z₁ + Z₂)
+
+   Normal incidence reduces to: r = (η₂−η₁)/(η₂+η₁) with η_i = √(μ_i/ε_i).
+   Snell's law unchanged: n₁ sin θ_i = n₂ sin θ_t, where n_i = c√(ε_i μ_i).
+
+   Practical note: most optics problems have μ_r≈1; magnetic contribution
+   only matters for ferrites, metamaterials, and μ-metal shielding.
+   Source: Cao §3.11; Jackson §7.3 problem extension.
+
 4. Power reflectance: R_s = |r_s|², R_p = |r_p|².
    Power transmittance: T_s = (n₂ cos θ_t/n₁ cos θ_i)|t_s|² (same for p).
 
@@ -98,8 +121,19 @@ either convention is fine as long as it's stated. Power R = |r|² is unambiguous
 6. Total internal reflection (TIR): n₁ > n₂, θ_i > θ_c = arcsin(n₂/n₁).
    cos θ_t = i √((n₁/n₂)² sin²θ_i − 1) → |r| = 1, evanescent transmitted field.
    Penetration depth into medium 2: d = 1/Im(k_z) = λ/(2π√(n₁²sin²θ_i − n₂²)).
-   Goos-Hänchen shift: Δ_∥ = −(λ/2πn₁)(dφ_r/dθ_i) where φ_r = arg(r).
-   For TIR, Δ_∥ ∼ λ (lateral shift of reflected beam). Born & Wolf §1.5.4.
+   Goos-Hänchen shift (beam displacement under TIR via stationary phase):
+   - For TIR, r_s = e^{iδ_s(θ_i)}, r_p = e^{iδ_p(θ_i)} (|r|=1, pure phase shift).
+     Phase formulas: tan(δ_s/2) = √(sin²θ_i − n²)/cos θ_i,
+                     tan(δ_p/2) = √(sin²θ_i − n²)/(n² cos θ_i)  (n=n₂/n₁).
+   - A finite beam is a wave packet: E_inc(x,z) = ∫ A(k_x) e^{i(k_x x + k_z z)} dk_x.
+   - Reflected beam: E_ref(x,z) = ∫ r(k_x) A(k_x) e^{i(k_x x − k_z z)} dk_x.
+   - Stationary phase: the reflected beam peak shifts laterally by
+     D = −(1/k₁)(dδ/dθ_i) evaluated at the central incidence angle.
+   - Explicit (approximate, for beam width ≫ λ):
+     D_s ≈ (λ/π) sin θ_i / √(sin²θ_i − n²)
+     D_p ≈ D_s / [n² − (1−n²)sin²θ_i]   (generally D_p > D_s, diverges at Brewster)
+   - Typical magnitude: few × λ for visible light at glass-air interface.
+   - Reference: Jackson §7.4, Artmann (1948), Born & Wolf §1.5.4.
 
 7. TRANSFER MATRIX FOR THIN FILMS (Born & Wolf §1.6):
    Each layer j of thickness d_j: 2×2 matrix M_j connecting (E,H)_top → (E,H)_bot.

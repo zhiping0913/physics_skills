@@ -143,6 +143,12 @@ Larmor radius (k_⊥ρ_L). Key effects:
   or it's unphysical.
 - Cold plasma is valid when k_⊥ρ_L ≪ 1 AND |ω−nω_c| ≫ k_∥v_th for all n.
 
+- **Lorentz oscillator (bound electron) generalization**: With a harmonic
+  restoring force ω₀²r added to the cold-plasma equation of motion, every
+  ω² term in the Stix parameters is replaced by ω² → ω² − ω₀². This
+  reproduces the classical Zeeman effect (R/L splitting at ω₀ ± ω_c/2)
+  and Voigt/Faraday rotation in glass with applied B. Source: Cao §6.22.
+
 ## Edge Cases
 
 - **B₀ → 0 (isotropic limit)**: cold-plasma ε reduces to isotropic ε(ω)=1−ω_p²/ω².

@@ -62,6 +62,6 @@ n_c [cm⁻³] = 1.115 × 10²¹ / λ² [μm²]
 **Gaussian**: `n_c = m_e ω² / (4π e²)`
 
 When crossing the landau-graph boundary, apply the Gaussian form using the
-conversion rules in `si-gaussian-conversion`.
+conversion rules in [[convention.units_systems]] (within this skill).
 
 **References**: Gibbon (2005), Kruer (1988), NRL Plasma Formulary.
