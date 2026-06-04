@@ -5,8 +5,12 @@ description: "Plasma physics reasoning and knowledge graph — extends landau-gr
 unit_system: SI
 unit_note: >
   All formulas in this skill use SI units, following Chen, Stix, and Ginzburg.
-  Landau-graph nodes use GAUSSIAN units. Conversion via `si-gaussian-conversion`.
+  Landau-graph nodes use GAUSSIAN units. Conversion via `physics-conventions`
+  (which absorbed `si-gaussian-conversion` and adds all project-wide conventions).
   Bidirectional edges with electrodynamics skill allowed. No edges into landau-graph.
+conventions: >
+  See `physics-conventions` for all sign / normalization / naming defaults.
+  Defaults are used silently; deviations declared in node `sign_convention` field.
 ---
 
 # Plasma Physics Skill Graph

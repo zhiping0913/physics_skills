@@ -11,11 +11,15 @@ reasoning_role: particle_drifts
 parent: reasoning.plasma.dispersion_relation_method
 retrieval_cost: 1
 sign_convention: >
-  Cyclotron frequency ω_c = |q|B/m (unsigned; often signed ω_c = qB/m with
-  sign from q — ions positive, electrons negative). See electrodynamics:
-  reasoning.plasma.dielectric_tensor_magnetized for signed convention in
-  the dielectric tensor context. E×B drift is charge-independent; ∇B and
-  curvature drifts have sign reversal for ions vs electrons.
+  Cyclotron frequency ω_c = qB/m (SIGNED, Stix convention, project default per
+  `physics-conventions: convention.charge_cyclotron`). ω_ce < 0 for electrons,
+  ω_ci > 0 for ions. All drift formulas below use the signed q, so ion and
+  electron drift directions come out automatically from the sign of q.
+  E×B drift is charge-independent (q cancels); ∇B and curvature drifts have
+  sign reversal for ions vs electrons via q in denominator.
+  Non-default alternative: some textbooks (e.g., Chen) use unsigned
+  ω_c = |q|B/m and handle signs with explicit ±. Both are equivalent;
+  the signed convention is the project standard.
 ---
 
 # reasoning.plasma.single_particle_drifts — E, B → Guiding-Center Motion
@@ -158,4 +162,4 @@ v_g = v_∥ b̂ + v_drift. This feeds directly into `plasma: reasoning.plasma.tr
   heat fluxes in Braginskii closure; bidirectional: transport relies on
   drift kinematics established here)
 - plasma: reasoning.plasma.dielectric_tensor_magnetized (ω_c sign convention
-  is handled there; drift formulas here use unsigned ω_c magnitude)
+  also follows signed Stix convention; the two nodes are now consistent)

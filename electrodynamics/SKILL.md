@@ -8,7 +8,11 @@ unit_note: >
   Maxwell: ∇·E=ρ/ε₀, ∇×B=μ₀J+μ₀ε₀∂E/∂t. Coulomb: F=q₁q₂/(4πε₀r²).
   Lorentz force: F=q(E+v×B). ε₀ and μ₀ appear throughout.
   Landau-graph (which this skill extends) uses GAUSSIAN units.
-  For conversion, load the `si-gaussian-conversion` skill.
+  For conversion, load the `physics-conventions` skill (which absorbed
+  `si-gaussian-conversion` and adds all project-wide sign/naming conventions).
+conventions: >
+  See `physics-conventions` for all sign / normalization / naming defaults.
+  Defaults are used silently; deviations declared in node `sign_convention` field.
 ---
 
 # Electrodynamics Skill Graph

@@ -5,8 +5,12 @@ description: "Optics engineering skill — extends landau-graph, electrodynamics
 unit_system: SI
 unit_note: >
   All formulas in SI units. landau-graph uses Gaussian — conversion via
-  `si-gaussian-conversion`. Bidirectional with electrodynamics and plasma OK.
+  `physics-conventions` (which absorbed `si-gaussian-conversion` and adds all
+  project-wide conventions). Bidirectional with electrodynamics and plasma OK.
   No edges into landau-graph.
+conventions: >
+  See `physics-conventions` for all sign / normalization / naming defaults.
+  Defaults are used silently; deviations declared in node `sign_convention` field.
 ---
 
 # Optics Skill Graph

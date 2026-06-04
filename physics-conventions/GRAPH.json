@@ -1,0 +1,43 @@
+{
+  "skill": "physics-conventions",
+  "node_index": {
+    "convention.time_fourier": {"node_type": "convention"},
+    "convention.metric_signature": {"node_type": "convention"},
+    "convention.units_systems": {"node_type": "convention"},
+    "convention.charge_cyclotron": {"node_type": "convention"},
+    "convention.polarization_handedness": {"node_type": "convention"},
+    "convention.green_functions": {"node_type": "convention"},
+    "convention.fresnel_rp": {"node_type": "convention"},
+    "convention.nonlinear_susceptibility": {"node_type": "convention"},
+    "convention.plasma_dispersion_function": {"node_type": "convention"},
+    "convention.plasma_parameters": {"node_type": "convention"},
+    "convention.mhd_energy_principle": {"node_type": "convention"},
+    "convention.transport_resistivity": {"node_type": "convention"},
+    "convention.pulse_phase_chirp": {"node_type": "convention"},
+    "convention.action_mechanics": {"node_type": "convention"},
+    "convention.scattering_amplitude": {"node_type": "convention"},
+    "convention.waveguide_te_tm": {"node_type": "convention"},
+    "exceptions.landau_graph_bridge": {"node_type": "convention"}
+  },
+  "edges": [
+    {"source": "convention.polarization_handedness", "target": "convention.time_fourier", "type": "depends_on"},
+    {"source": "convention.green_functions", "target": "convention.time_fourier", "type": "depends_on"},
+    {"source": "convention.green_functions", "target": "convention.units_systems", "type": "depends_on"},
+    {"source": "convention.fresnel_rp", "target": "convention.polarization_handedness", "type": "depends_on"},
+    {"source": "convention.nonlinear_susceptibility", "target": "convention.units_systems", "type": "depends_on"},
+    {"source": "convention.plasma_parameters", "target": "convention.units_systems", "type": "depends_on"},
+    {"source": "convention.plasma_parameters", "target": "convention.charge_cyclotron", "type": "depends_on"},
+    {"source": "convention.transport_resistivity", "target": "convention.charge_cyclotron", "type": "depends_on"},
+    {"source": "convention.pulse_phase_chirp", "target": "convention.time_fourier", "type": "depends_on"},
+    {"source": "convention.action_mechanics", "target": "convention.metric_signature", "type": "depends_on"},
+    {"source": "convention.scattering_amplitude", "target": "convention.green_functions", "type": "depends_on"},
+    {"source": "convention.waveguide_te_tm", "target": "convention.time_fourier", "type": "depends_on"},
+    {"source": "convention.plasma_dispersion_function", "target": "convention.time_fourier", "type": "depends_on"},
+    {"source": "convention.mhd_energy_principle", "target": "convention.metric_signature", "type": "depends_on"},
+    {"source": "convention.charge_cyclotron", "target": "convention.units_systems", "type": "depends_on"},
+    {"source": "exceptions.landau_graph_bridge", "target": "convention.units_systems", "type": "exception_of"},
+    {"source": "exceptions.landau_graph_bridge", "target": "convention.metric_signature", "type": "exception_of"},
+    {"source": "exceptions.landau_graph_bridge", "target": "convention.green_functions", "type": "exception_of"},
+    {"source": "exceptions.landau_graph_bridge", "target": "convention.polarization_handedness", "type": "exception_of"}
+  ]
+}

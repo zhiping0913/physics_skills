@@ -35,15 +35,22 @@ scattering as Fourier transform) and `landau-graph: reasoning.retarded_green_fun
 **Helmholtz-Kirchhoff Integral Theorem** (Born & Wolf §8.3):
 
 For scalar field U satisfying (∇² + k²)U = 0 in volume V, and Green's function
-G = e^{ikr}/r satisfying (∇² + k²)G = −4π δ(r−r'), Green's second identity:
+G = e^{ikr}/(4πr) satisfying (∇² + k²)G = −δ(r−r') (project default per
+`physics-conventions: convention.green_functions`), Green's second identity:
 ```
-  ∮_S [G ∂U/∂n − U ∂G/∂n] dS = ∫_V [G ∇²U − U ∇²G] dV = 4π U(P) for P∈V
-                                                 = 0       for P∉V
+  ∮_S [G ∂U/∂n − U ∂G/∂n] dS = ∫_V [G ∇²U − U ∇²G] dV = U(P)   for P∈V
+                                                 = 0          for P∉V
 ```
-Hence the Helmholtz-Kirchhoff integral:
+Note: Jackson/Gaussian uses (∇²+k²)G=−4πδ→G=e^{ikr}/r and U=(1/4π)∮[·]dS.
+Both give the same final integrand; the 1/(4π) lives inside G in our convention
+vs. outside the integral in Jackson's. The diffraction integral below is
+IDENTICAL in both conventions.
+
+Hence the Helmholtz-Kirchhoff integral (project convention):
 ```
-  U(P) = (1/4π) ∮_S [G ∂U/∂n − U ∂G/∂n] dS                 [eq.HK]
+  U(P) = ∮_S [G ∂U/∂n − U ∂G/∂n] dS                     [eq.HK]
 ```
+with the 1/(4π) absorbed in G itself.
 
 **Kirchhoff's approximation** (the lossy step — mathematically inconsistent
 but experimentally correct in the far field):
@@ -53,10 +60,11 @@ On the aperture Σ:  U = U_incident, ∂U/∂n = ∂U_inc/∂n
 On the rest of the screen S−Σ: U = 0, ∂U/∂n = 0
   (assume "screen perfectly black" — zero field in geometric shadow).
 
-Plug into [HK] with G = e^{ikr}/r, assuming observation distance r ≫ λ:
+Plug into [HK] with G = e^{ikr}/(4πr), ∂G/∂n ≈ ikG·cosθ for r≫λ:
 ```
   U(P) = −(ik/4π) ∫_Σ U₀(ξ,η) (e^{ikr}/r) (cos θ₁ + cos θ₂) dξ dη
 ```
+(The 1/4π from G combines with the ik factor to produce the familiar prefactor.)
 where θ₁ = angle between incident direction and aperture normal,
       θ₂ = angle between diffracted direction and aperture normal.
 

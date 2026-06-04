@@ -18,7 +18,7 @@ sign_convention: >
   species. When texts use |ω_c| > 0 (unsigned, e.g., Chen), R and L swap
   definitions; both are equivalent. The signed convention is used here to
   match Stix and Ginzburg. See plasma: reasoning.plasma.single_particle_drifts
-  for unsigned convention used in drift formulas.
+  for drift formulas (also uses signed convention — the two nodes are now consistent).
 retrieval_cost: 1
 references:
   - landau-graph: knowledge.kinetic.plasma_dielectric
@@ -166,7 +166,6 @@ Larmor radius (k_⊥ρ_L). Key effects:
 - Stix §1-2, Ginzburg §3-5, Chen §4
 - landau-graph: knowledge.kinetic.plasma_dielectric (warm plasma ε)
 - electrodynamics: knowledge.em.crystal_optics (same math, different physics)
-- plasma: reasoning.plasma.single_particle_drifts (ω_c sign convention: signed
-  here for dielectric tensor, unsigned in drift formulas; the E×B drift and
-  ∇B/curvature drifts determine how particles respond to the wave fields
-  described by this ε; bidirectional)
+- plasma: reasoning.plasma.single_particle_drifts (both now use signed ω_c
+  per `physics-conventions`; the E×B drift and ∇B/curvature drifts determine
+  how particles respond to the wave fields described by this ε; bidirectional)
