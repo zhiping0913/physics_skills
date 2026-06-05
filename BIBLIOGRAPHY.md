@@ -74,6 +74,13 @@ the canonical citation form used in node `Cross-References` sections.
 | Novotny & Hecht | L. Novotny & B. Hecht, *Principles of Nano-Optics*, 2nd ed., Cambridge, 2012 | `book/2012/2012--Principles of Nano-Optics (2nd Edition)/` |
 | Weiner | A. M. Weiner, *Ultrafast Optics*, Wiley, 2009 | `book/2009/2009--Ultrafast Optics/` |
 | Agrawal | G. P. Agrawal, *Nonlinear Fiber Optics*, 6th ed., Academic Press, 2019 | `book/2019/2019--Nonlinear Fiber Optics (6th Edition)/` |
+| Tai (VDA) | C.-T. Tai, *General Vector and Dyadic Analysis*, 2nd ed., IEEE Press, 1997 | `book/1997/1997--General Vector and Dyadic Analysis/` |
+| Tai (DGF) | C.-T. Tai, *Dyadic Green Functions in Electromagnetic Theory*, 2nd ed., IEEE Press, 1993 | `book/1993/1993--Dyadic Green Functions in Electromagnetic Theory (2nd Edition)/` |
+| Clemmow | P. C. Clemmow, *The Plane Wave Spectrum Representation of EM Fields*, IEEE Press, 1996 | `book/1996/1996--The Plane Wave Spectrum Representation of Electromagnetic Fields/` |
+| Felsen & Marcuvitz | L. B. Felsen & N. Marcuvitz, *Radiation and Scattering of Waves*, IEEE Press, 1994 | `book/1994/1994--Radiation and Scattering of Waves/` |
+| Hansen & Yaghjian | T. B. Hansen & A. D. Yaghjian, *Plane-Wave Theory of Time-Domain Fields*, IEEE Press, 1999 | `book/1999/1999--Plane-Wave Theory of Time-Domain Fields/` |
+| Lindell (2015) | I. V. Lindell, *Multiforms, Dyadics, and Electromagnetic Media*, IEEE Press, 2015 | `book/2015/2015--Multiforms, Dyadics, and Electromagnetic Media/` |
+| Collin (1990) | R. E. Collin, *Field Theory of Guided Waves*, 2nd ed., IEEE Press, 1990 | `book/1990/1990--Field Theory of Guided Waves (2nd Edition)/` |
 
 ## Citation Conventions
 
