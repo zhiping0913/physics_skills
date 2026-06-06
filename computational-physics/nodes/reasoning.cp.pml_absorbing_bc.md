@@ -12,6 +12,11 @@ trigger:
 reasoning_role: absorbing_boundary
 parent: reasoning.cp.fdtd_yee_algorithm
 retrieval_cost: 1
+sign_convention: >
+  Stretching: s_i(ω) = 1 + σ_i/(iωε₀) assumes e^{−iωt} time convention.
+  σ_i in S/m, ε₀ in F/m. CPML recursive convolution assumes
+  piecewise-constant field over Δt, same Δt as parent FDTD/FEM grid.
+  For frequency-domain (FEM): UPML tensors are complex symmetric.
 ---
 
 # reasoning.cp.pml_absorbing_bc — Outgoing Wave → Absorbed in PML

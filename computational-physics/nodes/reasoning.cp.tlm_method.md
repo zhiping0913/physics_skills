@@ -10,8 +10,13 @@ trigger:
   - time-domain EM simulation via circuit-network analogy
   - modeling complex boundaries, thin wires, diffusion, acoustics
 reasoning_role: tlm_network_solver
-parent: reasoning.em.waveguide_mode_decomposition
+parent: knowledge.em.transmission_lines
 retrieval_cost: 1
+sign_convention: >
+  Time step Δt = Δℓ/c (synchronized to wave speed, no CFL constraint).
+  Voltage pulses represent tangential E/H field components.
+  The scattering matrix S is unitary for lossless media (power conservation).
+  SCN: 12-port node (Johns 1987), voltage pulses V^i_k, k=1..12.
 ---
 
 # reasoning.cp.tlm_method — Space → Transmission-Line Network

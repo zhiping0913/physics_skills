@@ -10,8 +10,13 @@ trigger:
   - broadband time-domain EM simulation in inhomogeneous media
   - pulse propagation, scattering, antenna radiation, PIC field solver
 reasoning_role: time_domain_maxwell_solver
-parent: reasoning.em.helmholtz_decomposition
+parent: reasoning.em.uniqueness_theorem_boundary_value
 retrieval_cost: 1
+sign_convention: >
+  Time-harmonic e^{−iωt} when converting to frequency domain.
+  Discrete time step Δt per CFL limit. Yee grid staggering:
+  E at integer time steps, H at half-integer. Fourier convention
+  for NFFFT: E(ω) = Σ E(nΔt) e^{iω nΔt} Δt.
 ---
 
 # reasoning.cp.fdtd_yee_algorithm — ∂_t(E,B) → Discrete Leapfrog
@@ -26,7 +31,7 @@ explicit, conditionally stable scheme that preserves the divergence constraints
 
 ## Derivation Sketch
 
-From `electrodynamics: reasoning.em.helmholtz_decomposition` (Maxwell as two
+From `electrodynamics: reasoning.em.uniqueness_theorem_boundary_value` (the initial-boundary-value problem has a unique solution; FDTD provides the numerical time-marching) and Maxwell curl equations:
 first-order curl equations):
 
 Faraday:  ∂B/∂t = −∇×E − M_source

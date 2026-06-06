@@ -101,3 +101,5 @@ preconditioning or complex-shifted PML for exterior problems.
 - Zhu & Cangellaris (2006) Ch.3-5
 - Briggs, Henson & McCormick, *A Multigrid Tutorial*
 - computational-physics: reasoning.cp.finite_element_method (parent — FEM matrix)
+- mathematics-theorems: mathematics.dyadic_algebra (H(curl) discrete de Rham complex)
+- mathematics-theorems: mathematics.vector_green_identities (coarse-grid correction = Green's identity on coarser scale)

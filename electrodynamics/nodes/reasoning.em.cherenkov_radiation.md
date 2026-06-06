@@ -58,8 +58,10 @@ field exponentially localized around particle (no radiation).
 
 ### 4. Cone angle from phase matching (geometric construction)
 
-In time Δt, particle travels vΔt; light travels (c/n)Δt. The condition
-that successive wavefronts interfere constructively gives:
+In time Δt, particle travels vΔt; light travels (c/n)Δt. Spherical
+wavefronts emitted at successive positions of the particle form an envelope
+— a Mach cone in the medium. The envelope of secondary wavefronts forms a
+cone whose half-angle satisfies the geometric relation:
 cos θ_c(ω) = (c/n(ω))/v = 1/[β n(ω)]
 
 ### 5. Frank-Tamm formula (energy loss via Poynting flux)
