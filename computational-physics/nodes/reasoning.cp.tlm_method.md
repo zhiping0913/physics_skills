@@ -54,9 +54,9 @@ Equivalence condition: Δt = Δℓ/c where Δℓ is the mesh spacing and c = 1/�
       V^i_{2}(i,j) = V^s_{1}(i+1,j)    (outgoing left → incoming from right)
       V^i_{3}(i,j) = V^s_{4}(i,j−1)    (outgoing top → incoming from bottom)
       V^i_{4}(i,j) = V^s_{3}(i,j+1)    (outgoing bottom → incoming from top)
-   c. SOURCE: add incident field to V^i at source nodes.
+   c. EXCITATION: Soft source — add source pulse V_src(t) to all incident pulses V^i_k at the source node at each time step. For z-polarized E-field in 2D shunt TLM: add V_src equally to all 4 ports. Pulse shape: Gaussian derivative V_src(t) = (t−t₀)/τ exp(−(t−t₀)²/(2τ²)) for zero-DC broadband excitation. Hard source (overwrite total voltage) reflects outgoing waves — avoid unless modeling an ideal voltage generator.
    d. BOUNDARY: at PEC: reflect with −1. At PMC: reflect with +1.
-      At absorbing: impedance match → no reflection.
+      At absorbing (Absorbing Boundary): At mesh boundaries, terminate the exterior half-links with matched impedance Z_L = Z₀ (characteristic impedance of the link). Reflection coefficient Γ = (Z_L−Z₀)/(Z_L+Z₀) = 0 at matched boundary. For normal incidence this gives ~−20 dB reflection. For improved absorption, add 8-10 PML layers of TLM cells with graded loss (conductivity stubs).
    e. OUTPUT: record E_z(i,j) = ½ Σ V^i_k(i,j) at observation points.
 ```
 
@@ -65,6 +65,8 @@ Equivalence condition: Δt = Δℓ/c where Δℓ is the mesh spacing and c = 1/�
 The 2D node generalizes to 12 transmission lines per 3D node (Johns 1987).
 SCN is the standard 3D TLM cell. It models full vector Maxwell with all 6
 field components in one cell, no staggering needed.
+
+SCN scattering (Johns 1987): 12 incident pulses V^i labeled by port (direction + polarization). The scattered pulses V^s = S·V^i where S = ½ I − ... The key coupling: voltage pulses on links in the same coordinate plane are coupled through the node center. For lossless isotropic media: all reflected pulses receive ½ sum of co-planar incident pulses minus the incident pulse itself.
 
 ## Key Properties
 

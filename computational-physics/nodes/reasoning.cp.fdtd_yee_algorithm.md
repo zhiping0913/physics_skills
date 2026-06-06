@@ -71,6 +71,11 @@ Second-order accurate in both space and time. Explicit: no matrix solve.
 
 3. MATERIAL ASSIGNMENT: Assign ε_r, μ_r, σ to each cell face/edge.
 
+   Dielectric interfaces: at cell faces on a material boundary, use
+   ε_eff = (ε₁+ε₂)/2 for tangential E components. For discontinuous normal E
+   (staggered grid handles automatically via differently-weighted H-curl
+   stencils on either side of the interface).
+
 4. SOURCE INJECTION (TF/SF): Split the computational domain:
    - Total-field (TF) region: contains scatterer + incident + scattered fields.
    - Scattered-field (SF) region: only scattered fields (toward PML boundary).
@@ -103,14 +108,37 @@ Second-order accurate in both space and time. Explicit: no matrix solve.
 - **Conformal FDTD**: For curved PEC surfaces, modify the Faraday contour
   integral for partially filled cells (Dey-Mittra algorithm).
 
+## PEC BOUNDARIES
+
+On the Yee grid, set E_tan = 0 on faces coinciding with PEC. Specifically:
+for a PEC plane at x = x_0, zero out E_y and E_z on that face after each
+E-update. H components at PEC faces: do NOT force to zero (they are
+automatically tangential and emerge from the curl of adjacent E). Edge/corner:
+zero both tangential components. Total energy diagnostic:
+U = ½ Σ (ε|E|² + μ|H|²) should remain constant (σ=0, no PML); monitor to
+<0.1% drift over full simulation.
+
 ## Edge Cases
 
 - **Dispersive media**: ε(ω) not constant → use auxiliary differential equation
   (ADE) or recursive convolution. Drude, Debye, Lorentz models require extra
   time-marching equations for polarization current J_p.
+  Debye example: ε(ω) = ε_∞ + Δε/(1+iωτ). Auxiliary equation:
+  τ ∂P/∂t + P = ε₀ Δε E. Discrete: P^{n+1} = α P^n + β E^{n+½}
+  with α = (2τ−Δt)/(2τ+Δt), β = 2ε₀Δε Δt/(2τ+Δt).
+  Then D = ε₀ε_∞ E + P.
 - **Thin layers (≪ Δx)**: Use subcell models or surface impedance BC.
 - **Instability from PML**: Convolutional PML (CPML) more stable than split-field
   PML for long simulations and evanescent waves.
+
+## SUBCELL MODELS
+
+- **Thin wire** (radius a < Δx/2): Holland-Simpson model — modify the
+  surrounding H-curl coefficients with ln(Δx/a) correction to the effective
+  radius.
+- **Thin slot**: use Babinet dual with magnetic current line source.
+- **Conformal FDTD** (Dey-Mittra): for curved PEC surfaces crossing cell
+  faces, adjust the Faraday contour integral with the fractional open area.
 
 ## Cross-References
 

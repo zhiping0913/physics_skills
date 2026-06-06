@@ -78,8 +78,11 @@ reflection ~ O(10⁻³) from finite layer thickness and discretization.
    For each field component, store auxiliary convolution variables ψ_{E,xy}, etc.
    Update: E_x^{n+1} = E_x^n + (Δt/ε)[(∂H_z/∂y + ψ_{Exy}) − (∂H_y/∂z + ψ_{Exz})]
    ψ_{Exy}^{n+1} = b_y ψ_{Exy}^n + c_y (∂H_z/∂y)^{n+½}
-   b_y = e^{−(σ_y/ε₀ + α_y)Δt/ε₀},  c_y = (σ_y/(σ_y ε₀ + α_y ε₀²))(b_y − 1)
-   α_y: real pole shift for evanescent wave absorption (κ ≥ 0).
+   b_y = exp(−(σ_y + α_y)Δt/ε₀)
+   c_y = σ_y (b_y − 1) / (σ_y + α_y)
+   (With κ_y ≠ 1: b_y = exp(−(σ_y/κ_y + α_y)Δt/ε₀),
+    c_y = σ_y(b_y−1)/(κ_y(σ_y + κ_y α_y)).)
+   α_y: real pole shift for evanescent wave absorption (α_max ≈ 0.05–0.3).
 
 5. CORNER REGIONS: PML in 2+ directions simultaneously. The overlapping
    σ_x and σ_y multiply → no special corner treatment needed for UPML/CPML.

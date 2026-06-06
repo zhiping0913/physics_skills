@@ -73,16 +73,15 @@ n̂×E = 0 on Γ_PEC,   n̂×∇×E = 0 on Γ_PMC
 
 4. IMPOSE BOUNDARY CONDITIONS:
    - PEC: Zero out rows/cols for DoFs on Γ_PEC, set diagonal=1, RHS=0.
-   - Port/waveguide: Modal expansion at port surface → Robin BC.
-   - Radiation/ABC: PML layers or absorbing BC on outer boundary.
+   - PORT BC: (a) Pre-compute 2D port eigenmodes via separate FEM eigenvalue solve on the cross-section mesh. (b) At port surface Γ_p, enforce Robin BC: n̂×∇×E + γ n̂×(n̂×E) = U_inc, where γ = iβ_m for propagating mode m and U_inc is the incident modal field. (c) In the weak form, the boundary term is −∮_{Γ_p} γ (n̂×W)·(n̂×E) dS − ∮_{Γ_p} W·U_inc dS. (d) For multi-port problems, repeat per port; each port contributes independently to the system matrix and RHS.
+   - PML IN FEM: In frequency-domain FEM, PML is implemented through complex anisotropic material tensors: ε̃ = ε Λ, μ̃ = μ Λ with Λ = diag(s_y s_z/s_x, s_z s_x/s_y, s_x s_y/s_z) and s_i = 1 + σ_i/(iωε₀). These substitute directly into K and M assembly — no auxiliary variables. The resulting system is complex symmetric: use GMRES, QMR, or direct (MUMPS) solvers. Caution: CG fails for complex symmetric matrices.
 
 5. SOLVE: [K−k₀²M] {e} = {b}.
    - Direct: MUMPS, PARDISO (up to ~10⁶ unknowns)
    - Iterative: preconditioned CG/GMRES for larger problems
-   - Eigenvalue: [K]{e} = k₀²[M]{e} for resonant cavities
+   - EIGENVALUE FOR CAVITIES: Solve [K]{e} = k₀²[M]{e}. Use ARPACK shift-invert: (K − σM)⁻¹ M x = λ x with σ = (2π f_target/c)². Request 2-3× the expected number of modes in the band to filter spurious ones. The inner solve (K − σM) y = M x at each Arnoldi iteration needs a direct sparse solver. For leaky modes (with PML), eigenvalues are complex; sort by |Im(λ)|.
 
-6. POST-PROCESS: E(r) = Σ e_j N_j(r). Compute S-parameters from port
-   coefficients, far-field from near-field transform surface.
+6. POST-PROCESS: E(r) = Σ e_j N_j(r). S-PARAMETERS: Extract modal coefficients from the FEM field at each port using power orthogonality: a_m = ½ ∫_{Γ_p} (E×h_m* + e_m*×H)·n̂ dS. For port j excited: S_{ij} = b_i / a_j (all other ports matched). De-embed phase to reference plane if needed. Verify: Σ|S_{ij}|² ≤ 1 (passivity check).
 ```
 
 ## Edge Elements (Why Not Nodal?)
@@ -94,6 +93,12 @@ Nodal (scalar) elements at material interfaces force ALL E components continuous
 - Normal discontinuity allowed ✓
 - Discrete de Rham complex: grad → curl → div preserved exactly
 - No spurious modes, no need for penalty terms
+
+The discrete de Rham complex ensures Range(G) ⊆ Nullspace(K) where G is the discrete gradient (node→edge). For any nodal scalar φ, K·(G φ) = 0 exactly — gradient fields produce zero eigenvalue. Nodal elements break this: the discrete curl of a discrete gradient is non-zero, producing spurious non-zero eigenvalues in the curl-curl spectrum.
+
+## Adaptive Refinement
+
+Error indicator (residual-based): η_K = h_K ‖∇×μ⁻¹∇×E_h − k₀²εE_h − f‖_K + face jump terms ‖[n̂×μ⁻¹∇×E_h]‖_{∂K}. Mark elements where η_K > 0.5·max(η). Refine: smooth regions → p-refinement (exponential convergence); near corners/edges → h-refinement. Stop when global ‖η‖ < tolerance.
 
 ## Edge Cases
 

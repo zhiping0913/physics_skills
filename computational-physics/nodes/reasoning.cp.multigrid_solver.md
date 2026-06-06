@@ -64,7 +64,11 @@ function V_CYCLE(level ℓ, A_ℓ, b_ℓ, x_ℓ):
 ```
 
 Grid hierarchy: finest (level 0) → coarsen by factor 2 → level 1 → ... → level L
-(typically L=3-6 levels). Coarse matrices built by Galerkin: A_{ℓ+1} = R A_ℓ P.
+(typically L=3-6 levels).
+
+Cycle types: V(ν₁,ν₂) — one coarse solve per level, O(N) work. W-cycle — two coarse solves at intermediate levels, O(N log N) work, better convergence for difficult problems (indefinite Helmholtz, high aspect-ratio elements). Rule: start with V(2,2); if convergence factor >0.4, switch to W(2,2).
+
+H(curl) TRANSFER: For edge-element hierarchies on nested meshes, restriction R maps coarse-edge circulation = sum of fine-edge circulations along the same geometric path. Prolongation P = R^T (variationally consistent). For non-nested meshes: geometric agglomeration — merge fine elements into macro-elements via METIS, sum fine edge DoFs within each aggregate for coarse edges, build P from aggregation, then A_H = P^T A_h P (Galerkin).
 
 ## Curl-Curl Systems: Hiptmair Smoother
 
@@ -90,8 +94,7 @@ preconditioning or complex-shifted PML for exterior problems.
   Standard multigrid fails (coarse grid cannot represent oscillatory solutions).
   Use complex-shifted preconditioner or switch to direct solver.
 - **Strongly anisotropic mesh**: Semi-coarsening (coarsen in one direction only).
-- **Non-nested grids**: Algebraic multigrid (AMG) constructs coarse spaces
-  from matrix entries, not geometry.
+- **Non-nested grids**: AMG FOR MAXWELL (Auxiliary-space Maxwell Solver): Use auxiliary nodal (gradient) space for the nullspace correction: (a) build scalar Laplacian on nodes, (b) coarsen the nodal matrix using classical Ruge-Stüben AMG, (c) the edge-space correction combines the nodal correction (gradient component) + smoothed-aggregation edge correction (solenoidal component). Implementation: Kolev & Vassilevski, hypre/AMS.
 
 ## Cross-References
 

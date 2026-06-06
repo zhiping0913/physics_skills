@@ -55,6 +55,10 @@ Galerkin: w_m = f_m (same as basis). Point-matching: w_m = δ(r−r_m).
      f_n(r) = (ℓ_n/(2A_n^±)) (r − r_n^±)  on triangle T_n^±; 0 elsewhere.
      RWG ensures ∇_s·J continuity — no artificial surface charge.
 
+   For thin wires (radius a ≪ λ): use the reduced 1D EFIE with kernel
+   K(z,z') = e^{−ikR}/R where R = √(a²+(z−z')²). The approximate kernel
+   e^{−ik|z−z'|}/|z−z'| is valid when |z−z'| ≫ a.
+
 3. CHOOSE TESTING: Galerkin (w_m = f_m) gives symmetric matrix for PEC.
    Point-matching faster but less accurate near edges.
 
@@ -69,7 +73,12 @@ Galerkin: w_m = f_m (same as basis). Point-matching: w_m = δ(r−r_m).
 6. SOLVE: [Z][α] = [V]. For large N (>10⁴): use iterative solver (GMRES, CG)
    with MLFMA (multilevel fast multipole) for O(N log N) matrix-vector products.
 
-7. POST-PROCESS: J(s) = Σ α_n f_n(s). Far-field: E_ff(θ,φ) = −iωμ₀ (I̿−R̂R̂) · ∫ J e^{−ik·r'} dS' / (4πR). Near-field: evaluate G̿_e integral directly.
+   PRECONDITIONING: For iterative solvers, use diagonal (P = diag(Z)⁻¹)
+   for well-conditioned systems, block-diagonal for multi-scale geometries,
+   or incomplete LU for general cases. Without preconditioning, CG/GMRES
+   convergence stalls as N grows.
+
+7. POST-PROCESS: J(s) = Σ α_n f_n(s). Far-field: E_ff(θ,φ) = −iωμ₀ (I̿−R̂R̂) · ∫ J e^{−ik·r'} dS' / (4πR). Near-field: evaluate E(r_near) = iωμ₀ ∫ G̿_e(r_near,r')·J(r') dS'. Use adaptive quadrature for observation points close to the surface. For r_near within λ/2π of surface → singularity extraction + numerical integration of the regular part.
 ```
 
 ## Equation Choices

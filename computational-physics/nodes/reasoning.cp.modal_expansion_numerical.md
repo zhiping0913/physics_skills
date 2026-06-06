@@ -12,6 +12,7 @@ trigger:
 reasoning_role: mode_matching
 parent: reasoning.em.waveguide_mode_decomposition
 retrieval_cost: 1
+sign_convention: "Propagation: e^{i(βz−ωt)} (matches parent waveguide_mode_decomposition)"
 ---
 
 # reasoning.cp.modal_expansion_numerical — Cross-Section → Eigenmodes → S-Matrix
@@ -54,9 +55,16 @@ TE/TM modes in separable geometries):
 3. SORT MODES: Order by increasing k_c (or |β| for propagating modes at
    given frequency). Keep modes with |β| > β_cutoff (typically k_c < 2k₀).
 
+   DEGENERATE MODES: If multiple modes share the same k_c (e.g., circular
+   waveguide TE₀n/TM₁n, square guide TE_mn/TE_nm), the eigenvalue solver
+   returns arbitrary linear combinations. Group by |k_c,i−k_c,j| < 10⁻⁶·k_c,avg.
+   Within each degenerate group, apply symmetric Löwdin orthogonalization to
+   E_t, H_t vectors. The resulting modes are orthonormal and suitable for
+   mode matching.
+
 4. COMPUTE MODAL FIELDS:
-   TM: E_z = φ,  E_t = −(iβ/k_c²)∇_t φ,  H_t = (iωε/k_c²) ẑ×∇_t φ
-   TE: H_z = ψ,  H_t = −(iβ/k_c²)∇_t ψ,  E_t = −(iωμ/k_c²) ẑ×∇_t ψ
+   TM: E_z = φ,  E_t = +(iβ/k_c²)∇_t φ,  H_t = (iωε/k_c²) ẑ×∇_t φ
+   TE: H_z = ψ,  H_t = +(iβ/k_c²)∇_t ψ,  E_t = −(iωμ/k_c²) ẑ×∇_t ψ
 
 5. NORMALIZE: ∫ E_m × H_n* · ẑ dS = δ_{mn} (orthonormal power basis).
 
@@ -69,6 +77,10 @@ TE/TM modes in separable geometries):
 7. CASCADE: For multiple junctions, multiply GSMs using standard network
    algebra (connection of 2-ports).
 ```
+
+## Lossy Waveguides
+
+For lossy walls (finite conductivity): use impedance BC n̂×E = Z_s n̂×(n̂×H) with Z_s = (1+i)R_s. The eigenvalue problem becomes complex non-Hermitian. Conductor attenuation (perturbative, low-loss): α_c = (R_s/2Z₀) · ∮|H_tan|² dl / ∫|H_t|² dS. Dielectric attenuation: α_d = k₀ n tanδ / 2. Propagation: γ = α + iβ, fields ∝ e^{−γz}.
 
 ## Edge Cases
 
