@@ -81,7 +81,10 @@ principle for arbitrary vector sources.
    Level 1 (scalar): for ∇²φ = −ρ/ε₀ → φ = ∫ Gρ dV' + surface term
    Level 2 (vector): for (∇²+k²)E = iωμ₀J → Stratton-Chu representation
    Level 3 (dyadic): for ∇×∇×E − k²E = iωμ₀J → E = iωμ₀∫ G̿_e·J dV' + ...
-4. Evaluate surface integrals using the known BCs on S.
+4. Evaluate surface integrals using the known BCs on S:
+   4a. For radiation from aperture → Stratton-Chu with equivalent M_s, J_s.
+   4b. For cavity eigenmodes → scalar Green's identity with Dirichlet/Neumann BC.
+   4c. For scattering from PEC body → dyadic level with EFIE.
 5. Specialize: Kirchhoff diffraction = scalar level with Kirchhoff BCs;
    equivalence principle = vector level with equivalent surface currents.
 ```
@@ -103,6 +106,43 @@ principle for arbitrary vector sources.
 - **Radiation condition at infinity**: For exterior problems, the surface at
   infinity contributes zero ONLY when fields satisfy the Sommerfeld radiation
   condition (outgoing waves).
+
+## Cross-Domain Applications
+
+| Domain | Application | Green's Identity Level |
+|--------|-------------|----------------------|
+| Electrodynamics | Equivalence principle (aperture antenna) | Vector (Stratton-Chu) |
+| Electrodynamics | Method of Moments (EFIE/MFIE) | Dyadic |
+| Plasma | MHD energy principle (δW) | Scalar + Vector |
+| Plasma | Surface plasmon eigenmode from boundary integral | Vector |
+| Optics | Kirchhoff diffraction | Scalar |
+| Optics | Richards-Wolf vector diffraction | Vector |
+
+### Electrodynamics
+- **Equivalence principle (aperture antenna)**: The Stratton-Chu formula expresses
+  radiated fields from equivalent magnetic and electric surface currents M_s, J_s
+  on the aperture plane. This is the foundation of aperture antenna theory.
+- **Method of Moments (EFIE/MFIE)**: The dyadic Green's identity casts scattering
+  from PEC bodies into the Electric Field Integral Equation (EFIE) and Magnetic
+  Field Integral Equation (MFIE), discretized via MoM.
+
+### Plasma Physics
+- **MHD energy principle (δW)**: The potential energy perturbation δW in ideal
+  MHD stability analysis is formulated as a volume integral plus surface term,
+  directly leveraging Green's identities to convert differential operators into
+  boundary integrals for variational analysis.
+- **Surface plasmon eigenmode from boundary integral**: Surface plasmon
+  polariton eigenmodes at metal-dielectric interfaces are derived by applying
+  the vector Green's identity to the Helmholtz equation, yielding a boundary
+  integral eigenvalue problem whose solutions give the dispersion relation.
+
+### Optics
+- **Kirchhoff diffraction**: The scalar Green's second identity with Kirchhoff
+  boundary conditions on an aperture screen yields the Fresnel-Kirchhoff
+  diffraction integral — the fundamental scalar diffraction theory.
+- **Richards-Wolf vector diffraction**: The vector Green's identity (Stratton-Chu
+  level) applied to a high-NA focused field gives the Richards-Wolf integral,
+  capturing polarization and apodization effects beyond scalar diffraction.
 
 ## Cross-References
 

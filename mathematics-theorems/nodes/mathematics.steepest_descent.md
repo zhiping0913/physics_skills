@@ -58,6 +58,62 @@ I(λ) ~ F(z₀) e^{λ f(z₀)} √(2π / (−λ f''(z₀)))   as λ→∞
 For real integrals (stationary phase): replace √(2π/(−λf'')) with
 √(2π/(λ|f''|)) e^{±iπ/4}, the sign determined by the phase of f''.
 
+## EM Procedure: From Radiation Integral to Far-Field Pattern
+
+1. **Start from the dyadic Green's function integral**: 
+   ```
+   E(r) = iωμ₀ ∫ G̿_e(r,r')·J(r') dV'
+   ```
+
+2. **Far-zone approximation (kR ≫ 1)**: The dyadic Green's function reduces to
+   ```
+   G̿_e0 ≈ (I̿ − R̂R̂) e^{ikR}/(4πR)
+   ```
+   Extract the spherical wave factor: 
+   ```
+   E(r) = (e^{ikR}/R) F(θ,φ)
+   ```
+   where F(θ,φ) is the radiation pattern (vector far-field amplitude).
+
+3. **Radiation pattern integral**: 
+   ```
+   F(θ,φ) = ∫ J(r') e^{−ik·r'} dV'
+   ```
+   where k = k R̂ is the wave vector in the observation direction.
+
+4. **Highly oscillatory regime**: For electrically large antennas (D ≫ λ), the
+   exponential factor oscillates rapidly. Steepest descent evaluates this
+   asymptotically by deforming the integration contour into the complex plane.
+
+5. **Physical interpretation of saddle points**:
+   - **Real saddles** → geometric-optics (GO) ray directions — the dominant
+     radiation beams predicted by ray tracing.
+   - **Complex saddles** → evanescent / leaky wave contributions that decay
+     transversely but propagate along the structure.
+   - **Pole contributions** → surface waves, guided modes, and Cherenkov-like
+     radiation captured via residue evaluation when poles are crossed during
+     contour deformation.
+
+## Cross-Domain Bridges
+
+Steepest descent unifies radiation problems across wave physics. The same
+saddle-point skeleton appears in:
+
+| Domain | Integral Form | Saddle Physics |
+|--------|--------------|----------------|
+| **Antenna far-field pattern** | F(θ,φ) = ∫ J e^{−ik·r'} dV' | Saddle at θ_s = observation angle θ. The stationary-phase point in k-space picks out the ray traveling toward the observer. |
+| **Cherenkov radiation** | ∫ e^{ikR cos(θ−θ_c)} / (cos θ − 1/βn) dθ | Saddle + pole coalescence at the Cherenkov angle θ_c = arccos(1/βn). The uniform asymptotic expansion (Felsen & Marcuvitz §4.5) yields the Cherenkov cone. |
+| **Leaky wave antennas** | Sommerfeld integral with complex propagation constant k_z = β + iα | Complex saddle at arcsin(β/k₀) gives the beam direction. The imaginary part α controls beamwidth. |
+| **Plasma — whistler mode** | Anisotropic k-space integral in magnetized plasma | Multiple saddles arise from the anisotropic dispersion surface (non-spherical k-surface). Each saddle corresponds to a distinct ray direction → multi-beam radiation patterns. |
+| **Optics — Gaussian beam far-field** | Angular spectrum integral ∫ A(k_x,k_y) e^{ik_z z} dk_x dk_y | Saddle at the beam axis (k_x = k_y = 0). Paraxial approximation = Gaussian integral around this saddle. |
+
+The unifying principle: **far-field = k-space saddle point**. Any wave
+radiation problem in the far zone reduces to finding the stationary-phase
+point(s) of a spectral integral. The saddle location dictates the beam
+direction; the local curvature (f'') dictates the beamwidth; and
+saddle/pole interactions produce directional anomalies (Cherenkov cones,
+beam shifts at critical incidence, leaky wave cutoff).
+
 ## Algorithm
 
 ```

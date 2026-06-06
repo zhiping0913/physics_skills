@@ -6,7 +6,7 @@
     "mathematics.distribution_limits": {"node_type": "theorem"},
     "mathematics.airy_asymptotics": {"node_type": "theorem"},
     "mathematics.delta_4d_jacobian": {"node_type": "theorem"},
-    "mathematics.dyadic_algebra": {"node_type": "reasoning"},
+    "mathematics.dyadic_algebra": {"node_type": "knowledge"},
     "mathematics.vector_green_identities": {"node_type": "reasoning"},
     "mathematics.plane_wave_spectrum": {"node_type": "reasoning"},
     "mathematics.sommerfeld_integral": {"node_type": "reasoning"},

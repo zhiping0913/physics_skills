@@ -1,6 +1,6 @@
 ---
 skill_id: mathematics.dyadic_algebra
-type: reasoning
+type: knowledge
 summary_50t: >
   Dyadic D̿ = Σ_{i,j} D_{ij} x̂_i x̂_j. Nine components, transforms as
   D'_{mn} = Σ a_{mi} a_{nj} D_{ij}. Products: dot (D̿·F vector), cross
@@ -45,7 +45,21 @@ From `mathematics-theorems: mathematics.vector_algebra` (a vector F = Σ F_i x̂
 2. **Key distinction**: A dyad x̂_i x̂_j is ordered — x̂_i x̂_j ≠ x̂_j x̂_i.
    The transpose D̿^T has components (D̿^T)_{ij} = D_{ji}.
 
-## Algorithm — Products and Operations
+3. **Constructive pattern — when to reach for dyadics**:
+   ```
+   Given: a physical problem involving a LINEAR MAP F → G in 3D
+   Step 1: Identify the input vector (e.g., current J, field E, strain)
+           and the output vector (e.g., field E, displacement D, stress)
+   Step 2: Represent the linear operator as a dyadic D̿ such that G = D̿·F.
+           Build D̿ from symmetry, boundary conditions, or constitutive law.
+   Step 3: Select the appropriate product from the Operations catalog:
+           dot (·) for vector output, double-dot (:) for scalar invariants,
+           cross (×) for rotation-like maps.
+   Step 4: Exploit classification — if D̿ is symmetric, diagonalize via
+           eigen-dyadic; if antisymmetric, reduce to vector a via A̿ = I̿ × a.
+   ```
+
+## Operations — Product Catalog
 
 ```
 1. DOT PRODUCT (dyadic · vector → vector):
@@ -110,6 +124,25 @@ I̿ : ∇F = ∇·F
   (source and observation). Operations like ∇×G̿(r,r') require care about
   which argument is being differentiated.
 
+## Cross-Domain: When Dyadics Appear in Physics
+
+Every linear constitutive relation or linear differential operator in continuum
+physics is fundamentally a dyadic. Recognizing the dyadic structure unifies
+seemingly disparate domains:
+
+| Domain | Dyadic | Maps |
+|--------|--------|------|
+| Electrodynamics | G̿_e (dyadic Green's function) | J(r') → E(r) |
+| Plasma | ε̿ (dielectric tensor) | E → D |
+| Optics | χ̿^(n) (susceptibility tensor) | E^n → P_NL |
+| Elasticity | C̿ (stiffness tensor) | strain ε → stress σ |
+| Fluid dynamics | ∇v̿ (velocity gradient dyadic) | position → deformation rate |
+| Quantum mechanics | ρ̿ (density matrix) | state vector → ensemble average |
+
+The same dyadic algebra (dot, cross, double-dot, inverse, eigen-decomposition)
+applies across all domains — only the physical interpretation of the dyadic
+components changes.
+
 ## Cross-References
 
 - Tai, *General Vector and Dyadic Analysis* (1997) Ch.1 §1-5, §1-6, §1-7; Ch.7
@@ -118,3 +151,6 @@ I̿ : ∇F = ∇·F
 - mathematics-theorems: mathematics.vector_algebra (parent — vector operations)
 - mathematics-theorems: mathematics.vector_green_identities (scalar → vector → dyadic identities)
 - electrodynamics: reasoning.em.dyadic_green_function (applies dyadic algebra to EM)
+- plasma: plasma.dielectric_response (cold/hot plasma dielectric tensor ε̿ from Vlasov-Maxwell)
+- optics: optics.nonlinear_susceptibility (χ̿^(n) tensor symmetries and Kleinman conditions)
+- electrodynamics: knowledge.em.crystal_optics (anisotropic ε̿ and wave propagation)

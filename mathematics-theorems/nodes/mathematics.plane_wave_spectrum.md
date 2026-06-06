@@ -73,12 +73,33 @@ The angular spread: Δθ ≈ λ/(πw₀). Narrow waist → broad angular spectru
 
 ## Algorithm
 
+Concrete procedure — plane wave spectrum computation, propagation, and field reconstruction:
+
 ```
-1. Known field on aperture plane (z=0): E_a(x,y,0).
-2. Compute angular spectrum: A(k_x,k_y) = (1/4π²)∬ E_a e^{−ik_x x−ik_y y}dx dy.
-3. Propagate to any z ≥ 0: multiply by e^{i k_z z}.
-4. Far-field (z→∞): stationary phase evaluation → E(θ,φ) ∝ A(k_x,k_y)·(polarization).
-5. Inverse: field at any (x,y,z) = ∬ A e^{i(k_x x + k_y y + k_z z)} dk_x dk_y.
+INPUT:    Aperture field distribution E(x,y,0) on plane z=0.
+          Wavenumber k = ω/c = 2π/λ.
+
+STEP 1 — FOURIER TRANSFORM:
+          A(k_x,k_y) = (1/4π²) ∬ E(x,y,0) e^{−i(k_x x + k_y y)} dx dy
+          This is the plane wave spectrum (angular spectrum).
+
+STEP 2 — CLASSIFY each spectral component:
+          k_ρ = √(k_x² + k_y²)
+          IF k_ρ ≤ k:  k_z = +√(k² − k_ρ²)       REAL → propagating (far-field)
+          IF k_ρ > k:  k_z = +i√(k_ρ² − k²)      IMAGINARY → evanescent (near-field only)
+
+STEP 3 — PROPAGATE to any z ≥ 0:
+          Multiply each spectral component by the propagator e^{i k_z z}.
+          A(k_x,k_y; z) = A(k_x,k_y) · e^{i k_z z}
+
+STEP 4 — FAR-FIELD (Fraunhofer, z → ∞):
+          Stationary phase evaluation collapses the inverse transform to
+          E_ff(θ,φ) ∝ A(k sin θ cos φ, k sin θ sin φ)
+          Only the k_ρ ≤ k (propagating) spectrum contributes.
+
+STEP 5 — INVERSE (reconstruct field at any (x,y,z)):
+          E(x,y,z) = ∬ A(k_x,k_y) e^{i(k_x x + k_y y + k_z z)} dk_x dk_y
+          Numerical implementation: 2D IFFT of A(k_x,k_y; z).
 ```
 
 ## Applications
@@ -98,6 +119,17 @@ The angular spread: Δθ ≈ λ/(πw₀). Narrow waist → broad angular spectru
 - **Vector nature**: For EM fields, the spectrum must satisfy k·A = 0
   (divergence-free in source-free region). TE and TM decomposition in the
   spectral domain: A = A_TE (ê_TE) + A_TM (ê_TM).
+
+## Cross-Domain Bridges
+
+The plane wave spectrum connects into multiple domains — here is how it bridges:
+
+| Domain | Bridge via PWS |
+|--------|---------------|
+| **Antenna NFFFT** | Near-field measurements → 2D FT → angular spectrum A(k_x,k_y) → far-field radiation pattern. Core of planar near-field far-field transform (NFFFT) scanners. |
+| **Plasma** | In magnetized plasma, k_z depends on the anisotropic permittivity tensor ε̿. Each plane wave component sees a different refractive index depending on propagation direction relative to B₀ — PWS enables mode-by-mode field structure analysis. |
+| **Optics** | Gaussian beam propagation: A(k_x,k_y) is itself a Gaussian → the beam remains Gaussian at all z (paraxial). A thin lens imparts a quadratic phase e^{−ik(x²+y²)/(2f)}, which in the spectrum domain is convolution — the lens acts as a Fourier transformer (Goodman, *Introduction to Fourier Optics*). |
+| **SPP (Surface Plasmon Polariton)** | The evanescent spectrum (k_ρ > k) encodes sub-wavelength surface wave information. SPP dispersion lies beyond the light line — direct far-field observation is impossible; prism or grating coupling recovers the evanescent plane wave components. |
 
 ## Cross-References
 

@@ -87,6 +87,11 @@ singularity enables accelerated MoM computations.
 ```
 1. Given the geometry and BCs, determine the dyadic wave equation for G̿_e.
 2. If free-space: G̿_e0 = (I̿ + ∇∇/k²) G₀ (closed form).
+      **Caveat**: If the medium is anisotropic (e.g., ε̿ tensor, magnetized plasma):
+      the free-space decomposition G̿_e0 = (I̿+∇∇/k²)G₀ FAILS. Use the
+      spectral-domain method: Fourier transform in transverse plane, solve
+      the 4×4 system for each k_ρ, inverse FT. Cross-ref:
+      `plasma.dielectric_tensor_magnetized`.
 3. If bounded (cavity/waveguide/layered):
    a. Decompose: G̿_e = G̿_e0 (free-space part) + G̿_es (scattering part).
    b. Construct G̿_es to satisfy BCs using eigenfunction expansion or
@@ -116,6 +121,16 @@ singularity enables accelerated MoM computations.
 - **Low frequency (k→0)**: G̿_e0 ~ (I̿−3R̂R̂)/(4πk²R³) singularly diverges.
   Use low-frequency decomposition (Helmholtz decomposition into irrotational
   + solenoidal parts).
+
+## Cross-Domain Bridges
+
+| Domain | Dyadic G̿ | Key Application |
+|--------|-----------|-----------------|
+| Antenna/MoM | G̿_e (free-space or layered) | EFIE: E = iωμ₀∫G̿_e·J dV' → [Z][I]=[V] |
+| Cavity/waveguide | G̿_e1 (1st kind, Dirichlet) | Resonator eigenmodes, coupling coefficients |
+| Plasma (anisotropic) | ε⁻¹ in dyadic wave equation | Magnetized plasma has ε̿ anisotropic → G̿_e not (I̿+∇∇/k²)G₀ |
+| Optics (layered) | G̿_e via Sommerfeld integrals | SPP Green's function, dipole emission near interface |
+| Plasmonics | Spectral G̿_e(k_ρ) | Purcell factor, LDOS from Im[G̿_e] |
 
 ## Cross-References
 
