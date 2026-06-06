@@ -1,0 +1,106 @@
+---
+skill_id: reasoning.cp.moment_method
+type: reasoning
+summary_50t: >
+  Lu=f → expand u=Σα_n u_n, test with w_m → [Z][α]=[V].
+  Basis functions: pulse, triangle, RWG. Testing: point-matching, Galerkin.
+  EFIE for PEC: n̂×E_scat = −n̂×E_inc. MFIE alternate. Matrix fill cost
+  O(N²); FMM reduces to O(N log N). Condition number ∝ 1/(Δx).
+trigger:
+  - solving EM scattering/radiation from arbitrary conductor/dielectric bodies
+  - integral equation formulation for antenna, RCS, EMC problems
+reasoning_role: integral_equation_solver
+parent: reasoning.em.dyadic_green_function
+retrieval_cost: 1
+---
+
+# reasoning.cp.moment_method — L u = f → [Z][α] = [V]
+
+## Core Picture
+
+The Method of Moments converts a linear operator equation L u = f (integral or
+differential) into a matrix equation by expanding the unknown u in basis functions
+and testing with weight functions. In CEM, L is the electric/magnetic field integral
+equation, u is the surface current, and f is the incident field.
+
+## Derivation Sketch
+
+From `electrodynamics: reasoning.em.dyadic_green_function` (dyadic G̿_e maps
+source J to field E), the EFIE for a PEC scatterer:
+
+```
+n̂ × E_inc(r) = −n̂ × [iωμ₀ ∫_S G̿_e(r,r') · J(r') dS']   for r on S
+```
+
+This is L J = f with L being the integral operator. The MoM discretizes it:
+
+1. **Expand**: J(r) ≈ Σ_{n=1}^N α_n f_n(r)  where {f_n} are basis functions
+   defined on the mesh (pulse, RWG, rooftop).
+2. **Test**: Take inner product with weight functions {w_m}:
+   ⟨w_m, L J⟩ = ⟨w_m, f⟩ → Σ_n α_n ⟨w_m, L f_n⟩ = ⟨w_m, f⟩
+3. **Matrix**: Z_{mn} = ⟨w_m, L f_n⟩,  V_m = ⟨w_m, f_inc⟩.
+4. **Solve**: [Z][α] = [V] → α = Z⁻¹ V. Typically O(N³) direct or O(N²) iterative.
+
+Galerkin: w_m = f_m (same as basis). Point-matching: w_m = δ(r−r_m).
+
+## Algorithm — Given Geometry → Matrix → Current → Field
+
+```
+1. MESH: Discretize surface S into N patches/elements (triangles for 3D,
+   segments for wires). Record node coordinates, connectivity, edge lengths.
+
+2. CHOOSE BASIS: Select basis functions {f_n} defined on the mesh.
+   - Wire: pulse, triangle, piecewise sinusoid
+   - Surface (3D PEC): RWG (Rao-Wilton-Glisson) — each edge n:
+     f_n(r) = (ℓ_n/(2A_n^±)) (r − r_n^±)  on triangle T_n^±; 0 elsewhere.
+     RWG ensures ∇_s·J continuity — no artificial surface charge.
+
+3. CHOOSE TESTING: Galerkin (w_m = f_m) gives symmetric matrix for PEC.
+   Point-matching faster but less accurate near edges.
+
+4. FILL Z-MATRIX: For each m,n:
+   Z_{mn} = iωμ₀ ∫_{S_m} f_m(r) · [∫_{S_n} G̿_e(r,r') · f_n(r') dS'] dS
+          + (1/iωε₀) ∫_{S_m} (∇_s·f_m)(r) [∫_{S_n} G₀(r,r') (∇'_s·f_n)(r') dS'] dS
+   The second term (scalar potential) handles the ∇∇/k² part of G̿_e.
+   Cost: O(N²). Singularity when m=n → analytical extraction of 1/R singularity.
+
+5. FILL EXCITATION: V_m = ∫_{S_m} f_m(r) · E_inc(r) dS.
+
+6. SOLVE: [Z][α] = [V]. For large N (>10⁴): use iterative solver (GMRES, CG)
+   with MLFMA (multilevel fast multipole) for O(N log N) matrix-vector products.
+
+7. POST-PROCESS: J(s) = Σ α_n f_n(s). Far-field: E_ff(θ,φ) = −iωμ₀ (I̿−R̂R̂) · ∫ J e^{−ik·r'} dS' / (4πR). Near-field: evaluate G̿_e integral directly.
+```
+
+## Equation Choices
+
+| Problem | Equation | Kernel | Unknown | Notes |
+|---------|----------|--------|---------|-------|
+| PEC scatterer | EFIE | G̿_e | J_s | Valid for closed AND open surfaces |
+| PEC scatterer (closed) | MFIE | n̂×G̿_m | J_s | Better conditioned for large smooth bodies |
+| PEC (closed, resonance) | CFIE = α EFIE + (1−α)η MFIE | — | J_s | Removes interior resonance problem |
+| Dielectric body | PMCHWT | G̿_e + G̿_m | J_s, M_s | Both electric and magnetic currents |
+| Thin wire | Reduced EFIE | G₀ (scalar) | I(z) | 1D integral; use thin-wire kernel |
+
+## For the Plasma Physicist: MoM ↔ PIC
+
+MoM solves the frequency-domain integral equation for currents on surfaces —
+the complement to time-domain PIC which tracks particles in volume. Plasma
+applications: antenna coupling to plasma, RF heating launcher design, SPP
+scattering from nanoparticles. Cross-ref: `plasma: reasoning.plasma.laser_plasma_interaction`.
+
+## Edge Cases
+
+- **Interior resonance**: EFIE fails at frequencies where a closed cavity of
+  the same shape would resonate (k = k_cavity). Fix: CFIE.
+- **Low frequency (k→0)**: EFIE matrix becomes ill-conditioned (∇·J term
+  dominates). Use loop-star or loop-tree decomposition.
+- **Thin layer**: when thickness ≪ λ, use impedance BC instead of volumetric MoM.
+
+## Cross-References
+
+- Harrington, *Field Computation by Moment Methods* (1993) Ch.1-4
+- Peterson, Ray & Mittra (1997) Ch.3-10
+- electrodynamics: reasoning.em.dyadic_green_function (parent — G̿_e is the EFIE kernel)
+- mathematics-theorems: mathematics.dyadic_algebra (RWG basis → dyadic products)
+- mathematics-theorems: mathematics.vector_green_identities (EFIE from dyadic Green's identity)
