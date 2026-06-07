@@ -1,0 +1,59 @@
+{
+  "skill": "ultrafast-optics",
+  "node_index": {
+    "reasoning.uo.pulse_propagation_linear": {
+      "node_type": "reasoning"
+    },
+    "reasoning.uo.pulse_propagation_nlse_higher_order": {
+      "node_type": "reasoning"
+    },
+    "reasoning.uo.dispersion_compensation": {
+      "node_type": "reasoning"
+    },
+    "knowledge.uo.dispersion_data": {
+      "node_type": "knowledge"
+    }
+  },
+  "edges": [
+    {
+      "source": "reasoning.uo.pulse_propagation_linear",
+      "target": "reasoning.optics.pulse_propagation_nlse",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.pulse_propagation_nlse_higher_order",
+      "target": "reasoning.optics.pulse_propagation_nlse",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.dispersion_compensation",
+      "target": "reasoning.uo.pulse_propagation_linear",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.uo.dispersion_data",
+      "target": "reasoning.uo.pulse_propagation_linear",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "knowledge.uo.dispersion_data",
+      "target": "reasoning.uo.dispersion_compensation",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.uo.pulse_propagation_nlse_higher_order",
+      "target": "reasoning.uo.pulse_propagation_linear",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.pulse_propagation_nlse_higher_order",
+      "target": "reasoning.em.nonlinear_optical_response",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.pulse_propagation_nlse_higher_order",
+      "target": "reasoning.plasma.laser_plasma_interaction",
+      "type": "analogy"
+    }
+  ]
+}
