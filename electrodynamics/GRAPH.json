@@ -387,6 +387,16 @@
       "source": "knowledge.em.transmission_lines",
       "target": "knowledge.em.waveguides_cavities",
       "type": "analogy"
+    },
+    {
+      "source": "reasoning.em.nonlinear_optical_response",
+      "target": "mathematics.noether_selection_rules",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.em.oam_beams",
+      "target": "mathematics.noether_selection_rules",
+      "type": "prerequisite"
     }
   ]
 }

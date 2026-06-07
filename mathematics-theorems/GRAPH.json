@@ -36,6 +36,9 @@
     },
     "mathematics.geometric_phase": {
       "node_type": "reasoning"
+    },
+    "mathematics.noether_selection_rules": {
+      "node_type": "reasoning"
     }
   },
   "edges": [
@@ -108,6 +111,26 @@
       "source": "mathematics.geometric_phase",
       "target": "mathematics.steepest_descent",
       "type": "analogy"
+    },
+    {
+      "source": "mathematics.noether_selection_rules",
+      "target": "mathematics.geometric_phase",
+      "type": "analogy"
+    },
+    {
+      "source": "mathematics.noether_selection_rules",
+      "target": "reasoning.em.nonlinear_optical_response",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "mathematics.noether_selection_rules",
+      "target": "knowledge.em.oam_beams",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "mathematics.noether_selection_rules",
+      "target": "mathematics.distribution_limits",
+      "type": "prerequisite"
     }
   ],
   "_note": "mathematics.vector_algebra, mathematics.fourier_transform, mathematics.complex_analysis are external undergraduate prerequisites \u2014 not distilled as nodes."
