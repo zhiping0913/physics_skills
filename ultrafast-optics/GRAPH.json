@@ -30,6 +30,42 @@
     },
     "knowledge.uo.pulse_measurement_techniques": {
       "node_type": "knowledge"
+    },
+    "reasoning.uo.chirped_pulse_amplification": {
+      "node_type": "reasoning"
+    },
+    "reasoning.uo.opcpa": {
+      "node_type": "reasoning"
+    },
+    "knowledge.uo.ultrafast_amplifier_data": {
+      "node_type": "knowledge"
+    },
+    "reasoning.uo.pulse_shaping_fourier": {
+      "node_type": "reasoning"
+    },
+    "knowledge.uo.ultrafast_gain_media": {
+      "node_type": "knowledge"
+    },
+    "reasoning.uo.carrier_envelope_phase": {
+      "node_type": "reasoning"
+    },
+    "reasoning.uo.frequency_comb": {
+      "node_type": "reasoning"
+    },
+    "knowledge.uo.frequency_comb_systems": {
+      "node_type": "knowledge"
+    },
+    "reasoning.uo.attosecond_pulse_generation": {
+      "node_type": "reasoning"
+    },
+    "knowledge.uo.attosecond_physics_data": {
+      "node_type": "knowledge"
+    },
+    "reasoning.uo.ultrafast_spectroscopy": {
+      "node_type": "reasoning"
+    },
+    "knowledge.uo.ultrafast_spectroscopy_methods": {
+      "node_type": "knowledge"
     }
   },
   "edges": [
@@ -131,6 +167,91 @@
     {
       "source": "reasoning.uo.pulse_characterization_frog",
       "target": "reasoning.uo.dispersion_compensation",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.uo.chirped_pulse_amplification",
+      "target": "reasoning.uo.dispersion_compensation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.opcpa",
+      "target": "reasoning.uo.chirped_pulse_amplification",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.uo.opcpa",
+      "target": "reasoning.em.nonlinear_optical_response",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.uo.ultrafast_amplifier_data",
+      "target": "reasoning.uo.chirped_pulse_amplification",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.uo.pulse_shaping_fourier",
+      "target": "reasoning.uo.pulse_propagation_linear",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.pulse_shaping_fourier",
+      "target": "reasoning.uo.dispersion_compensation",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "knowledge.uo.ultrafast_gain_media",
+      "target": "reasoning.uo.mode_locking_passive",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.uo.carrier_envelope_phase",
+      "target": "reasoning.uo.mode_locking_passive",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.frequency_comb",
+      "target": "reasoning.uo.carrier_envelope_phase",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.uo.frequency_comb_systems",
+      "target": "reasoning.uo.frequency_comb",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.uo.attosecond_pulse_generation",
+      "target": "reasoning.uo.carrier_envelope_phase",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.attosecond_pulse_generation",
+      "target": "reasoning.em.nonlinear_optical_response",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.attosecond_pulse_generation",
+      "target": "reasoning.plasma.laser_plasma_interaction",
+      "type": "analogy"
+    },
+    {
+      "source": "knowledge.uo.attosecond_physics_data",
+      "target": "reasoning.uo.attosecond_pulse_generation",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.uo.ultrafast_spectroscopy",
+      "target": "reasoning.em.optical_coherence",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.ultrafast_spectroscopy",
+      "target": "reasoning.uo.pulse_characterization_frog",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.uo.ultrafast_spectroscopy_methods",
+      "target": "reasoning.uo.ultrafast_spectroscopy",
       "type": "reasoning-instance"
     }
   ]
