@@ -5,7 +5,9 @@ summary_50t: >
   ∇×∇×G̿_e − k²G̿_e = I̿δ(r−r'). Free-space: G̿_e0 = (I̿ + ∇∇/k²) G₀
   where G₀ = e^{ikR}/(4πR). Classification: 1st kind (Dirichlet),
   2nd kind (Neumann), 3rd kind (mixed/interface). Eigenfunction expansion:
-  G̿_e = −(1/k²)n̂n̂ δ(R−R') + Σ (solenoidal series). G̿_m = ∇×G̿_e solenoidal.
+  complete L,M,N triad with L=∇ψ irrotational. Source-region singularity
+  unified treatment: PV method with L̿ depolarization dyadic, spectral
+  representation ΣL_nL_n*, equivalence tr(L̿)=1, cross-domain applications.
 trigger:
   - constructing EM field from arbitrary current sources
   - integral equation formulation (EFIE/MFIE), Method of Moments
@@ -64,16 +66,44 @@ Key identity: G̿_e0 is NOT solenoidal — ∇·G̿_e0 = −(1/k²)∇δ(r−r')
 For each kind: G̿_e = G̿_e0 + G̿_es where G̿_es is the scattering part
 (homogeneous solution that satisfies the BC).
 
-### 4. Eigenfunction Expansion — The Singular Term
+### 4. Eigenfunction Expansion — The Complete L,M,N Triad
 
-Expand G̿_e in solenoidal (∇·=0) eigenfunctions {M_n, N_n} of ∇×∇×:
+Expand G̿_e in the complete orthonormal vector eigenfunctions {L_n, M_n, N_n}
+of ∇×∇×, where L_n are IRROTATIONAL (∇×L_n=0, k-INDEPENDENT), while M_n, N_n
+are SOLENOIDAL (∇·=0):
+
+```
+L_n = ∇ψ_n               (irrotational: ∇×L_n=0, ∇·L_n≠0)
+M_n = ∇×[c_n ψ_n]        (solenoidal: ∇·M_n=0)
+N_n = (1/k_n) ∇×M_n      (solenoidal, k_n eigenvalue of ∇×∇×)
+```
+
+where ψ_n satisfies the scalar Helmholtz equation (∇² + k_n²)ψ_n = 0, and c_n
+is a piloting vector (often r or a constant unit vector) chosen to satisfy BCs.
+
+The OHM-RAYLEIGH method: for source-free region, ∇×∇×E − k²E = 0, the solenoidal
+part is spanned by {M_n,N_n}. But dyadic completeness demands including L_n:
+
+```
+I̿ δ(r−r') = Σ_n [L_n(r)L_n*(r') + M_n(r)M_n*(r') + N_n(r)N_n*(r')]
+```
+
+This is the DYADIC DIRAC DELTA IDENTITY. Applying ∇×∇× − k² to the Green's
+dyadic expansion and using the eigenrelations ∇×∇×{M_n,N_n} = k_n²{M_n,N_n}:
+
 ```
 G̿_e(r,r') = Σ_n [M_n(r)M_n*(r') + N_n(r)N_n*(r')] / (k² − k_n²)
 ```
-Including the IRROTATIONAL modes (L_n = ∇φ_n/k_n) reveals the critical term:
+
+Now the critical contribution from L_n: since ∇×∇×L_n = 0, the L_n term
+solves ∇×∇×G̿_e = 0 in the eigenfunction expansion, but the DYADIC DELTA
+IDENTITY forces its inclusion. Operating ∇×∇× − k² on the full expansion
+(including L_n with eigenvalue 0 for ∇×∇×) gives:
+
 ```
 G̿_e(r,r') = −(1/k²) n̂n̂ δ(R−R') + Σ_n (solenoidal expansion)
 ```
+
 The δ-term — the SINGULARITY EXTRACTION — is UNIVERSAL for all geometries.
 It originates from the discontinuity of G̿_m = ∇×G̿_e across the source, and
 is essential for correct near-field evaluation in Method of Moments.
@@ -81,6 +111,126 @@ is essential for correct near-field evaluation in Method of Moments.
 Why this matters: numerically, the eigenfunction series converges slowly
 near r=r'. Extracting the δ-term and the closed-form G̿_e0 near-field
 singularity enables accelerated MoM computations.
+
+## Source-Region Singularity — Unified Treatment
+
+### 5.1 Statement
+
+Near the source point r≈r', G̿_e is a DISTRIBUTION, not a smooth function.
+Its singular part is regularization-dependent: different exclusion volumes
+(spherical, ellipsoidal, slab) produce different finite δ-term coefficients.
+The general form (Chew §7.1):
+
+```
+G̿_e(r,r') = P.V. G̿_e(r,r') − (1/k²) L̿ δ(r−r')
+```
+
+where P.V. is the principal value defined by the chosen exclusion shape,
+and L̿ is the DEPOLARIZATION DYADIC that encodes the shape's aspect ratios.
+The physical field must be independent of the regularization — the
+regularization-dependent L̿ precisely cancels the regularization-dependent
+P.V. integral, yielding a unique total field.
+
+### 5.2 Spatial Representation — PV Method (Chew §7.1.2)
+
+The depolarization dyadic L̿ emerges from excluding an infinitesimal
+ellipsoid centered at r=r'. For a general ellipsoid with semi-axes
+(a,b,c) aligned along (x̂,ŷ,ẑ):
+
+```
+L̿ = L₁ x̂x̂ + L₂ ŷŷ + L₃ ẑẑ
+```
+
+where the DEPOLARIZATION FACTORS L_i are given by the elliptic integral:
+
+```
+L_i = (a b c / 2) ∫₀^∞ ds / [(s + s_i²) √((s+a²)(s+b²)(s+c²))]
+```
+
+with s₁=a², s₂=b², s₃=c². They satisfy the SUM RULE:
+
+```
+L₁ + L₂ + L₃ = 1   →   tr(L̿) = 1
+```
+
+**Special cases (all satisfy tr(L̿)=1):**
+
+| Shape | Axes ratio | L̿ | Notes |
+|-------|-----------|-----|-------|
+| Sphere | a=b=c | L̿ = I̿/3 | Isotropic, each L_i=1/3 |
+| Thin disk (⟂ ẑ) | a=b≫c | L̿ = ẑẑ | L₁≈0, L₂≈0, L₃≈1 |
+| Needle (∥ x̂) | a≫b=c | L̿ = (ŷŷ+ẑẑ)/2 | L₁≈0, L₂=L₃≈1/2 |
+| Slab (infinite in xy) | a,b→∞, c finite | L̿ varies | Depends on aspect ratio |
+
+**Physical interpretation:** L̿ is the depolarization dyadic of a dielectric
+ellipsoid of the same shape in electrostatics. The excluded volume's shape
+determines how the singular self-field projects onto different directions.
+
+### 5.3 Spectral Representation (Chew §7.3)
+
+In the eigenfunction basis, the singular term arises from the IRROTATIONAL
+(L) modes. Since ∇×L_n = 0, these modes have eigenvalue ZERO for ∇×∇×,
+and in the dyadic Green's function expansion they contribute:
+
+```
+−(1/k²) Σ_n L_n(r) L_n*(r') = −(1/k²) n̂n̂ δ(r−r')
+```
+
+Key properties of L modes:
+```
+∇×L_n = 0           (irrotational — NO magnetic field coupling)
+∇·L_n ≠ 0           (carries the longitudinal field)
+L_n = ∇ψ_n          (gradient of scalar Helmholtz eigenfunction)
+k-INDEPENDENT       (mode shape independent of wavenumber k)
+```
+
+The dyad n̂n̂ is the DIRECTION OF INTEGRATION ORDER: if the eigenfunction
+sum is performed as a triple sum (e.g., in m,n,l indices for a rectangular
+cavity), the order of summation determines n̂. For a SPHERICAL cavity sum
+(r,θ,φ → summed radially last), n̂ = r̂ and n̂n̂ = r̂r̂.
+
+**Connection to L̿:** In a cavity shaped to match the excluded volume
+of the PV method, Σ L_n L_n* yields exactly L̿ δ(r−r').
+
+### 5.4 Equivalence of Spatial and Spectral (Chew §7.1.4)
+
+Both representations describe the SAME physics — the source-region
+singularity of the dyadic Green's function. The equivalence rests on:
+
+```
+tr(L̿) = tr(n̂n̂) = 1
+```
+
+In free space (spherical exclusion), L̿ = I̿/3 and n̂n̂ = r̂r̂, both have
+trace 1. The difference between L̿ and n̂n̂ is absorbed into the definition
+of the P.V. integral and the summation convention:
+
+```
+P.V._sphere G̿_e − (I̿/3k²)δ = P.V._disk G̿_e − (ẑẑ/k²)δ = unique E(r)
+```
+
+The total field is INDEPENDENT of regularization — this is guaranteed
+by the sum rule tr(L̿)=1 and the fact that the irrotational part
+contributes −(1/k²)L̿ δ, exactly compensating the shape dependence of the
+P.V. integral.
+
+### 5.5 Cross-Domain Applications
+
+| Domain | Role of L̿ / δ-term | Key equation / concept |
+|--------|---------------------|----------------------|
+| **Dielectric ellipsoid** | Depolarization dyadic L̿ determines internal E for uniform external field | E_int = E_ext − L̿·P/ε₀ |
+| **Clausius-Mossotti** | Spherical L̿=I̿/3 gives Lorentz local field correction | ε_eff = ε_b (1+2α)/(1−α), α molecular polarizability |
+| **Lorentz field** | Spherical cavity exclusion; L̿=I̿/3 → E_loc = E + P/(3ε₀) | Classic dielectric local field |
+| **Magnetized plasma ε̿** | Anisotropic ε̿ modifies L̿; G̿_e no longer (I̿+∇∇/k²)G₀ | Spectral-domain dyadic GF required |
+| **MoM self-term** | Singularity extraction via L̿; self-patch integral closed-form | Z_mm = iωμ₀ ∫_patch ∫_patch f_m·G̿_e·f_m |
+| **Kelvin cavity** | Needle-shaped (L̿=(ŷŷ+ẑẑ)/2) or disk-shaped (L̿=ẑẑ) exclusion | Historical debate resolved by L̿ shape choice |
+
+**Key insight for Method of Moments:** The self-term (diagonal) of the
+impedance matrix requires careful handling of the G̿_e singularity.
+Subtracting the static singular kernel and using L̿ for the excluded
+volume yields a convergent, regularization-independent result. For
+RWG basis functions on triangular patches, the spherical exclusion
+(L̿=I̿/3) is standard.
 
 ## Algorithm
 
