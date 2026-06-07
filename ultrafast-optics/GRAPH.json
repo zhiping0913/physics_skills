@@ -12,6 +12,15 @@
     },
     "knowledge.uo.dispersion_data": {
       "node_type": "knowledge"
+    },
+    "reasoning.uo.mode_locking_active": {
+      "node_type": "reasoning"
+    },
+    "reasoning.uo.mode_locking_passive": {
+      "node_type": "reasoning"
+    },
+    "knowledge.uo.mode_locked_laser_designs": {
+      "node_type": "knowledge"
     }
   },
   "edges": [
@@ -54,6 +63,36 @@
       "source": "reasoning.uo.pulse_propagation_nlse_higher_order",
       "target": "reasoning.plasma.laser_plasma_interaction",
       "type": "analogy"
+    },
+    {
+      "source": "reasoning.uo.mode_locking_active",
+      "target": "reasoning.optics.laser_rate_equations",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.mode_locking_passive",
+      "target": "reasoning.uo.mode_locking_active",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.mode_locking_passive",
+      "target": "reasoning.uo.dispersion_compensation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.mode_locking_passive",
+      "target": "reasoning.uo.pulse_propagation_nlse_higher_order",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.uo.mode_locking_passive",
+      "target": "reasoning.optics.gaussian_beam_optics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.uo.mode_locked_laser_designs",
+      "target": "reasoning.uo.mode_locking_passive",
+      "type": "reasoning-instance"
     }
   ]
 }
