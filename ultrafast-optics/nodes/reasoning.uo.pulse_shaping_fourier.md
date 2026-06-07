@@ -157,6 +157,42 @@ single measurement-compensation cycle.
   significant space-time coupling. Design with reflective optics (Öffner
   triplet or cylindrical mirrors).
 
+## Adaptive Coherent Control — Learning-Loop Pulse Shaping
+
+Beyond deterministic compensation (MIIPS), the 4f-shaper enables closed-loop
+optimization where the experimental signal itself is the fitness function:
+
+```
+1. DEFINE fitness F(φ_mask) = measurable signal (SHG yield, multiphoton
+   fluorescence, CARS contrast, photoproduct branching ratio).
+
+2. INITIALIZE population of N random phase masks on SLM.
+
+3. FOR each generation:
+   a. Apply each phase mask → measure F → fitness ranking.
+   b. Select top-k elites.
+   c. Crossover: combine elite phases pairwise → children.
+   d. Mutate: small random perturbations.
+   e. Replace bottom of population with offspring.
+
+4. ITERATE until fitness plateaus (typically 50-500 generations).
+
+5. OUTPUT: the spectral phase maximizing F.
+```
+
+**Why this works without a model** (Judson-Rabitz 1992, Rabitz 2000):
+Multiphoton quantum-control landscapes are "trap-free" under broad
+observability conditions — gradient-based and GA methods reliably converge
+to the global optimum. This is a deep result of quantum controllability.
+
+Common algorithms: Genetic Algorithm (GA), Simulated Annealing (SA),
+Nelder-Mead simplex, Covariance Matrix Adaptation (CMA-ES).
+
+**Contrast with MIIPS**: MIIPS is DETERMINISTIC — measures φ''(ω) from
+SHG modulation and compensates to transform limit in one scan. Adaptive
+control is GENERAL — optimizes any measurable observable without requiring
+a model of the light-matter interaction. Dantus Ch.11-15.
+
 ## Cross-References
 
 - Weiner §8, Dantus §2-5

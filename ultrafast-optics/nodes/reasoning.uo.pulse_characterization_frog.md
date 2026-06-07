@@ -63,8 +63,10 @@ SHG-FROG is symmetric: I(ω,τ) = I(ω,−τ). This introduces a time-direction
 ambiguity — I(t) vs I(−t) produce identical traces. The spectral phase
 also has a sign ambiguity. PG-FROG resolves both ambiguities.
 
-**Trace marginals**: ∫ I_SHG(ω,τ) dτ gives the SHG power spectrum (not
-directly the fundamental). Marginals provide consistency checks.
+**Trace marginals** (Trebino Ch.6):
+- ∫I_SHG(ω,τ) **dω** → SHG intensity autocorrelation ∫|E(t)|²|E(t−τ)|²dt (function of τ)
+- ∫I_SHG(ω,τ) **dτ** → autoconvolution of |E(ω)|² (function of ω)
+Use marginals for consistency checks against independently measured spectrum/autocorrelation.
 
 ### 3. Iterative retrieval — Generalized Projections (GP) algorithm
 
