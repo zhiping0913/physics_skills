@@ -19,8 +19,9 @@ sign_convention: >
   τ_p = FWHM of |a(t)|². SA recovery time τ_A: fast if τ_A ≪ τ_p,
   slow if τ_p ≪ τ_A. SESAM: ΔR = maximum reflectivity change,
   F_sat = saturation fluence (μJ/cm²), τ_A = recovery time (ps to ns).
-  KLM: n₂ > 0 for self-focusing. Soliton order N² = γ P₀ τ_p² / |β₂|.
-  Positive chirp = red leads blue.
+  KLM: n₂ > 0 for self-focusing. Soliton order N² = γ P₀ T₀² / |β₂| where
+  T₀ = τ_p/1.763 (1/e intensity half-width for sech²). N=1 fundamental
+  soliton: E_p = 2|β₂|/(γ T₀) ≈ 3.53|β₂|/(γ τ_p).
 references:
   - ultrafast-optics: reasoning.uo.mode_locking_active (parent — ML concepts)
   - ultrafast-optics: reasoning.uo.pulse_propagation_linear (GDD → broadening)
@@ -160,11 +161,10 @@ used in fiber oscillators.
 When net cavity GDD is anomalous (β₂,net < 0), the pulse forms a soliton:
 SPM balances GVD → sech² shape. The soliton order is:
 ```
-N² = γ P₀ τ_p² / |β₂,net|
+N² = γ P₀ T₀² / |β₂,net|     where T₀ = τ_p/1.763 (sech²)
 ```
-For stable mode-locking: N ≈ 1 (fundamental soliton). The soliton area
-theorem (McCalls-Hahn for SIT; adapted for fiber): the soliton adjusts its
-energy and duration to satisfy N = 1 within each round-trip.
+For stable mode-locking: N ≈ 1 (fundamental soliton). The soliton
+energy-duration relation for N=1: E_p = 2|β₂|/(γ T₀) ≈ 3.53|β₂|/(γ τ_p).
 
 **Soliton mode-locking with slow SA** (Weiner §7.2): The slow saturable
 absorber opens a net gain window. Within this window, the pulse forms a
@@ -200,7 +200,8 @@ pulses. Energy scaling: E_p ∝ √(β₂,pos − β₂,neg) vs soliton limit E_
    → asymmetric pulse shape (steeper leading edge).
 
 4. SOLITON ML (anomalous GDD):
-   τ_p = (4|β₂,net|)/(γ E_p)   (fundamental soliton, N=1)
+   T₀² = |β₂,net|/(γ P₀) → E_p = 2P₀T₀ = 2|β₂,net|/(γ T₀)
+   τ_p ≈ 3.53|β₂,net|/(γ E_p)   (fundamental soliton, N=1, sech²)
    E_p is determined by gain saturation: E_p ≈ E_sat,g · ln(g₀/ℓ₀).
 
 5. CHECK STABILITY:
@@ -225,9 +226,12 @@ pulses. Energy scaling: E_p ∝ √(β₂,pos − β₂,neg) vs soliton limit E_
 
 ## Edge Cases
 
-- **Q-switched mode-locking (QML)**: Periodic bursts of ML pulses under
-  a Q-switched envelope. Unstable regime; increase pump power or SA
-  modulation depth to transition to CW-ML.
+- **Q-switched mode-locking (QML)**: When the saturable absorber is not
+  strong enough, relaxation oscillations (Q-switching) modulate the pulse
+  train envelope. Q-switching instability occurs when |dR/dF|·E_p < T_R/τ_L.
+  Distinguished from CW-ML by periodic bursts of mode-locked pulses under
+  a Q-switched envelope. Suppress by increasing SA modulation depth ΔR,
+  reducing cavity losses, or increasing pump power (Kärtner criterion).
 - **Multiple pulsing**: At high pump, gain supports >1 soliton. Splits into
   N=2,3... bound or separated solitons per round-trip.
 - **CW breakthrough (CW-ML with CW background)**: Incomplete SA saturation
