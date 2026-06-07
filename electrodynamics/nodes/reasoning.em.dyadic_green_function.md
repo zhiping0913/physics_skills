@@ -214,7 +214,67 @@ by the sum rule tr(L̿)=1 and the fact that the irrotational part
 contributes −(1/k²)L̿ δ, exactly compensating the shape dependence of the
 P.V. integral.
 
-### 5.5 Cross-Domain Applications
+### 5.5 curl G̿ singularity and MFIE kernel
+
+The magnetic dyadic Green function G̿_m = ∇×G̿_e has a weaker but still
+non-integrable point singularity on a surface: curl G̿_e behaves like 1/R²
+near R = |r−r'| → 0. Thus surface terms of the form
+
+```
+∫_S J_ms(r') · [∇×G̿_e(r,r')] dS'
+```
+
+must be interpreted as a Cauchy principal value when the observation point r
+lies on S. This is exactly the magnetic-field integral equation (MFIE) kernel.
+Taking the limiting value from either side of a smooth boundary produces the
+standard jump term: the singular part contributes ±(1/2)J_s (sign set by the
+normal and field convention), so the boundary equation contains the familiar
+1/2 J_s term plus the principal-value MFIE operator.
+
+### 5.6 Layered media M̿/N̿ decomposition
+
+For planar layered media, Fourier transform in the transverse coordinates and
+write the spectral dyadic Green function as TE-to-z and TM-to-z pieces:
+
+```
+G̿(k_x,k_y; z,z') = M̿ + N̿
+M̿ = (∇×ẑ)(∇'×ẑ) F_TE
+N̿ = (∇×∇×ẑ)(∇'×∇'×ẑ) F_TM / (iωε)
+```
+
+The scalar spectral kernels F_TE and F_TM carry the upward/downward propagation
+factors and the generalized reflection/transmission coefficients of the layer
+stack. This is the dyadic version of the Sommerfeld integral construction. In
+anisotropic layered media the TE/TM channels generally couple; the independent
+M̿/N̿ split is replaced by a 4×4 Berreman (first-order z-propagation) matrix.
+
+### 5.7 Equivalence principle from magnetic currents J*,ρ*
+
+The field-equivalence principle can be formulated by adding fictitious magnetic
+current and magnetic charge to Maxwell's equations (for the e^{-iωt}
+convention used here):
+
+```
+∇×E = iωμH − J*
+∇×H = J − iωεE
+∇·(εE) = ρ
+∇·(μH) = ρ*
+```
+
+Stratton-Chu surface representations then replace the removed region by
+equivalent surface currents. With the outward normal n̂ of the retained region,
+one common convention is
+
+```
+J_s = n̂×H,
+M_s = −n̂×E,
+```
+
+while authors using K* for magnetic current often write K* = n̂×E = −M_s.
+Physically, the surface magnetic current encodes the discontinuity of the
+tangential electric field: n̂×(E₂−E₁) = −M_s (up to the same sign convention).
+
+### 5.8 Cross-Domain Applications
 
 | Domain | Role of L̿ / δ-term | Key equation / concept |
 |--------|---------------------|----------------------|

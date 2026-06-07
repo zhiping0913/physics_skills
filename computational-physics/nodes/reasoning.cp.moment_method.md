@@ -98,12 +98,43 @@ the complement to time-domain PIC which tracks particles in volume. Plasma
 applications: antenna coupling to plasma, RF heating launcher design, SPP
 scattering from nanoparticles. Cross-ref: `plasma: reasoning.plasma.laser_plasma_interaction`.
 
+## Surface vs Volume Integral Equations
+
+- **Surface IE specialization**: EFIE/MFIE/CFIE reduce Maxwell scattering to
+  equivalent currents on material boundaries. For PEC, EFIE solves only the
+  electric surface current J_s. For dielectric penetrable bodies, PMCHWT uses
+  both equivalent electric and magnetic currents (J_s, M_s) and enforces
+  tangential E/H continuity across the interface.
+- **Volume IE / Lippmann-Schwinger**: In an inhomogeneous volume embedded in a
+  homogeneous background (ε_b, μ_b), the unknown is the total interior field:
+  ```
+  E(r) = E_inc(r) + ω² μ_b ∫_V G̿_b(r,r') · [ε(r') − ε_b] E(r') dV'
+  ```
+  This is the electromagnetic Lippmann-Schwinger equation; the contrast
+  current is J_c = −iω[ε−ε_b]E. The **Born approximation** is the first
+  Neumann iterate: replace E under the integral by E_inc.
+- **Port/network MoM and S-matrix**: With modal port excitations, outgoing and
+  incident wave amplitudes obey [V⁻] = [S][V⁺]. S is symmetric for reciprocal
+  structures and unitary for lossless matched networks. In a power-normalized
+  impedance basis, S = (Z−U)(Z+U)⁻¹, where U is the identity matrix.
+
 ## Edge Cases
 
-- **Interior resonance**: EFIE fails at frequencies where a closed cavity of
-  the same shape would resonate (k = k_cavity). Fix: CFIE.
+- **Interior resonance**: EFIE/MFIE errors grow rapidly as k approaches an
+  interior cavity eigenvalue k_res of the closed surface; condition number and
+  current amplitude can show sharp spikes. Use CFIE when k > k_res/2 for the
+  lowest relevant interior resonance, or scan frequency for spikes in cond(Z)
+  and switch formulations near them. Fredholm alternative: MFIE uniqueness
+  fails at interior resonances because the homogeneous integral equation has a
+  nontrivial solution.
 - **Low frequency (k→0)**: EFIE matrix becomes ill-conditioned (∇·J term
-  dominates). Use loop-star or loop-tree decomposition.
+  dominates). Use the surface Helmholtz/Hodge split
+  J_s = ∇_s φ + n̂×∇_s ψ (plus harmonic topology terms): the ∇_s φ part is
+  longitudinal/charge-carrying and the n̂×∇_s ψ part is solenoidal/loop-like.
+  Loop-star or loop-tree decompositions are discrete versions of this split.
+  Without the split, the low-k EFIE mostly recovers ∇_s·J_s through the scalar
+  potential term while the divergence-free current is poorly scaled and easily
+  lost/contaminated.
 - **Thin layer**: when thickness ≪ λ, use impedance BC instead of volumetric MoM.
 
 ## Cross-References
@@ -111,5 +142,6 @@ scattering from nanoparticles. Cross-ref: `plasma: reasoning.plasma.laser_plasma
 - Harrington, *Field Computation by Moment Methods* (1993) Ch.1-4
 - Peterson, Ray & Mittra (1997) Ch.3-10
 - electrodynamics: reasoning.em.dyadic_green_function (parent — G̿_e is the EFIE kernel)
+- computational-physics: reasoning.cp.lippmann_schwinger (volume IE and Born/Neumann series)
 - mathematics-theorems: mathematics.dyadic_algebra (RWG basis → dyadic products)
 - mathematics-theorems: mathematics.vector_green_identities (EFIE from dyadic Green's identity)

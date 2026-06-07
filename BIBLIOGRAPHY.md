@@ -81,6 +81,11 @@ the canonical citation form used in node `Cross-References` sections.
 | Hansen & Yaghjian | T. B. Hansen & A. D. Yaghjian, *Plane-Wave Theory of Time-Domain Fields*, IEEE Press, 1999 | `book/1999/1999--Plane-Wave Theory of Time-Domain Fields/` |
 | Lindell (2015) | I. V. Lindell, *Multiforms, Dyadics, and Electromagnetic Media*, IEEE Press, 2015 | `book/2015/2015--Multiforms, Dyadics, and Electromagnetic Media/` |
 | Collin (1990) | R. E. Collin, *Field Theory of Guided Waves*, 2nd ed., IEEE Press, 1990 | `book/1990/1990--Field Theory of Guided Waves (2nd Edition)/` |
+| Collin (2001) | R. E. Collin, *Foundations for Microwave Engineering*, 2nd ed., IEEE Press, 2001 | `book/2001/2001--Foundations for Microwave Engineering (2nd Edition)/` |
+| Ishimaru | A. Ishimaru, *Electromagnetic Wave Propagation, Radiation, and Scattering*, IEEE Press, 2017 | `book/2017/2017--Electromagnetic Wave Propagation, Radiation, and Scattering/` |
+| Van Bladel | J. G. Van Bladel, *Electromagnetic Fields*, 2nd ed., IEEE Press, 2007 | `book/2007/2007--Electromagnetic Fields (2nd Edition)/` |
+| Jones | D. S. Jones, *Methods in Electromagnetic Wave Propagation*, IEEE Press, 1994 | `book/1994/1994--Methods in Electromagnetic Wave Propagation/` |
+| Pathak & Burkholder | P. H. Pathak & R. J. Burkholder, *Electromagnetic Radiation, Scattering, and Diffraction*, IEEE Press, 2021 | `book/2021/2021--Electromagnetic Radiation, Scattering, and Diffraction/` |
 
 ## Citation Conventions
 

@@ -1,35 +1,206 @@
 {
   "skill": "computational-physics",
   "node_index": {
-    "reasoning.cp.moment_method": {"node_type": "reasoning"},
-    "reasoning.cp.fdtd_yee_algorithm": {"node_type": "reasoning"},
-    "reasoning.cp.finite_element_method": {"node_type": "reasoning"},
-    "reasoning.cp.absorbing_boundary_conditions": {"node_type": "reasoning"},
-    "reasoning.cp.tlm_method": {"node_type": "reasoning"},
-    "reasoning.cp.multigrid_solver": {"node_type": "reasoning"},
-    "reasoning.cp.modal_expansion_numerical": {"node_type": "reasoning"},
-    "knowledge.cp.mom_data": {"node_type": "knowledge"},
-    "knowledge.cp.fem_data": {"node_type": "knowledge"},
-    "knowledge.cp.fdtd_data": {"node_type": "knowledge"}
+    "reasoning.cp.moment_method": {
+      "node_type": "reasoning"
+    },
+    "reasoning.cp.fdtd_yee_algorithm": {
+      "node_type": "reasoning"
+    },
+    "reasoning.cp.finite_element_method": {
+      "node_type": "reasoning"
+    },
+    "reasoning.cp.absorbing_boundary_conditions": {
+      "node_type": "reasoning"
+    },
+    "reasoning.cp.tlm_method": {
+      "node_type": "reasoning"
+    },
+    "reasoning.cp.multigrid_solver": {
+      "node_type": "reasoning"
+    },
+    "reasoning.cp.modal_expansion_numerical": {
+      "node_type": "reasoning"
+    },
+    "knowledge.cp.mom_data": {
+      "node_type": "knowledge"
+    },
+    "knowledge.cp.fem_data": {
+      "node_type": "knowledge"
+    },
+    "knowledge.cp.fdtd_data": {
+      "node_type": "knowledge"
+    },
+    "reasoning.cp.galerkin_rayleigh_ritz": {
+      "node_type": "reasoning"
+    },
+    "reasoning.cp.lippmann_schwinger": {
+      "node_type": "reasoning"
+    },
+    "reasoning.cp.regularization_ill_posed": {
+      "node_type": "reasoning"
+    }
   },
   "edges": [
-    {"source": "reasoning.cp.moment_method", "target": "knowledge.cp.mom_data", "type": "reasoning-instance"},
-    {"source": "reasoning.cp.finite_element_method", "target": "knowledge.cp.fem_data", "type": "reasoning-instance"},
-    {"source": "reasoning.cp.fdtd_yee_algorithm", "target": "knowledge.cp.fdtd_data", "type": "reasoning-instance"},
-    {"source": "reasoning.em.dyadic_green_function", "target": "reasoning.cp.moment_method", "type": "prerequisite"},
-    {"source": "reasoning.em.uniqueness_theorem_boundary_value", "target": "reasoning.cp.fdtd_yee_algorithm", "type": "prerequisite"},
-    {"source": "reasoning.em.uniqueness_theorem_boundary_value", "target": "reasoning.cp.finite_element_method", "type": "prerequisite"},
-    {"source": "knowledge.em.transmission_lines", "target": "reasoning.cp.tlm_method", "type": "prerequisite"},
-    {"source": "reasoning.em.waveguide_mode_decomposition", "target": "reasoning.cp.modal_expansion_numerical", "type": "prerequisite"},
-    {"source": "reasoning.cp.finite_element_method", "target": "reasoning.cp.multigrid_solver", "type": "prerequisite"},
-    {"source": "reasoning.cp.fdtd_yee_algorithm", "target": "reasoning.cp.absorbing_boundary_conditions", "type": "prerequisite"},
-    {"source": "reasoning.cp.finite_element_method", "target": "reasoning.cp.absorbing_boundary_conditions", "type": "prerequisite"},
-    {"source": "mathematics.dyadic_algebra", "target": "reasoning.cp.moment_method", "type": "prerequisite"},
-    {"source": "mathematics.vector_green_identities", "target": "reasoning.cp.moment_method", "type": "prerequisite"},
-    {"source": "mathematics.sommerfeld_integral", "target": "reasoning.cp.absorbing_boundary_conditions", "type": "prerequisite"},
-    {"source": "mathematics.plane_wave_spectrum", "target": "reasoning.cp.fdtd_yee_algorithm", "type": "prerequisite"},
-    {"source": "mathematics.dyadic_algebra", "target": "reasoning.cp.multigrid_solver", "type": "prerequisite"},
-    {"source": "mathematics.vector_green_identities", "target": "reasoning.cp.multigrid_solver", "type": "prerequisite"},
-    {"source": "reasoning.plasma.laser_plasma_interaction", "target": "reasoning.cp.fdtd_yee_algorithm", "type": "analogy"}
+    {
+      "source": "reasoning.cp.moment_method",
+      "target": "knowledge.cp.mom_data",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.cp.finite_element_method",
+      "target": "knowledge.cp.fem_data",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.cp.fdtd_yee_algorithm",
+      "target": "knowledge.cp.fdtd_data",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.em.dyadic_green_function",
+      "target": "reasoning.cp.moment_method",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.uniqueness_theorem_boundary_value",
+      "target": "reasoning.cp.fdtd_yee_algorithm",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.uniqueness_theorem_boundary_value",
+      "target": "reasoning.cp.finite_element_method",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.em.transmission_lines",
+      "target": "reasoning.cp.tlm_method",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.waveguide_mode_decomposition",
+      "target": "reasoning.cp.modal_expansion_numerical",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.finite_element_method",
+      "target": "reasoning.cp.multigrid_solver",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.fdtd_yee_algorithm",
+      "target": "reasoning.cp.absorbing_boundary_conditions",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.finite_element_method",
+      "target": "reasoning.cp.absorbing_boundary_conditions",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.dyadic_algebra",
+      "target": "reasoning.cp.moment_method",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.vector_green_identities",
+      "target": "reasoning.cp.moment_method",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.sommerfeld_integral",
+      "target": "reasoning.cp.absorbing_boundary_conditions",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.plane_wave_spectrum",
+      "target": "reasoning.cp.fdtd_yee_algorithm",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.dyadic_algebra",
+      "target": "reasoning.cp.multigrid_solver",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.vector_green_identities",
+      "target": "reasoning.cp.multigrid_solver",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.laser_plasma_interaction",
+      "target": "reasoning.cp.fdtd_yee_algorithm",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.cp.galerkin_rayleigh_ritz",
+      "target": "reasoning.cp.moment_method",
+      "type": "abstraction"
+    },
+    {
+      "source": "reasoning.cp.galerkin_rayleigh_ritz",
+      "target": "reasoning.cp.moment_method",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.galerkin_rayleigh_ritz",
+      "target": "reasoning.cp.finite_element_method",
+      "type": "abstraction"
+    },
+    {
+      "source": "reasoning.cp.galerkin_rayleigh_ritz",
+      "target": "reasoning.cp.finite_element_method",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.galerkin_rayleigh_ritz",
+      "target": "reasoning.cp.modal_expansion_numerical",
+      "type": "abstraction"
+    },
+    {
+      "source": "reasoning.cp.galerkin_rayleigh_ritz",
+      "target": "reasoning.cp.modal_expansion_numerical",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.lippmann_schwinger",
+      "target": "reasoning.cp.moment_method",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.lippmann_schwinger",
+      "target": "reasoning.cp.moment_method",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.em.dyadic_green_function",
+      "target": "reasoning.cp.lippmann_schwinger",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.em.born_approximation_scattering",
+      "target": "reasoning.cp.lippmann_schwinger",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.cp.moment_method",
+      "target": "reasoning.cp.regularization_ill_posed",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.extinction_theorem",
+      "target": "reasoning.cp.moment_method",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.fdtd_yee_algorithm",
+      "target": "reasoning.cp.absorbing_boundary_conditions",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.cp.absorbing_boundary_conditions",
+      "target": "reasoning.cp.modal_expansion_numerical",
+      "type": "analogy"
+    }
   ]
 }

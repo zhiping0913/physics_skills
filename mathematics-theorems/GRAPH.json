@@ -1,32 +1,96 @@
 {
   "skill": "mathematics-theorems",
   "node_index": {
-    "mathematics.bertrand_theorem": {"node_type": "theorem"},
-    "mathematics.liouville_arnold": {"node_type": "theorem"},
-    "mathematics.distribution_limits": {"node_type": "theorem"},
-    "mathematics.airy_asymptotics": {"node_type": "theorem"},
-    "mathematics.delta_4d_jacobian": {"node_type": "theorem"},
-    "mathematics.dyadic_algebra": {"node_type": "knowledge"},
-    "mathematics.vector_green_identities": {"node_type": "reasoning"},
-    "mathematics.plane_wave_spectrum": {"node_type": "reasoning"},
-    "mathematics.sommerfeld_integral": {"node_type": "reasoning"},
-    "mathematics.steepest_descent": {"node_type": "reasoning"}
+    "mathematics.bertrand_theorem": {
+      "node_type": "theorem"
+    },
+    "mathematics.liouville_arnold": {
+      "node_type": "theorem"
+    },
+    "mathematics.distribution_limits": {
+      "node_type": "theorem"
+    },
+    "mathematics.airy_asymptotics": {
+      "node_type": "theorem"
+    },
+    "mathematics.delta_4d_jacobian": {
+      "node_type": "theorem"
+    },
+    "mathematics.dyadic_algebra": {
+      "node_type": "knowledge"
+    },
+    "mathematics.vector_green_identities": {
+      "node_type": "reasoning"
+    },
+    "mathematics.plane_wave_spectrum": {
+      "node_type": "reasoning"
+    },
+    "mathematics.sommerfeld_integral": {
+      "node_type": "reasoning"
+    },
+    "mathematics.steepest_descent": {
+      "node_type": "reasoning"
+    },
+    "mathematics.depolarization_dyadic": {
+      "node_type": "knowledge"
+    }
   },
   "edges": [
-    {"source": "mathematics.dyadic_algebra", "target": "mathematics.vector_green_identities", "type": "prerequisite"},
-    {"source": "mathematics.plane_wave_spectrum", "target": "mathematics.sommerfeld_integral", "type": "prerequisite"},
-    {"source": "mathematics.sommerfeld_integral", "target": "mathematics.steepest_descent", "type": "prerequisite"},
-
-    {"source": "mathematics.vector_green_identities", "target": "reasoning.em.uniqueness_theorem_boundary_value", "type": "prerequisite"},
-
-    {"source": "mathematics.dyadic_algebra", "target": "reasoning.em.dyadic_green_function", "type": "prerequisite"},
-    {"source": "mathematics.vector_green_identities", "target": "reasoning.em.dyadic_green_function", "type": "prerequisite"},
-    {"source": "mathematics.sommerfeld_integral", "target": "reasoning.em.dyadic_green_function", "type": "prerequisite"},
-
-    {"source": "mathematics.plane_wave_spectrum", "target": "reasoning.em.scalar_diffraction_kirchhoff", "type": "prerequisite"},
-
-    {"source": "mathematics.steepest_descent", "target": "mathematics.sommerfeld_integral", "type": "prerequisite"}
+    {
+      "source": "mathematics.dyadic_algebra",
+      "target": "mathematics.vector_green_identities",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.plane_wave_spectrum",
+      "target": "mathematics.sommerfeld_integral",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.sommerfeld_integral",
+      "target": "mathematics.steepest_descent",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.vector_green_identities",
+      "target": "reasoning.em.uniqueness_theorem_boundary_value",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.dyadic_algebra",
+      "target": "reasoning.em.dyadic_green_function",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.vector_green_identities",
+      "target": "reasoning.em.dyadic_green_function",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.sommerfeld_integral",
+      "target": "reasoning.em.dyadic_green_function",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.plane_wave_spectrum",
+      "target": "reasoning.em.scalar_diffraction_kirchhoff",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.steepest_descent",
+      "target": "mathematics.sommerfeld_integral",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.depolarization_dyadic",
+      "target": "reasoning.em.dyadic_green_function",
+      "type": "prerequisite"
+    },
+    {
+      "source": "mathematics.depolarization_dyadic",
+      "target": "knowledge.em.static_multipoles",
+      "type": "analogy"
+    }
   ],
-
   "_note": "mathematics.vector_algebra, mathematics.fourier_transform, mathematics.complex_analysis are external undergraduate prerequisites — not distilled as nodes."
 }

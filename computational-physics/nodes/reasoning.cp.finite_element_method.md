@@ -35,6 +35,19 @@ The vector wave equation (curl-curl form):
 n̂×E = 0 on Γ_PEC,   n̂×∇×E = 0 on Γ_PMC
 ```
 
+## Variational Origin
+
+For source current J and time convention e^{−iωt}, the curl-curl equation is
+the stationary point δF = 0 of the electromagnetic functional
+```
+F(E) = 1/2 ∫_V [ μ⁻¹ |curl E|² − k² ε |E|² ] dV
+       − Re ∫_V E · (iωJ) dV.
+```
+Taking the first variation and integrating the curl term by parts gives the
+weak curl-curl operator plus a boundary term. Essential boundary condition:
+n̂×E = 0 (PEC/tangential E prescribed). Natural boundary condition:
+n̂×curl E = 0 (PMC/free boundary in the μ-normalized form).
+
 ### Weak Form (Galerkin procedure)
 
 1. Dot with test function W, integrate over V:
@@ -117,4 +130,4 @@ Error indicator (residual-based): η_K = h_K ‖∇×μ⁻¹∇×E_h − k₀²�
 - Zhu & Cangellaris (2006) Ch.1-3
 - electrodynamics: reasoning.em.uniqueness_theorem_boundary_value (parent)
 - computational-physics: reasoning.cp.multigrid_solver (fast sparse solve)
-- computational-physics: reasoning.cp.pml_absorbing_bc (domain truncation)
+- computational-physics: reasoning.cp.absorbing_boundary_conditions (domain truncation)

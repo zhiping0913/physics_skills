@@ -107,7 +107,19 @@ single-mode, high nonlinearity, anomalous dispersion at visible.
 ## Cavity Resonators — Q, Mode Density, Purcell Factor
 
 For a closed cavity (or ring resonator), resonances occur when βL = mπ
-(longitudinal quantization on top of transverse). Key figures of merit:
+(longitudinal quantization on top of transverse).
+
+**Eigenmode BVP caveat:** for a conducting-wall cavity, the vector eigenproblem
+is not defined by n̂×E = 0 alone. One must also impose ∇·E = 0 in the source-free
+volume (or an equivalent compatible gauge/constraint). Otherwise irrotational
+gradient fields satisfy the curl-curl equation spuriously and contaminate the
+mode set. This is the continuum version of the L/M/N split in
+`electrodynamics: knowledge.em.vector_wave_functions`; in FEM, edge elements
+and the discrete de Rham complex in
+`computational-physics: reasoning.cp.finite_element_method` remove the same
+spurious gradient modes.
+
+Key figures of merit:
 
 - **Quality factor**: Q = ω₀ W_stored / P_loss. For a cavity with volume V
   and surface resistance R_s: Q ∼ (V/S)(1/δ_skin). Superconducting cavities
@@ -130,6 +142,10 @@ mechanics, ω is the eigenvalue (discrete); here, k_⊥ is the eigenvalue
 - Jackson §8.1-8.6
 - Griffiths §9.5
 - landau-graph: reasoning.normal_mode_decomposition (same mathematical structure)
+- electrodynamics: knowledge.em.vector_wave_functions (L/M/N vector mode basis;
+  separates solenoidal modes from gradient fields)
+- computational-physics: reasoning.cp.finite_element_method (FEM edge elements
+  and discrete de Rham complex suppress spurious modes)
 - electrodynamics: reasoning.em.fresnel_interface_reflection_refraction
   (waveguide conducting walls = TIR boundary; dielectric interface is the
   planar counterpart — Fresnel coefficients from the same boundary-condition

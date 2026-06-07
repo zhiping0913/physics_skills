@@ -59,6 +59,27 @@ The scalar spherical wave e^{ikR}/R as a plane wave superposition:
 ```
 e^{ik|r−r'|}/(4π|r−r'|) = (i/8π²) ∬ e^{i[k_x(x−x')+k_y(y−y')+k_z|z−z'|]} dk_x dk_y/k_z
 ```
+Derivation sketch: start from the full 3D Fourier representation of the
+outgoing scalar Green function for
+`(∇²+k₀²)G = −δ`:
+
+```
+G(r) = (1/(2π)³) ∫∫∫ G~(k_x,k_y,k_z) e^{i k·r} d³k,
+G~ = −1/(k_x²+k_y²+k_z²−k₀²−i0).
+```
+
+For fixed transverse wave vector k_ρ²=k_x²+k_y², evaluate the k_z integral by
+contour integration. The radiation condition selects the outgoing pole
+
+```
+k_z = +√(k₀²−k_ρ²),     Im k_z ≥ 0,
+```
+
+closing the contour in the upper/lower half-plane according to the sign of
+z−z'. Jordan's lemma kills the semicircle contribution, and the residue gives
+`(i/2k_z)e^{ik_z|z−z'|}`. Substitution into the remaining transverse integral
+yields the Weyl identity above.
+
 This is the 2D Fourier representation of the free-space Green's function.
 It decomposes a spherical wave into plane waves — essential for layered
 media Green's functions (Chew §2) and diffraction theory.

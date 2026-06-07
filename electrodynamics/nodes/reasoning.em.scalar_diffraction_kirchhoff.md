@@ -126,6 +126,17 @@ Blaze angle: shift single-slit envelope to desired diffraction order.
 
 ## Edge Cases
 
+### Sommerfeld-Rayleigh-Kottler vector correction
+
+Scalar Kirchhoff applies a scalar Helmholtz integral component-by-component; in
+vector EM this both inherits the Kirchhoff overspecification and can violate
+the source-free constraint ∇·E = 0. The Sommerfeld-Rayleigh-Kottler correction
+(Stratton §8.15) adds a contour line integral around the aperture edge C when
+the tangential fields are discontinuous at the rim. For high-NA apertures,
+polarization-sensitive masks, or sharp conducting screens, prefer the full
+Stratton-Chu surface representation or the Richards-Wolf/Debye vector integral
+so that the tangential boundary conditions and ∇·E=0 are enforced consistently.
+
 - **Vector diffraction** (high NA >0.5): scalar Kirchhoff fails. Use Richards-Wolf
   integral (Born & Wolf §8.8): Debye-Wolf diffraction integral with polarization
   rotation, 3D focal field E(r) = −(ikf/2π) ∬ a(k_x,k_y) e^{ik·r} dΩ/k_z.

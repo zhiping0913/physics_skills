@@ -1,5 +1,5 @@
 ---
-skill_id: reasoning.cp.pml_absorbing_bc
+skill_id: reasoning.cp.absorbing_boundary_conditions
 type: reasoning
 summary_50t: >
   Truncate unbounded domain with layers that absorb outgoing waves without

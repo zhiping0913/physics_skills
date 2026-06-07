@@ -113,6 +113,27 @@ Second-order accurate in both space and time. Explicit: no matrix solve.
 - **Conformal FDTD**: For curved PEC surfaces, modify the Faraday contour
   integral for partially filled cells (Dey-Mittra algorithm).
 
+### Magic time step
+
+In 1D vacuum FDTD, choosing the Courant number s = cΔt/Δx = 1 makes the
+discrete dispersion exact: ω = c k for all resolvable k. At the same step, the
+first-order Engquist-Majda/Mur absorbing boundary is an exact one-cell shift of
+the outgoing wave. In 2D/3D no single Courant number is exact for all propagation
+angles, so numerical anisotropy remains even at the CFL limit.
+
+### Discrete divergence proof
+
+Faraday update: B^{n+1/2} = B^{n−1/2} − Δt (∇_d×E^n). Taking the Yee-cell
+discrete divergence gives
+```
+∇_d·B^{n+1/2} = ∇_d·B^{n−1/2} − Δt ∇_d·(∇_d×E^n)
+               = ∇_d·B^{n−1/2}.
+```
+The last term is exactly zero because each edge circulation contributing to the
+curl appears with opposite signs on the two adjacent faces of a Yee cube; all
+face-flux contributions cancel pairwise. Thus ∇·B is conserved to roundoff if
+it is initialized consistently.
+
 ## PEC BOUNDARIES
 
 On the Yee grid, set E_tan = 0 on faces coinciding with PEC. Specifically:
@@ -150,5 +171,5 @@ U = ½ Σ (ε|E|² + μ|H|²) should remain constant (σ=0, no PML); monitor to
 - Yee, IEEE TAP 14, 302 (1966); Taflove & Hagness, *Computational Electrodynamics*
 - Peterson, Ray & Mittra (1997) Ch.11-12
 - electrodynamics: reasoning.em.helmholtz_decomposition (parent — continuous curl eqns)
-- computational-physics: reasoning.cp.pml_absorbing_bc (PML truncation of FDTD grid)
+- computational-physics: reasoning.cp.absorbing_boundary_conditions (ABC/PML truncation of FDTD grid)
 - plasma: reasoning.plasma.laser_plasma_interaction (FDTD-PIC for laser-plasma)
