@@ -169,6 +169,31 @@ In each case: expand unknown in orthogonal basis → project residual onto test
 basis → solve linear system for coefficients. The only change is which Hilbert
 space hosts the inner product.
 
+## OAM Connection — Hansen Azimuthal Index = Orbital Angular Momentum
+
+The azimuthal quantum number m in Hansen vector wave functions M_nm, N_nm
+**is** the orbital angular momentum (OAM) quantum number l:
+```
+M_nm(r,θ,φ), N_nm(r,θ,φ) ∝ exp(imφ)
+```
+The exp(imφ) azimuthal phase factor carries **OAM = mℏ per photon**. This
+identifies the Hansen formulation as the **vector-spherical version of OAM
+mode decomposition**. Three OAM formulations share the same exp(ilφ) structure:
+
+| Formulation | Azimuthal dependence | OAM per photon | Domain |
+|------------|---------------------|----------------|--------|
+| Hansen M_nm, N_nm | exp(imφ) | mℏ | Spherical (exact) / cylindrical |
+| Laguerre-Gauss LG_{p,l} | exp(ilφ) | lℏ | Cylindrical (paraxial) |
+| Bessel beam J_l | exp(ilφ) | lℏ | Cylindrical (non-paraxial) |
+
+The twisted wavefront S = k₀ r + lφ has an azimuthal component
+∇S_φ = l/(r sin θ) — the wavevector has a helical twist. For l = 1, one
+complete screw turn per wavelength; for l = 2, a double helix. The phase
+singularity at r = 0 (where φ is undefined) is the vortex core.
+
+**Cross-reference**: `knowledge.em.oam_beams` (OAM beam physics — Laguerre-Gauss
+modes, Bessel beams, twisted wavefront, generation methods, applications).
+
 ## Key Takeaways
 
 1. \(\mathbf{L}, \mathbf{M}, \mathbf{N}\) form a complete basis for the vector Helmholtz

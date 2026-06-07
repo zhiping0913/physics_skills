@@ -95,6 +95,35 @@ with ω_p = ω_s + ω_i.
 **Pockels effect**: χ⁽²⁾(ω; ω, 0) — DC field changes refractive index linearly.
 n(E) = n₀ − (1/2)n₀³r_eff E. Used in electro-optic modulators.
 
+## Angular Momentum Conservation in χ⁽ⁿ⁾ Processes
+
+Nonlinear optical processes with OAM-carrying beams obey angular momentum
+selection rules from U(1) rotational symmetry about the propagation axis.
+For an n-photon process (n pump photons → 1 output photon):
+```
+l_out = Σ l_in          (total OAM conservation)
+```
+For **SHG**: two ω photons with OAM l_fund → one 2ω photon:
+```
+l_SH = 2 × l_fund
+```
+The nth-harmonic generalization is l_n = n × l_1.
+
+**Physical origin**: U(1) symmetry — the χ⁽ⁿ⁾ tensor commutes with continuous
+rotation if the crystal has C_∞ symmetry. By Noether's theorem, the conserved
+charge is total OAM; individual photon OAM numbers simply add.
+
+**Symmetry breaking in real crystals**: For crystals with discrete n-fold
+rotational symmetry (e.g., BBO 3m point group), OAM conservation is relaxed:
+```
+l_out = Σ l_in ± n_crystal × m    (m = 0, ±1, ±2, ...)
+```
+This is the OAM analog of crystal-momentum umklapp in solid-state physics.
+
+**Verification application**: measuring SH spatial mode (interferometric
+analysis of l_SH) verifies χ⁽²⁾ tensor symmetry and phase-matching quality.
+Cross-reference: `knowledge.em.oam_beams` (OAM generation and detection).
+
 ## Third-Order Effects (χ⁽³⁾)
 
 Allowed in ALL media (centrosymmetric included). Weaker than χ⁽²⁾ but universal.

@@ -171,6 +171,7 @@ Ewald-Oseen extinction theorem.
 | Crystal/continuum optics | Bound polarization current -iωP | Incident free-space wave inside matter | Refracted wave with k=nω/c | Ewald-Oseen microscopic explanation of refraction |
 | Acoustics | Monopole/dipole layer on boundary | Pressure field on one side of S | Pressure/velocity field on the other side | Scalar analog of single/double-layer potentials |
 | Elastic waves | Traction and displacement layer potentials | Elastodynamic field in excluded region | Displacement/stress in retained region | Boundary integral methods mirror EM equivalence |
+| **Time-domain reciprocity (antenna)** | **TD Huygens currents J_s(R,t), M_s(R,t) with causal retardation** | **Fields in unselected time-space region** | **Radiated/received pulse at antenna terminals** | **Štumpf 2019 §7: TD reciprocity uses time-convolution form ∫(E_a·J_b − H_a·K_b)dV dt. For a one-port antenna, self-reciprocity relates the transmit effective length to the receive open-circuit voltage: V_oc = h_eff · E_inc (time-domain vector effective height).** |
 
 ## Boundary-Integral Consequences
 

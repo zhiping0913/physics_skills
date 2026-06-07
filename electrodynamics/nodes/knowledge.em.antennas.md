@@ -37,4 +37,33 @@ Circular aperture (radius a): HPBW ≈ 1.02λ/(2a), first sidelobe −17.6 dB.
 **Friis transmission**: P_r/P_t = G_t G_r (λ/4πR)².
 **Radar range equation**: P_r = P_t G_t G_r λ²σ/[(4π)³R⁴].
 
+## Millimeter-Wave Propagation and Frequency Scaling
+
+**Atmospheric attenuation** (ITU-R P.676): molecular absorption creates
+transmission windows. Key features:
+- O₂ absorption peak at 60 GHz (∼15 dB/km at sea level) — the dominant
+  mm-wave loss mechanism
+- H₂O absorption peaks at 22 GHz and 183 GHz
+- **Windows**: 35 GHz (Ka-band), 94 GHz (W-band), 220 GHz, 340 GHz
+- 60-GHz paradox: high atmospheric loss → natural isolation between
+  neighboring links → ideal for short-range unlicensed communication
+  (5G NR bands n257/n258/n260/n261).
+
+**Frequency-scaling laws** (fixed physical aperture A):
+```
+G ∝ f²          (gain ∝ frequency squared — from G = 4πA_eff/λ²)
+HPBW ∝ 1/f      (beamwidth narrows with frequency)
+```
+These drive the push to higher frequencies: for the same antenna size,
+doubling the frequency quadruples the gain and halves the beamwidth.
+
+**Rain attenuation** (ITU-R P.838): specific attenuation ∝ k R^α where R is
+rain rate (mm/hr). k and α depend on frequency and polarization. At 60 GHz,
+moderate rain (10 mm/hr) adds ∼10-20 dB/km — the dominant weather loss above
+20 GHz.
+
+**Free-space path loss**: L_fs = (4πR/λ)². At 60 GHz and R = 100 m,
+L_fs ≈ 108 dB — demands high-gain antennas even for short links.
+
 - Jackson §9.2-9.8, Griffiths §11.1-11.3
+- ITU-R P.676 (atmospheric attenuation), ITU-R P.838 (rain attenuation)

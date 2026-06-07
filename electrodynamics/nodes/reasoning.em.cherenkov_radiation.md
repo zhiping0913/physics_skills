@@ -110,6 +110,15 @@ d²E/(dx dω) = (q²/4πε₀c²) ω [1 − 1/(β² n²(ω))]        for β n(ω
 
 - **Below threshold** (β n < 1): No Cherenkov. All field energy stays bound.
   Still have energy loss via ionization (Bethe-Bloch), which is distinct.
+- **Reversed Cherenkov in DNG (double-negative / left-handed) media**:
+  When ε < 0, μ < 0 simultaneously (n < 0, Veselago 1968), the phase and
+  group velocities are anti-parallel. The Cherenkov cone opens **backward** —
+  the radiation is emitted behind the particle rather than ahead. The
+  Cherenkov angle formula is formally unchanged (cos θ_c = 1/[|βn|]) but
+  the cone direction reverses. This is the electromagnetic analog of the
+  reversed Doppler effect in left-handed media. Cross-reference:
+  `knowledge.em.metamaterials_classification` (DNG/ENG/MNG/DPS quadrants),
+  Veselago 1968, Pendry 2000.
 - **Strong-field / nonlinear**: χ⁽³⁾ modifies ε → Cherenkov angle shifts;
   nonlinear Cherenkov generates harmonics of the fundamental. Cross-ref:
   `electrodynamics: knowledge.em.strong_field_electrodynamics` and

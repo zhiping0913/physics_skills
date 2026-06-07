@@ -33,6 +33,9 @@
     },
     "mathematics.depolarization_dyadic": {
       "node_type": "knowledge"
+    },
+    "mathematics.geometric_phase": {
+      "node_type": "reasoning"
     }
   },
   "edges": [
@@ -95,6 +98,16 @@
       "source": "mathematics.steepest_descent",
       "target": "mathematics.sommerfeld_integral",
       "type": "reasoning-instance"
+    },
+    {
+      "source": "mathematics.geometric_phase",
+      "target": "knowledge.em.oam_beams",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "mathematics.geometric_phase",
+      "target": "mathematics.steepest_descent",
+      "type": "analogy"
     }
   ],
   "_note": "mathematics.vector_algebra, mathematics.fourier_transform, mathematics.complex_analysis are external undergraduate prerequisites \u2014 not distilled as nodes."

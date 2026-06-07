@@ -131,7 +131,7 @@ physics-conventions: convention.charge_cyclotron
 
 ---
 
-*Last updated: 2026-06-07. Phase β handoff — added Hill 2009, Okhmatovski-Zheng 2024, Kast 2022, Poljak-Šušnjara 2023, Hesthaven-Warburton 2007, and related UQ/statistical references.*
+*Last updated: 2026-06-07. Phase γ/δ handoff — added OAM, geometric phase, SIW, mm-wave, EM-TL coupling, reversed Cherenkov in DNG, TD reciprocity; Phase γ/δ IEEE Press books (Stumpf, Josefsson, Nakano, Chen SIW, Papathanasopoulos); Veselago, Allen, Berry, Pancharatnam, Aharonov-Bohm references.*
 
 ## External References (Not in Knowledge Base)
 
@@ -158,3 +158,14 @@ Flagged with `[square brackets]` in node cross-references. Consider acquiring fo
 | [Le Maître-Knio 2010] | O. P. Le Maître & O. M. Knio, *Spectral Methods for Uncertainty Quantification*, Springer, 2010 | Not in KB — UQ monograph; cited by `uncertainty_quantification` |
 | [Saltelli 2008] | A. Saltelli et al., *Global Sensitivity Analysis: The Primer*, Wiley, 2008 | Not in KB — Sobol sensitivity analysis; cited by `uncertainty_quantification` |
 | [Cockburn-Shu 1989] | B. Cockburn & C. W. Shu, "TVB Runge-Kutta local projection discontinuous Galerkin finite element method," J. Comput. Phys., 1989 | Journal article — foundational DG-CFD paper; cited by `dgtd_method` |
+| [Papathanasopoulos 2021] | E. D. Papathanasopoulos, W. Tang, S. Yu & F. Yin (eds), *Electromagnetic Vortices — Wave Phenomena and Engineering Applications*, IEEE Press, 2021 | Not in KB — Phase δ validation book (T12); cited by `oam_beams` |
+| [Stumpf 2019] | M. Štumpf, *Time-Domain Electromagnetic Reciprocity in Antenna Modeling*, IEEE Press, 2019 | Not in KB — Phase γ validation book (T8); cited by `transmission_lines`, `extinction_theorem` |
+| [Josefsson-Persson 2006] | L. Josefsson & P. Persson, *Conformal Array Antenna Theory and Design*, IEEE Press, 2006 | Not in KB — Phase γ validation book (A1) |
+| [Nakano 2016] | H. Nakano, *Low-Profile Natural and Metamaterial Antennas*, IEEE Press, 2016 | Not in KB — Phase γ validation book (A2) |
+| [Chen 2021 SIW] | Z. N. Chen et al., *Substrate-Integrated Millimeter-Wave Antennas for Next-Generation Communication and Radar Systems*, IEEE Press, 2021 | Not in KB — Phase γ validation book (A3); cited by `transmission_lines`, `antennas` |
+| [Allen 1992] | L. Allen et al., "Orbital angular momentum of light and the transformation of Laguerre-Gaussian laser modes," Phys. Rev. A 45:8185, 1992 | Journal article — foundational OAM paper; cited by `oam_beams` |
+| [Yan-Wang 2014] | Y. Yan et al., "High-capacity millimetre-wave communications with orbital angular momentum multiplexing," Nature Commun. 5:4876, 2014 | Journal article — OAM multiplexing; cited by `oam_beams` |
+| [Berry 1984] | M. V. Berry, "Quantal phase factors accompanying adiabatic changes," Proc. R. Soc. Lond. A 392:45, 1984 | Journal article — Berry phase original paper; cited by `geometric_phase` |
+| [Pancharatnam 1956] | S. Pancharatnam, "Generalized theory of interference, and its applications," Proc. Ind. Acad. Sci. A 44:247, 1956 | Journal article — PB phase original paper (predates Berry by 28 years); cited by `geometric_phase` |
+| [Aharonov-Bohm 1959] | Y. Aharonov & D. Bohm, "Significance of electromagnetic potentials in the quantum theory," Phys. Rev. 115:485, 1959 | Journal article — AB effect; cited by `geometric_phase` |
+| [Veselago 1968] | V. G. Veselago, "The electrodynamics of substances with simultaneously negative values of ε and μ," Sov. Phys. Usp. 10:509, 1968 | Journal article — DNG/left-handed media; cited by `cherenkov_radiation` |

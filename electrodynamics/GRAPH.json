@@ -107,6 +107,9 @@
     },
     "knowledge.em.bethe_aperture_coupling": {
       "node_type": "knowledge"
+    },
+    "knowledge.em.oam_beams": {
+      "node_type": "knowledge"
     }
   },
   "edges": [
@@ -358,6 +361,31 @@
     {
       "source": "knowledge.em.bethe_aperture_coupling",
       "target": "reasoning.em.edge_field_phenomena",
+      "type": "analogy"
+    },
+    {
+      "source": "knowledge.em.oam_beams",
+      "target": "knowledge.em.vector_wave_functions",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "knowledge.em.oam_beams",
+      "target": "reasoning.em.nonlinear_optical_response",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "knowledge.em.oam_beams",
+      "target": "knowledge.em.antennas",
+      "type": "analogy"
+    },
+    {
+      "source": "knowledge.em.oam_beams",
+      "target": "reasoning.em.statistical_em_cavity",
+      "type": "analogy"
+    },
+    {
+      "source": "knowledge.em.transmission_lines",
+      "target": "knowledge.em.waveguides_cavities",
       "type": "analogy"
     }
   ]

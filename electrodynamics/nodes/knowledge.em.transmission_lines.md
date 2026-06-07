@@ -27,4 +27,57 @@ normalized impedance z=r+jx mapped to Γ-plane → graphical design.
 **Power**: P_avg=(|V₀⁺|²/2Z₀)(1−|Γ|²). Maximum available power (conjugate
 match: Z_L=Z₀*). Attenuation: α=α_c+α_d (conductor + dielectric loss).
 
+## Substrate-Integrated Waveguide (SIW)
+
+SIW = rectangular waveguide synthesized using two rows of metallized vias in
+a dielectric substrate. Bridges microstrip (low cost, high loss) and metal
+waveguide (high cost, low loss). Only **TE modes** are supported — TM modes
+leak between vias.
+
+**Equivalent width** (Cassivi-Wu-Deslandes 2002):
+```
+a_eff = W − d²/(0.95 p)
+```
+where W = center-to-center via row spacing, d = via diameter, p = via period.
+
+**Design rules**:
+- p ≤ 2d (to prevent leakage between vias)
+- p/λ₀ ≤ 0.05–0.1 (subwavelength period)
+- Cutoff: same as rectangular waveguide with width a_eff:
+  f_c(TE₁₀) = c/(2 a_eff √ε_r)
+
+**SIW vs microstrip vs metal waveguide**:
+| Property | SIW | Microstrip | Metal WG |
+|----------|-----|-----------|----------|
+| Loss | Medium | High | Low |
+| Cost | Low | Low | High |
+| Integration | PCB-compatible | PCB-native | Separate component |
+| Modes | TE only | Quasi-TEM | TE/TM |
+| mm-wave viable | Yes (up to ∼100 GHz) | Marginal (>60 GHz lossy) | Yes |
+
+## EM-Transmission Line Coupling
+
+External electromagnetic fields (lightning, HEMP, HIRF) induce currents
+on transmission lines via three canonical coupling models:
+
+**Taylor model** (distributed voltage sources):
+dI/dz + Y V = −Y E_tan(z) — tangential E-field drives distributed current
+sources along the line via the impedance Y.
+
+**Agrawal model** (scattered voltage formulation):
+dV_scat/dz + Z I = E_z_inc — incident axial E-field drives distributed
+voltage sources. Scattered voltage V_scat plus incident voltage V_inc
+reconstructs the total voltage.
+
+**Rachidi model** (magnetic-field excitation):
+V(z) = −∫_0^h ∂B_y/∂t dz — the time-derivative of the incident magnetic
+flux drives voltage sources.
+
+These models are equivalent for the same geometry (Štumpf 2019 §12). The
+Agrawal form is preferred for numerical implementation because it handles
+lossy grounds naturally. All three follow from the reciprocity theorem
+applied to the transmission-line equations.
+
 - Jackson §8.1
+- Štumpf, *Time-Domain EM Reciprocity in Antenna Modeling* (2019) §12
+- Chen et al., *Substrate-Integrated mm-Wave Antennas* (2021) §3
