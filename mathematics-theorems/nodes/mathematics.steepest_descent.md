@@ -137,6 +137,78 @@ beam shifts at critical incidence, leaky wave cutoff).
 | Cherenkov radiation integral | Saddle + pole interaction → Cherenkov cone |
 | Leaky wave radiation | Complex saddle → beam at angle arcsin(β/k₀) |
 
+## Branch-Point Asymptotics: The α-th Order Endpoint Formula
+
+When the steepest-descent contour deformation crosses a **branch cut** (as in
+Sommerfeld half-space problems), the branch-cut integral contributes an
+endpoint asymptotic distinct from saddle-point contributions. This is the
+canonical mechanism behind the **lateral wave** (head wave) in layered media.
+
+### Canonical Result
+
+For an integral with a branch point at the origin:
+```
+I(λ) = ∫₀^∞ s^α e^{iλs} ds = Γ(α+1) / (iλ)^{α+1}
+```
+
+**Derivation** by contour rotation: substitute σ = −iλs, deforming the
+contour to the positive real axis:
+```
+I(λ) = ∫₀^∞ (−σ/(iλ))^α e^{−σ} (−dσ/(iλ))
+     = (1/(iλ)^{α+1}) ∫₀^∞ σ^α e^{−σ} dσ
+     = Γ(α+1) / (iλ)^{α+1}
+```
+
+### Special Cases and Applications
+
+| α | Amplitude | Physical Application |
+|---|-----------|---------------------|
+| 0 | ∝ 1/λ | Watson's lemma standard endpoint; line-source near-field |
+| 1/2 | ∝ 1/λ^{3/2} | Lateral wave from half-space interface (α=1/2 from √u near branch point k_ρ=k₂) |
+| 1 | ∝ 1/λ² | Double-endpoint; next-order correction |
+| −1/2 | ∝ 1/√λ | Edge diffraction (Fresnel integral endpoint) |
+
+### Application to Lateral Waves (Sommerfeld Problem)
+
+In the Sommerfeld half-space problem (source and receiver both in medium 1,
+medium 2 below), the k_ρ (radial wavenumber) integral involves:
+```
+k_z2 = √(k₂² − k_ρ²)
+```
+After deforming the original integration path (SIP) onto the steepest-descent
+path (SDP), the SDP may cross the branch cut originating at k_ρ = k₂. The
+branch-cut integral is evaluated by:
+```
+∫₀^∞ F(u) e^{iuρ} du,   u = k_ρ − k₂
+```
+Near the branch point, F(u) ∼ √u / (k₁² − k₂²) (from k_z2 ∼ √(2k₂u)).
+Setting α = 1/2:
+```
+∫₀^∞ √u e^{iuρ} du = Γ(3/2) / (iρ)^{3/2} = (√π/2) e^{−3iπ/4} / ρ^{3/2}
+```
+
+**Lateral wave properties** (Okhmatovski-Zheng §6.9; Chew §2.5-2.6):
+- Amplitude decays as 1/ρ^{3/2} — slower than spherical 1/ρ at large range
+- Phase velocity equals the wave speed of medium 2: v_ph = c/n₂
+- Exponentially confined to the interface in the vertical direction
+- Physical origin: critically refracted wave that continuously sheds energy
+  back into medium 1 along the Cherenkov-like conical wavefront
+
+### Cross-Domain Lateral Wave Table
+
+The same 1/ρ^{3/2} × exponential confinement structure appears in:
+
+| Domain | Phenomenon | Physical Mechanism | Reference |
+|--------|-----------|-------------------|-----------|
+| EM ground wave | Sommerfeld-Norton surface/lateral wave | Critical-angle refraction at earth-air interface | Sommerfeld 1909; Norton 1936 |
+| Seismology | Head wave (refraction survey) | Critically refracted P-wave along layer interface | Aki & Richards 1980 |
+| Underwater acoustics | Lloyd's mirror / surface duct | Phase-reversed reflection + surface-guided propagation | Brekhovskikh 1980 |
+| Ionospheric propagation | Whispering gallery modes | Trapping by spherical ionospheric layers | Wait 1962 |
+
+**Unified physics**: critical-angle trapping at a planar/spherical interface
+produces the same conical-wave radiation pattern regardless of the specific
+wave equation (Maxwell, elastic, or acoustic).
+
 ## Edge Cases
 
 - **Coalescing saddle + pole**: When a pole crosses the saddle as a parameter

@@ -118,6 +118,46 @@ scattering from nanoparticles. Cross-ref: `plasma: reasoning.plasma.laser_plasma
   structures and unitary for lossless matched networks. In a power-normalized
   impedance basis, S = (Z−U)(Z+U)⁻¹, where U is the identity matrix.
 
+## Time-Domain Extension (TD-EFIE / TD-MFIE / MOT)
+
+The MoM can be extended to the time domain via the Method of Marching-On-in-Time
+(MOT). The time-domain EFIE is:
+```
+n̂ × E_inc(r,t) = −n̂ × [∂_t A(r,t) + ∇Φ(r,t)]
+A(r,t) = (μ₀/4π) ∫_S J(r', t−|r−r'|/c) / |r−r'| dS'
+```
+
+**Retardation kernel**: The Green's function in time domain is
+G(r,r'; t,t') = δ(t − t' − |r−r'|/c) / (4π|r−r'|). The causal nature
+(no field before the source) makes the discretized space-time MoM matrix
+**upper-triangular** in time — each time step only depends on earlier times,
+enabling explicit marching.
+
+**MOT discretization** (Kast et al. 2022 §7):
+1. Expand J(r,t) = Σ_{n,j} α_n^j f_n(r) T_j(t) — spatial basis × temporal basis
+2. Test with w_m(r) δ(t−t_i) (point-testing in time after spatial projection)
+3. Matrix at time step i: Z₀ α^i = V^i − Σ_{k=1}^{i-1} Z_{i−k} α^k
+   where Z₀ is the instantaneous (magnetic-field) matrix and Z_{i−k} are
+   retarded-time matrices.
+
+**Late-time stability issues**: Explicit MOT based on standard EFIE can suffer
+from exponential late-time instability due to:
+- DC wandering of the solution (unstable static mode)
+- High-frequency numerical resonances from discretization
+- Ill-conditioning of the instantaneous matrix Z₀
+
+Mitigation strategies:
+- **Calderón preconditioning**: Use second-kind integral equations
+  (TD-MFIE or TD-CFIE) which have better spectral properties.
+- **Implicit MOT**: Shifts stability from explicit to implicit time stepping.
+- **Lubich convolution quadrature**: Recasts TDIE as frequency-domain IE
+  with numerical inverse Laplace transform — bypasses stability issues
+  entirely (cf. `reasoning.cp.regularization_ill_posed` — late-time stability
+  is the time-domain analog of compact-operator ill-posedness).
+- **TD-MFIE**: For closed PEC surfaces, the magnetic field integral equation
+  is of the second kind (identity + compact operator), giving better
+  conditioning than EFIE (first kind).
+
 ## Edge Cases
 
 - **Interior resonance**: EFIE/MFIE errors grow rapidly as k approaches an

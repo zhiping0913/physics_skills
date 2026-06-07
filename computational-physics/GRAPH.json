@@ -39,6 +39,12 @@
     },
     "reasoning.cp.regularization_ill_posed": {
       "node_type": "reasoning"
+    },
+    "reasoning.cp.dgtd_method": {
+      "node_type": "reasoning"
+    },
+    "reasoning.cp.uncertainty_quantification": {
+      "node_type": "reasoning"
     }
   },
   "edges": [
@@ -201,6 +207,51 @@
       "source": "reasoning.cp.absorbing_boundary_conditions",
       "target": "reasoning.cp.modal_expansion_numerical",
       "type": "analogy"
+    },
+    {
+      "source": "reasoning.cp.dgtd_method",
+      "target": "reasoning.cp.galerkin_rayleigh_ritz",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.dgtd_method",
+      "target": "reasoning.cp.finite_element_method",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.cp.dgtd_method",
+      "target": "reasoning.cp.fdtd_yee_algorithm",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.cp.uncertainty_quantification",
+      "target": "reasoning.cp.galerkin_rayleigh_ritz",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.uncertainty_quantification",
+      "target": "reasoning.cp.regularization_ill_posed",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.cp.uncertainty_quantification",
+      "target": "reasoning.em.statistical_em_cavity",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.cp.moment_method",
+      "target": "reasoning.cp.uncertainty_quantification",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.cp.moment_method",
+      "target": "reasoning.cp.dgtd_method",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.cp.galerkin_rayleigh_ritz",
+      "target": "reasoning.cp.uncertainty_quantification",
+      "type": "reasoning-instance"
     }
   ]
 }

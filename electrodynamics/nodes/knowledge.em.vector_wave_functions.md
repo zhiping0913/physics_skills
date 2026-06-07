@@ -152,6 +152,23 @@ establishing the notation \(\mathbf{L}, \mathbf{M}, \mathbf{N}\) still used toda
 Independently, the spherical versions are often called "vector spherical harmonics"
 or "vector spherical wave functions" in the physics literature.
 
+## Hilbert-Space Cross-Template
+
+The Hansen triad {L, M, N} is the **physical-space orthogonal basis** for
+vector Helmholtz fields. The same orthogonal-expansion Hilbert-space
+template appears in:
+
+| Hilbert Space | Orthogonal Basis | Inner Product | Application Node |
+|--------------|-----------------|---------------|------------------|
+| Physical 3D space | L, M, N (Hansen vectors) | ∫ E·E'* dV | `dyadic_green_function`, this node |
+| Probability space | ψ_α(ξ) (Wiener-Askey polynomials) | ∫ ψ_α ψ_β p(ξ) dξ | `reasoning.cp.uncertainty_quantification` |
+| Time domain | T_j(t) (temporal basis) | ∫ f(t) g(t) dt | `moment_method` §TD extension |
+| Fock space | Slater determinants | ⟨Ψ|O|Ψ'⟩ | Quantum chemistry CI (future) |
+
+In each case: expand unknown in orthogonal basis → project residual onto test
+basis → solve linear system for coefficients. The only change is which Hilbert
+space hosts the inner product.
+
 ## Key Takeaways
 
 1. \(\mathbf{L}, \mathbf{M}, \mathbf{N}\) form a complete basis for the vector Helmholtz

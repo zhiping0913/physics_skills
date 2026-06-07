@@ -90,7 +90,12 @@
       "source": "mathematics.depolarization_dyadic",
       "target": "knowledge.em.static_multipoles",
       "type": "analogy"
+    },
+    {
+      "source": "mathematics.steepest_descent",
+      "target": "mathematics.sommerfeld_integral",
+      "type": "reasoning-instance"
     }
   ],
-  "_note": "mathematics.vector_algebra, mathematics.fourier_transform, mathematics.complex_analysis are external undergraduate prerequisites — not distilled as nodes."
+  "_note": "mathematics.vector_algebra, mathematics.fourier_transform, mathematics.complex_analysis are external undergraduate prerequisites \u2014 not distilled as nodes."
 }

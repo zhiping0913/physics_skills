@@ -101,6 +101,12 @@
     },
     "knowledge.em.vector_wave_functions": {
       "node_type": "knowledge"
+    },
+    "reasoning.em.statistical_em_cavity": {
+      "node_type": "reasoning"
+    },
+    "knowledge.em.bethe_aperture_coupling": {
+      "node_type": "knowledge"
     }
   },
   "edges": [
@@ -323,6 +329,36 @@
       "source": "mathematics.depolarization_dyadic",
       "target": "reasoning.em.dyadic_green_function",
       "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.statistical_em_cavity",
+      "target": "reasoning.em.dyadic_green_function",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.statistical_em_cavity",
+      "target": "mathematics.plane_wave_spectrum",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.statistical_em_cavity",
+      "target": "reasoning.cp.uncertainty_quantification",
+      "type": "analogy"
+    },
+    {
+      "source": "knowledge.em.bethe_aperture_coupling",
+      "target": "knowledge.em.scattering_mie",
+      "type": "analogy"
+    },
+    {
+      "source": "knowledge.em.bethe_aperture_coupling",
+      "target": "reasoning.em.statistical_em_cavity",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "knowledge.em.bethe_aperture_coupling",
+      "target": "reasoning.em.edge_field_phenomena",
+      "type": "analogy"
     }
   ]
 }

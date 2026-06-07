@@ -131,7 +131,7 @@ physics-conventions: convention.charge_cyclotron
 
 ---
 
-*Last updated: 2026-06-04. Generated from `/home/zhiping/knowledge_base/book/` inventory.*
+*Last updated: 2026-06-07. Phase β handoff — added Hill 2009, Okhmatovski-Zheng 2024, Kast 2022, Poljak-Šušnjara 2023, Hesthaven-Warburton 2007, and related UQ/statistical references.*
 
 ## External References (Not in Knowledge Base)
 
@@ -145,3 +145,16 @@ Flagged with `[square brackets]` in node cross-references. Consider acquiring fo
 | [Maier] | S. A. Maier, *Plasmonics: Fundamentals and Applications*, Springer, 2007 | Not in KB |
 | [Artmann] | K. Artmann, *Ann. Physik* 437, 87 (1948) | Journal article — original Goos-Hänchen paper |
 | [Azzam & Bashara] | R. M. A. Azzam & N. M. Bashara, *Ellipsometry and Polarized Light*, North-Holland, 1977 | Not in KB — cited in Fresnel node |
+| [Hill 2009] | D. A. Hill, *Electromagnetic Fields in Cavities: Deterministic and Statistical Theories*, IEEE Press, 2009 | Not in KB — Phase β validation book (T5); cited by `statistical_em_cavity`, `bethe_aperture_coupling` |
+| [Okhmatovski-Zheng 2024] | V. Okhmatovski & S. Zheng, *Theory and Computation of Electromagnetic Fields in Layered Media*, IEEE Press, 2024 | Not in KB — Phase β validation book (T6); cited by `steepest_descent` |
+| [Kast 2022] | J. Kast et al., *Advanced Time Domain Modeling for Electrical Engineering*, IEEE Press, 2022 | Not in KB — Phase β validation book (T10); cited by `dgtd_method`, `moment_method` §TD |
+| [Poljak-Šušnjara 2023] | D. Poljak & A. Šušnjara, *Deterministic and Stochastic Modeling in Computational Electromagnetics*, IEEE Press, 2023 | Not in KB — Phase β validation book (T11); cited by `uncertainty_quantification` |
+| [Goodman Statistical Optics] | J. W. Goodman, *Statistical Optics*, 2nd ed., Wiley, 2015 | Not in KB — cited by `statistical_em_cavity` (optical speckle) |
+| [Berry 1977] | M. V. Berry, "Regular and irregular semiclassical wavefunctions," J. Phys. A: Math. Gen. 10:2083, 1977 | Journal article — Berry conjecture for chaotic eigenfunctions |
+| [BGS 1984] | O. Bohigas, M. J. Giannoni & C. Schmit, "Characterization of chaotic quantum spectra and universality of level fluctuation laws," Phys. Rev. Lett. 52:1, 1984 | Journal article — Bohigas-Giannoni-Schmit conjecture |
+| [Sabine 1900] | W. C. Sabine, *Reverberation*, collected papers on acoustics, Harvard, 1922 (orig. 1900) | Not in KB — cited by `statistical_em_cavity` (acoustic reverberation) |
+| [Hesthaven-Warburton 2007] | J. S. Hesthaven & T. Warburton, *Nodal Discontinuous Galerkin Methods*, Springer, 2007 | Not in KB — canonical DGTD textbook; cited by `dgtd_method` |
+| [Xiu-Karniadakis 2002] | D. Xiu & G. E. Karniadakis, "The Wiener-Askey polynomial chaos for stochastic differential equations," SIAM J. Sci. Comput. 24:619, 2002 | Journal article — foundational gPCE paper; cited by `uncertainty_quantification` |
+| [Le Maître-Knio 2010] | O. P. Le Maître & O. M. Knio, *Spectral Methods for Uncertainty Quantification*, Springer, 2010 | Not in KB — UQ monograph; cited by `uncertainty_quantification` |
+| [Saltelli 2008] | A. Saltelli et al., *Global Sensitivity Analysis: The Primer*, Wiley, 2008 | Not in KB — Sobol sensitivity analysis; cited by `uncertainty_quantification` |
+| [Cockburn-Shu 1989] | B. Cockburn & C. W. Shu, "TVB Runge-Kutta local projection discontinuous Galerkin finite element method," J. Comput. Phys., 1989 | Journal article — foundational DG-CFD paper; cited by `dgtd_method` |

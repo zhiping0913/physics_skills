@@ -169,12 +169,14 @@ making A or B diagonal.
 ## Cross-Domain Unification Table
 
 | Domain | Functional / weak object | Trial space | Matrix problem | Physical meaning |
-|---|---|---|---|---|
+|---|---|---|---|---|---|
 | Quantum Rayleigh-Ritz | Energy expectation E[ψ]=<ψ,Hψ>/<ψ,ψ> | Atomic orbitals, plane waves, finite elements, configuration basis | H c = E S c | Variational upper bounds for bound-state energies; configuration interaction is Galerkin in many-body basis |
 | Solid mechanics FEM | Potential Π(u)=1/2∫ε(u):C:ε(u)dV - ∫u·f dV - ∮u·t dS | Nodal or vector displacement shape functions | K d = F | Stationary elastic potential energy; stiffness matrix from strain-displacement bilinear form |
+| **Probability space (UQ)** | **⟨ψ_β, L Σ c_α ψ_α⟩_p = ⟨ψ_β, f⟩_p** | **Wiener-Askey orthogonal polynomials (Hermite, Legendre, Jacobi, Laguerre)** | **A c = b with A_{βα}=⟨ψ_β, L ψ_α⟩_p** | **Galerkin projection on probability Hilbert space — PCE, stochastic collocation. Same Aα=b structure as FEM/MoM but inner product is w.r.t. input PDF (cf. reasoning.cp.uncertainty_quantification)** |
 | Ideal MHD stability | δW[ξ] from displacement ξ | Fourier harmonics, finite elements, flux-coordinate basis | K ξ = ω² M ξ or δW sign test | δW>0 stable; δW<0 instability. Green's identities expose surface terms and jump conditions |
 | Acoustics | ∫(∇p·∇q* - k²pq*)dV - boundary terms | Nodal FEM, boundary elements, modes | (K-k²M)p=b | Pressure Helmholtz weak form / boundary integral projection |
 | Heat/diffusion | ∫∇v·κ∇u dV - ∫vf dV | FEM nodal functions | K u = f | Minimum dissipation / weak Poisson equation |
+| **Time domain (TDIE/MOT)** | **∫ w_m(r) · [L_t J](r,t) dS, causal L_t** | **RWG spatial × temporal basis T_j(t)** | **Z₀ α^i = V^i − Σ Z_{i−k} α^k (upper-triangular in time)** | **Space-time Galerkin with causality. MOT is time-domain block-upper-triangular Galerkin (cf. moment_method §TD extension)** |
 
 ## Edge Cases and Checks
 
