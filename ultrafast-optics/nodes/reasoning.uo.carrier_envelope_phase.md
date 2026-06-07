@@ -109,8 +109,14 @@ E_peak varies by up to 100% as φ_CEO drifts. CEP-stabilized pulses are
 essential for:
 - Isolated attosecond pulse generation (IAP — needs cos-like E-field)
 - Attosecond streaking (CEP controls streaking spectrogram)
-- Carrier-envelope phase-dependent strong-field physics (above-threshold
-  ionization, high-harmonic generation)
+   - carrier-envelope phase-dependent strong-field physics (above-threshold
+     ionization, high-harmonic generation)
+   - **CEP-controlled state-selective strong-field excitation**: for τ_p < 2
+     cycles, the peak field acts as a DC kick whose direction is set by φ_CEO.
+     Stark shifts of opposite-polarity excited states are flipped between
+     CEP=0 and CEP=π, producing state-selective excitation and CEP-tunable
+     fragmentation/photoproduct ratios (PUILS-XIII Ch.4, LiH: Y_Σ₂/Y_Σ₃ = 2.45
+     at CEP=0 vs 0.29 at CEP=π).
 
 ## Algorithm — Given Comb → f_CEO Measurement + Stabilization
 

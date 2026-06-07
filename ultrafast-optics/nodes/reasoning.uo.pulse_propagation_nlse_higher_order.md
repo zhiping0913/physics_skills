@@ -167,6 +167,21 @@ effective plasma frequency ω_p/√γ shifts with intensity. Cross-reference:
 
 - **Zero-dispersion wavelength (ZDW)**: β₂ ≈ 0 → TOD dominates.
   Supercontinuum generation relies on pumping near ZDW.
+- **Self-focusing critical power**: When P > P_cr, the Kerr lens overcomes
+  diffraction, causing beam collapse. The critical power:
+  ```
+  P_cr = α λ²/(4π n₀ n₂)
+  ```
+  where α depends on beam profile: Townes (optimal self-trapping) α≈1.86,
+  Gaussian (aberrationless) α≈1.86. For Ti:sapphire at 800 nm (n₀≈1.76,
+  n₂≈3×10⁻¹⁶ cm²/W): P_cr ≈ 2.6 MW. Self-focusing distance:
+  ```
+  z_sf = L_diff / √(P/P_cr − 1)     (Marburger/Akhmanov)
+  ```
+  where L_diff = k₀ w₀² is the Rayleigh length. For P close to P_cr,
+  z_sf → ∞ (stable self-trapping for Townes profile). Above P_cr, beam
+  collapses at finite z_sf. In filamentation, plasma defocusing balances
+  Kerr at I_clamp ≈ few×10¹³ W/cm² in air.
 - **Raman response in gases**: T_R ∼ 100-300 fs (molecular rotation),
   much longer than in solids. Enables coherent rotational Raman generation.
 - **Plasma contribution**: Above the ionization threshold (∼10¹³ W/cm²),

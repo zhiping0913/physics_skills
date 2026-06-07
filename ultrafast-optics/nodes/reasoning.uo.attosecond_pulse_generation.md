@@ -118,10 +118,18 @@ Not isolated, but useful for:
 - Polarization gating + second-harmonic field → extends the ellipticity
   window → cleaner gate.
 
-**Attosecond lighthouse** (Vincenti 2012):
-- Wavefront rotation (spatial chirp) + angular filtering → spatial gating.
-- Each attosecond pulse is emitted in a different direction → single pulse
-  selected by aperture.
+4. **Attosecond lighthouse** (Vincenti 2012):
+   Wavefront rotation (spatial chirp) + angular filtering → spatial gating.
+   Each attosecond pulse is emitted in a different direction → single pulse
+   selected by aperture.
+
+5. **Ionization gating** (Ferrari 2010): For intense few-cycle pulses with
+   peak intensity well above the saturation intensity, the ground state is
+   depleted during the rising edge of the pulse. Only the LEADING half-cycle
+   generates harmonics before the gas is fully ionized → natural IAP selection.
+   Advantage: works with multi-cycle drivers where polarization gating is
+   impractical. Used at ELI-ALPS for high-flux IAP generation (PUILS-XIII
+   Ch.10).
 
 ### 5. Attosecond streaking characterization
 

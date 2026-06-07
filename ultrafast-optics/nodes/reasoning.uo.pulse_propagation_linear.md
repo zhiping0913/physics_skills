@@ -16,8 +16,9 @@ parent: reasoning.optics.pulse_propagation_nlse
 retrieval_cost: 1
 sign_convention: >
   Time convention e^{−iωt}. Spectral phase ψ(ω) = arg{E(ω)}.
-  GDD = ψ₂ = d²ψ/dω² (fs²). Positive ψ₂ → positive chirp (red leads blue,
-  instantaneous frequency increases with time). β₂ = −ψ₂/L for bulk medium.
+  GDD = ψ₂ = d²ψ/dω² = +β₂L (with e^{−iωt} convention: ψ(ω)=+β(ω)L adds
+  to pulse phase). Positive ψ₂ → positive chirp (red leads blue,
+  instantaneous frequency increases with time). β₂ = +ψ₂/L for bulk medium.
   In fibers: D (ps/nm/km) = −(2πc/λ²)β₂. Normal dispersion: D<0, β₂>0.
   Anomalous dispersion: D>0, β₂<0. τ_p = FWHM of |a(t)|².
   Transform limit τ_p Δν: Gaussian 0.44, sech² 0.315.
@@ -73,12 +74,13 @@ v_g = β₁⁻¹ = c/(n + ω dn/dω) = c/(n − λ dn/dλ)       (Weiner eq 4.12
 
 **GDD definition**:
 ```
-GDD = ψ₂ = d²ψ/dω² = −β₂L    (units: fs²)
+GDD = ψ₂ = d²ψ/dω² = +β₂L    (units: fs²)
 ```
+where ψ(ω) = +β(ω)L for propagation with e^{−iωt} carrier convention.
 
-**Material GDD** (Weiner eq 4.21):
+**Material GDD** (Weiner §4.1, eq 4.21):
 ```
-ψ₂ = −(λ³L)/(2πc²) · d²n/dλ²
+ψ₂ = +(λ³L)/(2πc²) · d²n/dλ²
 ```
 Fused silica at 800 nm: d²n/dλ² > 0 → ψ₂ > 0 (normal dispersion). Typical:
 ψ₂ ≈ +360 fs² per cm.

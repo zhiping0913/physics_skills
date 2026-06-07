@@ -194,7 +194,9 @@ pulses. Energy scaling: E_p ∝ √(β₂,pos − β₂,neg) vs soliton limit E_
 
 3. HAUS EQUATION ANALYSIS (fast SA approximation):
    ℓ(t) = ℓ₀ − κ|a(t)|² (for small saturation, KLM/NPE)
-   → steady-state: sech² pulse, τ_p ∝ 1/√(κ E_p).
+   → steady-state: sech² pulse, τ_p ≈ 4/(ω_c² κ E_p) — linear in inverse
+   pulse energy (from balancing d²/dt² filter broadening ∝ 1/(ω_c²τ²)
+   against SA shortening ∝ κE_p/(2τ)).
 
    For slow SA: ℓ(t) = ℓ₀ exp(−U(t)/U_A).
    → asymmetric pulse shape (steeper leading edge).
