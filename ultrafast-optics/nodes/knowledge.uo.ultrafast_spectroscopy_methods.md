@@ -98,3 +98,67 @@ to common delay grid.
 | Population time | T₁ | Fluorescence/excited-state lifetime | ps-ns (electronic), ps (vibrational) |
 | Inhomogeneous width | σ_inh | Gaussian width of static distribution | 50-500 cm⁻¹ |
 | FFCF | C(t) | Frequency fluctuation correlation function | Decays with spectral diffusion time |
+
+## Voigt Profile and Lineshape Analysis (Mukamel §8, §10)
+
+The linear absorption lineshape is the convolution of homogeneous (Lorentzian)
+and inhomogeneous (Gaussian) contributions — the **Voigt profile**:
+```
+σ_a(ω) = ∫ σ_a^H(ω − ω') W(ω') dω'
+W(ω) = (1/√(2π)Δ) exp(−ω²/2Δ²)              [Gaussian inhomogeneous]
+σ_a^H(ω) = (Γ̂/π) / ((ω−ω₀)² + Γ̂²)           [Lorentzian homogeneous]
+```
+Key insight (Mukamel §10.1): Linear spectroscopy CANNOT distinguish
+homogeneous from inhomogeneous broadening — the lineshape is invariant to
+exchanging J_H(t) ↔ χ(t). Only nonlinear techniques (photon echo, 2D
+spectroscopy, hole burning) can separate them.
+
+## Spectral Diffusion and FFCF (Mukamel §8, Brownian Oscillator)
+
+The **Frequency Fluctuation Correlation Function (FFCF)** quantifies how
+the instantaneous transition frequency fluctuates:
+```
+C(t) = ⟨δω(0) δω(t)⟩
+```
+- **Static limit** (inhomogeneous): C(t) ≈ Δ² (constant) → Gaussian lineshape
+- **Fast modulation** (homogeneous): C(t) ≈ (2k_BT λ/ℏ) Λ e^{−Λt}
+  where Λ is the bath relaxation rate → Lorentzian lineshape
+- **Intermediate**: Brownian oscillator model interpolates continuously
+  between these limits by varying Λ.
+
+The **Cumulant expansion** (Mukamel §8.3) provides a systematic way to
+include bath dynamics in the response function:
+```
+g(t) = ∫₀^t dτ₁ ∫₀^{τ₁} dτ₂ C(τ₂)           [lineshape function]
+J(t) = exp(−i⟨ω⟩t − g(t))                    [linear response]
+```
+The second-order cumulant is exact for the Brownian oscillator (Gaussian
+bath). Higher cumulants capture non-Gaussian dynamics.
+
+In 2D spectroscopy, the FFCF manifests as the **center-line slope (CLS)**
+of the 2D peak: CLS(T) ∝ C(T)/C(0). By measuring the slope at various
+waiting times T, the FFCF is extracted directly — no model fitting needed.
+
+## Complementary Inhomogeneous-Elimination Techniques (Mukamel §10, §13)
+
+Beyond photon echo and 2D spectroscopy, other methods selectively eliminate
+inhomogeneous broadening:
+
+- **Hole burning** (Mukamel §13): Narrow-band pump burns a spectral hole in
+  the inhomogeneous band → broad-band probe reads the hole. Hole width ∝
+  2Γ_hom → direct measure of T₂. Only molecules resonant with pump are
+  affected — inherently selective.
+
+- **Fluorescence line narrowing (FLN)**: Narrow-band excitation → only a
+  sub-ensemble fluoresces → emission linewidth ≈ homogeneous linewidth
+  (free of inhomogeneous broadening). Requires low temperature to suppress
+  spectral diffusion.
+
+- **Single-molecule spectroscopy** (Moerner 1989): At cryogenic temperatures,
+  individual molecules can be isolated spatially → their fluorescence
+  excitation spectrum reveals the pure homogeneous lineshape. The
+  inhomogeneous distribution is reconstructed by measuring many molecules.
+
+- **Accumulated photon echo (APE)**: Long-lived population gratings
+  accumulate over many pulse pairs → stronger signal at low rep rates.
+

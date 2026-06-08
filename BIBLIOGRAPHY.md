@@ -158,6 +158,7 @@ Flagged with `[square brackets]` in node cross-references. Consider acquiring fo
 | [Le Maître-Knio 2010] | O. P. Le Maître & O. M. Knio, *Spectral Methods for Uncertainty Quantification*, Springer, 2010 | Not in KB — UQ monograph; cited by `uncertainty_quantification` |
 | [Saltelli 2008] | A. Saltelli et al., *Global Sensitivity Analysis: The Primer*, Wiley, 2008 | Not in KB — Sobol sensitivity analysis; cited by `uncertainty_quantification` |
 | [Cockburn-Shu 1989] | B. Cockburn & C. W. Shu, "TVB Runge-Kutta local projection discontinuous Galerkin finite element method," J. Comput. Phys., 1989 | Journal article — foundational DG-CFD paper; cited by `dgtd_method` |
+| [Mukamel 1995] | S. Mukamel, *Principles of Nonlinear Optical Spectroscopy*, Oxford, 1995 | In KB — canonical nonlinear spectroscopy text; cited by `ultrafast_spectroscopy`, `ultrafast_spectroscopy_methods` |
 | [Papathanasopoulos 2021] | E. D. Papathanasopoulos, W. Tang, S. Yu & F. Yin (eds), *Electromagnetic Vortices — Wave Phenomena and Engineering Applications*, IEEE Press, 2021 | Not in KB — Phase δ validation book (T12); cited by `oam_beams` |
 | [Stumpf 2019] | M. Štumpf, *Time-Domain Electromagnetic Reciprocity in Antenna Modeling*, IEEE Press, 2019 | Not in KB — Phase γ validation book (T8); cited by `transmission_lines`, `extinction_theorem` |
 | [Josefsson-Persson 2006] | L. Josefsson & P. Persson, *Conformal Array Antenna Theory and Design*, IEEE Press, 2006 | Not in KB — Phase γ validation book (A1) |

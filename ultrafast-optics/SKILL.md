@@ -28,6 +28,7 @@ use them as frequency combs and attosecond probes.
 - Trebino, *Frequency-Resolved Optical Gating* (2000)
 - Dantus, *Femtosecond Laser Shaping* (2017)
 - Ye & Cundiff, *Femtosecond Optical Frequency Comb* (2005)
+- Mukamel, *Principles of Nonlinear Optical Spectroscopy* (1995) — response functions, Liouville space, cumulant, Brownian oscillator
 - Siegman, *Lasers* (1986) — mode-locking sections (§26-27)
 - Svelto, *Principles of Lasers* (2010, 5th ed) — test set
 - PUILS XIII, *Progress in Ultrafast Intense Laser Science* (2017) — test set

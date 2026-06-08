@@ -39,7 +39,68 @@ revealing couplings, energy transfer pathways, and quantum coherences — the
 optical analog of multidimensional NMR (Weiner §12-13; Diels-Rudolph §8;
 Mukamel 1995).
 
-## Derivation Sketch
+## Derivation Sketch — Response Function Formalism
+
+Following Mukamel §5-6, the optical polarization is expanded in orders of
+the external field:
+```
+P = P⁽¹⁾ + P⁽²⁾ + P⁽³⁾ + ...
+P⁽ⁿ⁾(t) = ∫₀^∞ dt_n ... ∫₀^∞ dt₁ R⁽ⁿ⁾(t_n,...,t₁) E(t−t_n)...E(t−t_n−...−t₁)
+```
+where R⁽ⁿ⁾ is the n-th order response function. Linear spectroscopy
+(absorption, refraction) is governed by R⁽¹⁾. All ultrafast nonlinear
+spectroscopies — pump-probe, photon echo, transient grating, 2D — are
+governed by the **third-order response function R⁽³⁾(t₃,t₂,t₁)**.
+
+### 1. Four Liouville-space pathways (R1–R4)
+
+The third-order response decomposes into four distinct density-matrix
+pathways (double-sided Feynman diagrams, Mukamel §6):
+
+| Pathway | t₁ evolution | t₂ evolution | t₃ evolution | Physical process |
+|---------|-------------|-------------|-------------|-----------------|
+| R₁ (NR) | |g⟩⟨e| (coherence) | |e⟩⟨e| (population) | |e⟩⟨g| (coherence) | Excited-state emission (non-rephasing) |
+| R₂ (R) | |e⟩⟨g| (coherence) | |e⟩⟨e| (population) | |e⟩⟨g| (coherence) | Excited-state emission (rephasing) |
+| R₃ (R) | |e⟩⟨g| (coherence) | |g⟩⟨g| (population) | |e⟩⟨g| (coherence) | Ground-state bleach (rephasing) |
+| R₄ (NR) | |g⟩⟨e| (coherence) | |g⟩⟨g| (population) | |e⟩⟨g| (coherence) | Ground-state bleach (non-rephasing) |
+
+**Rephasing** (R₂,R₃): t₁ evolution with phase e^{−iωt₁}, t₃ with e^{+iωt₃}
+→ inhomogeneous dephasing reversed → photon echo at t₃ = t₁.
+Phase-matching: **k_I = −k₁ + k₂ + k₃**.
+
+**Non-rephasing** (R₁,R₄): same phase sign in t₁ and t₃ → no echo.
+Phase-matching: **k_II = +k₁ − k₂ + k₃**.
+
+All four pathways are required for the absorptive 2D spectrum (R₁+R₂+R₃+R₄).
+
+### 2. Photon echo as four-wave mixing
+
+Photon echo is a **third-order four-wave mixing process** (Mukamel §10):
+```
+Pulse 1 (k₁, t=0) → coherence |g⟩⟨e| (phase e^{−iω_{eg}t₁})
+Pulse 2 (k₂, t=t₁) → population |e⟩⟨e| (phase frozen during t₂)
+Pulse 3 (k₃, t=t₁+t₂) → coherence |e⟩⟨g| (phase e^{+iω_{eg}t₃})
+Signal at k_s = −k₁ + k₂ + k₃ → echo at t₃ = t₁
+```
+Echo amplitude: |E_echo| ∝ exp(−2t₁/T₂) · exp(−t₂/T₁).
+Inhomogeneous distribution contributes factor χ(t₃−t₁) → integrated out
+at t₃=t₁ (the echo peak). Homogeneous dephasing T₂ survives.
+
+**Two-pulse echo**: t₂ = 0 (pulses 2 and 3 degenerate).
+**Three-pulse (stimulated) echo**: finite t₂ probes population relaxation
+and spectral diffusion.
+
+### 3. Pump-probe from response function
+
+Pump-probe signal = heterodyne-detected third-order response:
+```
+ΔT/T(τ) ∝ Im{P⁽³⁾(t; pump, pump, probe)} ∝ Im{R⁽³⁾ convoluted with fields}
+```
+Three contributions (all from R⁽³⁾ pathways):
+- **Ground-state bleach (GSB)** — R₃+R₄: pump removes g-population
+- **Stimulated emission (SE)** — R₁+R₂: pump creates e-population
+- **Excited-state absorption (ESA)** — additional e→f transition not in R1-R4
+Net: ΔT/T = GSB + SE − ESA.
 
 ### 1. Pump-probe spectroscopy
 
