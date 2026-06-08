@@ -88,8 +88,43 @@ external field perturbations → potentially 10⁻¹⁹ ultimate accuracy.
 **Supercontinuum coherence**: The supercontinuum generated in PCF must be
 coherent (low RIN — relative intensity noise). Coherence degrades for long
 pulses (>200 fs) and high soliton order. Use short input pulses (<100 fs)
-and short PCF length (<10 cm).
+and short PCF length (<10 cm). Supercontinuum noise amplification from
+technical and shot noise can limit the usable f_CEO SNR (Ye-Cundiff Ch.4).
 
 **Flicker noise floor**: f_CEO phase noise at low Fourier frequencies is
 dominated by flicker (1/f) noise from pump laser and environmental
 fluctuations. Requires >10 kHz lock bandwidth or feed-forward cancellation.
+
+## Direct-Octave Lasers (No Fiber)
+
+High-repetition-rate (>1 GHz) Ti:sapphire ring oscillators can generate
+octave-spanning spectra directly (570–1100 nm) using enhanced self-amplitude
+modulation (SAM) with convex cavity mirrors (Ye-Cundiff Ch.3). Advantages:
+- No microstructure fiber → no supercontinuum noise amplification
+- f_CEO measured via 3ω vs 2ω method (triple 930 nm, beat with doubled 620 nm)
+- Demonstrated >48 hours continuous phase-locked operation without cycle slips
+- ~25-30 dB SNR in 300 kHz bandwidth, stable indefinitely
+- 100× more power per mode than conventional 100 MHz lasers
+
+## Comb Phase Noise Characterization (Ye-Cundiff Ch.1, Ch.5)
+
+The accumulated rms CEP fluctuation over observation time τ_obs:
+```
+Δφ_ce^rms(τ_obs) = √2 · ∫_{1/(2πτ_obs)}^∞ (1/f²) S_ν^{f₀}(f) df
+```
+where S_ν^{f₀}(f) is the frequency-noise power spectral density of f_CEO.
+Coherence time is defined as the τ_obs where 1 radian of phase fluctuations
+have accumulated. Phase-stabilized combs achieve coherence times >1000 s.
+
+**Amplitude-to-phase conversion** (Ye-Cundiff Ch.5): Intensity fluctuations
+couple to CEO phase via the intensity-dependent nonlinear refractive index
+→ RIN at frequency f produces CEO phase noise at f.
+
+## Coherent Pulse Synthesis
+
+Two independent mode-locked lasers with synchronized f_rep and f_CEO can be
+phase-coherently combined to synthesize arbitrary optical waveforms
+(Ye-Cundiff Ch.1, Shelton 2001). The relative timing jitter between the two
+pulse trains can be <1 fs, enabling coherent pulse synthesis across spectral
+regions not accessible to a single laser. Applications: waveform generation
+for coherent control, synthesis of single-cycle pulses.

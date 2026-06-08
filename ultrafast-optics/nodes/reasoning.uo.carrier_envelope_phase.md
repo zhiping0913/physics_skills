@@ -84,9 +84,15 @@ optical frequency metrology — Nobel Prize in Physics 2005 (Hänsch & Hall).
 
 **Feed-back (slow, <100 kHz bandwidth)**:
 - Modulate pump laser power → changes intracavity peak power → changes
-  nonlinear phase → shifts Δφ_CEO.
-- Bandwidth limited by gain dynamics (∼100 kHz).
+  nonlinear phase → shifts Δφ_CEO. Empirically effective; mechanism involves
+  nonlinear phase, spectral shifts, and intensity-dependent group velocity
+  (Ye-Cundiff Ch.5). Bandwidth limited by gain dynamics (∼100 kHz).
 - Residual CEP jitter: ∼100-300 mrad (rms, integrated).
+
+**Tilting end mirror** (Ye-Cundiff Ch.5): In prism-based oscillators, tilting
+the end mirror after the prism sequence introduces a linear phase-with-frequency
+(equivalent group delay) → changes Δφ_CEO without affecting other laser
+parameters. Widely used in Ti:sapphire comb systems.
 
 **Feed-forward (fast, >1 MHz bandwidth)**:
 - Measure Δφ_CEO via f-2f on a single-shot basis.
@@ -145,13 +151,22 @@ essential for:
 ## Edge Cases
 
 - **Insufficient octave for f-2f**: Use 2f-3f interferometer (needs 2/3 octave)
-  or common-path f-2f in PCF.
+  or common-path f-2f in PCF. Alternative: transfer oscillator method (Ye-Cundiff
+  Ch.5) where a stable RF oscillator tracks f_CEO, or interval bisection using
+  auxiliary cw lasers to bridge the frequency gap.
 - **CEP slip in amplifier chain**: Chirped pulse amplifier stretches the pulse →
   CEP in the amplifier is "frozen" for ps duration. But stretcher/compressor
-  misalignment adds CEP noise.
+  misalignment adds CEP noise. In multi-pass amplifiers, beam-pointing
+  fluctuations → path-length changes → CEP drift. Post-amplification CEP
+  stabilization requires interferometric detection after the compressor and
+  feed-forward correction (Ye-Cundiff Ch.10).
 - **CEP drift in hollow-core fiber**: Ionization in gas-filled fiber produces
   plasma-dependent dispersion that drifts CEP. Requires active slow-loop
   stabilization after HCF.
+- **Gouy phase shift for few-cycle pulses** (Ye-Cundiff Ch.10): Propagation
+  through a focus adds a wavelength-dependent Gouy phase π/2 per focal region
+  → CEP shift ≈ π for tight focusing. Critical for CEP-sensitive experiments
+  near focus.
 
 ## Cross-References
 
