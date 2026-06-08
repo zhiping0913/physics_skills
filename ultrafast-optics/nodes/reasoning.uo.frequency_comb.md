@@ -140,6 +140,56 @@ broadband, high-resolution spectroscopy at kHz acquisition rates.
    Allan deviation: comb linewidth <1 Hz at 1 s gate time.
 ```
 
+## Comb Dynamics — The Fixed Point (Ye-Cundiff §5.2.2)
+
+For any perturbation X (cavity length, pump power, mirror tilt, temperature),
+there exists a frequency f_x in the comb that remains **unaffected**:
+```
+f_x = f_CEO + f_rep · (∂f_CEO/∂X) / (∂f_rep/∂X)
+```
+This "fixed point" is a powerful diagnostic: measuring how f_CEO and f_rep
+respond to a perturbation immediately reveals its physical origin.
+- X = cavity length change → f_x ≈ 0 (f_rep changes, f_CEO stays nearly constant)
+- X = mirror tilt (group delay only) → f_x ≈ carrier frequency (pure CEO shift)
+- Environmental effects → f_x somewhere between 0 and ν_carrier
+
+The fixed point concept also guides which servo actuator to use: if the
+perturbation's f_x lies far from the spectral region of interest, a different
+control strategy is needed.
+
+## CEO Phase Noise and Coherence Time (Ye-Cundiff §1.5, §5.4)
+
+The accumulated rms CEP fluctuation over observation time τ_obs:
+```
+Δφ_ce^rms(τ_obs) = √2 · ∫_{1/(2πτ_obs)}^∞ S_ν^{f₀}(f) / f² df
+```
+where S_ν^{f₀}(f) is the frequency-noise power spectral density of f_CEO.
+For white frequency noise S_ν = S₀: Δφ_ce^rms(τ) ≈ √(S₀·τ).
+
+**Coherence time** τ_c: the τ_obs where integrated phase noise reaches 1 rad.
+Modern stabilized combs: τ_c > 1000 s (Ye-Cundiff §1.5).
+
+**Three physical CEO noise mechanisms** (Ye-Cundiff §5.4, eq 10):
+1. **Center frequency shifts** (∂ω_c/∂X term): pump power or temperature
+   changes shift the spectrum → change ∫n(ω)dω → Δφ_CEO.
+2. **Cavity geometry / beam pointing** (∂L/∂X term): mirror tilt or air
+   turbulence changes path length → affects both f_rep and f_CEO.
+   **Prism cavities are ~10× noisier** than prismless due to beam pointing
+   in the prism sequence.
+3. **Dispersion changes / Kerr effect** (∂²n/∂ω∂X term): intensity
+   fluctuations modulate n₂ → amplitude-to-phase conversion (APC).
+   APC coefficient ∝ ∂²n/∂ω∂I. For Ti:sapphire: ∼10⁻³ rad/GHz (fundamental
+   limit).
+
+**Amplitude-to-phase conversion (APC)**: RIN at frequency f produces CEO
+phase noise at f. The coupling coefficient is laser-design-dependent;
+prismless, all-chirped-mirror cavities minimize it.
+
+**Key practical insight** (Ye-Cundiff §5.5): Extracavity supercontinuum
+generation contributes only ∼1/f_rep of the intracavity noise to f_CEO.
+This is why microstructure fiber does NOT corrupt CEO stability — the
+dominant noise source is always intracavity.
+
 ## Cross-References
 
 - Ye-Cundiff §1,6-9; Hänsch 2006 (Nobel lecture); Coddington 2008 (dual-comb)

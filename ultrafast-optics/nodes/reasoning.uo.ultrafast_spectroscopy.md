@@ -155,6 +155,16 @@ S(ω_τ, T, ω_t) = 2D correlation spectrum at waiting time T
 - **Non-rephasing (k_II = +k₁ − k₂ + k₃)**: broadening not refocused.
   Cross peaks (ω_τ ≠ ω_t) = excitation at ω_a, detection at ω_b → coupling.
 
+**Advanced framework** (Mukamel §6, §11): Within each phase-matched direction,
+there are TWO distinct Liouville-space pathways (double-sided Feynman
+diagrams, Mukamel Fig 10.6). Rephasing = R₂+R₃, non-rephasing = R₁+R₄.
+Each R_α has specific ket/bra time-ordering and level connectivity.
+The GSB/SE/ESA operational decomposition (three contributions in pump-probe)
+corresponds to specific groupings of these pathways under a 3- or 4-level
+system assumption. For quantitative 2D peak-shape simulation from first
+principles, use Mukamel's full R_α decomposition; the rephasing/non-rephasing
+pair is sufficient for qualitative interpretation.
+
 **Waiting time T evolution**:
 - At T = 0: diagonal peaks broadened along diagonal (inhomogeneous).
   Cross peaks = electronic/vibrational coupling.
