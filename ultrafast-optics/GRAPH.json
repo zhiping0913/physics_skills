@@ -106,7 +106,7 @@
     },
     {
       "source": "reasoning.uo.pulse_propagation_nlse_higher_order",
-      "target": "reasoning.plasma.laser_plasma_interaction",
+      "target": "reasoning.lp.laser_propagation_plasma",
       "type": "analogy"
     },
     {
@@ -231,7 +231,7 @@
     },
     {
       "source": "reasoning.uo.attosecond_pulse_generation",
-      "target": "reasoning.plasma.laser_plasma_interaction",
+      "target": "reasoning.lp.laser_propagation_plasma",
       "type": "analogy"
     },
     {

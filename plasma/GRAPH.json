@@ -9,9 +9,7 @@
     "knowledge.plasma.kinetic_waves": {
       "node_type": "knowledge"
     },
-    "knowledge.plasma.laser_plasma_processes": {
-      "node_type": "knowledge"
-    },
+
     "knowledge.plasma.mhd_waves_stability": {
       "node_type": "knowledge"
     },
@@ -34,9 +32,6 @@
       "node_type": "reasoning"
     },
     "reasoning.plasma.instability_classification": {
-      "node_type": "reasoning"
-    },
-    "reasoning.plasma.laser_plasma_interaction": {
       "node_type": "reasoning"
     },
     "reasoning.plasma.mhd_equilibrium_stability": {
@@ -69,11 +64,6 @@
     {
       "source": "reasoning.plasma.wave_particle_resonance",
       "target": "knowledge.plasma.kinetic_waves",
-      "type": "reasoning-instance"
-    },
-    {
-      "source": "reasoning.plasma.laser_plasma_interaction",
-      "target": "knowledge.plasma.laser_plasma_processes",
       "type": "reasoning-instance"
     },
     {
@@ -117,11 +107,6 @@
       "type": "prerequisite"
     },
     {
-      "source": "reasoning.em.nonlinear_optical_response",
-      "target": "reasoning.plasma.laser_plasma_interaction",
-      "type": "prerequisite"
-    },
-    {
       "source": "reasoning.equilibrium_as_extremum",
       "target": "reasoning.plasma.mhd_equilibrium_stability",
       "type": "prerequisite"
@@ -147,8 +132,6 @@
       "type": "prerequisite"
     },
 
-    {"source": "reasoning.plasma.laser_plasma_interaction", "target": "reasoning.optics.pulse_propagation_nlse", "type": "analogy"},
-    {"source": "reasoning.plasma.laser_plasma_interaction", "target": "reasoning.optics.stimulated_raman_scattering", "type": "analogy"},
     {"source": "reasoning.plasma.instability_classification", "target": "reasoning.em.nonlinear_optical_response", "type": "analogy"}
   ]
 }

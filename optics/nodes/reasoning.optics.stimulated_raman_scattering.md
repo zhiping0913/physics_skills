@@ -16,7 +16,7 @@ parent: reasoning.em.nonlinear_optical_response
 retrieval_cost: 1
 references:
   - electrodynamics: reasoning.em.nonlinear_optical_response
-  - plasma: reasoning.plasma.laser_plasma_interaction
+  - plasma: reasoning.lp.laser_propagation_plasma
   - optics: knowledge.optics.stimulated_scattering_engineering
   - optics: reasoning.optics.pulse_propagation_nlse
 ---
@@ -132,8 +132,8 @@ nonlinearity arises from a DRIVEN OSCILLATOR response.
   κ′ = d(k₀ − k_S − k_epw)/dx. Convective threshold: G > π.
 - **Frequency matching constraint**: plasma SRS requires n_e ≤ n_c/4
   (otherwise ω_S < ω_pe and Stokes is below cutoff).
-- Cross-ref: `plasma: reasoning.plasma.laser_plasma_interaction`
-  (SRS growth rate table, convective vs absolute, SRS/SBS section).
+- Cross-ref: `laser-plasma: reasoning.lp.parametric_instabilities_lpi`
+  (SRS/SBS/TPD growth rates, convective vs absolute thresholds).
 - **Key difference**: plasma SRS has NO material damage threshold (no solid
   lattice); fiber SRS is limited by glass damage (~1 GW/cm²). Plasma SRS
   saturates by Langmuir wave-breaking or pump depletion.
@@ -170,7 +170,7 @@ Bragg scattering. Cross-ref: `knowledge.optics.stimulated_scattering_engineering
 - Boyd §10 (SRS theory, oscillator model), Agrawal §8 (fiber Raman amplifiers)
 - electrodynamics: reasoning.em.nonlinear_optical_response (parent: χ⁽³⁾ framework;
   Derivation Sketch step 3 builds directly on the parent's χ⁽³⁾ → P_NL formalism)
-- plasma: reasoning.plasma.laser_plasma_interaction (plasma SRS — same 3-wave
+- plasma: reasoning.lp.laser_propagation_plasma (plasma SRS — same 3-wave
   structure, different oscillator; this node is the plasma↔fiber analogy bridge)
 - optics: knowledge.optics.stimulated_scattering_engineering (fiber SRS/SBS
   engineering values, threshold formulas, damage limits)

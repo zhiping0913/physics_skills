@@ -107,7 +107,7 @@ XPM factor 2: incoherent cross-phase modulation (energy of field 2 modulates ind
 **Plasma analog — relativistic self-focusing**: In plasma, n(I) = n₀ − n₂ I where
 n₂ = −1/(2 n₀ a₀²) is the relativistic correction (a₀ = eE/(mωc)). Same I-dependence
 as Kerr but PHYSICAL ORIGIN is mass increase, not bound-electron anharmonicity.
-Cross-ref: `plasma: reasoning.plasma.laser_plasma_interaction` (relativistic
+Cross-ref: `plasma: reasoning.lp.laser_propagation_plasma` (relativistic
 self-focusing, critical power P_c = 17 (n_c/n_e) GW).
 
 Also: self-steepening already in Higher-Order Effects section is fine. For the

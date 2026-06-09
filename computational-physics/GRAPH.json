@@ -134,7 +134,7 @@
       "type": "prerequisite"
     },
     {
-      "source": "reasoning.plasma.laser_plasma_interaction",
+      "source": "reasoning.lp.laser_propagation_plasma",
       "target": "reasoning.cp.fdtd_yee_algorithm",
       "type": "analogy"
     },

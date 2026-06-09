@@ -150,12 +150,12 @@
     },
     {
       "source": "reasoning.optics.pulse_propagation_nlse",
-      "target": "reasoning.plasma.laser_plasma_interaction",
+      "target": "reasoning.lp.laser_propagation_plasma",
       "type": "analogy"
     },
     {
       "source": "reasoning.optics.stimulated_raman_scattering",
-      "target": "reasoning.plasma.laser_plasma_interaction",
+      "target": "reasoning.lp.parametric_instabilities_lpi",
       "type": "analogy"
     },
     {

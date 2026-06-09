@@ -96,7 +96,7 @@ Galerkin: w_m = f_m (same as basis). Point-matching: w_m = δ(r−r_m).
 MoM solves the frequency-domain integral equation for currents on surfaces —
 the complement to time-domain PIC which tracks particles in volume. Plasma
 applications: antenna coupling to plasma, RF heating launcher design, SPP
-scattering from nanoparticles. Cross-ref: `plasma: reasoning.plasma.laser_plasma_interaction`.
+scattering from nanoparticles. Cross-ref: `plasma: reasoning.lp.laser_propagation_plasma`.
 
 ## Surface vs Volume Integral Equations
 

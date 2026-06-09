@@ -1,0 +1,88 @@
+{
+  "skill": "laser-plasma",
+  "node_index": {
+    "reasoning.lp.laser_propagation_plasma": {
+      "node_type": "reasoning"
+    },
+    "reasoning.lp.laser_absorption_mechanisms": {
+      "node_type": "reasoning"
+    },
+    "reasoning.lp.ponderomotive_force": {
+      "node_type": "reasoning"
+    },
+    "reasoning.lp.parametric_instabilities_lpi": {
+      "node_type": "reasoning"
+    },
+    "knowledge.lp.plasma_parameters_laser": {
+      "node_type": "knowledge"
+    },
+    "knowledge.lp.laser_absorption_data": {
+      "node_type": "knowledge"
+    },
+    "knowledge.lp.parametric_instability_data": {
+      "node_type": "knowledge"
+    }
+  },
+  "edges": [
+    {
+      "source": "reasoning.plasma.dielectric_tensor_magnetized",
+      "target": "reasoning.lp.laser_propagation_plasma",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.dispersion_relation_method",
+      "target": "reasoning.lp.parametric_instabilities_lpi",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.instability_classification",
+      "target": "reasoning.lp.parametric_instabilities_lpi",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.laser_propagation_plasma",
+      "target": "reasoning.lp.laser_absorption_mechanisms",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.laser_propagation_plasma",
+      "target": "reasoning.lp.ponderomotive_force",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.laser_propagation_plasma",
+      "target": "knowledge.lp.plasma_parameters_laser",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.lp.laser_absorption_mechanisms",
+      "target": "knowledge.lp.laser_absorption_data",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.lp.parametric_instabilities_lpi",
+      "target": "knowledge.lp.parametric_instability_data",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.lp.ponderomotive_force",
+      "target": "reasoning.em.nonlinear_optical_response",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.lp.parametric_instabilities_lpi",
+      "target": "reasoning.optics.stimulated_raman_scattering",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.lp.laser_propagation_plasma",
+      "target": "reasoning.optics.pulse_propagation_nlse",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.lp.laser_absorption_mechanisms",
+      "target": "reasoning.lp.parametric_instabilities_lpi",
+      "type": "reasoning-instance"
+    }
+  ]
+}

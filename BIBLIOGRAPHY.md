@@ -123,7 +123,7 @@ use Short Name + § only.
 When citing a reasoning node from another skill, use the fully-qualified form:
 ```
 electrodynamics: reasoning.em.nonlinear_optical_response
-plasma: reasoning.plasma.laser_plasma_interaction
+plasma: reasoning.lp.laser_propagation_plasma
 optics: reasoning.optics.pulse_propagation_nlse
 landau-graph: reasoning.adiabatic_invariance
 physics-conventions: convention.charge_cyclotron

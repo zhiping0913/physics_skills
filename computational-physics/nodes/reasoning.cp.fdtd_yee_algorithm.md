@@ -172,4 +172,4 @@ U = ½ Σ (ε|E|² + μ|H|²) should remain constant (σ=0, no PML); monitor to
 - Peterson, Ray & Mittra (1997) Ch.11-12
 - electrodynamics: reasoning.em.helmholtz_decomposition (parent — continuous curl eqns)
 - computational-physics: reasoning.cp.absorbing_boundary_conditions (ABC/PML truncation of FDTD grid)
-- plasma: reasoning.plasma.laser_plasma_interaction (FDTD-PIC for laser-plasma)
+- plasma: reasoning.lp.laser_propagation_plasma (FDTD-PIC for laser-plasma)

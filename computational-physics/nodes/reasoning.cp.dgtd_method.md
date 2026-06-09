@@ -186,7 +186,7 @@ decomposition of the flux Jacobian.
   subdominant, DGTD + cold/warm plasma fluid model provides a computationally
   efficient alternative to full PIC.
 
-Cross-reference: `plasma: reasoning.plasma.laser_plasma_interaction`
+Cross-reference: `plasma: reasoning.lp.laser_propagation_plasma`
 
 ## Edge Cases
 
@@ -212,4 +212,4 @@ Cross-reference: `plasma: reasoning.plasma.laser_plasma_interaction`
   Galerkin with discontinuous basis)
 - computational-physics: reasoning.cp.finite_element_method (conforming sibling)
 - computational-physics: reasoning.cp.fdtd_yee_algorithm (structured grid alternative)
-- plasma: reasoning.plasma.laser_plasma_interaction (plasma physics context)
+- plasma: reasoning.lp.laser_propagation_plasma (plasma physics context)

@@ -161,7 +161,7 @@ that are prominent in supercontinuum spectra.
 **Plasma connection**: In laser-plasma interaction, the relativistic mass
 increase produces a nonlinearity analogous to self-steepening — the
 effective plasma frequency ω_p/√γ shifts with intensity. Cross-reference:
-`plasma: reasoning.plasma.laser_plasma_interaction`.
+`plasma: reasoning.lp.laser_propagation_plasma`.
 
 ## Edge Cases
 
@@ -199,4 +199,4 @@ effective plasma frequency ω_p/√γ shifts with intensity. Cross-reference:
 - optics: reasoning.optics.pulse_propagation_nlse (parent — standard NLSE)
 - electrodynamics: reasoning.em.nonlinear_optical_response (Kerr n₂, Raman gain)
 - ultrafast-optics: reasoning.uo.pulse_propagation_linear (β₂, β₃ from dispersion)
-- plasma: reasoning.plasma.laser_plasma_interaction (relativistic self-steepening analog)
+- plasma: reasoning.lp.laser_propagation_plasma (relativistic self-steepening analog)

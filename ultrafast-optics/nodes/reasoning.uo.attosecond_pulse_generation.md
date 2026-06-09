@@ -24,7 +24,7 @@ sign_convention: >
 references:
   - ultrafast-optics: reasoning.uo.carrier_envelope_phase (CEP for IAP)
   - electrodynamics: reasoning.em.nonlinear_optical_response (HHG nonlinearity)
-  - plasma: reasoning.plasma.laser_plasma_interaction (HHG in plasma context)
+  - plasma: reasoning.lp.laser_propagation_plasma (HHG in plasma context)
 ---
 
 # reasoning.uo.attosecond_pulse_generation — HHG → XUV Burst → IAP
@@ -185,5 +185,5 @@ Ne gas with sub-2-cycle 1.8 μm driver).
 - ultrafast-optics: reasoning.uo.carrier_envelope_phase (CEP for gating)
 - ultrafast-optics: reasoning.uo.mode_locking_passive (few-cycle driver)
 - electrodynamics: reasoning.em.nonlinear_optical_response (χ⁽ⁿ⁾ in HHG)
-- plasma: reasoning.plasma.laser_plasma_interaction (HHG in plasma, relativistic regime)
+- plasma: reasoning.lp.laser_propagation_plasma (HHG in plasma, relativistic regime)
 - ultrafast-optics: knowledge.uo.attosecond_physics_data (HHG data, IAP records)

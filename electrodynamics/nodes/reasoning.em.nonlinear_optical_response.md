@@ -153,7 +153,7 @@ from TPA-generated carriers further increases loss.
 4. Phase matching in fibers: near zero-GVD (β₂→0).
 5. **Plasma analog**: same 4-wave structure in Langmuir decay instability (L→L'+S)
    and modulational instability. Cross-ref: `plasma: reasoning.plasma.instability_classification`
-   (parametric instabilities) and `reasoning.plasma.laser_plasma_interaction` (TPD/SRS).
+   (parametric instabilities) and `reasoning.lp.laser_propagation_plasma` (TPD/SRS).
 
 ## Manley-Rowe Relations
 
