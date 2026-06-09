@@ -25,6 +25,12 @@
     "reasoning.lp.radiation_pressure_acceleration": {
       "node_type": "reasoning"
     },
+    "reasoning.lp.relativistic_self_focusing": {
+      "node_type": "reasoning"
+    },
+    "reasoning.lp.relativistic_transparency": {
+      "node_type": "reasoning"
+    },
     "knowledge.lp.plasma_parameters_laser": {
       "node_type": "knowledge"
     },
@@ -156,6 +162,26 @@
       "source": "reasoning.lp.ponderomotive_force",
       "target": "reasoning.lp.direct_laser_acceleration",
       "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.laser_propagation_plasma",
+      "target": "reasoning.lp.relativistic_self_focusing",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.laser_propagation_plasma",
+      "target": "reasoning.lp.relativistic_transparency",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.relativistic_self_focusing",
+      "target": "reasoning.lp.relativistic_transparency",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.relativistic_self_focusing",
+      "target": "reasoning.uo.pulse_propagation_nlse_higher_order",
+      "type": "analogy"
     }
   ]
 }
