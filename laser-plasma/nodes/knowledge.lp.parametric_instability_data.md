@@ -118,6 +118,11 @@ Iλ² > 10¹⁵: Brunel (steep)          SRS/SBS + Brunel          SRS still gro
                                        SRS absolute at n_c/4    (plasma hot)
 ```
 
+**SBS vs SRS convective gain ratio**: 
+G_SBS/G_SRS ≈ (v_g^EPW/v_g^IAW) × (γ₀^SBS/γ₀^SRS)².
+Typically v_g^EPW/v_g^IAW ∼ 10–100 while γ₀^SBS/γ₀^SRS ∼ 0.01–0.1,
+so G_SBS/G_SRS ∼ 0.1–10 — comparable despite lower SBS growth rate.
+
 ## Cross-References
 
 - laser-plasma: reasoning.lp.parametric_instabilities_lpi (parent — theory)

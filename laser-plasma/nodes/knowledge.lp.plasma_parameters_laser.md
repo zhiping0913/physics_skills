@@ -30,6 +30,7 @@ retrieval_cost: 1
 | Nd:glass (4ω) | 263 | 1.6 × 10²² | 4.71 |
 | ArF | 193 | 2.9 × 10²² | 6.42 |
 | XFEL (soft x-ray) | 1.0 | 1.1 × 10²⁷ | 1240 |
+| Optical probe (2ω Ti:Sapph) | 400 | 7.0 × 10²¹ | 3.10 |
 
 Formula: n_c[cm⁻³] = 1.1148 × 10²¹ / λ²[μm]
 

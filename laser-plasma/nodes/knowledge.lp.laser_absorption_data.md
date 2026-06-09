@@ -114,6 +114,11 @@ the gas fill → L_n > 100s of μm → inverse bremsstrahlung dominates
 completely at 0.351 μm. No resonance absorption or Brunel heating.
 This is by design.
 
+**Note on Brunel formula**: The basic f_A = (η/π)(v_osc/c)³ gives a lower bound.
+For L_n/λ < 0.05 at I > 10¹⁶ W/cm², observed absorption exceeds this formula
+by factor 3–10 due to j×B coupling, enhanced sheath acceleration, and 
+synergistic resonance-Brunel effects at steep plasma-vacuum interfaces.
+
 ## Cross-References
 
 - laser-plasma: reasoning.lp.laser_absorption_mechanisms (parent — theory)

@@ -55,6 +55,10 @@ energies for tomographic reconstruction (discriminate E vs B).
 **Typical sensitivity**: E > 10⁷ V/m, B > 10 T at 10 MeV proton energy,
 50 μm spatial resolution.
 
+**Worked example**: For 10 MeV protons (v≈0.14c), L=1 mm, 1 mrad deflection:
+  Δθ_min = e B_min L / (m_p v) → B_min = m_p v Δθ_min/(e L) ≈ 10 T.
+  At 50 MeV (v≈0.3c): sensitivity improves to B_min ≈ 2 T.
+
 ### 2. Optical probing — density measurement
 
 Laser probe beam (typically frequency-doubled, synchronized) intersects

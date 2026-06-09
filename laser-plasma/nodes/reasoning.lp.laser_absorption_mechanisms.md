@@ -138,6 +138,12 @@ Dominant for Iλ² > 10¹⁷ W·μm²/cm².
 
 ## Edge Cases
 
+- **α_IB divergence near n_c**: The formula α_IB ∝ 1/√(1−n_e/n_c) diverges as
+  n_e → n_c. For n_e/n_c > 0.5, the WKB propagation model breaks down and
+  α_IB is not physically meaningful. The actual absorption is limited by
+  the finite density scale length L_n near the critical surface. Use the
+  full wave solution or effective absorption efficiency ∝ L_n^{−1} ω/c.
+
 - **Overlapping regimes**: At Iλ² ∼ 10¹⁵ near steep gradients, resonance
   absorption and Brunel heating coexist → full PIC needed.
 - **Saturated absorption**: f_A cannot exceed 1. In practice f_A ≤ 0.8

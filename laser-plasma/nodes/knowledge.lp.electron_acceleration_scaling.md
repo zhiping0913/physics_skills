@@ -27,8 +27,8 @@ retrieval_cost: 1
 
 Practical formula (Lu 2007 bubble scaling):
 ```
-ε[GeV] ≈ 1.7 a₀ (n_c/n_e)
-L_d[mm] ≈ 0.7 √a₀ / (n_e/10¹⁸)
+ε[GeV] ≈ 6.8×10⁻⁴ a₀ (n_c/n_e)                          [from (4/3)m_ec²]
+ε[GeV] ≈ 1.7 (P[TW]/100)^{1/3} (10¹⁸/n_e)^{2/3}          [matched conditions]
 ```
 
 For a₀=4, n_e=3×10¹⁸ cm⁻³, λ₀=0.8μm: ε≈3.1 GeV, L_d≈2.9 mm.

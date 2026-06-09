@@ -63,7 +63,7 @@ P_LEH = σ T_r⁴ A_LEH    [X-rays escaping through LEHs]
 P_wall = (1−α_w) σ T_r⁴ A_wall    [net wall absorption]
 ```
 
-Here σ = ac/4 = 1.03×10¹² W/cm²/eV⁴ is the Stefan-Boltzmann constant in
+Here σ = ac/4 = 1.03×10⁵ W/cm²/eV⁴ is the Stefan-Boltzmann constant in
 practical units, and α_w is the wall albedo.
 
 The radiation temperature is:

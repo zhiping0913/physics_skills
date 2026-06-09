@@ -131,7 +131,7 @@ physics-conventions: convention.charge_cyclotron
 
 ---
 
-*Last updated: 2026-06-07. Phase γ/δ handoff — added OAM, geometric phase, SIW, mm-wave, EM-TL coupling, reversed Cherenkov in DNG, TD reciprocity; Phase γ/δ IEEE Press books (Stumpf, Josefsson, Nakano, Chen SIW, Papathanasopoulos); Veselago, Allen, Berry, Pancharatnam, Aharonov-Bohm references.*
+*Last updated: 2026-06-10. Added laser-plasma skill (28 nodes, 47 edges, 5 phases). Phase 6 validation: 2 audit rounds, 22P+5PWN+1F over 29 targets. 8 patches applied (2 CRITICAL: R3 Xi example, R14 sigma SB; 1 IMPORTANT: R5/K4 LWFA energy formula; 5 COSMETIC: R2 alpha_IB edge, K2 Brunel, K3 SBS/SRS ratio, K1 probe λ, R17 B_min example).*
 
 ## External References (Not in Knowledge Base)
 

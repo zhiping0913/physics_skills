@@ -78,11 +78,11 @@ L_d = (4/3) · (c/ω_p) · (n_c/n_e) · √a₀         [3D bubble, Lu 2007]
 
 **Dephasing-limited energy gain**:
 ```
-Δε_max = e E_z L_d ≈ (2/3) m_e c² a₀ (n_c/n_e)   [bubble regime]
-→ Δε[GeV] ≈ 1.7 a₀ (n_c/n_e)                      [practical]
-```
+Δε_max = (4/3) m_e c² a₀ (n_c/n_e)             [bubble, Lu 2007 prefactor]
+→ ε[GeV] ≈ 6.8×10⁻⁴ a₀ (n_c/n_e)                [m_ec²=0.511 MeV]
+→ For matched conditions: ε[GeV] ≈ 1.7 (P[TW]/100)^{1/3} (10¹⁸/n_e)^{2/3} [Lu 2007]
 
-For n_e = 10¹⁸ cm⁻³, a₀ = 4, λ₀ = 0.8 μm: Δε_max ≈ 1.6 GeV over L_d ≈ 3 mm.
+Example: n_e=3×10¹⁸ cm⁻³, a₀=4, λ₀=0.8μm → Δε≈3 GeV over L_d≈3 mm.
 
 ### 3. Injection mechanisms
 

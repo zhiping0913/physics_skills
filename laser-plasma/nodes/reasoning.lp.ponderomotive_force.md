@@ -97,7 +97,9 @@ More precisely (non-relativistic ions, relativistic electrons):
 ```
 v_p/c = √(Ξ/(1+Ξ))    [hole-boring velocity]
 ```
-For I=10²⁰ W/cm² on solid Al (ρ=2.7 g/cm³): Ξ ≈ 3.7 → v_p/c ≈ 0.89.
+For I=10²⁰ W/cm² on a gas jet (n_e=5×10¹⁹ cm⁻³ H₂, ρ≈1.7×10⁻⁴ g/cm³): Ξ ≈ 2.2, v_hb/c ≈ 0.83. For solid Al (ρ=2.7 g/cm³): Ξ ≈ 1.4×10⁻⁵, v_hb/c ≈ 0.004 — hole boring negligible at solid density for current lasers.
+
+NOTE: For solid-density targets at I < 10²² W/cm², hole boring is negligible (Ξ ≪ 1, v_hb ≪ c). Significant hole boring (v_hb/c > 0.5) requires either gas-jet targets (low ρ) or I > 10²² W/cm² (solid targets).
 
 Hole-boring depth during pulse τ_L:
 ```
