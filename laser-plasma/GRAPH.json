@@ -13,6 +13,18 @@
     "reasoning.lp.parametric_instabilities_lpi": {
       "node_type": "reasoning"
     },
+    "reasoning.lp.laser_wakefield_acceleration": {
+      "node_type": "reasoning"
+    },
+    "reasoning.lp.direct_laser_acceleration": {
+      "node_type": "reasoning"
+    },
+    "reasoning.lp.tnsa_ion_acceleration": {
+      "node_type": "reasoning"
+    },
+    "reasoning.lp.radiation_pressure_acceleration": {
+      "node_type": "reasoning"
+    },
     "knowledge.lp.plasma_parameters_laser": {
       "node_type": "knowledge"
     },
@@ -20,6 +32,12 @@
       "node_type": "knowledge"
     },
     "knowledge.lp.parametric_instability_data": {
+      "node_type": "knowledge"
+    },
+    "knowledge.lp.electron_acceleration_scaling": {
+      "node_type": "knowledge"
+    },
+    "knowledge.lp.ion_acceleration_scaling": {
       "node_type": "knowledge"
     }
   },
@@ -50,6 +68,31 @@
       "type": "prerequisite"
     },
     {
+      "source": "reasoning.lp.laser_absorption_mechanisms",
+      "target": "reasoning.lp.tnsa_ion_acceleration",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.ponderomotive_force",
+      "target": "reasoning.lp.laser_wakefield_acceleration",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.ponderomotive_force",
+      "target": "reasoning.lp.radiation_pressure_acceleration",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.laser_wakefield_acceleration",
+      "target": "reasoning.lp.direct_laser_acceleration",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.lp.tnsa_ion_acceleration",
+      "target": "reasoning.lp.radiation_pressure_acceleration",
+      "type": "analogy"
+    },
+    {
       "source": "reasoning.lp.laser_propagation_plasma",
       "target": "knowledge.lp.plasma_parameters_laser",
       "type": "reasoning-instance"
@@ -62,6 +105,26 @@
     {
       "source": "reasoning.lp.parametric_instabilities_lpi",
       "target": "knowledge.lp.parametric_instability_data",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.lp.laser_wakefield_acceleration",
+      "target": "knowledge.lp.electron_acceleration_scaling",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.lp.direct_laser_acceleration",
+      "target": "knowledge.lp.electron_acceleration_scaling",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.lp.tnsa_ion_acceleration",
+      "target": "knowledge.lp.ion_acceleration_scaling",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.lp.radiation_pressure_acceleration",
+      "target": "knowledge.lp.ion_acceleration_scaling",
       "type": "reasoning-instance"
     },
     {
@@ -83,6 +146,16 @@
       "source": "reasoning.lp.laser_absorption_mechanisms",
       "target": "reasoning.lp.parametric_instabilities_lpi",
       "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.uo.chirped_pulse_amplification",
+      "target": "reasoning.lp.laser_wakefield_acceleration",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.ponderomotive_force",
+      "target": "reasoning.lp.direct_laser_acceleration",
+      "type": "prerequisite"
     }
   ]
 }
