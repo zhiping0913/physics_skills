@@ -66,10 +66,10 @@ Simplified: ε_max[MeV] ≈ C (I_20 λ_μm²)^{0.5}, C ≈ 0.3–0.5.
 
 | I (W/cm²) | τ_L (fs) | σ (μg/cm²) | ε_i (MeV/u) | Notes |
 |-----------|----------|------------|------------|-------|
-| 5×10¹⁹ | 30 | 10 | 30 | DLC foil |
-| 10²⁰ | 50 | 5 | 200 | CNT foil |
-| 5×10²⁰ | 30 | 1 | 3000 | Ultra-thin foil |
-| 10²² | 20 | 5 | 8000 | ELI-NP goal |
+| 5×10¹⁹ | 30 | 10 | 3 | DLC foil |
+| 10²⁰ | 50 | 5 | 20 | CNT foil |
+| 5×10²⁰ | 30 | 1 | 300 | Ultra-thin foil |
+| 10²² | 20 | 5 | 80 | ELI-NP goal |
 
 ## RPA Experimental Benchmarks
 

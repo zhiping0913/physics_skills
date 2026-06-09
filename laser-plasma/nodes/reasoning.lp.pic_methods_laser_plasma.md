@@ -133,6 +133,16 @@ W_ADK ∝ exp(−2(2|E_i|)^{3/2} / 3|E|)    [atomic units]
 ```
 BSI (Barrier Suppression Ionization): instantaneous when E > E_crit.
 
+**Ionization regime boundary** (Keldysh parameter):
+```
+γ_K = ω √(2 I_p) / E₀    [Keldysh 1965]
+γ_K ≫ 1: multiphoton ionization   γ_K ≪ 1: tunnel ionization
+```
+The laser-plasma skill assumes pre-formed plasma. For the detailed
+atomic strong-field physics of the gas-to-plasma transition
+(Keldysh parameter, ATI spectra, recollision), see the
+`ultrafast-optics` skill (HHG/attosecond nodes) and Gavrila (1992).
+
 **Collisions**: binary collision model (Nanbu, Takizuka-Abe) for ν_ei.
 Pair-wise scattering with conservation. Monte Carlo.
 

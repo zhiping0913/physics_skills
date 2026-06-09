@@ -85,7 +85,7 @@ In the target rest frame, the reflected intensity is reduced by
 **Final energy** (after pulse duration τ_L):
 ```
 γ_f − 1 ≈ 2 (I/c²) τ_L / σ    [non-relativistic limit]
-ε_i[MeV/u] ≈ 2 × 10⁻⁴ I_20 τ_L[fs] / σ[μg/cm²]    [practical]
+ε_i[MeV/u] ≈ 2 I_20 τ_L[fs] / σ[μg/cm²]    [practical, η≈0.05 coupling]
 ```
 
 For I = 5×10²⁰ W/cm², τ_L = 50 fs, σ = 1 μg/cm²: ε_i ≈ 500 MeV/u.

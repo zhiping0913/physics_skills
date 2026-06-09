@@ -110,6 +110,12 @@
     },
     "knowledge.em.oam_beams": {
       "node_type": "knowledge"
+    },
+    "reasoning.em.three_wave_parametric_coupling": {
+      "node_type": "reasoning"
+    },
+    "reasoning.em.intensity_dependent_refractive_index": {
+      "node_type": "reasoning"
     }
   },
   "edges": [
@@ -396,6 +402,41 @@
     {
       "source": "knowledge.em.oam_beams",
       "target": "mathematics.noether_selection_rules",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.nonlinear_optical_response",
+      "target": "reasoning.em.three_wave_parametric_coupling",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.nonlinear_optical_response",
+      "target": "reasoning.em.intensity_dependent_refractive_index",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.three_wave_parametric_coupling",
+      "target": "reasoning.lp.parametric_instabilities_lpi",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.three_wave_parametric_coupling",
+      "target": "reasoning.optics.stimulated_raman_scattering",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.intensity_dependent_refractive_index",
+      "target": "reasoning.lp.relativistic_self_focusing",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.intensity_dependent_refractive_index",
+      "target": "reasoning.uo.pulse_propagation_nlse_higher_order",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.lp.radiation_reaction",
+      "target": "reasoning.em.larmor_radiation_power",
       "type": "prerequisite"
     }
   ]

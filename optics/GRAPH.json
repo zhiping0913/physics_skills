@@ -182,6 +182,11 @@
       "source": "reasoning.em.optical_coherence",
       "target": "reasoning.uo.ultrafast_spectroscopy",
       "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.three_wave_parametric_coupling",
+      "target": "reasoning.optics.stimulated_raman_scattering",
+      "type": "refinement"
     }
   ]
 }

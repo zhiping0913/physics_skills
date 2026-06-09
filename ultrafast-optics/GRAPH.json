@@ -253,6 +253,11 @@
       "source": "knowledge.uo.ultrafast_spectroscopy_methods",
       "target": "reasoning.uo.ultrafast_spectroscopy",
       "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.em.intensity_dependent_refractive_index",
+      "target": "reasoning.uo.pulse_propagation_nlse_higher_order",
+      "type": "refinement"
     }
   ]
 }
