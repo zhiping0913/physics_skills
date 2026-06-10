@@ -396,6 +396,26 @@
       "source": "knowledge.em.energy_momentum_tensor_field",
       "target": "reasoning.lp.shock_waves_plasma",
       "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.periodic_parametric_instability",
+      "target": "reasoning.lp.parametric_instabilities_lpi",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.dimensional_analysis_to_similarity",
+      "target": "reasoning.lp.shock_waves_plasma",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.classical_to_quantum_correspondence",
+      "target": "reasoning.lp.radiation_reaction",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.wkb_quasiclassical",
+      "target": "reasoning.lp.laser_propagation_plasma",
+      "type": "prerequisite"
     }
   ]
 }

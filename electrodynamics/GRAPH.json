@@ -507,6 +507,21 @@
       "source": "reasoning.linear_response_general",
       "target": "reasoning.em.nonlinear_optical_response",
       "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.periodic_parametric_instability",
+      "target": "reasoning.em.three_wave_parametric_coupling",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.noether_field_theory",
+      "target": "reasoning.em.helmholtz_decomposition",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.green_function_method",
+      "target": "reasoning.em.dyadic_green_function",
+      "type": "prerequisite"
     }
   ]
 }

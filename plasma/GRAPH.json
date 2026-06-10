@@ -181,6 +181,31 @@
       "source": "reasoning.constitutive_relation_from_symmetry",
       "target": "reasoning.plasma.generalized_fluid_equations",
       "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.collision_integral_construction",
+      "target": "reasoning.plasma.transport_coefficients",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.wkb_quasiclassical",
+      "target": "reasoning.plasma.wave_particle_resonance",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.adiabatic_invariance",
+      "target": "reasoning.plasma.single_particle_drifts",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.noether_field_theory",
+      "target": "reasoning.plasma.mhd_equilibrium_stability",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.timescale_hierarchy",
+      "target": "reasoning.plasma.generalized_fluid_equations",
+      "type": "prerequisite"
     }
   ]
 }
