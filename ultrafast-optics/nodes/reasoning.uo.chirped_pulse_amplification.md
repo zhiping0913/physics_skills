@@ -160,6 +160,38 @@ Can pre-compensate TOD and higher-order phase → τ_comp < 20 fs.
 7. OUTPUT: τ_comp, P_peak = 0.88 E_out/τ_comp (sech²), Strehl ratio.
 ```
 
+### Gain saturation fundamentals (Principles of Lasers 2010, Ch.2,5-6)
+
+The amplifier stages in CPA rely on stimulated emission from a population-
+inverted gain medium. Key physics:
+
+**Small-signal gain** (unsaturated, I ≪ I_sat):
+```
+I(z) = I₀ exp(g₀ z),    g₀ = σ ΔN₀    [cm⁻¹]
+```
+where σ is the stimulated emission cross-section and ΔN₀ = N₂ − (g₂/g₁)N₁
+is the initial population inversion density.
+
+**Gain saturation** (I ∼ I_sat):
+```
+dI/dz = g₀ I / (1 + I/I_sat),    I_sat = hν / (σ τ_f)
+```
+where τ_f is the fluorescence lifetime of the upper laser level. When
+I ≫ I_sat, the gain is "bleached" and the extraction efficiency approaches
+ΔN₀ hν per unit volume.
+
+**Three-level vs four-level lasers** (Principles of Lasers Ch.1,6):
+- **Three-level** (e.g., ruby, Er:fiber): the lower laser level IS the
+  ground state → > 50% of active ions must be pumped to reach transparency.
+  High threshold, low efficiency.
+- **Four-level** (e.g., Nd:glass, Ti:sapphire, Yb:doped): the lower laser
+  level is an excited state that rapidly decays → transparency at near-zero
+  pump power. Low threshold, high efficiency. All CPA systems use four-level
+  gain media.
+
+**Ti:sapphire specifics** (σ ≈ 3×10⁻¹⁹ cm² at 800 nm, τ_f ≈ 3.2 μs,
+I_sat ≈ 0.9 J/cm² for 100 fs stretched pulse, Δλ_gain ≈ 650–1100 nm).
+
 ## Cross-References
 
 - Weiner §11, Diels-Rudolph §7, Strickland & Mourou 1985
