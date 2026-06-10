@@ -121,6 +121,26 @@ T (eV)
 
 Boundary: T ∼ T_F = (ℏ²/2m)(3π² n)^{2/3}.
 
+**Quantum degeneracy parameters** (Quantum Plasma 2025, Ch.4):
+```
+Θ = k_B T / E_F    [degeneracy parameter: Θ < 1 → quantum]
+r_s = a / a_B = (3/4πn)^{1/3} / a_B    [density parameter]
+```
+- Θ ≪ 1, r_s ≪ 1: quantum degenerate, weakly coupled (e.g., warm dense matter)
+- Θ ≪ 1, r_s ≫ 1: quantum degenerate, strongly coupled (e.g., white dwarf interior)
+- Θ ≫ 1, r_s ≪ 1: classical, weakly coupled (ideal plasma)
+- Θ ≫ 1, r_s ≫ 1: classical, strongly coupled (dusty plasma, liquid metals)
+
+**QHD vs DFT** (Quantum Plasma Ch.5):
+Quantum hydrodynamics (QHD) is a moment closure of the Wigner equation,
+valid for collective dynamics at k λ_F ≪ 1. Density functional theory (DFT)
+is more fundamental — solves the Kohn-Sham equations for the ground-state
+electron density — but is computationally expensive and primarily static.
+QHD captures the time-dependent collective response missing from ground-state
+DFT, at the cost of losing details of the electronic structure. For
+laser-plasma interaction where time-dependent collective effects dominate
+(wakefields, instabilities), QHD is the appropriate framework.
+
 ### 6. Cross-domain fluid connections
 
 The same skeleton appears beyond plasma physics:

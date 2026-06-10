@@ -61,7 +61,28 @@ where R_c ≡ α χ_e a₀ is the **radiation dominance parameter**.
 
 ### 2. Classical radiation reaction — Landau-Lifshitz
 
-The Lorentz-Abraham-Dirac (LAD) equation:
+**First-principles justification** (Spohn 2023, Ch.4-6,9):
+The point-charge limit of classical electrodynamics is pathological — the
+self-energy ∝ e²/r → ∞ produces the ill-posed Lorentz-Abraham-Dirac (LAD)
+equation with pre-acceleration. The resolution is to model the charge as
+an EXTENDED distribution of radius R_ep (Abraham 1903, Lorentz 1892),
+with well-defined dynamics at finite R_ep. As R_ep → 0:
+
+1. **Mass renormalization**: the bare mass m_b and electromagnetic mass
+   δm combine: m_obs = m_b + δm. Only m_obs is experimentally accessible.
+2. **Center manifold reduction**: the full dynamics (particle + field)
+   has an attracting invariant manifold M_c where the field is "slaved"
+   to the particle motion. On M_c, the reduced dynamics converge to LL:
+   ```
+   m_obs a = F_ext + (2e²/3c³) ȧ + O(R_ep²)
+   ```
+   Substituting ȧ ≈ (e/m_obs) Ḟ_ext (adiabatic approximation) yields LL.
+3. **LAD is NOT the R_ep → 0 limit**: LAD corresponds to a DIFFERENT
+   submanifold (non-physical initial conditions with free radiation).
+   Generic initial conditions converge to M_c → LL, not LAD.
+   **Practical rule: use LL, never LAD.**
+
+The Lorentz-Abraham-Dirac (LAD) equation (historical, not recommended):
 ```
 m du^μ/dτ = (e/c) F^{μν} u_ν + (2e²/3c³)(d²u^μ/dτ² + u^μ u^ν d²u_ν/dτ²)
 ```

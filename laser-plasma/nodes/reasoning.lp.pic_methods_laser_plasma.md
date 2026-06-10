@@ -191,6 +191,35 @@ species.
 - **QED Monte Carlo statistics**: at χ_e ~ 1, multiple photons per timestep
   → sub-stepping or adaptive timestepping needed.
 
+### Shape function noise and P3M (Hockney & Eastwood 2020, Ch.5,7-8)
+
+The shape function S(x) determines both spatial resolution AND force noise:
+```
+⟨(δF)²⟩ ∝ (1/N_c) Σ_k |S(k)|² k² |φ(k)|²
+```
+where N_c is the number of superparticles per Debye sphere. Lower-order
+shape functions (NGP) produce more high-k noise; higher-order (CIC, TSC)
+suppress it at the cost of wider stencil:
+
+| Shape | Order | Stencil width | Noise level | Force accuracy |
+|-------|-------|--------------|-------------|---------------|
+| **NGP** (nearest grid point) | 0 | 1 cell | High | O(Δx) |
+| **CIC** (cloud-in-cell) | 1 | 2 cells | Medium | O(Δx²) |
+| **TSC** (triangular shaped cloud) | 2 | 3 cells | Low | O(Δx³) |
+
+**P3M (Particle-Particle Particle-Mesh)**: for problems where close encounters
+matter (ν_coll not negligible), supplement the PM force with direct PP
+corrections at r < r_cut. The short-range force is the EXACT Coulomb/gravitational
+force minus the mesh-smoothed component to avoid double-counting. P3M
+complexity is O(N_p N_nb + N_g log N_g), intermediate between PM and full PP.
+
+**Universal collisionless condition** (Hockney §1-3): the model remains
+collisionless when N_c ≫ 1 and timescales are short compared to the
+numerical relaxation time τ_coll ≈ N_c T_p (λ_D/Δx)³. This condition
+applies identically to plasma PIC, N-body galaxy simulations, and MD
+— in all cases, the shape function S(x) smooths short-range forces
+to suppress artificial two-body relaxation.
+
 ## Cross-References
 
 - Birdsall & Langdon, *Plasma Physics via Computer Simulation* (2018)
