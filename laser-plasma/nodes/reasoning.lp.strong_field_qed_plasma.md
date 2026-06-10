@@ -150,6 +150,41 @@ initial target density → QED plasma regime.
   the laser propagation → coupled QED-PIC (PIC with Monte Carlo QED
   modules) needed for self-consistent modeling.
 
+### Classical → Quantum transition (Strong Field Physics 2025, Ch.3)
+
+The quantum nature of strong-field interactions is governed by a single
+dimensionless ratio (SF-2025 §3.6):
+```
+η = ℏω'_γ / (γ m_e c²)
+```
+where ω'_γ is the Doppler-upshifted photon frequency in the electron rest
+frame. When η ≪ 1, the laser field can be treated CLASSICALLY (the photon
+number is so large that quantum fluctuations are negligible). When η ∼ 1,
+individual photon emission events become distinguishable → quantum regime.
+
+**Adiabatic pulse condition** (SF-2025 §3.3): for a finite-duration pulse
+with envelope s(t − z/c), the electron gains NO net momentum from the laser
+if the envelope rises and falls adiabatically (Lawson-Woodward theorem).
+Any net acceleration requires either: (i) a non-adiabatic envelope (few-cycle
+pulse, ∂_t s comparable to ω), (ii) plasma fields (wakefield, sheath), or
+(iii) radiation reaction recoil.
+
+### QED cascades — experimental reach (SF-2025, Ch.8)
+
+Current and near-future facilities capable of QED-cascade physics:
+
+| Facility | Peak I (W/cm²) | a₀ | χ_e (γ=1000) | QED regime |
+|----------|---------------|-----|--------------|------------|
+| ELI-NP (2×10 PW) | 10²² | 100 | 0.38 | Strong QED |
+| SULF (10 PW) | 5×10²¹ | 70 | 0.27 | Photon emission dominant |
+| CoReLS (4 PW) | 10²² | 100 | 0.38 | Strong QED |
+| Future (100 PW) | 10²³ | 300 | 1.1 | QED-dominated |
+
+At χ_e > 1, a single laser period produces O(1) gamma photons per electron,
+and the pair plasma density can exceed the critical density → "pair fireworks"
+regime where the laser interacts primarily with self-generated QED plasma
+rather than the original target.
+
 ## Cross-References
 
 - Di Piazza et al., RMP 84, 1177 (2012) — comprehensive strong-field QED review

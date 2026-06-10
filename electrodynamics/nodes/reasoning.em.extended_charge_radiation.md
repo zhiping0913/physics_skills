@@ -174,6 +174,28 @@ converge to M_c exponentially fast. The LAD equation corresponds to a DIFFERENT
 submanifold and is not the R_ep → 0 limit of physical solutions.
 **Practical rule**: use LL, never LAD, for classical radiation reaction.
 
+### Distribution-theory formulation (Classical ED Modern Perspective 2018, Ch.4.3)
+
+The mathematical foundation for extended charge models is Maxwell's equations
+in the space of distributions D'(ℝ⁴). A point charge with worldline z^μ(τ)
+produces a 4-current:
+```
+j^μ(x) = e ∫ δ⁴(x − z(τ)) u^μ(τ) dτ    [distributional]
+```
+The field equations ∂_ν F^{μν} = μ₀ j^μ in D'(ℝ⁴) admit a unique solution
+(the Liénard-Wiechert field) satisfying the retarded boundary condition.
+The distributional formulation makes rigorous what the "smearing" φ(x)
+in the Abraham model accomplishes: replacing the Dirac δ with a smooth
+test function φ ∈ C_c^∞(ℝ³) converts the distributional current into
+a regular one, eliminating the self-energy divergence.
+
+This connects directly to PIC: the shape function S(x) in current
+deposition is precisely the test function that regularizes the
+distributional current. The choice of S(x) (NGP, CIC, TSC) corresponds
+to different regularizations of the point-particle singularity — the
+same mathematical operation in both classical electron theory and
+computational plasma physics.
+
 ## Cross-References
 
 - Spohn, *Dynamics of Charged Particles and their Radiation Field* (2023), Ch.2-5
