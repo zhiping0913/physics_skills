@@ -9,7 +9,6 @@
     "knowledge.plasma.kinetic_waves": {
       "node_type": "knowledge"
     },
-
     "knowledge.plasma.mhd_waves_stability": {
       "node_type": "knowledge"
     },
@@ -47,6 +46,9 @@
       "node_type": "reasoning"
     },
     "reasoning.plasma.wave_particle_resonance": {
+      "node_type": "reasoning"
+    },
+    "reasoning.plasma.generalized_fluid_equations": {
       "node_type": "reasoning"
     }
   },
@@ -131,7 +133,25 @@
       "target": "reasoning.plasma.wave_particle_resonance",
       "type": "prerequisite"
     },
-
-    {"source": "reasoning.plasma.instability_classification", "target": "reasoning.em.nonlinear_optical_response", "type": "analogy"}
+    {
+      "source": "reasoning.plasma.instability_classification",
+      "target": "reasoning.em.nonlinear_optical_response",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.plasma.mhd_equilibrium_stability",
+      "target": "reasoning.plasma.generalized_fluid_equations",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.generalized_fluid_equations",
+      "target": "reasoning.lp.ponderomotive_force",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.plasma.generalized_fluid_equations",
+      "target": "reasoning.lp.radiative_hydrodynamics",
+      "type": "refinement"
+    }
   ]
 }

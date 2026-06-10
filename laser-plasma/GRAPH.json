@@ -346,6 +346,41 @@
       "source": "reasoning.em.intensity_dependent_refractive_index",
       "target": "reasoning.lp.relativistic_self_focusing",
       "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.particle_field_cosimulation",
+      "target": "reasoning.lp.pic_methods_laser_plasma",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.positive_feedback_instability",
+      "target": "reasoning.lp.relativistic_self_focusing",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.plasma.generalized_fluid_equations",
+      "target": "reasoning.lp.ponderomotive_force",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.plasma.generalized_fluid_equations",
+      "target": "reasoning.lp.radiative_hydrodynamics",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.extended_charge_radiation",
+      "target": "reasoning.lp.radiation_reaction",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.absorbing_boundary_conditions",
+      "target": "reasoning.lp.laser_absorption_mechanisms",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.em.extended_charge_radiation",
+      "target": "reasoning.lp.pic_methods_laser_plasma",
+      "type": "analogy"
     }
   ]
 }

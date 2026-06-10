@@ -258,6 +258,16 @@
       "source": "reasoning.em.intensity_dependent_refractive_index",
       "target": "reasoning.uo.pulse_propagation_nlse_higher_order",
       "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.positive_feedback_instability",
+      "target": "reasoning.uo.pulse_propagation_nlse_higher_order",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.mt.soliton_formation",
+      "target": "reasoning.uo.pulse_propagation_nlse",
+      "type": "refinement"
     }
   ]
 }

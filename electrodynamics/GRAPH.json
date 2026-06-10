@@ -116,6 +116,15 @@
     },
     "reasoning.em.intensity_dependent_refractive_index": {
       "node_type": "reasoning"
+    },
+    "reasoning.em.particle_field_cosimulation": {
+      "node_type": "reasoning"
+    },
+    "reasoning.em.positive_feedback_instability": {
+      "node_type": "reasoning"
+    },
+    "reasoning.em.extended_charge_radiation": {
+      "node_type": "reasoning"
     }
   },
   "edges": [
@@ -438,6 +447,56 @@
       "source": "reasoning.lp.radiation_reaction",
       "target": "reasoning.em.larmor_radiation_power",
       "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.cp.fdtd_yee_algorithm",
+      "target": "reasoning.em.particle_field_cosimulation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.particle_field_cosimulation",
+      "target": "reasoning.lp.pic_methods_laser_plasma",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.nonlinear_optical_response",
+      "target": "reasoning.em.positive_feedback_instability",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.positive_feedback_instability",
+      "target": "reasoning.lp.relativistic_self_focusing",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.positive_feedback_instability",
+      "target": "reasoning.uo.pulse_propagation_nlse_higher_order",
+      "type": "refinement"
+    },
+    {
+      "source": "reasoning.em.larmor_radiation_power",
+      "target": "reasoning.em.extended_charge_radiation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.extended_charge_radiation",
+      "target": "reasoning.lp.radiation_reaction",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.extended_charge_radiation",
+      "target": "reasoning.lp.pic_methods_laser_plasma",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.cp.absorbing_boundary_conditions",
+      "target": "reasoning.lp.laser_absorption_mechanisms",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.lp.ponderomotive_force",
+      "target": "reasoning.em.positive_feedback_instability",
+      "type": "analogy"
     }
   ]
 }

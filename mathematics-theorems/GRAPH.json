@@ -39,6 +39,9 @@
     },
     "mathematics.noether_selection_rules": {
       "node_type": "reasoning"
+    },
+    "reasoning.mt.soliton_formation": {
+      "node_type": "reasoning"
     }
   },
   "edges": [
@@ -131,6 +134,16 @@
       "source": "mathematics.noether_selection_rules",
       "target": "mathematics.distribution_limits",
       "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.nonlinear_optical_response",
+      "target": "reasoning.mt.soliton_formation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.mt.soliton_formation",
+      "target": "reasoning.uo.pulse_propagation_nlse",
+      "type": "refinement"
     }
   ],
   "_note": "mathematics.vector_algebra, mathematics.fourier_transform, mathematics.complex_analysis are external undergraduate prerequisites \u2014 not distilled as nodes."
