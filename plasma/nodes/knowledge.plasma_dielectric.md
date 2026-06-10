@@ -1,5 +1,5 @@
 ---
-skill_id: knowledge.kinetic.plasma_dielectric
+skill_id: knowledge.plasma_dielectric
 type: knowledge
 summary_50t: >
   ε_l(k,ω). Langmuir: ω²=ω_p²+3k²v_T². Debye: a_D=√(T/4πne²).

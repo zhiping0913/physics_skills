@@ -1,7 +1,7 @@
 {
   "meta": {
     "source": "Landau-Lifshitz Vol.1 Mechanics (5th ed., 2004)",
-    "kb_path": "/home/zhiping/knowledge_base/book/2004/2004--Механика/book.md",
+    "kb_path": "/home/zhiping/knowledge_base/book/2004/2004--\u041c\u0435\u0445\u0430\u043d\u0438\u043a\u0430/book.md",
     "version": "0.1.0",
     "node_count": 89,
     "edge_count": 152,
@@ -286,12 +286,6 @@
       "reasoning_role": "collision_operator",
       "volume": 10
     },
-    "reasoning.plasma_dielectric_response": {
-      "file": "nodes/reasoning.plasma_dielectric_response.md",
-      "layer": "reasoning",
-      "reasoning_role": "linear_response",
-      "volume": 10
-    },
     "knowledge.kinetic.boltzmann_equation": {
       "file": "nodes/knowledge.kinetic.boltzmann_equation.md",
       "layer": "knowledge",
@@ -304,24 +298,11 @@
       "reasoning_role": "collisionless_damping_formula",
       "volume": 10
     },
-    "knowledge.kinetic.plasma_dielectric": {
-      "file": "nodes/knowledge.kinetic.plasma_dielectric.md",
-      "layer": "knowledge",
-      "reasoning_role": "plasma_linear_response",
-      "volume": 10
-    },
     "knowledge.kinetic.landau_collision_integral": {
       "file": "nodes/knowledge.kinetic.landau_collision_integral.md",
       "layer": "knowledge",
       "reasoning_role": "coulomb_collision_operator",
       "volume": 10
-    },
-    "knowledge.kinetic.plasma_instabilities": {
-      "file": "",
-      "layer": "knowledge",
-      "reasoning_role": "collective_instability",
-      "volume": 10,
-      "note": "inline"
     },
     "knowledge.kinetic.vlasov_equation": {
       "file": "",
@@ -535,35 +516,35 @@
       "volume": "cross"
     },
     "reasoning.physical_solution_selection": {
-      "source": "Vol.2 §62, Vol.6 §96, Vol.8 §82, Vol.10 §29",
+      "source": "Vol.2 \u00a762, Vol.6 \u00a796, Vol.8 \u00a782, Vol.10 \u00a729",
       "node_type": "reasoning"
     },
     "reasoning.equilibrium_as_extremum": {
-      "source": "Vol.1 §2, Vol.3 §17, Vol.5 §12, Vol.7 §4",
+      "source": "Vol.1 \u00a72, Vol.3 \u00a717, Vol.5 \u00a712, Vol.7 \u00a74",
       "node_type": "reasoning"
     },
     "reasoning.linear_response_general": {
-      "source": "Vol.5 §123, Vol.8 §77, Vol.9 §76, Vol.10 §29",
+      "source": "Vol.5 \u00a7123, Vol.8 \u00a777, Vol.9 \u00a776, Vol.10 \u00a729",
       "node_type": "reasoning"
     },
     "reasoning.noether_field_theory": {
-      "source": "Vol.2 §29, §32",
+      "source": "Vol.2 \u00a729, \u00a732",
       "node_type": "reasoning"
     },
     "reasoning.angular_momentum_algebra": {
-      "source": "Vol.3 §27, §54",
+      "source": "Vol.3 \u00a727, \u00a754",
       "node_type": "reasoning"
     },
     "reasoning.cumulant_generating_function": {
-      "source": "Vol.4 §72, Vol.5 §15, Vol.9 §13",
+      "source": "Vol.4 \u00a772, Vol.5 \u00a715, Vol.9 \u00a713",
       "node_type": "reasoning"
     },
     "reasoning.renormalization": {
-      "source": "Vol.4 §114-116",
+      "source": "Vol.4 \u00a7114-116",
       "node_type": "reasoning"
     },
     "reasoning.hidden_symmetry": {
-      "source": "Vol.1 §15, §52",
+      "source": "Vol.1 \u00a715, \u00a752",
       "node_type": "reasoning"
     }
   },
@@ -996,12 +977,6 @@
     },
     {
       "source": "reasoning.kinetic_equation_closure",
-      "target": "reasoning.plasma_dielectric_response",
-      "type": "prerequisite",
-      "weight": 0.9
-    },
-    {
-      "source": "reasoning.kinetic_equation_closure",
       "target": "knowledge.kinetic.boltzmann_equation",
       "type": "reasoning-instance",
       "weight": 1.0
@@ -1019,28 +994,10 @@
       "weight": 1.0
     },
     {
-      "source": "reasoning.plasma_dielectric_response",
-      "target": "knowledge.kinetic.plasma_dielectric",
-      "type": "reasoning-instance",
-      "weight": 1.0
-    },
-    {
       "source": "reasoning.adiabatic_invariance",
       "target": "reasoning.landau_damping",
       "type": "analogy",
       "weight": 0.7
-    },
-    {
-      "source": "knowledge.em.maxwell_from_action",
-      "target": "reasoning.plasma_dielectric_response",
-      "type": "prerequisite",
-      "weight": 0.7
-    },
-    {
-      "source": "knowledge.statistical.fluctuations",
-      "target": "knowledge.kinetic.plasma_dielectric",
-      "type": "prerequisite",
-      "weight": 0.5
     },
     {
       "source": "knowledge.em.lienard_wiechert",
@@ -1103,22 +1060,10 @@
       "weight": 0.8
     },
     {
-      "source": "knowledge.kinetic.plasma_dielectric",
-      "target": "knowledge.continuous.spatial_dispersion",
-      "type": "prerequisite",
-      "weight": 0.7
-    },
-    {
       "source": "knowledge.continuous.kramers_kronig",
       "target": "knowledge.kinetic.landau_damping_formula",
       "type": "prerequisite",
       "weight": 0.6
-    },
-    {
-      "source": "reasoning.plasma_dielectric_response",
-      "target": "reasoning.spatial_dispersion",
-      "type": "reasoning-instance",
-      "weight": 0.8
     },
     {
       "source": "knowledge.em.lienard_wiechert",
@@ -1691,12 +1636,6 @@
       "weight": 1
     },
     {
-      "source": "reasoning.plasma_dielectric_response",
-      "target": "knowledge.kinetic.plasma_instabilities",
-      "type": "reasoning-instance",
-      "weight": 1
-    },
-    {
       "source": "reasoning.canonical_transformation",
       "target": "reasoning.hidden_symmetry",
       "type": "prerequisite",
@@ -1743,6 +1682,51 @@
       "target": "reasoning.hidden_symmetry",
       "type": "analogy",
       "weight": 1.0
+    },
+    {
+      "source": "reasoning.linear_response_general",
+      "target": "reasoning.plasma.dielectric_tensor_magnetized",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.linear_response_general",
+      "target": "knowledge.em.crystal_optics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.linear_response_general",
+      "target": "reasoning.em.nonlinear_optical_response",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.spatial_dispersion",
+      "target": "reasoning.plasma.dielectric_tensor_magnetized",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.spatial_dispersion",
+      "target": "reasoning.plasma.surface_waves_plasmonics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.constitutive_relation_from_symmetry",
+      "target": "reasoning.plasma.generalized_fluid_equations",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.energy_momentum_tensor_field",
+      "target": "reasoning.plasma.mhd_equilibrium_stability",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.fluid.shock_waves",
+      "target": "reasoning.lp.shock_waves_plasma",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.em.energy_momentum_tensor_field",
+      "target": "reasoning.lp.shock_waves_plasma",
+      "type": "prerequisite"
     }
   ],
   "rumination_1_notes": {
@@ -1778,18 +1762,18 @@
     ],
     "duplicates_found": [],
     "missing_edges": [
-      "parametric_resonance → adiabatic_invariance: both concern time-dependent parameters, but parametric is fast variation, adiabatic is slow. Complementary views of the same underlying Floquet/slow manifold mathematics.",
-      "normal_modes → small_parameter_expansion: the reverse edge should exist — normal mode theory is what justifies the quadratic expansion being sufficient."
+      "parametric_resonance \u2192 adiabatic_invariance: both concern time-dependent parameters, but parametric is fast variation, adiabatic is slow. Complementary views of the same underlying Floquet/slow manifold mathematics.",
+      "normal_modes \u2192 small_parameter_expansion: the reverse edge should exist \u2014 normal mode theory is what justifies the quadratic expansion being sufficient."
     ],
-    "graph_quality": "Good initial topology. The reasoning tree is deep (variational → symmetry → conservation → effective reduction → Kepler). Cross-links (analogy edges) are sparse but correctly identified. The main gap is the timescale_separation hidden parent — extracting this would make the graph significantly more useful for plasma physics applications.",
+    "graph_quality": "Good initial topology. The reasoning tree is deep (variational \u2192 symmetry \u2192 conservation \u2192 effective reduction \u2192 Kepler). Cross-links (analogy edges) are sparse but correctly identified. The main gap is the timescale_separation hidden parent \u2014 extracting this would make the graph significantly more useful for plasma physics applications.",
     "vol2_additions": {
       "new_reasoning_nodes": 6,
       "new_knowledge_nodes": 8,
       "cross_volume_edges": 5,
       "key_analogies": [
-        "multipole_expansion ↔ small_parameter_expansion (scale separation in radiation vs mechanics)",
-        "lorentz_invariance ↔ symmetry_to_conservation (Vol.2 T1 vs Vol.1 T2 — both are symmetry→physics chains)",
-        "EM energy-momentum tensor ↔ mechanical energy conservation (field theory generalization of Noether)"
+        "multipole_expansion \u2194 small_parameter_expansion (scale separation in radiation vs mechanics)",
+        "lorentz_invariance \u2194 symmetry_to_conservation (Vol.2 T1 vs Vol.1 T2 \u2014 both are symmetry\u2192physics chains)",
+        "EM energy-momentum tensor \u2194 mechanical energy conservation (field theory generalization of Noether)"
       ],
       "potential_new_hidden_parents": [
         {
@@ -1799,7 +1783,7 @@
             "reasoning.small_parameter_expansion",
             "reasoning.adiabatic_invariance"
           ],
-          "rationale": "All three separate dynamics by a small parameter: a/λ (radiation), amplitude/equilibrium (oscillations), dλ/dt·T (adiabatic). Could unify as 'small parameter → simplified description'.",
+          "rationale": "All three separate dynamics by a small parameter: a/\u03bb (radiation), amplitude/equilibrium (oscillations), d\u03bb/dt\u00b7T (adiabatic). Could unify as 'small parameter \u2192 simplified description'.",
           "confidence": "high"
         },
         {
@@ -1817,36 +1801,36 @@
       "new_reasoning_nodes": 4,
       "new_knowledge_nodes": 7,
       "cross_volume_edges": 3,
-      "new_dag_branch": "variational_principle → ensemble_logic → microcanonical_to_canonical → partition_to_thermodynamics"
+      "new_dag_branch": "variational_principle \u2192 ensemble_logic \u2192 microcanonical_to_canonical \u2192 partition_to_thermodynamics"
     },
     "vol10_additions": {
       "new_reasoning_nodes": 4,
       "new_knowledge_nodes": 6,
       "file_nodes_written": 8,
       "key_cross_connections": [
-        "adiabatic_invariance ↔ landau_damping (both involve slow/fast timescale separation)",
-        "parametric_instability ↔ landau_damping (instability thresholds vs damping thresholds)",
-        "Maxwell → plasma dielectric (field equations + Vlasov → ε(k,ω))",
-        "entropy → Boltzmann H-theorem (statistical → kinetic irreversibility)"
+        "adiabatic_invariance \u2194 landau_damping (both involve slow/fast timescale separation)",
+        "parametric_instability \u2194 landau_damping (instability thresholds vs damping thresholds)",
+        "Maxwell \u2192 plasma dielectric (field equations + Vlasov \u2192 \u03b5(k,\u03c9))",
+        "entropy \u2192 Boltzmann H-theorem (statistical \u2192 kinetic irreversibility)"
       ]
     },
     "vol8_additions": {
       "new_reasoning_nodes": 2,
       "new_knowledge_nodes": 4,
       "key_cross_connections": [
-        "Maxwell → dielectric_dispersion (field equations in matter)",
-        "plasma ε(k,ω) → spatial_dispersion (microscopic→macroscopic framework)",
-        "Kramers-Kronig → Landau damping (analyticity underlies both)",
-        "Liénard-Wiechert ↔ moving_media (point charge radiation ↔ medium electrodynamics)"
+        "Maxwell \u2192 dielectric_dispersion (field equations in matter)",
+        "plasma \u03b5(k,\u03c9) \u2192 spatial_dispersion (microscopic\u2192macroscopic framework)",
+        "Kramers-Kronig \u2192 Landau damping (analyticity underlies both)",
+        "Li\u00e9nard-Wiechert \u2194 moving_media (point charge radiation \u2194 medium electrodynamics)"
       ]
     },
     "vol6_additions": {
       "new_nodes": 7,
       "key_connections": [
-        "mechanics.energy → continuum_limit (conservation laws in field form)",
-        "homogeneity_to_scaling → dimensional_analysis (Vol.1 scaling → Vol.6 similarity)",
-        "Navier-Stokes ↔ kinetic_closure (fluid stress ↔ Boltzmann collision integral)",
-        "Euler → MHD (ideal fluid + Maxwell = magnetohydrodynamics)"
+        "mechanics.energy \u2192 continuum_limit (conservation laws in field form)",
+        "homogeneity_to_scaling \u2192 dimensional_analysis (Vol.1 scaling \u2192 Vol.6 similarity)",
+        "Navier-Stokes \u2194 kinetic_closure (fluid stress \u2194 Boltzmann collision integral)",
+        "Euler \u2192 MHD (ideal fluid + Maxwell = magnetohydrodynamics)"
       ]
     }
   },

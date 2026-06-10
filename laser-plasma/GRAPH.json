@@ -381,6 +381,21 @@
       "source": "reasoning.em.extended_charge_radiation",
       "target": "reasoning.lp.pic_methods_laser_plasma",
       "type": "analogy"
+    },
+    {
+      "source": "reasoning.energy_momentum_tensor_field",
+      "target": "reasoning.lp.shock_waves_plasma",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.fluid.shock_waves",
+      "target": "reasoning.lp.shock_waves_plasma",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.em.energy_momentum_tensor_field",
+      "target": "reasoning.lp.shock_waves_plasma",
+      "type": "prerequisite"
     }
   ]
 }

@@ -497,6 +497,16 @@
       "source": "reasoning.lp.ponderomotive_force",
       "target": "reasoning.em.positive_feedback_instability",
       "type": "analogy"
+    },
+    {
+      "source": "reasoning.linear_response_general",
+      "target": "knowledge.em.crystal_optics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.linear_response_general",
+      "target": "reasoning.em.nonlinear_optical_response",
+      "type": "prerequisite"
     }
   ]
 }

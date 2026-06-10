@@ -1,5 +1,5 @@
 ---
-skill_id: knowledge.kinetic.plasma_instabilities
+skill_id: knowledge.plasma_instabilities
 type: knowledge
 summary_50t: >
   Beam-plasma (bump-on-tail → δf/∂v > 0 → inverse Landau damping).

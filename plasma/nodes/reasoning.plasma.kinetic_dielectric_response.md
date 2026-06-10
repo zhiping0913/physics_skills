@@ -1,5 +1,5 @@
 ---
-skill_id: reasoning.plasma_dielectric_response
+skill_id: reasoning.plasma.kinetic_dielectric_response
 type: reasoning
 summary_50t: >
   ε_l(k,ω) = 1 − (4πe²/k²)∫(k·∂f/∂p)/(kv−ω−i0) d³p.

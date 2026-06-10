@@ -50,6 +50,15 @@
     },
     "reasoning.plasma.generalized_fluid_equations": {
       "node_type": "reasoning"
+    },
+    "knowledge.plasma.plasma_dielectric": {
+      "node_type": "knowledge"
+    },
+    "knowledge.plasma.plasma_instabilities": {
+      "node_type": "knowledge"
+    },
+    "reasoning.plasma.kinetic_dielectric_response": {
+      "node_type": "reasoning"
     }
   },
   "edges": [
@@ -94,7 +103,7 @@
       "type": "reasoning-instance"
     },
     {
-      "source": "knowledge.kinetic.plasma_dielectric",
+      "source": "knowledge.plasma.plasma_dielectric",
       "target": "reasoning.plasma.dielectric_tensor_magnetized",
       "type": "prerequisite"
     },
@@ -104,7 +113,7 @@
       "type": "prerequisite"
     },
     {
-      "source": "knowledge.kinetic.plasma_instabilities",
+      "source": "knowledge.plasma.plasma_instabilities",
       "target": "reasoning.plasma.instability_classification",
       "type": "prerequisite"
     },
@@ -152,6 +161,26 @@
       "source": "reasoning.plasma.generalized_fluid_equations",
       "target": "reasoning.lp.radiative_hydrodynamics",
       "type": "refinement"
+    },
+    {
+      "source": "reasoning.plasma.kinetic_dielectric_response",
+      "target": "reasoning.plasma.dielectric_tensor_magnetized",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.linear_response_general",
+      "target": "reasoning.plasma.dielectric_tensor_magnetized",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.spatial_dispersion",
+      "target": "reasoning.plasma.dielectric_tensor_magnetized",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.constitutive_relation_from_symmetry",
+      "target": "reasoning.plasma.generalized_fluid_equations",
+      "type": "prerequisite"
     }
   ]
 }
