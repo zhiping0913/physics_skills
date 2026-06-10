@@ -171,6 +171,32 @@ When R_c = α χ_e a₀ ≫ 1:
 5. SATURATED γ: γ_sat ≈ a₀ / R_c ≈ (137 a₀) / (a₀²) ∼ 10⁴/a₀.
 ```
 
+### Collisional runaway — Dreicer field (VTP Vol.11, 1982)
+
+In a collisional plasma with applied electric field E, electrons with
+v > v_crit experience DECREASING collisional drag (F_drag ∝ v⁻² for
+v > v_th, Coulomb logarithm). Above the Dreicer field:
+
+```
+E_D = n e³ lnΛ / (4π ε₀² m_e v_th²)    [Dreicer 1959]
+E_D[V/m] ≈ 5.6×10⁻¹⁴ n[cm⁻³] Z_eff / T_e[eV]
+```
+
+For E > E_D, ALL electrons run away. For E ≪ E_D (typical tokamak:
+E/E_D < 0.1), the runaway fraction is exponentially small:
+f_runaway ∝ exp(−E_D/4E). Runaway electrons are accelerated to
+relativistic energies (γ ∼ 10–100) and can carry significant current.
+
+**Runaway ↔ QED bridge** (VTP Vol.11 → Strong Field Physics):
+the Dreicer field E_D (collisional threshold for runaway) and the
+Schwinger field E_cr = m²c³/eℏ (quantum threshold for pair production)
+define two critical E-fields at opposite ends of the physics spectrum:
+classical collisional → quantum relativistic. At intermediate intensities
+relevant to tokamak disruptions (E ∼ 10² V/m, n_e ∼ 10²⁰ m⁻³), runaway
+electrons can reach γ ∼ 50 before synchrotron radiation reaction limits
+further acceleration — a classical analog of the radiation-dominated
+regime (R_c ∼ 1).
+
 ## Edge Cases
 
 - **Vacuum vs plasma**: in vacuum, RR is the only dissipation. In plasma,

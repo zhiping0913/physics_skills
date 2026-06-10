@@ -145,6 +145,36 @@ if ∇p·κ > 0: bad curvature), parallel current (kink drive).
   equation includes Δ'_GGJ + bootstrap + curvature terms. Use neoclassical
   tearing mode (NTM) theory when bootstrap is significant.
 
+### Non-inductive current drive (VTP Vol.17, 1989)
+
+Steady-state tokamak operation requires non-inductive current drive to
+supplement the bootstrap current. Key methods (VTP Vol.17, Kadomtsev &
+Shafranov review):
+
+**Lower Hybrid Current Drive (LHCD)** — Fisch (1978):
+launch LH waves (ω_LH ≈ √(ω_ci ω_ce)) that resonate with suprathermal
+electrons via Landau damping (n=0, v_∥ ≈ ω/k_∥). The wave imparts
+parallel momentum to resonant electrons, driving current:
+```
+j_LH / P_LH ≈ (2πR / n_e e) η_CD    [current drive efficiency, A/W]
+η_CD ∝ 1/n_e R₀ (higher at low density, large R₀)
+```
+
+**Electron Cyclotron Current Drive (ECCD)** — Fisch-Boozer (1980):
+EC waves at the fundamental or second harmonic resonance (ω = n ω_ce/γ)
+heat electrons asymmetrically in v_∥ (Doppler shift selects direction).
+The resulting anisotropic resistivity generates current:
+```
+j_EC / P_EC ≈ 0.05 T_e[keV] / n_e[10²⁰]  [MA/MW, empirical]
+```
+ECCD is highly localized (Δr ∼ few cm) — can stabilize NTM by driving
+current at rational surfaces.
+
+**Bootstrap + current drive synergy**: j_total = j_BS + j_CD. For ITER:
+j_BS ∼ 2.5 MA, j_CD ∼ 1.5 MA (ECCD + LHCD), j_total ∼ 15 MA. The
+bootstrap fraction f_BS ≈ √ε β_p provides the baseline; current drive
+fills the gap and provides profile control.
+
 ## Cross-References
 
 - Friedberg §4-9, Chen §6
