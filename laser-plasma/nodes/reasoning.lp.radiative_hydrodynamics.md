@@ -38,6 +38,19 @@ flows, and high-Z plasma dynamics under intense laser irradiation
 
 ### 1. Radiation-hydrodynamic equations
 
+The coupled system (Theoretical Fluid Dynamics 2019, Ch.7-8; Introduction
+to Plasma Physics with Space and Laboratory Applications 2020, Ch.9):
+
+The radiation-hydrodynamic equations extend the standard fluid conservation
+laws with radiation source terms. Two-temperature models (T_e ≠ T_i) are
+essential when the electron-ion energy equilibration time τ_ei exceeds the
+hydrodynamic timescale. In space plasmas (2020 text, Ch.9): collisionless
+shocks are mediated by wave-particle interactions rather than binary
+collisions, and the shock structure is determined by the whistler precursor
+and ion reflection at the ramp — connecting to `plasma.mhd_equilibrium_stability`
+(Hall MHD reconnection) and `plasma.wave_particle_resonance` (collisionless
+dissipation).
+
 The coupled system:
 ```
 ∂ρ/∂t + ∇·(ρv) = 0                                     [mass]

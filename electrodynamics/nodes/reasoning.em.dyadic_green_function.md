@@ -246,6 +246,16 @@ The scalar spectral kernels F_TE and F_TM carry the upward/downward propagation
 factors and the generalized reflection/transmission coefficients of the layer
 stack. This is the dyadic version of the Sommerfeld integral construction. In
 anisotropic layered media the TE/TM channels generally couple; the independent
+TE/TM decomposition fails and full 4×4 transfer matrix formalism is required
+(Theory and Computation of EM Fields in Layered Media 2024, Ch.3-5). The
+layered Green function is constructed via:
+```
+G̿_e(k_ρ; z,z') = transmission-line Green functions for voltage/current
+                   in each layer × dyadic basis from field decomposition
+```
+The singularity at the source plane z=z' is handled by the
+depolarization dyadic L̿ weighted by the local permittivity tensor —
+generalizing the free-space L̿ = ẑẑ to arbitrary anisotropy. The
 M̿/N̿ split is replaced by a 4×4 Berreman (first-order z-propagation) matrix.
 
 ### 5.7 Equivalence principle from magnetic currents J*,ρ*

@@ -26,6 +26,29 @@ to direct or iterative solvers.
 
 ## Derivation Sketch
 
+The FEM for electromagnetics (Finite Element Method Electromagnetics 1998;
+Computational Methods for Electromagnetics 1997, Ch.8) specializes the
+general Galerkin method to Maxwell's equations:
+
+**Edge elements (Nédélec 1980)**: unlike nodal FEM (continuous across
+element boundaries), edge elements enforce tangential continuity of E —
+the physical requirement from Maxwell. The lowest-order edge element
+(Whitney 1-form) has 6 degrees of freedom per tetrahedron (one per edge),
+eliminating spurious modes (∇φ solutions with ω ≠ 0) that plague nodal FEM.
+
+**The Nyström method** (The Nyström Method in Electromagnetics 2020): an
+alternative to MoM/FEM for integral equations. Discretizes the integral
+operator by quadrature (no basis functions needed):
+```
+∫ K(r,r') J(r') dr' ≈ Σ_j w_j K(r,r_j) J(r_j)    [Nyström discretization]
+```
+Avoids singular integrals via local correction schemes. Particularly
+efficient for smooth scatterers where high-order quadrature (Gauss-Legendre)
+achieves exponential convergence. Bridges `cp.moment_method` (basis functions)
+and `cp.fdtd_yee_algorithm` (differential formulation).
+
+## Derivation Sketch (continued)
+
 From `electrodynamics: reasoning.em.uniqueness_theorem_boundary_value`
 (the BVP has a unique solution; FEM is the numerical method to find it):
 
