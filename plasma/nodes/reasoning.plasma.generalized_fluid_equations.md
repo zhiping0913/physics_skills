@@ -5,7 +5,21 @@ summary_50t: >
   Generalized fluid equation skeleton: ∂_t ρ + ∇·(ρv) = 0, ρ(∂_t + v·∇)v
   = −∇·P + F_ext + Q_correction. Shared by classical MHD, two-fluid plasma,
   quantum hydrodynamics (QHD, Bohm potential), and radiation hydrodynamics
-  (radiation pressure). The correction term Q determines the physics regime:
+  (radiation pressure). The correction term Q determines the physics regime.
+
+**Strongly coupled plasma** (Physics of Strongly Coupled Plasma 2006):
+when the Coulomb coupling parameter Γ = e²/(a k_B T) > 1 (a = Wigner-Seitz
+radius), the ideal-gas EOS and Debye-Hückel screening break down. The ion
+correlation function g(r) develops oscillations (liquid-like short-range
+order), and the excess pressure contains non-ideal contributions:
+```
+p = n k_B T (1 + Δp_ex/3)    [Δp_ex ∝ Γ^{3/2} for Γ ≫ 1, OCP limit]
+```
+In the **one-component plasma (OCP)** model: ions interact via screened
+Coulomb potential with uniform neutralizing electron background. Freezes
+into a Wigner crystal at Γ > 175. For warm dense matter (1 < Γ < 100,
+Θ ∼ 1), the transport coefficients are modified by factors 2–10× from
+the weakly-coupled (Spitzer) values. Connects to `knowledge.lp.hedp_parameters` K8.
   Q=0 → ideal MHD, Q=−(ℏ²/2m)∇(∇²√ρ/√ρ) → QHD, Q=∇·P_rad → radiation
   hydro. Source: Quantum Plasma (2025) Ch.5, Nonlinear Physics of Plasmas.
 trigger:

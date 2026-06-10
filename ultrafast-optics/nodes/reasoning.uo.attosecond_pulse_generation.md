@@ -173,8 +173,16 @@ Ne gas with sub-2-cycle 1.8 μm driver).
    - Phase matching pressure: P_opt ∼ few-100 mbar.
    - Absorption limit: L_abs ∼ 1/(n σ_abs).
 
-5. XUV OPTICS: Multilayer mirrors (Mo/Si for ∼90 eV, bandwidth ∼5 eV).
-   Filter for fundamental. XUV spectrometer (grating + CCD/MCP).
+5. XUV OPTICS (Elements of Modern X-ray Physics 2011, Ch.2-3,8-9):
+   - Multilayer mirrors: Mo/Si for ∼90 eV (ΔE/E ∼ 4%), Mo/Be for 110 eV.
+   - **Zone plates**: Fresnel zone plates for focusing/imaging at λ ∼ 1-30 nm.
+     Outer zone width determines resolution: Δr ≈ 1.22 Δr_outer.
+   - **Refractive X-ray optics**: compound refractive lenses (CRLs) — n = 1−δ+iβ
+     with δ ∼ 10⁻⁵–10⁻⁶ for hard X-rays. Focal length f = R/(2Nδ).
+   - **Coherence** (§8.4): longitudinal coherence length L_L = λ²/Δλ.
+     Transverse coherence: L_T = λR/(2πσ_s). For HHG sources, L_L ∼ 0.1–1 μm,
+     L_T ∼ 10–100 μm at 30 eV — partially coherent.
+   - Filter for fundamental. XUV spectrometer (grating + CCD/MCP).
 
 6. CHARACTERIZE: Attosecond streaking → FROG-CRAB → τ_IAP, φ(ω).
 ```

@@ -131,7 +131,17 @@ if ∇p·κ > 0: bad curvature), parallel current (kink drive).
   (VMEC + TERPSICHORE/COBRA) for equilibrium; stability is mode-family
   dependent (N-periodic). When large islands form at low-order rational
   surfaces, the nested-flux-surface assumption breaks down — use
-  PIES/HINT for island equilibria or RMHD.
+  (PIES/HINT for island equilibria or RMHD).
+- **Hall MHD and collisionless reconnection** (Modern MHD 2016, Ch.4,7):
+  at scales d_i = c/ω_pi (ion skin depth), the Hall term J×B/en in the
+  generalized Ohm's law decouples ion and electron dynamics. Magnetic
+  field lines remain frozen to the ELECTRON fluid while slipping relative
+  to ions. This enables FAST collisionless reconnection (rate ∼ 0.1 V_A B)
+  independent of resistivity — much faster than Sweet-Parker (∼ S^{-1/2}).
+  The whistler-mediated reconnection layer forms a quadrupolar out-of-plane
+  magnetic field (Hall field), observable as B_y signature at the X-point.
+  Also enables **dynamo action**: helical turbulence generates large-scale
+  magnetic fields via the α-effect (mean-field electrodynamics).
 - **Hall MHD / two-fluid regime**: when L ∼ d_i (ion skin depth), the
   frozen-in condition for electrons is broken. The generalized Ohm's law
   E + v×B = ηJ + (d_i/L)(J×B − ∇p_e)/ne introduces dispersive whistler
