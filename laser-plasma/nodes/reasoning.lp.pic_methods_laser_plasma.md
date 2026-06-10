@@ -146,6 +146,27 @@ atomic strong-field physics of the gas-to-plasma transition
 (Keldysh parameter, ATI spectra, recollision), see the
 `ultrafast-optics` skill (HHG/attosecond nodes) and Gavrila (1992).
 
+**Keldysh theory and strong-field approximation** (Joachain 2011, Ch.6):
+The transition from multiphoton (γ_K ≫ 1) to tunneling (γ_K ≪ 1)
+ionization is described by the Keldysh-Faisal-Reiss (KFR) theory.
+For a monochromatic field, the ionization rate connects smoothly:
+```
+W(γ_K) ∝ exp[−(2I_p/ℏω) f(γ_K)]
+f(γ) = (1 + 1/2γ²) arcsinh(γ) − √(1+γ²)/2γ    [Keldysh function]
+```
+For γ_K ≪ 1: f(γ) → 2γ/3, recovering the ADK tunneling limit.
+For γ_K ≫ 1: f(γ) → ln(2γ) − 1/2, giving the multiphoton power law
+W ∝ I^N with N = ceil(I_p/ℏω + U_p/ℏω).
+
+**Ultra-short pulse ionization** (Joachain §6.3.1): for few-cycle pulses,
+the Keldysh parameter becomes time-dependent γ_K(t) through the pulse
+envelope E₀(t). The ionization probability is integrated over the pulse
+profile, and the ADK static-field rate must be replaced by the
+time-dependent ionization yield Y(t) = 1 − exp(−∫ W_ADK(E(t')) dt').
+This connects directly to `uo.attosecond_pulse_generation` (few-cycle
+pulses for IAP gating) and `uo.carrier_envelope_phase` (CEP dependence
+of ionization yield).
+
 **Collisions**: binary collision model (Nanbu, Takizuka-Abe) for ν_ei.
 Pair-wise scattering with conservation. Monte Carlo.
 

@@ -127,6 +127,35 @@ Dominant for Iλ² > 10¹⁷ W·μm²/cm².
 6. REFLECTED energy: 1 − f_A. For ICF: need f_A > 0.8.
 ```
 
+### Critical perspective on absorption formulas (High Power Laser-Matter Interaction 2010, Ch.2-3)
+
+The textbook by Mulser & Bauer (2010) provides an important CRITICAL
+perspective on standard absorption formulas, identifying several
+limitations not covered by canonical derivations:
+
+**Collisional absorption under strong drift**: the standard Dawson-Oberman
+formula for ν_ei assumes a Maxwellian electron distribution. In intense
+laser fields, the electron distribution develops a super-Gaussian tail
+due to the quiver motion, reducing the effective collision frequency by
+up to 30% compared to the Maxwellian assumption (HPLM Ch.3).
+
+**Nonphysical asymptotic forms**: the product of two Coulomb logarithms
+appearing in some asymptotic formulas for collisional absorption under
+strong drift is an artifact of inconsistent approximations — the correct
+form has a single lnΛ factor (HPLM §3.3.4). This affects absorption
+calculations at I > 10¹⁶ W/cm² where the quiver velocity exceeds the
+thermal velocity.
+
+**Dimensional analysis and similarity** (HPLM Ch.2): the absorption
+dynamics can be characterized by two dimensionless parameters:
+```
+Π = I / (n_e m_e c³)    [normalized intensity]
+Λ = ν_ei L_n / c       [optical depth parameter]
+```
+These two parameters alone determine the absorption regime boundary,
+enabling similarity scaling between experiments at different wavelengths
+and intensities. This connects to `landau-graph: reasoning.dimensional_analysis_to_similarity`.
+
 ## Absorption Mechanism Regime Map
 
 | Mechanism | Iλ² (W·μm²/cm²) | L_n/λ | Pol. | θ | Scaling |

@@ -169,6 +169,28 @@ U = ½ Σ (ε|E|² + μ|H|²) should remain constant (σ=0, no PML); monitor to
 - **Thin layers (≪ Δx)**: Use subcell models or surface impedance BC.
 - **Instability from PML**: Convolutional PML (CPML) more stable than split-field
   PML for long simulations and evanescent waves.
+- **Corrected unsplit PML for anisotropic dispersive media** (Advances in FDTD 2013, Ch.5):
+  several published PML formulations for anisotropic and periodic media fail
+  rigorous validation — they behave as adiabatic absorbers rather than true PMLs.
+  The corrected formulation requires matching the PML tensor to the medium's
+  constitutive relations at ALL frequencies, not just at the center frequency.
+
+### GVADE FDTD for nonlinear pulse propagation (Advances in FDTD 2013, Ch.17)
+
+The General Vector Auxiliary Differential Equation (GVADE) FDTD method
+solves Maxwell's equations in materials with COMBINED linear and nonlinear
+dispersion WITHOUT the paraxial or slowly-varying envelope approximations.
+Key capabilities:
+- Direct time-domain solution of ∇×E = −∂B/∂t, ∇×H = ∂D/∂t + J
+- Material dispersion via auxiliary ODEs (Drude, Lorentz, Debye, χ⁽³⁾)
+- Nonlinear polarization: P_NL = ε₀ χ⁽³⁾ |E|² E updated at each timestep
+- Captures: self-focusing, soliton formation, supercontinuum generation,
+  harmonic generation — all from first-principles Maxwell's equations
+
+GVADE bridges `cp.fdtd_yee_algorithm` with `uo.pulse_propagation_nlse_higher_order`:
+where NLSE captures envelope dynamics, GVADE resolves the full optical
+carrier, enabling study of carrier-envelope effects, few-cycle pulse
+propagation, and backward-wave generation inaccessible to envelope methods.
 
 ## SUBCELL MODELS
 
