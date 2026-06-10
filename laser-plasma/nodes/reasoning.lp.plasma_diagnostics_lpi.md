@@ -90,7 +90,17 @@ imaging.
 dN_γ/dE ∝ exp(−E/k_B T_hot)    [thermal bremsstrahlung]
 ```
 
-**Betatron X-rays**: from LWFA/DLA electrons. Synchrotron-like spectrum
+**Betatron X-rays** (Synchrotron Radiation and FELs 2017, Ch.2,8):
+from LWFA/DLA electrons executing betatron oscillations in the ion
+cavity. The radiation is synchrotron-like with critical energy
+ℏω_c = (3/2)ℏγ² ω_β (r_β/λ_β). The betatron source is a TABLETOP
+analog of a wiggler/undulator: the ion cavity provides the periodic
+transverse field (effective undulator period λ_u ≈ √(2γ) λ_p).
+For γ=200, n_e=10¹⁹ cm⁻³: ℏω_c ≈ 10 keV, brightness ∼ 10²²
+photons/s/mm²/mrad²/0.1%BW — comparable to 3rd-generation synchrotron
+beamlines but in femtosecond bursts. Connects to `lp.direct_laser_acceleration` R6.
+
+Original betatron: synchrotron-like spectrum
 with critical energy ℏω_c ∝ γ². Spectral analysis → γ and a₀.
 
 **X-ray spectrometers**: HOPG (Highly Oriented Pyrolytic Graphite) crystal

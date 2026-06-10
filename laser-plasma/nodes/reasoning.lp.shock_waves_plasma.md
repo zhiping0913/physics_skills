@@ -103,6 +103,15 @@ material-dominated (ablative). For Bo ≫ 1, radiation pressure drives
 the shock → radiative precursor → supercritical shock structure.
 For I = 10¹⁴ W/cm², λ = 0.35 μm: p_ablation ≈ 50 Mbar.
 
+**Warm dense matter regime** (Extreme States of Matter 2011):
+at T ∼ 1–100 eV and ρ ∼ 0.1–10× solid density, matter is NEITHER
+ideal plasma nor condensed matter. The coupling parameter Γ > 1 and
+degeneracy Θ = T/T_F ∼ 1. In this regime, the shock Hugoniot deviates
+from the ideal-gas prediction due to ionization balance shifts and
+electron degeneracy pressure. The principal Hugoniot for WDM is
+measured via impedance-matching techniques using laser-driven shocks
+on pre-compressed samples. Connects to `knowledge.lp.hedp_parameters` K8.
+
 **Piston shock**: at very high intensity (a₀ ≫ 1), radiation pressure
 acts as a direct piston. Hole-boring regime (RPA):
 ```

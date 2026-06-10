@@ -105,7 +105,22 @@ Trapping condition: v_z ≥ v_ph − v_wake, i.e., the electron must catch the w
   electrons ionized only at peak of laser → born inside wake → trapped.
   Simple, tunable by dopant concentration.
 
-### 4. Energy spread and beam quality
+### 4. Beam quality — emittance and brightness
+
+Accelerator-quality beams are characterized by (Accelerator Physics 2019, Ch.2-3):
+
+**Normalized emittance**: ε_n = γ β ε_rms where ε_rms = √(⟨x²⟩⟨x'²⟩−⟨xx'⟩²)
+is the geometric rms emittance. LWFA typically achieves ε_n ∼ 1 mm·mrad,
+comparable to state-of-the-art RF photoinjectors.
+
+**Brightness**: B = 2I/(ε_nx ε_ny) — the phase-space density of the beam.
+LWFA beams achieve B ∼ 10¹⁵–10¹⁶ A/(m·rad)² due to the combination of
+kA-level peak currents and mm-mrad emittances.
+
+**Energy spread**: self-injected LWFA: Δε/ε ∼ 10–50%. Controlled injection
+(density downramp, colliding pulse, ionization): Δε/ε ∼ 1–5%.
+
+### 5. Energy spread and beam quality
 
 Energy spread in self-injected LWFA: typically 10-50% (continuous injection).
 With controlled injection (colliding pulse, ionization): 1-5%.
