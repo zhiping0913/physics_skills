@@ -23,7 +23,13 @@ references:
 
 The Helmholtz theorem (fundamental theorem of vector calculus): any
 sufficiently smooth vector field F(r) that vanishes at infinity can be
-UNIQUELY decomposed as:
+UNIQUELY decomposed as (for lossless isotropic media). In anisotropic and
+viscoelastic media (Wave Fields in Real Media 2022, Ch.4): the Lamé constants
+become complex, frequency-dependent tensors C_{ijkl}(ω), the P/S wave
+decoupling is generally lost, and the Helmholtz decomposition is replaced by
+the Christoffel equation det(C_{ijkl} n_j n_l − ρv² δ_{ik}) = 0. This connects to
+`plasma.dielectric_tensor_magnetized` (anisotropic ε_{ik}) and
+`em.nonlinear_optical_response` (frequency-dependent χ^{(n)}).
 
 ```
 F = −∇φ + ∇×A

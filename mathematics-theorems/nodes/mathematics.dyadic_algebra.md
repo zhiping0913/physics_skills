@@ -103,7 +103,7 @@ Eigen-dyadic: For symmetric D̿, ∃ three orthogonal eigenvectors û_i:
   where D̿·û_i = λ_i û_i. λ_i are eigenvalues.
 ```
 
-## Key Identities
+## Key Identities (General Vector and Dyadic Analysis 1997; Multiforms/Dyadics/EM Media 2015)
 
 ```
 ∇·(D̿·F) = (∇·D̿)·F + D̿^T : ∇F
@@ -112,6 +112,27 @@ Eigen-dyadic: For symmetric D̿, ∃ three orthogonal eigenvectors û_i:
 ∇×(I̿ f) = ∇f × I̿ = −I̿ × ∇f
 I̿ : ∇F = ∇·F
 ```
+
+**Basis-free forms** (Tai 1997, §1.7): The dyadic I̿ is the sole isotropic
+dyadic — any isotropic linear map is λ I̿. Key basis-free identities:
+```
+(a×I̿) · b = a × b          [cross-product map as dyadic]
+I̿ × a = −a × I̿             [antisymmetric dyadic from vector]
+∇ · (ab) = (∇·a)b + a·(∇b)  [dyadic divergence of dyad ab]
+```
+These are essential for `em.dyadic_green_function` — the free-space Green
+dyadic G̿_e0 = (I̿ + ∇∇/k²)G₀ uses I̿, and source-region corrections use the
+depolarization dyadic L̿ (a singular dyadic with det=0).
+
+**Geometric/Clifford algebra connection** (Lindell 2015, Ch.1-2): In the
+language of geometric algebra (GA), Maxwell's equations in free space reduce
+to ∇F = J where F = E + iζH is a multivector field (bivector + pseudoscalar
+parts) and i is the unit pseudoscalar. The dyadic Green function in GA is a
+linear mapping between multivectors, unifying the electric and magnetic dyadic
+Green functions into a single geometric object. The depolarization dyadic
+corresponds to the projection onto the 3D subspace in the GA 4D embedding —
+a connection between `mathematics.dyadic_algebra` and the covariant
+formulation in `em.covariant_electrodynamics`.
 
 ## Edge Cases
 

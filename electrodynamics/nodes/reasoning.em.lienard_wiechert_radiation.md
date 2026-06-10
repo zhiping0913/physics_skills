@@ -21,6 +21,14 @@ The Liénard-Wiechert potentials give the exact EM fields of a point charge
 on an arbitrary trajectory r₀(t), evaluated at the RETARDED time t' satisfying
 t' = t − |r−r₀(t')|/c (Jackson §14, Griffiths §11).
 
+**Retarded-time constraint detail** (Griffiths 5th Ed. 2023, §11.1.2): the
+implicit equation t_ret = t − |r−w(t_ret)|/c encodes the finite speed of light.
+The retarded-time gradient is ∂t_ret/∂t = 1/(1−n̂·β) where n̂ = (r−w)/|r−w|,
+β = v/c — the relativistic Doppler factor. For β→1 the field compresses into
+a forward cone of angular width ~1/γ (relativistic beaming, §11.2). This
+connects to `uo.relativistic_intensity` (γ-a₀ scaling) and
+`em.synchrotron_radiation` (beaming in circular motion).
+
 ## Derivation Sketch (from retarded Green's function → LW)
 
 The retarded potentials from `landau-graph: reasoning.retarded_green_function` are
