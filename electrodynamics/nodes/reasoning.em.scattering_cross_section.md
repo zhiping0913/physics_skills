@@ -117,6 +117,27 @@ the "extinction paradox"). Diffraction contributes equally to direct interceptio
 This is a consequence of ENERGY CONSERVATION (unitarity of S-matrix). It holds
 for ANY target, not just spheres.
 
+### Asymptotic methods for electrically large scatterers
+(EM Radiation, Scattering, and Diffraction 2021, Ch.16)
+
+When the scatterer size D ≫ λ, full-wave methods become prohibitively
+expensive. Asymptotic techniques exploit the short-wavelength limit:
+
+- **GTD (Geometrical Theory of Diffraction)** — Keller (1962): extends
+  GO with diffracted rays from edges, tips, and creeping waves on
+  smooth convex surfaces. Diffraction coefficient D(φ,φ') from
+  canonical wedge problem.
+- **UTD (Uniform Theory of Diffraction)** — Kouyoumjian & Pathak (1974):
+  removes GTD's singularities at shadow/reflection boundaries using
+  Fresnel integral transition functions. Uniformly valid across all
+  observation angles.
+- **PO (Physical Optics)** — surface current approximation J_s ≈ 2n̂×H_i
+  on lit surfaces, J_s=0 in shadow. Accurate near specular directions;
+  fails at wide angles and for edge diffraction.
+
+These methods connect to `em.dyadic_green_function` (full-wave kernel)
+and `em.scalar_diffraction_kirchhoff` (the scalar precursor to PO).
+
 ## Edge Cases
 
 - **Rayleigh-Gans-Debye (RGD) regime**: |ε−1| ≪ 1 but ka NOT ≪ 1 — use Born

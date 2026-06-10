@@ -113,7 +113,19 @@ The cone-guided FI demonstrated at Gekko-XII / FIREX-I (Kodama 2001):
 - Coupling efficiency η_coupling ≈ 20–30%.
 - Full ignition not yet achieved — requires higher energy and better coupling.
 
-### 5. Proton fast ignition (alternative)
+### 5. ITER and fusion context (Chen 2016, Ch.1,10)
+
+The Lawson criterion (Chen §10.4) for DT ignition requires:
+```
+n T τ_E > 3 × 10²¹ keV·s/m³    [triple product]
+```
+For ITER (R=6.2 m, B=5.3 T, I_p=15 MA): τ_E ≈ 3.7 s, T_i ≈ 25 keV,
+n ≈ 10²⁰ m⁻³ → Q = P_fusion/P_heating ≈ 10 (ten-fold energy gain).
+The H-mode confinement scaling (IPB98(y,2)): τ_E ∝ I_p^{0.93} B^{0.15}
+n^{0.41} P^{-0.69}. ELM (Edge Localized Mode) instabilities limit the
+pedestal pressure and must be mitigated for steady-state operation.
+
+### 6. Proton fast ignition (alternative)
 
 Instead of electrons, use laser-accelerated protons (TNSA):
 - Protons have higher stopping power (Bragg peak) → more localized heating.

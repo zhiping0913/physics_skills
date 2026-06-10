@@ -86,6 +86,21 @@ shock or rarefaction reaches a shocked region.
 ```
 p_ablation ≈ (I/10¹⁴)^{2/3} (λ/μm)^{-2/3} Mbar    [scaling]
 ```
+
+**Blast wave similarity** (Intense Shock Waves 2021, Ch.2-3):
+after the laser pulse ends, the shock enters a blast-wave phase governed
+by the Sedov-Taylor solution:
+```
+R_s(t) = ξ₀ (E t² / ρ₀)^{1/(2+ν)}    [ν = 1,2,3 for planar/cylindrical/spherical]
+```
+where ξ₀ ≈ 1 for γ=5/3 in air. The shock pressure decays as
+p_s ∝ t^{-2ν/(2+ν)} in the blast-wave phase.
+
+**Radiation-hydrodynamic coupling** (Intense Shock Waves §3.4):
+the transition between ablative and radiative shock regimes is governed
+by the Boltzmann number Bo = P_rad/P_hydro. For Bo ≪ 1, the shock is
+material-dominated (ablative). For Bo ≫ 1, radiation pressure drives
+the shock → radiative precursor → supercritical shock structure.
 For I = 10¹⁴ W/cm², λ = 0.35 μm: p_ablation ≈ 50 Mbar.
 
 **Piston shock**: at very high intensity (a₀ ≫ 1), radiation pressure
