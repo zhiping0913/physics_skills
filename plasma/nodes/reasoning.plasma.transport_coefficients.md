@@ -157,6 +157,46 @@ Empirical scaling: τ_E ∝ I_p^α P^{−β} n^{γ} (e.g., IPB98(y,2)).
   for the radial electric field well E_r, which provides the shear
   suppression. Use neoclassical + turbulence saturation models (e.g.,
   QuaLiKiz, TGLF) that capture E×B shear quenching.
+
+### Classical transport — Chapman-Enskog for plasma (VTP Vol.1, 1963)
+
+The foundational treatment of classical plasma transport (Вопросы теории
+плазмы, Vol.1) adapts the Chapman-Enskog method from neutral gas kinetics
+to fully ionized plasma. Key differences from the neutral gas case:
+
+1. **Long-range Coulomb interaction**: the collision integral uses the
+   Landau (Fokker-Planck) form rather than Boltzmann — collisions are
+   dominated by small-angle scattering with cumulative effect.
+
+2. **Unlike-species coupling**: electron and ion distribution functions
+   are coupled through the friction force R = −∫ m_e v C_{ei}(f_e, f_i) d³v.
+   This couples the electron and ion transport equations and produces
+   the thermoelectric (Nernst, Ettingshausen) effects.
+
+3. **Magnetic field suppression**: in strong B₀ (Ω_e τ_ei ≫ 1), transport
+   across B₀ is suppressed: χ⊥/χ∥ ∼ 1/(Ω_e τ_ei)² ∼ (ρ_e/λ_mfp)².
+
+### Neoclassical transport — Galeev-Sagdeev (VTP Vol.7, 1973; Vol.16, 1987)
+
+The Soviet school's seminal contribution: transport in toroidal geometry is
+ENHANCED over classical by trapped-particle orbits. Three regimes defined
+by the collisionality parameter ν* = ν_eff / ω_bounce:
+
+| Regime | ν* | χ ∝ | Physics |
+|--------|-----|-----|--------|
+| **Banana** (Galeev-Sagdeev) | ν* ≪ 1 | q² ε^{−3/2} ν_ei ρ_i² | Trapped particles complete full banana orbits between collisions |
+| **Plateau** | ν* ∼ 1 | ε^{1/2} v_th²/(Ω_i R) | Resonant detrapping at ν_eff ∼ ω_bounce |
+| **Pfirsch-Schlüter** | ν* ≫ 1 | q² ν_ei ρ_i² | Collisional — 1/ε enhancement over classical from helical field |
+
+Banana regime (most relevant for fusion-reactor conditions):
+```
+χ_i^neo ≈ q² ε^{−3/2} ν_ii ρ_i²    [ion neoclassical thermal diffusivity]
+ε = r/R₀ (inverse aspect ratio), q = safety factor
+```
+
+The bootstrap current (ВТП Vol.7) arises self-consistently from ∇p-driven
+trapped-particle orbits in toroidal geometry: j_BS ∝ √ε (T/B_θ) dp/dr — a
+pressure-gradient-driven current that flows without an external electric field.
 - **Gyrokinetic validity breaks down** when ρ* is not small (spherical
   tokamaks, edge) or when k_⊥ ρ_i ∼ 1 (full Larmor radius needed).
   Use full-orbit (PIC, Vlasov) when the gyrokinetic ordering fails;

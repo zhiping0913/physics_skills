@@ -192,5 +192,37 @@ principle but practically irreversible due to coarse-graining.
 ## Cross-References
 
 - Stix §8-10, Chen §7-8, Ginzburg §6-7
+- Вопросы теории плазмы, Вып. 6 (1972) — Веденов, Рютов, "Квазилинейные эффекты"
 - landau-graph: reasoning.landau_damping (n=0 electrostatic)
 - landau-graph: reasoning.plasma_dielectric_response (ε_l from Vlasov)
+
+### Quasilinear theory and anomalous transport (VTP Vol.6, 1972; Vol.7, 1973)
+
+The quasilinear theory, developed extensively in the Soviet school (Vedenov,
+Ryutov, Galeev, Sagdeev — ВТП Vol.6-7), describes the self-consistent
+evolution of a weakly turbulent plasma. When many unstable waves grow:
+
+1. **Quasilinear diffusion equation** (Vedenov 1963, ВТП Vol.6):
+   ```
+   ∂f₀/∂t = ∂/∂v (D_QL ∂f₀/∂v),    D_QL ∝ Σ_k |E_k|² δ(ω_k − k·v)
+   ```
+   The diffusion coefficient D_QL is proportional to the spectral energy
+   density of the waves. Particles diffuse in velocity space along
+   diffusion paths: v_⊥² − (ω/k_∥)² v_∥²/ω_c = const (for magnetized).
+
+2. **Anomalous transport from turbulence**: turbulent E×B fluctuations
+   produce a radial particle flux Γ = ⟨ñ ṽ_E⟩. In the quasilinear
+   approximation: D_anom ≈ Σ_k (k_θ/k_∥)² |eφ_k/T|² (cT/eB) — typically
+   10²–10⁴ times larger than neoclassical. This "anomalous transport"
+   is the dominant energy loss channel in all tokamaks (ВТП Vol.7).
+
+3. **Saturation mechanisms**: quasilinear flattening of ∂f₀/∂v (plateau
+   formation) at the resonant velocity removes the free energy source.
+   The saturated spectrum |E_k|² is determined by the balance between
+   linear growth and nonlinear transfer (mode coupling, ВТП Vol.7).
+
+4. **Transition to strong turbulence**: when the bounce frequency of
+   trapped particles in the wave potential exceeds the wave growth rate
+   (ω_B > γ_L), quasilinear theory breaks down → particle trapping
+   dominates → strong turbulence regime (Zakharov equations, see
+   em.positive_feedback_instability).
