@@ -205,6 +205,14 @@ regime (R_c ∼ 1).
   asymmetric photon emission → electron beam self-polarization.
 - **RR modification of LWFA**: at extreme intensities, RR damping in the
   bubble may reduce the accelerating gradient.
+- **Collisional vs radiative runaway**: at low fields (E ≪ E_D in tokamaks),
+  the dominant runaway mechanism is collisional (Dreicer — electrons with
+  v > v_crit experience decreasing drag). At high fields (a₀ ≫ 1 in
+  laser-plasma), radiative runaway (R_c > 1) dominates. The transition
+  occurs when the radiative drag (∝ γ² I) exceeds the collisional drag
+  (∝ ν_ei v_th). For typical tokamak disruption parameters, runaway
+  electrons reach γ ∼ 50 before synchrotron radiation limits acceleration.
+  See Dreicer field section above and VTP Vol.11 (1982).
 
 ## Cross-References
 

@@ -96,33 +96,19 @@ with critical energy ℏω_c ∝ γ². Spectral analysis → γ and a₀.
 **X-ray spectrometers**: HOPG (Highly Oriented Pyrolytic Graphite) crystal
 for keV range, transmission grating for sub-keV. Resolving power E/ΔE ~ 100–1000.
 
-### 4. Impurity radiation diagnostics (VTP Vol.12, 1984)
-
-In magnetically confined fusion plasmas, impurity ions — sputtered from
-walls or intentionally seeded — dominate the radiative power balance.
-Key diagnostics (VTP Vol.12, Vainshtein & Shevelko review):
-
-**Coronal equilibrium model**: at low density (n_e < 10¹³ cm⁻³ for visible,
-< 10¹⁶ cm⁻³ for XUV), collisional excitation is balanced by radiative decay
-(no collisional de-excitation). The line intensity:
-```
-I_λ = n_e n_Z ⟨σv⟩_exc B_λ    [photons/cm³/s]
-```
-where ⟨σv⟩_exc is the excitation rate coefficient (van Regemorter formula)
-and B_λ is the branching ratio. This provides local n_Z from measured I_λ.
-
-**Z_eff diagnostic**: the effective charge
-```
-Z_eff = Σ_Z n_Z Z² / n_e    [≥ 1, = 1 for pure hydrogen]
-```
-is measured from bremsstrahlung continuum slope (dN_γ/dE ∝ Z_eff exp(−E/T_e))
-or from visible bremsstrahlung (VB) at λ ∼ 523 nm. Z_eff > 2 indicates
-significant impurity contamination → enhanced radiation losses.
-
-**Radiation power loss**: P_rad = n_e Σ_Z n_Z L_Z(T_e) where L_Z(T_e) is
-the cooling rate (coronal equilibrium). For carbon at 100 eV: L_C ∼ 10⁻³¹
-W·m³; for tungsten at 1 keV: L_W ∼ 10⁻³² W·m³. P_rad can exceed P_α
-(fusion alpha heating) if Z_eff is too high → radiative collapse.
+**Impurity radiation and Z_eff** (VTP Vol.12, 1984; Vainshtein & Shevelko):
+in both MCF and LPI contexts, impurity ions dominate the radiative power
+balance. The **coronal equilibrium model** (collisional excitation balanced
+by radiative decay) gives line intensity I_λ = n_e n_Z ⟨σv⟩_exc B_λ, where
+⟨σv⟩_exc is the van Regemorter excitation rate and B_λ the branching ratio.
+The **effective charge** Z_eff = Σ_Z n_Z Z² / n_e is measured from the
+bremsstrahlung continuum slope — dN_γ/dE ∝ Z_eff exp(−E/T_e) rather than
+∝ exp(−E/T_e) alone. Z_eff > 2 indicates significant contamination.
+**Radiation power loss**: P_rad = n_e Σ_Z n_Z L_Z(T_e) with cooling rate
+L_Z(T_e); for carbon at 100 eV L_C ∼ 10⁻³¹ W·m³. P_rad > P_α triggers
+radiative collapse. This connects directly to `plasma.transport_coefficients`
+(radiation loss term in energy balance) and `lp.hohlraum_physics` (wall
+impurity radiation in hohlraum).
 
 ### 4. Neutron diagnostics (ICF)
 
