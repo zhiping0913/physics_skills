@@ -187,3 +187,25 @@ Ne gas with sub-2-cycle 1.8 μm driver).
 - electrodynamics: reasoning.em.nonlinear_optical_response (χ⁽ⁿ⁾ in HHG)
 - plasma: reasoning.lp.laser_propagation_plasma (HHG in plasma, relativistic regime)
 - ultrafast-optics: knowledge.uo.attosecond_physics_data (HHG data, IAP records)
+
+### Alternative plasma-based XUV sources (Coherent Sources of XUV 2006, Ch.5-10)
+
+Beyond gas HHG, coherent XUV radiation can be generated via **X-ray lasers**
+— population inversion in highly ionized plasma columns pumped by intense
+optical lasers. Key schemes:
+
+- **Collisional excitation**: Ne-like or Ni-like ions pumped to metastable
+  upper laser level → amplified spontaneous emission at 5–50 nm.
+- **Recombination lasers**: rapid cooling of laser-produced plasma →
+  three-body recombination into excited states → population inversion
+  in H-like or Li-like ions (e.g., C VI at 18.2 nm).
+- **Transient gain**: short-pulse (~ps) heating after pre-plasma formation
+  → gain duration ~10 ps, output ~μJ.
+- **Saturated operation**: gain-length product GL > 15 → output saturation,
+  demonstrated at multiple facilities.
+
+These X-ray lasers connect directly to `laser-plasma` skill (plasma heating,
+ionization balance, hydrodynamic expansion) and complement the gas-phase
+HHG approach covered in this node. See `lp.laser_absorption_mechanisms`
+for the pump absorption physics and `lp.shock_waves_plasma` for the
+hydrodynamic expansion that limits gain duration.

@@ -103,9 +103,22 @@ Second-order accurate in both space and time. Explicit: no matrix solve.
 
 ## Key Numerical Properties
 
-- **Grid dispersion**: Phase velocity v_p(θ,Δ) < c for propagation not aligned
-  with grid axes. E.g., along diagonal: v_p/c ≈ 1 − (π²/12)(Δ/λ)².
-  Mitigation: finer grid or higher-order schemes (FDTD(2,4)).
+- **Exact 2D numerical dispersion** (Taflove §2.6):
+```
+sin²(ωΔt/2) = (cΔt/Δ)² [sin²(k̃_x Δ/2) + sin²(k̃_y Δ/2)]
+```
+where k̃_x, k̃_y are the numerical wavenumbers. For propagation at angle φ
+to the grid, the numerical phase velocity is:
+```
+v_p(φ)/c = (λ/πΔS) arcsin[ S sin(πΔ/λ) ]    with S = cΔt/Δ
+```
+- **Numerical anisotropy**: along grid axes, v_p/c ≈ 1 − (π²/8)(Δ/λ)².
+  Along diagonal (45°): v_p/c ≈ 1 − (π²/16)(Δ/λ)² — half the error.
+  Anisotropy vanishes as Δ/λ → 0.
+- **Complex-frequency stability** (Taflove §2.7.1): substitute e^{i(k̃·r − ω̃t)}
+  into the discrete wave equation. The growth condition Im(ω̃) ≤ 0 for all k̃
+  yields the CFL bound as a NECESSARY condition. The sufficiency requires
+  bounding the spatial eigenvalue spectrum: λ_max(∇²_d) ≤ 4/Δx²+4/Δy²+4/Δz².
 - **Staggered grid preserves ∇·B=0**: The discrete divergence of the curl is
   identically zero on the Yee grid. If ∇·B=0 initially, it stays zero forever.
 - **Material interfaces**: ε and σ at E-nodes, μ at H-nodes. Averaging at
