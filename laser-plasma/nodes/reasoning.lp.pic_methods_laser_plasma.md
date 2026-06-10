@@ -8,7 +8,9 @@ summary_50t: >
   transform → γ_b² reduction in computational cost. QED modules: Monte
   Carlo photon emission + pair production. Ionization: ADK tunnel
   ionization, barrier suppression (BSI). Resolution: Δx ≲ λ_D, Δt <
-  Δx/c√d (CFL). Standard for LWFA, TNSA, RPA, QED-plasma modeling.
+c Δt < Δx/√d (CFL). Standard for LWFA, TNSA, RPA, QED-plasma modeling.
+For 1D: Δt = Δx/c gives zero numerical dispersion (magic time-step, Taflove §2.6.2).
+For 3D Yee: Δt = Δx/(c√3) minimizes numerical dispersion.
 trigger:
   - setting up PIC simulation parameters (resolution, box size, #particles)
   - choosing between lab-frame vs boosted-frame PIC
@@ -97,6 +99,7 @@ by Poisson correction (add electrostatic field → 4x cost).
 | Δt | < 2/ω_p | Resolve plasma oscillations |
 | Δt | < Δx/c√d | CFL condition |
 | N_particles/cell | > 10 | Reduce numerical noise |
+| N_particles/Debye sphere | > 10 | Suppress numerical collisionality (universal: plasma, galaxies, MD) |
 | Simulation time | > ω_pi⁻¹ | Capture ion dynamics |
 
 **Numerical heating**: insufficient spatial resolution → self-heating.

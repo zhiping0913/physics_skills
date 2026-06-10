@@ -134,6 +134,22 @@ waveguide effect → relativistic self-focusing (see R9).
    Channel depth: Δn_e/n₀ ≈ a₀²/(1+a₀²).
 ```
 
+### Alternative derivation — adiabatic wave-particle interaction
+
+From the kinetic perspective (Nonlinear Physics of Plasmas Ch.5, §5.7):
+when a high-frequency wave amplitude is spatially modulated, a particle
+oscillating in the wave field experiences asymmetric restoring forces over
+one cycle — stronger on the high-amplitude side, weaker on the low-amplitude
+side. The time-averaged net force points toward DECREASING amplitude:
+```
+⟨F⟩ = −(q²/4mω²) ∇|E₀|² ≡ f_p
+```
+This kinetic derivation shows that the ponderomotive force is a general
+adiabatic effect, not specific to fluid plasma — it applies to ANY charged
+particle in an inhomogeneous oscillating field (electrons in laser, ions
+in RF Paul traps, dielectric particles in optical tweezers). The fluid
+derivation (R3 §1) is the collective-plasma specialization.
+
 ## Cross-Domain Analogy
 
 | Domain | Force | Form | Application |

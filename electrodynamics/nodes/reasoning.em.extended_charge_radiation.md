@@ -152,6 +152,28 @@ Monte Carlo QED-PIC approach takes over (laser-plasma R12).
   (Abraham model with spin, Spohn Ch.10). The spin dynamics couple to the
   translational motion through the Barnett and Einstein-de Haas effects.
 
+### Lagrangian formulation and PIC connection
+
+The Abraham model has a well-defined Lagrangian (Spohn Ch.13):
+```
+L = ½ m_b v² + (e/c) v·A_eff[q] − e φ_eff[q]
+```
+where A_eff and φ_eff are the self-consistent potentials smeared by φ(x−q).
+The canonical momentum p = m_b v + (e/c) A_eff contains both mechanical and
+field contributions. This is structurally identical to the PIC Boris pusher's
+canonical momentum decomposition, where the particle's effective mass already
+includes the electromagnetic contribution from the shape function S(x).
+
+### Center manifold — precise statement
+
+(Spohn Ch.9)
+The Landau-Lifshitz equation is the leading-order reduced dynamics on the
+center manifold M_c = {states with no free radiation, only bound Coulomb field}.
+Generic initial conditions (with free radiation) do NOT satisfy LL; they
+converge to M_c exponentially fast. The LAD equation corresponds to a DIFFERENT
+submanifold and is not the R_ep → 0 limit of physical solutions.
+**Practical rule**: use LL, never LAD, for classical radiation reaction.
+
 ## Cross-References
 
 - Spohn, *Dynamics of Charged Particles and their Radiation Field* (2023), Ch.2-5

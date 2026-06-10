@@ -91,6 +91,7 @@ soliton order N² = γ P₀ T₀²/|β₂| determines the temporal profile.
 | Domain | Wave equation | u (field) | α (nonlin.) | β (disp.) | Soliton type | Node |
 |--------|--------------|-----------|------------|----------|-------------|------|
 | Ion-acoustic (plasma) | KdV | δn/n₀ | T_e/m_i | λ_D² ω_pi | KdV compres- sional | plasma |
+  **Mach condition**: M = v_soliton/c_s > 1, M < 1.6 (ion trapping limit).
 | Langmuir (plasma) | NLS | E_L envelope | ω_p/n₀ T_e | 3 λ_D² ω_p | NLS envelope | plasma |
 | Optical fiber | NLS | A(z,t) | n₂ ω₀/c A_eff | β₂ | NLS temporal | uo.NLSE |
 | Shallow water | KdV | η(x,t) | 3c₀/2h₀ | c₀ h₀²/6 | KdV surface | — |
@@ -140,6 +141,15 @@ SOLITON EXISTS when:  α β > 0   and   nonlinearity balances dispersion.
 5. VERIFY: does the soliton width satisfy the assumptions?
    KdV: Δ ≫ λ₀ (weak dispersion). NLS: T₀ ≫ 1/ω₀ (SVEA).
 ```
+
+### Soliton existence conditions (domain-specific)
+
+- **KdV ion-acoustic solitons**: require M = v/c_s > 1 (supersonic). For M > 1.6,
+  ion trapping in the wave potential causes wave breaking → no stationary soliton.
+  (Nonlinear Physics of Plasmas Ch.6)
+- **NLS solitons**: require anomalous dispersion (β₂ < 0) in optical fiber, or
+  attractive nonlinearity (γ > 0). For normal dispersion (β₂ > 0), only dark
+  solitons (dips in CW background) are possible.
 
 ## Edge Cases
 

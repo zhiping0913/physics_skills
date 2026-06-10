@@ -132,6 +132,34 @@ saturation mechanism differ.
    P > P_cr → beam collapse.
 ```
 
+### Lighthill criterion for modulation instability
+
+(Nonlinear Physics of Plasmas Ch.5, §5.8.2)
+A monochromatic wave is modulationally unstable when:
+```
+d²ω/dk² × μ > 0    [Lighthill 1965]
+```
+where μ = ∂ω/∂|A|² is the nonlinear frequency shift. The physical picture:
+at the crest of a modulation, the frequency decreases if μ > 0 → phase
+velocity decreases → upstream wavenumber increases → group velocity
+increases → energy flows INTO the crest from both sides → growth.
+When d²ω/dk² × μ < 0: modulation is stable (self-defocusing).
+
+### Zakharov equation family
+
+(Nonlinear Physics of Plasmas Ch.10-11)
+The coupled NLS + ion-acoustic equations (Zakharov 1972) govern wave
+collapse across multiple plasma contexts:
+```
+i ∂_t E + ∇²E = n E          [NLS for high-frequency field]
+∂_t² n − c_s² ∇²n = ∇²|E|²   [ion-acoustic for density response]
+```
+This family includes:
+- Langmuir collapse (E = electrostatic Langmuir field)
+- EM wave collapse (E = vector potential, same structure)
+- Relativistic self-focusing (E = laser envelope, n = ponderomotive density)
+All share: NLS-type equation + ponderomotive-driven density response.
+
 ## Edge Cases
 
 - **Saturation vs collapse**: whether the feedback leads to a bounded
