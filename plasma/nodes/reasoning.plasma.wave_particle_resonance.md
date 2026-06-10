@@ -4,16 +4,20 @@ type: reasoning
 summary_50t: >
   ω−k_∥v_∥ = nω_c selects resonant particles that stay in phase with wave.
   n=0: Landau damping (electrostatic) + transit-time (magnetic). n=±1: cyclotron.
-  |n|≥2: Bernstein (undamped). Quasilinear diffusion: ∂f₀/∂t = ∂/∂v(D_QL ∂f₀/∂v).
+  |n|≥2: Bernstein (undamped). Quasilinear diffusion: ∂f₀/∂t = ∂/∂v(D_QL ∂f₀/∂v)
+  with D_QL ∝ Σ_k |E_k|² (Vedenov 1963). Anomalous transport from turbulent
+  E×B fluctuations. Transition to strong turbulence (Zakharov).
 trigger:
   - computing wave damping/growth from particle distribution
   - need resonant velocity condition for specific harmonic
   - quasilinear evolution of distribution function
+  - estimating anomalous transport from turbulence spectra
 reasoning_role: resonance_condition
 parent: reasoning.landau_damping
 retrieval_cost: 1
 references:
   - landau-graph: reasoning.landau_damping (n=0 electrostatic case)
+  - Вопросы теории плазмы: Vol.6 (1972) — Веденов, Рютов, квазилинейные эффекты; Vol.7 (1973) — нелинейные кинетические неустойчивости, аномальный перенос
 ---
 
 # reasoning.plasma.wave_particle_resonance — Phase Matching → Energy Exchange
@@ -31,7 +35,13 @@ plasma (Stix §8-9, Chen §7, Ginzburg §6):
 where ω_c = qB₀/m is the (signed) cyclotron frequency. Each n selects a
 different harmonic of the cyclotron motion.
 
-## Derivation Sketch (from Landau damping → general resonance)
+When many resonant waves are present, the cumulative effect is described by
+**quasilinear theory** — the resonant particles diffuse in velocity space,
+flattening the distribution function and producing anomalous transport. This
+theory was developed extensively in the Soviet school (Vedenov, Ryutov —
+Вопросы теории плазмы Vol.6, 1972; Galeev, Sagdeev — Vol.7, 1973).
+
+## Derivation Sketch (from Landau damping → general resonance → quasilinear)
 
 Starting from `landau-graph: reasoning.landau_damping` (which establishes
 the n=0 electrostatic resonance — a particle resonant when its parallel
@@ -56,20 +66,103 @@ generalization adds cyclotron sidebands:
    For n=±1 (cyclotron): damping proportional to (v_⊥/2) ∂f₀/∂v_⊥ +
    v_res ∂f₀/∂v_∥ — perpendicular AND parallel gradients both contribute.
 
-4. **Quasilinear plateau formation** (nonlinear saturation): the wave spectrum
-   diffuses resonant particles in velocity space along diffusion paths
-   v_⊥² + (v_∥ − ω/k_∥)² = const. Particles diffuse until ∂f₀/∂v along
-   the diffusion path vanishes — a PLATEAU forms. The plateau is the
-   maximum-entropy state for the resonant population; the wave growth
-   saturates when the free energy (positive slope) is exhausted.
+## Quasilinear Theory — Vedenov Formalism (VTP Vol.6, 1972)
 
-5. **H-theorem connection**: the quasilinear diffusion operator is a
-   Fokker-Planck operator ∂f₀/∂t = ∂/∂v·(D_QL·∂f₀/∂v), where D_QL
-   is positive-definite. This implies dS/dt ≥ 0 for the kinetic entropy
-   S = −∫ f₀ ln f₀ dv — the resonant wave-particle interaction irreversibly
-   increases entropy, converting ordered wave energy into thermal spread
-   of the distribution. This is the microscopic basis for the second law
-   in collisionless plasmas: Landau damping IS entropy production.
+When MANY unstable waves are present simultaneously, the resonant particles
+experience a net diffusive evolution in velocity space. The quasilinear
+theory, developed by Vedenov, Velikhov, and Sagdeev (1962-63) and
+systematized in Вопросы теории плазмы Vol.6 (Vedenov & Ryutov, 1972),
+provides the self-consistent coupling between the wave spectrum and the
+slowly-evolving particle distribution.
+
+### 1. Quasilinear diffusion equation (Vedenov 1963)
+
+The resonant particles evolve via a Fokker-Planck-type diffusion:
+
+```
+∂f₀/∂t = ∂/∂v · (D_QL · ∂f₀/∂v)
+D_QL(v) = (πq²/m²) Σ_k |E_k|² δ(ω_k − k·v)    [unmagnetized]
+D_QL(v) = (πq²/m²) Σ_{k,n} |E_{k,n}|² J_n²(k_⊥ρ_L) δ(ω_k − k_∥v_∥ − nω_c)  [magnetized]
+```
+
+The diffusion coefficient D_QL is proportional to the spectral energy
+density of the waves at the resonant velocity. This is the central result:
+the wave spectrum |E_k|² acts as a "collision operator" for the resonant
+particles.
+
+**Diffusion paths** (VTP Vol.6): in magnetized plasma, particles diffuse
+along curves in (v_∥, v_⊥) space where the resonance condition holds:
+v_⊥² − (ω_k/k_∥)(v_∥ − ω_k/k_∥)² / ω_c = const. These paths connect
+different regions of phase space, enabling cross-heating between ∥ and ⊥
+degrees of freedom.
+
+### 2. Saturation by plateau formation
+
+The quasilinear diffusion acts to FLATTEN the distribution function along
+the resonant diffusion paths. For 1D electrostatic Langmuir waves:
+
+```
+∂f₀/∂t = ∂/∂v (D_QL ∂f₀/∂v)    with D_QL ∝ |E_k|² at k = ω_p/v
+```
+
+An initial positive slope ∂f₀/∂v > 0 (bump-on-tail) drives wave growth.
+The growing waves increase D_QL, which flattens f₀ near the resonant
+velocity. When ∂f₀/∂v = 0 (plateau formed), growth stops — the free
+energy source is exhausted. The saturated wave energy density is:
+
+```
+∫ |E_k|² dk / 8π = ∫_{v_min}^{v_max} ½ m n_bump (v − v_avg)² dv
+```
+
+— the initial excess kinetic energy of the bump is transferred to the waves.
+
+**H-theorem** (VTP Vol.6): the quasilinear operator is positive-definite,
+so dS/dt = −∫ (∂f₀/∂v)·D_QL·(∂f₀/∂v) dv / f₀ ≥ 0. Entropy increases
+irreversibly — Landau damping IS entropy production in collisionless plasma.
+
+### 3. Anomalous transport from turbulence (VTP Vol.7, 1973)
+
+In magnetized plasma, the turbulent E×B drift produces a radial particle flux:
+
+```
+Γ_r = ⟨ñ ṽ_E·r̂⟩ = Σ_k (k_θ/B) Im⟨ñ* φ_k⟩
+```
+
+In the quasilinear approximation (VTP Vol.7, Galeev & Sagdeev):
+
+```
+D_anom ≈ Σ_k (k_θ/k_∥)² |eφ_k/T|² (cT/eB)    [Fick's law: Γ = −D_anom ∇n]
+```
+
+This is the **anomalous transport** that dominates all tokamaks:
+D_anom / D_neo ∼ 10²–10⁴. The physical mechanism: E×B convection of
+particles by turbulent eddies produces a net radial flux when the
+fluctuations are correlated with density perturbations.
+
+### 4. Transition to strong turbulence (VTP Vol.7)
+
+The quasilinear theory assumes RANDOM PHASES among the waves — a weak
+turbulence condition. This breaks down when:
+
+```
+ω_B > γ_L    where ω_B = √(e k² φ / m) is the bounce frequency
+```
+
+When particles are trapped in the wave potential faster than the wave
+grows/damps, phase correlations become important. The system transitions
+to **strong turbulence**, described by the Zakharov equations (see
+`em.positive_feedback_instability`). In this regime, self-organized
+structures (solitons, collapse cavities, phase-space holes) replace
+the random-phase wave ensemble.
+
+## Resonance Types
+
+| n | Name | Physics | Damping mechanism |
+|---|------|---------|-------------------|
+| 0 | Landau | Electrostatic, E_∥ | Parallel trapping, phase mixing |
+| 0 | Transit-time | Magnetic, μ∇B force | Mirror force on magnetic moment |
+| ±1 | Cyclotron | E_⊥ rotates with particle | Perpendicular heating |
+| ±2,... | Bernstein | Finite Larmor radius | Undamped! (k_∥ → 0) |
 
 ## Algorithm
 
@@ -83,43 +176,15 @@ generalization adds cyclotron sidebands:
    Resonance: ω' = 0 → ω − k_∥ v_∥ = n ω_c.
 
 4. Resonant particles EXCHANGE energy with the wave:
-   - ∂f₀/∂v|_{v_res} < 0 → LANDAU DAMPING (energy from wave to particles)
-   - ∂f₀/∂v|_{v_res} > 0 → INVERSE DAMPING / INSTABILITY (bump-on-tail)
+   - ∂f₀/∂v|_{v_res} < 0 → LANDAU DAMPING
+   - ∂f₀/∂v|_{v_res} > 0 → INVERSE DAMPING / INSTABILITY
 
-5. For n=0 (Landau, transit-time): parallel dynamics, no B₀ needed.
-   For n=±1 (cyclotron): perpendicular dynamics, needs B₀.
-   For |n|≥2 (Bernstein): finite Larmor radius, K⊥ρ_L ∼ n, undamped.
+5. WAVE SPECTRUM: for quasilinear evolution (multiple waves):
+   D_QL ∝ Σ_k |E_k|² δ(ω_k − k_∥ v_∥ − n ω_c)
+   ∂f₀/∂t = ∂/∂v (D_QL ∂f₀/∂v) → plateau formation → saturation.
+
+6. ANOMALOUS FLUX: Γ = ⟨ñ ṽ_E⟩ ≈ −D_anom ∇n, with D_anom from Step 5.
 ```
-
-## Resonance Types
-
-| n | Name | Physics | Damping mechanism |
-|---|------|---------|-------------------|
-| 0 | Landau | Electrostatic, E_∥ | Parallel trapping, phase mixing |
-| 0 | Transit-time | Magnetic, μ∇B force | Mirror force on magnetic moment |
-| ±1 | Cyclotron | E_⊥ rotates with particle | Perpendicular heating |
-| ±2,... | Bernstein | Finite Larmor radius | Undamped! (k_∥ → 0) |
-
-## Quasilinear Theory (Stix §10, Chen §8)
-
-Beyond linear damping: the wave spectrum modifies f₀(v) via diffusion:
-
-```
-∂f₀/∂t = ∂/∂v_∥ (D_∥ ∂f₀/∂v_∥) + (1/v_⊥)∂/∂v_⊥ (v_⊥ D_⊥ ∂f₀/∂v_⊥)
-D ∝ Σ |E_k|² δ(ω_k − k_∥ v_∥ − n ω_c)
-```
-
-This flattens f₀ near resonance → saturation of instability → plateau formation.
-
-**Plateau formation — explicit**: for 1D electrostatic (Langmuir), the
-diffusion path is v_∥ only. Initial positive slope ∂f₀/∂v_∥ > 0 drives
-wave growth; quasilinear diffusion fills the "valley" between the bulk
-and the bump until ∂f₀/∂v_∥ = 0 on the interval v_bulk ≤ v_∥ ≤ v_bump.
-The resonant interval widens until the plateau covers all unstable phase
-velocities. Total energy: W_wave + ∫ ½ m v² f₀(v) dv = const (Manley-Rowe).
-**H-theorem**: dS/dt = −∫ (∂f₀/∂v)·D_QL·(∂f₀/∂v) dv / f₀ ≥ 0,
-since D_QL is positive-definite. Equality only at plateau (∂f₀/∂v = 0
-on resonance).
 
 ### Nonlinear Landau Damping, BGK Modes, and Plasma Echoes
 
@@ -131,98 +196,39 @@ instabilities and for spectral energy transfer in turbulence.
 
 **BGK (Bernstein-Greene-Kruskal) modes**: exact nonlinear Vlasov-Poisson
 equilibria where trapped particles in the wave potential well maintain
-an undamped, finite-amplitude wave. The distribution function is
-f(v) = f(E) where E = ½ mv² − eφ is the total energy in the wave frame.
-ANY such f(E) satisfies the steady Vlasov equation. These are the
-nonlinear endpoint of Landau damping — the wave does NOT decay to zero
-but to a BGK mode of finite amplitude. The final amplitude depends on
-the initial wave energy and the number of trapped particles.
+an undamped, finite-amplitude wave. ANY distribution f(v) = f(½mv²−eφ)
+satisfies the steady Vlasov equation. These are the nonlinear endpoint
+of Landau damping — the wave does NOT decay to zero but to a BGK mode.
 
 **Plasma echoes**: a remarkable nonlinear effect demonstrating the
 REVERSIBILITY of the Vlasov equation. Two pulses separated by time τ
-produce an echo at time 2τ (temporal echo) or position 2k₁−k₂ (spatial
-echo). The echo arises because phase-mixing (Landau damping) stores
-information in fine-scale velocity-space structure, which a second
-pulse can "unmix." The echo amplitude decays as exp(−const × γ_L τ)
-where γ_L is the Landau damping rate — the stored information leaks
-away via phase-space diffusion (collisions, nonlinear broadening).
-Echoes prove that Landau damping is NOT true irreversibility in the
-collisionless limit — it's phase mixing, which is reversible in
-principle but practically irreversible due to coarse-graining.
+produce an echo at time 2τ. The echo arises because phase-mixing stores
+information in fine-scale velocity-space structure, which a second pulse
+can "unmix." Proves Landau damping is phase mixing, not true irreversibility.
 
 ## Edge Cases
 
-- **k_⊥ ρ_L → 0 (cold limit)**: J_n(k_⊥ ρ_L) → 0 for all |n| ≥ 1.
-  Only n=0 resonance survives — the particle responds only to E_∥
-  (Landau) and the mirror force (transit-time). All cyclotron and
-  Bernstein harmonics vanish. This is the cold plasma regime.
-  Breaks down when k_⊥ ρ_L > 0.1 — use the full Bessel expansion
-  with at least |n| ≤ k_⊥ ρ_L + 3 harmonics.
-- **k_∥ → 0 (purely perpendicular propagation)**: the Landau resonance
-  condition ω − k_∥ v_∥ = n ω_c collapses to ω = n ω_c. ALL particles
-  with the same n are resonant regardless of v_∥ → no phase mixing →
-  NO Landau damping (n=0) or cyclotron damping (n=±1). This is why
-  Bernstein waves (k_∥=0) are undamped. Breaks down when thermal
-  broadening via ω_D (magnetic drift) or collisions provide a small
-  effective k_∥ — damping is weak but nonzero.
-- **Nonlinear regime (wave amplitude large)**: when the bounce frequency
-  ω_B = √(e k² φ/m) of trapped particles exceeds the Landau damping
-  rate γ_L (i.e., ω_B > γ_L), linear theory fails. Particles bounce in
-  the wave potential faster than the wave damps → nonlinear saturation
-  via trapping. The O'Neil (1965) solution shows that the wave amplitude
-  oscillates and eventually settles to a constant (BGK) value. Use
-  Vlasov simulation (or BGK theory) when eφ/T_e > (γ_L/ω_p)²; linear
-  Landau formula overestimates damping in this regime.
-- **Relativistic resonance**: when v_res ∼ c, the non-relativistic
-  resonance condition ω − k_∥ v_∥ = n ω_c/γ fails. The correct
-  relativistic resonance is ω − k_∥ v_∥ = n ω_c/γ, where γ = 1/√(1−v²/c²)
-  and ω_c includes the relativistic mass increase. This is critical for
-  ECRH (electron cyclotron resonance heating) at T_e > 50 keV and for
-  runaway electron interaction with waves. The resonance curve in (v_∥, v_⊥)
-  space becomes an ellipse, not a line. Use fully relativistic dispersion
-  with the relativistic plasma dispersion function when T_e > 50 keV.
-- **Multiple overlapping resonances**: when |n₁ ω_c₁ − n₂ ω_c₂| < γ_L
-  for two species, resonances overlap and the quasilinear diffusion
-  paths can connect different regions of phase space. This can lead to
-  enhanced transport (synergistic heating) or mode conversion. Use
-  multi-species kinetic codes (AORSA, TORIC) when ion and electron
-  cyclotron harmonics overlap. In the extreme limit, resonance overlap
-  produces stochastic heating (Chirikov criterion for resonance overlap).
+- **k_⊥ ρ_L → 0 (cold limit)**: J_n(k_⊥ ρ_L) → 0 for |n| ≥ 1. Only n=0
+  resonance survives. Breaks down when k_⊥ ρ_L > 0.1.
+- **k_∥ → 0 (purely perpendicular propagation)**: the resonance collapses
+  to ω = n ω_c. ALL particles with same n are resonant → NO phase mixing →
+  NO Landau/cyclotron damping. Bernstein waves are undamped.
+- **Nonlinear regime (ω_B > γ_L)**: linear and quasilinear theories fail.
+  Particle trapping dominates. Use BGK theory or Vlasov simulation when
+  eφ/T_e > (γ_L/ω_p)² (VTP Vol.7).
+- **Relativistic resonance**: at T_e > 50 keV, use ω − k_∥ v_∥ = n ω_c/γ
+  with γ = 1/√(1−v²/c²). The resonance curve becomes an ellipse.
+- **Overlapping resonances**: when |n₁ω_c₁ − n₂ω_c₂| < γ_L, resonant
+  diffusion paths merge → enhanced cross-heating. Chirikov overlap
+  criterion for stochasticity.
+- **Multiple ion species**: each species has its own ω_cα and resonant
+  velocity. The quasilinear diffusion paths for different species can
+  intersect → synergistic heating (VTP Vol.15, electron beam heating).
 
 ## Cross-References
 
 - Stix §8-10, Chen §7-8, Ginzburg §6-7
-- Вопросы теории плазмы, Вып. 6 (1972) — Веденов, Рютов, "Квазилинейные эффекты"
+- Вопросы теории плазмы: Vol.6 (1972) — Vedenov & Ryutov, quasilinear effects; Vol.7 (1973) — nonlinear kinetic instabilities, anomalous transport; Vol.15 (1987) — relativistic electron beam heating
 - landau-graph: reasoning.landau_damping (n=0 electrostatic)
-- landau-graph: reasoning.plasma_dielectric_response (ε_l from Vlasov)
-
-### Quasilinear theory and anomalous transport (VTP Vol.6, 1972; Vol.7, 1973)
-
-The quasilinear theory, developed extensively in the Soviet school (Vedenov,
-Ryutov, Galeev, Sagdeev — ВТП Vol.6-7), describes the self-consistent
-evolution of a weakly turbulent plasma. When many unstable waves grow:
-
-1. **Quasilinear diffusion equation** (Vedenov 1963, ВТП Vol.6):
-   ```
-   ∂f₀/∂t = ∂/∂v (D_QL ∂f₀/∂v),    D_QL ∝ Σ_k |E_k|² δ(ω_k − k·v)
-   ```
-   The diffusion coefficient D_QL is proportional to the spectral energy
-   density of the waves. Particles diffuse in velocity space along
-   diffusion paths: v_⊥² − (ω/k_∥)² v_∥²/ω_c = const (for magnetized).
-
-2. **Anomalous transport from turbulence**: turbulent E×B fluctuations
-   produce a radial particle flux Γ = ⟨ñ ṽ_E⟩. In the quasilinear
-   approximation: D_anom ≈ Σ_k (k_θ/k_∥)² |eφ_k/T|² (cT/eB) — typically
-   10²–10⁴ times larger than neoclassical. This "anomalous transport"
-   is the dominant energy loss channel in all tokamaks (ВТП Vol.7).
-
-3. **Saturation mechanisms**: quasilinear flattening of ∂f₀/∂v (plateau
-   formation) at the resonant velocity removes the free energy source.
-   The saturated spectrum |E_k|² is determined by the balance between
-   linear growth and nonlinear transfer (mode coupling, ВТП Vol.7).
-
-4. **Transition to strong turbulence**: when the bounce frequency of
-   trapped particles in the wave potential exceeds the wave growth rate
-   (ω_B > γ_L), quasilinear theory breaks down → particle trapping
-   dominates → strong turbulence regime (Zakharov equations, see
-   em.positive_feedback_instability).
+- electrodynamics: reasoning.em.positive_feedback_instability (strong turbulence transition)
+- plasma: reasoning.plasma.transport_coefficients (anomalous transport manifestation)
