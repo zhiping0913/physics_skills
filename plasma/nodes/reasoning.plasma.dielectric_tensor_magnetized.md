@@ -170,8 +170,35 @@ Larmor radius (k_⊥ρ_L). Key effects:
 ## Cross-References
 
 - Stix §1-2, Ginzburg §3-5, Chen §4
+- Вопросы теории плазмы, Вып. 3 (1963) — Шафранов, "Электромагнитные волны в плазме"
 - landau-graph: knowledge.kinetic.plasma_dielectric (warm plasma ε)
 - electrodynamics: knowledge.em.crystal_optics (same math, different physics)
+
+### Dispersion equation derivation (Shafranov 1963, §1)
+
+The standard method for deriving the dielectric tensor, as systematized by
+Shafranov in Вопросы теории плазмы Vol.3 (1963), proceeds in three steps:
+
+1. **Maxwell's equations with microscopic currents**: combine ∇×E = −∂B/∂t
+   and ∇×B = μ₀(J + ε₀∂E/∂t) → eliminate B → wave equation for E with J
+   as the source.
+
+2. **Conductivity tensor from particle dynamics**: for a linearized plasma,
+   J_α = σ_{αβ}(k,ω) E_β. The conductivity tensor σ_{αβ} is computed from
+   the linearized Vlasov (or fluid) equations for each species.
+
+3. **Dielectric tensor from conductivity**: ε_{αβ} = δ_{αβ} + (i/ε₀ω) σ_{αβ}.
+   The wave equation becomes [k²δ_{αβ} − k_α k_β − (ω²/c²) ε_{αβ}] E_β = 0,
+   yielding the dispersion relation det(···) = 0.
+
+Shafranov's treatment emphasizes the generality of this approach: the same
+framework (ε_{αβ} from σ_{αβ} from particle equations) applies to cold
+fluid, warm kinetic, and even quantum plasmas — only the computation of
+σ_{αβ} changes. The resulting ε_{αβ} encodes ALL linear wave properties:
+refractive index N = ck/ω, polarization, damping/growth rates.
+Shafranov also developed the fluctuation-dissipation connection: in thermal
+equilibrium, the correlation function of microscopic currents G_{αβ}(k,ω)
+is uniquely determined by the anti-Hermitian part of ε_{αβ}.
 - plasma: reasoning.plasma.single_particle_drifts (both now use signed ω_c
   per `physics-conventions`; the E×B drift and ∇B/curvature drifts determine
   how particles respond to the wave fields described by this ε; bidirectional)
