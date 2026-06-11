@@ -536,6 +536,21 @@
       "source": "reasoning.em.radiation_reaction",
       "target": "reasoning.lp.radiation_reaction",
       "type": "analogy"
+    },
+    {
+      "source": "knowledge.quantum.wkb_approximation",
+      "target": "reasoning.em.waveguide_mode_decomposition",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.plasma.surface_waves_plasmonics",
+      "target": "reasoning.em.edge_field_phenomena",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.em.three_wave_parametric_coupling",
+      "target": "reasoning.optics.stimulated_raman_scattering",
+      "type": "analogy"
     }
   ]
 }

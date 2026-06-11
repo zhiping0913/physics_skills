@@ -314,6 +314,41 @@
       "source": "reasoning.plasma.bogoliubov_chain",
       "target": "reasoning.plasma.generalized_fluid_equations",
       "type": "analogy"
+    },
+    {
+      "source": "reasoning.plasma.kinetic_dielectric_response",
+      "target": "knowledge.plasma.parameters_scales",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.plasma.nonlinear_wave_dynamics",
+      "target": "reasoning.optics.pulse_propagation_nlse",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.plasma.nonlinear_wave_dynamics",
+      "target": "knowledge.mechanics.central_field_effective",
+      "type": "analogy"
+    },
+    {
+      "source": "knowledge.quantum.wkb_approximation",
+      "target": "reasoning.plasma.dielectric_tensor_magnetized",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.fluctuation_dissipation_quantum",
+      "target": "knowledge.plasma.diagnostics",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.linear_response_general",
+      "target": "reasoning.plasma.kinetic_dielectric_response",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.em.cherenkov_radiation",
+      "target": "knowledge.em.strong_field_electrodynamics",
+      "type": "analogy"
     }
   ]
 }

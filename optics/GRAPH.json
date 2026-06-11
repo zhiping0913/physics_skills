@@ -187,6 +187,16 @@
       "source": "reasoning.em.three_wave_parametric_coupling",
       "target": "reasoning.optics.stimulated_raman_scattering",
       "type": "refinement"
+    },
+    {
+      "source": "reasoning.optics.pulse_propagation_nlse",
+      "target": "reasoning.plasma.nonlinear_wave_dynamics",
+      "type": "analogy"
+    },
+    {
+      "source": "knowledge.continuous.kramers_kronig",
+      "target": "reasoning.optics.fourier_optics_transfer_function",
+      "type": "analogy"
     }
   ]
 }

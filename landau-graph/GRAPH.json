@@ -1787,6 +1787,21 @@
       "source": "reasoning.timescale_hierarchy",
       "target": "reasoning.plasma.generalized_fluid_equations",
       "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.mechanics.hamilton_equations",
+      "target": "reasoning.plasma.drift_kinetic_equation",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.wkb_quasiclassical",
+      "target": "reasoning.em.waveguide_mode_decomposition",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.renormalization",
+      "target": "reasoning.em.radiation_reaction",
+      "type": "analogy"
     }
   ],
   "rumination_1_notes": {
