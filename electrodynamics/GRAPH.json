@@ -129,6 +129,10 @@
     "reasoning.em.radiation_reaction": {
       "node_type": "reasoning",
       "summary": "ALD eq, LL reduction, runaway, self-energy"
+    },
+    "reasoning.em.synchrotron_fourier_decomposition": {
+      "node_type": "reasoning",
+      "summary": "LW circular motion \u2192 Fourier \u2192 cos CEP=0 (\u03c0), sin CEP=\u03c0/2 (\u03c3)"
     }
   },
   "edges": [
@@ -550,6 +554,26 @@
     {
       "source": "reasoning.em.three_wave_parametric_coupling",
       "target": "reasoning.optics.stimulated_raman_scattering",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.em.lienard_wiechert_radiation",
+      "target": "reasoning.em.synchrotron_fourier_decomposition",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.synchrotron_fourier_decomposition",
+      "target": "knowledge.em.synchrotron_radiation",
+      "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.symmetry_drives_physics",
+      "target": "reasoning.em.synchrotron_fourier_decomposition",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.synchrotron_fourier_decomposition",
+      "target": "reasoning.uo.attosecond_pulse_generation",
       "type": "analogy"
     }
   ]
