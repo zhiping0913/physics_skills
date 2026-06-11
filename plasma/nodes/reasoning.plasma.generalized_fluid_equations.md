@@ -63,7 +63,54 @@ where P is the pressure tensor and Q represents ALL physics beyond
 the ideal Lorentz force. The energy equation (third moment) completes
 the closure but follows the same pattern.
 
-### 2. The pressure tensor hierarchy
+### 2. Closing the moment hierarchy: the essential recipes
+
+Taking velocity moments of the kinetic equation (Vlasov, Boltzmann, or Wigner)
+yields an INFINITE chain: the nth moment equation always contains the (n+1)th
+moment. Closure means truncating this chain with a physically motivated ansatz.
+
+**Closure recipe 1 — Chapman-Enskog (collisional plasmas)**:
+
+The distribution function is expanded f = f_Maxwell + ε f^(1) + ..., where
+ε ∼ λ_mfp/L is the small Knudsen number. The first-order correction f^(1) is
+found by solving the linearized collision operator C(f_M, f^(1)), yielding the
+transport fluxes (heat, viscosity) as gradients of the macroscopic variables:
+
+```
+f^(1) ∝ τ_collision × (thermal force terms from ∇T, ∇v, ∇n)
+```
+
+This leads to Braginskii's five transport coefficients (Braginskii 1965):
+η₀, η₁, η₂, η₃, η₄ (ion viscosity — 5 independent coefficients in magnetized
+plasma) and κ_∥, κ_⟂, κ_∧ (electron/ion thermal conductivity). The Braginskii
+closure gives the complete two-fluid transport equations used in fusion
+edge-modelling codes (SOLPS, UEDGE). See `plasma: reasoning.plasma.transport_coefficients`.
+
+**Closure recipe 2 — Grad 13-moment (intermediate collisionality)**:
+
+Expand f in Hermite polynomials around a Maxwellian, truncate at 13 moments
+(ρ, v, T, P_{ij}, q_i). The 13-moment equations include the correct asymptotic
+limits of both Euler (5-moment) and Navier-Stokes (derived by Chapman-Enskog
+from 13-moment) while remaining simpler than the full kinetic equation. The
+closure relation for the heat flux:
+```
+q_i = −κ ∇T − (τ_heat) ∂q_i/∂t    [Maxwell-Cattaneo: finite propagation speed]
+```
+This is essential for strongly-coupled or weakly-collisional plasmas where the
+Fourier law (instantaneous heat conduction) fails — heat propagates at finite
+speed, eliminating the paradox of infinite propagation in the classical
+diffusion equation.
+
+**Closure recipe 3 — Anisotropic pressure (CGL, collisionless)**:
+
+For magnetized collisionless plasma: assume double-adiabatic invariants μ and
+J (Chew-Goldberger-Low 1956). The pressure tensor is diagonal with p_∥ and p_⟂:
+```
+d/dt (p_⟂/(ρB)) = 0,    d/dt (p_∥ B²/ρ³) = 0    [CGL invariants]
+```
+This generalizes the isotropic adiabatic law p/ρ^γ = const to magnetized
+collisionless plasma. When these invariants break (firehose: p_∥−p_⟂ > B²/μ₀;
+mirror: p_⟂(T_⟂/T_∥−1) > B²/2μ₀), the plasma becomes unstable.
 
 | Closure | P (pressure tensor) | Validity |
 |---------|---------------------|----------|

@@ -23,13 +23,22 @@ references:
 All plasma instabilities draw free energy from either CONFIGURATION space
 (gradients in real space) or VELOCITY space (non-Maxwellian distributions).
 
-## Derivation Sketch (from kinetic instability theory → classification)
+## Derivation Sketch — From D(k,ω)=0 to Growth Rate
 
 Starting from `landau-graph: knowledge.kinetic.plasma_instabilities` (which
 provides the dispersion relation D(k,ω)=0 for unstable modes), the taxonomy
 of instabilities follows the SOURCE of free energy:
 
-1. **Two fundamental routes to Im ω > 0**: The dispersion relation D(k,ω)≡0
+### Phase 0: The universal instability derivation algorithm
+
+1. **Choose equilibrium** (f₀, B₀, n₀(r), T₀(r)) and perturbation (ñ, ṽ, Ẽ, B̃).
+2. **Linearize** Vlasov+Maxwell or fluid equations around equilibrium.
+3. **Fourier transform** → D(k,ω)=0 via `plasma: reasoning.plasma.dispersion_relation_method`.
+4. **Solve** ω(k) = ω_r + iγ; instability ⇔ γ=Im ω > 0.
+5. **Identify free-energy source** — which equilibrium gradient (∂n₀/∂r, ∂T₀/∂r,
+   ∂f₀/∂v > 0, J×B) drives the instability. This last step IS the classification.
+
+### Phase 1: Two fundamental routes to Im ω > 0: The dispersion relation D(k,ω)≡0
    defines ω(k). Writing D = D_R + i D_I, and expanding for small Im ω:
    ```γ = Im ω ≈ −D_I / (∂D_R/∂ω)```
    Instability (γ>0) requires D_I and ∂D_R/∂ω to have opposite signs.

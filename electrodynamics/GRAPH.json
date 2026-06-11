@@ -125,6 +125,10 @@
     },
     "reasoning.em.extended_charge_radiation": {
       "node_type": "reasoning"
+    },
+    "reasoning.em.radiation_reaction": {
+      "node_type": "reasoning",
+      "summary": "ALD eq, LL reduction, runaway, self-energy"
     }
   },
   "edges": [
@@ -522,6 +526,16 @@
       "source": "reasoning.green_function_method",
       "target": "reasoning.em.dyadic_green_function",
       "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.lienard_wiechert_radiation",
+      "target": "reasoning.em.radiation_reaction",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.em.radiation_reaction",
+      "target": "reasoning.lp.radiation_reaction",
+      "type": "analogy"
     }
   ]
 }

@@ -59,6 +59,22 @@
     },
     "reasoning.plasma.kinetic_dielectric_response": {
       "node_type": "reasoning"
+    },
+    "reasoning.plasma.nonlinear_wave_dynamics": {
+      "node_type": "reasoning",
+      "summary": "Sagdeev pseudopotential, BGK modes, wave breaking"
+    },
+    "reasoning.plasma.quasilinear_diffusion": {
+      "node_type": "reasoning",
+      "summary": "df/dt = dv(D_QL dv f), plateau, saturation"
+    },
+    "reasoning.plasma.wave_kinetic_equation": {
+      "node_type": "reasoning",
+      "summary": "Three-wave collision integral, KZ spectra"
+    },
+    "reasoning.plasma.atomic_transition_rates": {
+      "node_type": "reasoning",
+      "summary": "Einstein A, collisional excitation, CR balance, Saha"
     }
   },
   "edges": [
@@ -205,6 +221,46 @@
     {
       "source": "reasoning.timescale_hierarchy",
       "target": "reasoning.plasma.generalized_fluid_equations",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.wave_particle_resonance",
+      "target": "reasoning.plasma.nonlinear_wave_dynamics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.wave_particle_resonance",
+      "target": "reasoning.plasma.quasilinear_diffusion",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.quasilinear_diffusion",
+      "target": "reasoning.plasma.instability_classification",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.quasilinear_diffusion",
+      "target": "reasoning.plasma.wave_kinetic_equation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.wave_kinetic_equation",
+      "target": "reasoning.em.three_wave_parametric_coupling",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.plasma.nonlinear_wave_dynamics",
+      "target": "mt.soliton_formation",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.plasma.nonlinear_wave_dynamics",
+      "target": "reasoning.lp.wakefield_acceleration",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.wave_particle_resonance",
+      "target": "reasoning.plasma.atomic_transition_rates",
       "type": "prerequisite"
     }
   ]
