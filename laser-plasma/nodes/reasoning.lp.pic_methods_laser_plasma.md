@@ -241,6 +241,44 @@ applies identically to plasma PIC, N-body galaxy simulations, and MD
 — in all cases, the shape function S(x) smooths short-range forces
 to suppress artificial two-body relaxation.
 
+### Finite-grid instability and numerical heating (Hockney §7-8, Birdsall §10)
+
+Spatial discretisation on a mesh produces ALIASING: physical modes with
+k > π/Δx are folded back into the resolved band 0 < k < π/Δx. The
+aliased modes carry energy that thermalises as grid heating. The effect
+is strongest for NGP (S(k) ∝ sinc(kΔx/2), slow decay ∝ 1/k) and weakest
+for TSC (S(k) ∝ sinc⁴(kΔx/2), decay ∝ 1/k⁴).
+
+Grid heating temperature scales as:
+```
+T_grid ∝ (Δx/λ_D)² × (ω_p Δt)² × (particle kinetic energy)
+```
+Mitigation: (a) use at least cubic (TSC) or quartic spline shapes, (b) keep
+Δx < λ_D (Debye-resolved), (c) apply digital filtering to remove modes with
+kΔx > π/2 every N_filter timesteps.
+
+**Galerkin consistency** (Hockney Ch.5): the same shape function S(x) MUST be
+used for charge deposition (ρ assignment) AND force interpolation (E → F).
+Using different functions (mixed interpolation) violates Newton's third law
+and spoils momentum conservation.
+
+### Symplectic integrator — Verlet/leapfrog/Boris
+
+The Boris pusher and leapfrog integrator used in every PIC code belong to
+the class of SYMPLECTIC integrators — they preserve the phase-space volume
+(exact Liouville theorem for the discrete map) and conserve a shadow
+Hamiltonian H̃ = H + O(Δt²) exactly. Key properties:
+- Leapfrog: 2nd-order symplectic, time-reversible, stable for ω_p Δt < 2
+- Boris rotation: separates E-acceleration (half-step) from B-rotation
+  (full step), preserving |v| in pure B-field
+- Vay pusher (2008): relativistic generalisation with correct v×B for γ ≫ 1
+- Forest-Ruth (1990): 4th-order symplectic, four force evaluations per step
+
+For PIC, the leapfrog integrator is the ONLY acceptable choice unless
+unconditional stability (ADI-FDTD) or extreme γ is needed — Runge-Kutta
+methods (non-symplectic) cause spurious numerical heating over many
+plasma periods.
+
 ## Cross-References
 
 - Birdsall & Langdon, *Plasma Physics via Computer Simulation* (2018)

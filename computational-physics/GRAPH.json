@@ -45,6 +45,10 @@
     },
     "reasoning.cp.uncertainty_quantification": {
       "node_type": "reasoning"
+    },
+    "reasoning.cp.fdtd_advanced_techniques": {
+      "node_type": "reasoning",
+      "summary": "TF/SF injection, CPML, ADE-FDTD for dispersive media"
     }
   },
   "edges": [
@@ -252,6 +256,11 @@
       "source": "reasoning.cp.galerkin_rayleigh_ritz",
       "target": "reasoning.cp.uncertainty_quantification",
       "type": "reasoning-instance"
+    },
+    {
+      "source": "reasoning.cp.fdtd_yee_algorithm",
+      "target": "reasoning.cp.fdtd_advanced_techniques",
+      "type": "prerequisite"
     }
   ]
 }

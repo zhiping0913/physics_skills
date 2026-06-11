@@ -75,6 +75,18 @@
     "reasoning.plasma.atomic_transition_rates": {
       "node_type": "reasoning",
       "summary": "Einstein A, collisional excitation, CR balance, Saha"
+    },
+    "reasoning.plasma.strongly_coupled_thermodynamics": {
+      "node_type": "reasoning",
+      "summary": "OCP F_ex, Wigner crystal, HNC closure, Ziman conductivity"
+    },
+    "reasoning.plasma.drift_kinetic_equation": {
+      "node_type": "reasoning",
+      "summary": "Gyroaveraged Vlasov, FLR, banana/plateau/Pfirsch-Schluter"
+    },
+    "reasoning.plasma.bogoliubov_chain": {
+      "node_type": "reasoning",
+      "summary": "Liouville \u2192 BBGKY, Bogoliubov functional hypothesis \u2192 Landau integral"
     }
   },
   "edges": [
@@ -262,6 +274,46 @@
       "source": "reasoning.plasma.wave_particle_resonance",
       "target": "reasoning.plasma.atomic_transition_rates",
       "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.generalized_fluid_equations",
+      "target": "reasoning.plasma.strongly_coupled_thermodynamics",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.strongly_coupled_thermodynamics",
+      "target": "reasoning.plasma.atomic_transition_rates",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.strongly_coupled_thermodynamics",
+      "target": "reasoning.plasma.transport_coefficients",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.plasma.kinetic_dielectric_response",
+      "target": "reasoning.plasma.drift_kinetic_equation",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.drift_kinetic_equation",
+      "target": "reasoning.plasma.instability_classification",
+      "type": "prerequisite"
+    },
+    {
+      "source": "knowledge.kinetic.boltzmann_equation",
+      "target": "reasoning.plasma.bogoliubov_chain",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.bogoliubov_chain",
+      "target": "knowledge.kinetic.landau_collision_integral",
+      "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.plasma.bogoliubov_chain",
+      "target": "reasoning.plasma.generalized_fluid_equations",
+      "type": "analogy"
     }
   ]
 }
