@@ -575,6 +575,11 @@
       "source": "reasoning.em.synchrotron_fourier_decomposition",
       "target": "reasoning.uo.attosecond_pulse_generation",
       "type": "analogy"
+    },
+    {
+      "source": "reasoning.em.synchrotron_fourier_decomposition",
+      "target": "reasoning.mt.fm_bessel_expansion",
+      "type": "analogy"
     }
   ]
 }

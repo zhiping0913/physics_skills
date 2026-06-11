@@ -416,6 +416,11 @@
       "source": "reasoning.wkb_quasiclassical",
       "target": "reasoning.lp.laser_propagation_plasma",
       "type": "prerequisite"
+    },
+    {
+      "source": "reasoning.lp.laser_absorption_mechanisms",
+      "target": "reasoning.mt.fm_bessel_expansion",
+      "type": "prerequisite"
     }
   ]
 }

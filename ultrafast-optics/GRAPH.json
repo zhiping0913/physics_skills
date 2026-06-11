@@ -278,6 +278,16 @@
       "source": "reasoning.fluctuation_dissipation_quantum",
       "target": "reasoning.uo.attosecond_pulse_generation",
       "type": "analogy"
+    },
+    {
+      "source": "reasoning.mt.fm_bessel_expansion",
+      "target": "reasoning.uo.frequency_comb",
+      "type": "analogy"
+    },
+    {
+      "source": "reasoning.mt.fm_bessel_expansion",
+      "target": "reasoning.uo.attosecond_pulse_generation",
+      "type": "prerequisite"
     }
   ]
 }

@@ -42,6 +42,10 @@
     },
     "reasoning.mt.soliton_formation": {
       "node_type": "reasoning"
+    },
+    "reasoning.mt.fm_bessel_expansion": {
+      "node_type": "reasoning",
+      "summary": "sin(\u03c9t+\u03b2 cos \u03a9t) \u2192 \u03a3 J_n [sin/cos], Jacobi-Anger, FM sidebands"
     }
   },
   "edges": [
@@ -144,6 +148,11 @@
       "source": "reasoning.mt.soliton_formation",
       "target": "reasoning.uo.pulse_propagation_nlse",
       "type": "refinement"
+    },
+    {
+      "source": "mathematics.plane_wave_spectrum",
+      "target": "reasoning.mt.fm_bessel_expansion",
+      "type": "prerequisite"
     }
   ],
   "_note": "mathematics.vector_algebra, mathematics.fourier_transform, mathematics.complex_analysis are external undergraduate prerequisites \u2014 not distilled as nodes."
